@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Burnett's Flavored Vodka</title>
+<style>
+@media only screen and (max-width: 480px) {
+   html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }
+  .mobile-width{width:480px!important;}
+  .header-image{width:100px!important;height:129px!important;}
+}
+</style>
+</head>
+<body>
+    Check out this Burnett's %RECIPE_NAME% recipe which I found in the Burnett’s Flavorite Occasions Recipe App!<br/><br/><a href="%RECIPE_LINK%">%RECIPE_LINK%</a><br/><br/>Please <a href="http://www.burnettsvodka.com/">click here</a> to download the Burnett's Falvorites recipe app.<br/><br/>
+    <table width="500" cellpadding="0" cellspacing="0" border="0" class="mobile-width">
+	<tr>
+    	<td align="center" colspan="2">
+        	<img src="http://burnettsvodka.com/php/images/burnetts-logo-flavored.png" />
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="2" align="left"> 
+        	<h2 style="color: #0039a6;font-family:Arial,Helvetica,sans-serif;font-size: 22px;letter-spacing: 0.025em;font-weight: normal;margin-top: 0pt;margin-right: 0pt;margin-bottom:0px;margin-left: 0pt;padding-top: 0pt;padding-right: 0pt;padding-bottom: 0pt;padding-left: 0pt; padding-bottom:10px;">
+            	%RECIPE_NAME%<hr style="height: 1px; background-color: #dcddde; border: 0; padding:0px; margin:00px;" /><br />
+        </td>
+    </tr>
+    <tr>
+    	<td width="185" align="left" valign="top" rowspan="2">
+        	<img class="header-image" src="%IMAGE_URL%" width="175" height="225" /><br />
+      </td>
+      <td width="188" valign="top" style="font-family: Arial,Helvetica,sans-serif;font-size: 16px;font-weight: normal;color: #333333;line-height:26px;" align="left">
+      
+            
+      	<p style="padding:0px; margin:0px; margin-top:0px; font-weight:bold;">Ingredients:</p>
+<ul>%INGREDIENTS%</td>
+</tr><tr>
+      <td width="299" valign="top" style="font-family: Arial,Helvetica,sans-serif;font-size: 16px;font-weight: normal;color: #333333;line-height:26px;" align="left">
+     	<p style="padding:0px; margin:0px; margin-top:10px; font-weight:bold; padding-bottom:10px;">Process:</p>%PROCESS%</td>
+    </tr>
+    <tr >
+    	<td colspan="2" style="font-family: Arial,Helvetica,sans-serif;font-size: 11px;font-weight: normal;color: #333333;" align="center"><br />
+        <hr style="height: 1px; background-color: #dcddde; border: 0; padding:0px; margin:0px;" /><br />
+
+        &copy; 2013. Heaven Hill Distilleries, Inc. All Rights Reserved. <a href="#">Trademarks & Privacy</a>.  <a href="http://www.heaven-hill.com/csrs.shtml" target="_blank">Responsibility</a>.</p>
+        </td>
+    </tr>
+	<tr >
+    	<td colspan="2">
+       <BR/><br/>You can view this recipe and many others at http://burnettsvodka.com/#Recipes
+        </td>
+    </tr>
+</table></body>
+</html>

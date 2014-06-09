@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BVApp" representedClassName="BVApp" syncable="YES">
+        <attribute name="currentVersionOfFlavorData" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentVersionOfRecipeData" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deviceID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="favoriteRecipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="associatedApp" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Flavor" representedClassName="Flavor" syncable="YES">
+        <attribute name="flavorID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="flavor" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES">
+        <attribute name="directions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredients" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ratingCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="ratingValue" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="ratingValueSubmittedByUser" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="recipeID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="associatedApp" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="BVApp" inverseName="favoriteRecipes" inverseEntity="BVApp" syncable="YES"/>
+        <relationship name="flavor" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Flavor" inverseName="recipes" inverseEntity="Flavor" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BVApp" positionX="-54" positionY="93" width="128" height="105"/>
+        <element name="Flavor" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="Recipe" positionX="117" positionY="-222" width="128" height="195"/>
+    </elements>
+</model>

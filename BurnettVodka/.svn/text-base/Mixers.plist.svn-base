@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mixers</key>
+	<array>
+		<string>Orange Juice</string>
+		<string>Cranberry Juice</string>
+		<string>Pineapple Juice</string>
+		<string>Club Soda</string>
+		<string>Tonic Water</string>
+		<string>Lemon Lime Soda</string>
+		<string>Lemonade</string>
+		<string>Sweet &amp; Sour Mix</string>
+		<string>Lime Juice</string>
+		<string>Cola</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,118 @@
+10
+
+dir
+93
+file:///Users/admin/SVN%20Repository/Burnett%20Vodka/trunk/BurnettVodka
+file:///Users/admin/SVN%20Repository/Burnett%20Vodka
+
+
+
+2013-10-01T15:45:53.469129Z
+93
+admin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6f822e09-322e-4b2c-9d22-3df17f7bb9c5
+
+GAITracker.h
+file
+0
+
+
+add
+
+GAIDictionaryBuilder.h
+file
+0
+
+
+add
+
+GAITrackedViewController.h
+file
+0
+
+
+add
+
+BurnettVodka.xcodeproj
+dir
+
+GAI.h
+file
+0
+
+
+add
+
+GAILogger.h
+file
+0
+
+
+add
+
+BurnettVodka
+dir
+
+Flurry.h
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+libFlurry_5.0.0.a
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+GAIFields.h
+file
+0
+
+
+add
+
+libGoogleAnalyticsServices.a
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+

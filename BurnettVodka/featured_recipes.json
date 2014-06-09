@@ -1,0 +1,36 @@
+{
+    
+    "success": "Ok",
+    "featured_recipes": [
+                         {
+                         "db_id": 308,
+                         "defaultImageName": "HomeScreenFlavor_ClubCola.png"
+                         },
+                         {
+                         "db_id": 304,
+                         "defaultImageName": "HomeScreenFlavor_StrawberryBananaSwirl.png"
+                         },
+                         {
+                         "db_id": 318,
+                         "defaultImageName": "HomeScreenFlavor_TropicalPunch.png"
+                         },
+                         {
+                         "db_id": 325,
+                         "defaultImageName": "HomeScreenFlavor_RubyRed.png"
+                         },
+                         {
+                         "db_id": 329,
+                         "defaultImageName": "HomeScreenFlavor_RedBerry.png"
+                         },
+                         {
+                         "db_id": 334,
+                         "defaultImageName": "HomeScreenFlavor_MangoPineapple.png"
+                         },
+                         {
+                         "db_id": 315,
+                         "defaultImageName": "HomeScreenFlavor_VeryBerry.png"
+                         }
+                         ],
+    "error": null
+    
+}

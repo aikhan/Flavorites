@@ -1,0 +1,280 @@
+10
+
+dir
+0
+file:///Users/admin/SVN%20Repository/Burnett%20Vodka/trunk/BurnettVodka/BurnettVodka/FacebookSDK.framework/Versions/A/Headers
+file:///Users/admin/SVN%20Repository/Burnett%20Vodka
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6f822e09-322e-4b2c-9d22-3df17f7bb9c5
+
+FBOpenGraphAction.h
+file
+
+
+
+add
+
+FBProfilePictureView.h
+file
+
+
+
+add
+
+FBOpenGraphActionShareDialogParams.h
+file
+
+
+
+add
+
+FBInsights.h
+file
+
+
+
+add
+
+FBAppLinkData.h
+file
+
+
+
+add
+
+FBError.h
+file
+
+
+
+add
+
+FBGraphLocation.h
+file
+
+
+
+add
+
+FBFrictionlessRecipientCache.h
+file
+
+
+
+add
+
+FBAccessTokenData.h
+file
+
+
+
+add
+
+FBUserSettingsViewController.h
+file
+
+
+
+add
+
+FBSettings.h
+file
+
+
+
+add
+
+FBLoginView.h
+file
+
+
+
+add
+
+FacebookSDK.h
+file
+
+
+
+add
+
+FBFriendPickerViewController.h
+file
+
+
+
+add
+
+FBGraphPlace.h
+file
+
+
+
+add
+
+FBRequestConnection.h
+file
+
+
+
+add
+
+FBAppCall.h
+file
+
+
+
+add
+
+FBDialogsData.h
+file
+
+
+
+add
+
+FBWebDialogs.h
+file
+
+
+
+add
+
+FBPlacePickerViewController.h
+file
+
+
+
+add
+
+FBDialogs.h
+file
+
+
+
+add
+
+FBSession.h
+file
+
+
+
+add
+
+FBTestSession.h
+file
+
+
+
+add
+
+FBSessionTokenCachingStrategy.h
+file
+
+
+
+add
+
+FBShareDialogParams.h
+file
+
+
+
+add
+
+FBDialogsParams.h
+file
+
+
+
+add
+
+FBRequest.h
+file
+
+
+
+add
+
+FBGraphObject.h
+file
+
+
+
+add
+
+FBNativeDialogs.h
+file
+
+
+
+add
+
+FBGraphUser.h
+file
+
+
+
+add
+
+FBCacheDescriptor.h
+file
+
+
+
+add
+
+FBAppEvents.h
+file
+
+
+
+add
+
+FBOpenGraphObject.h
+file
+
+
+
+add
+
+FBErrorUtility.h
+file
+
+
+
+add
+
+FBViewController.h
+file
+
+
+
+add
+
+NSError+FBError.h
+file
+
+
+
+add
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>latest_version</key>
+	<string>4</string>
+	<key>files</key>
+	<dict>
+		<key>3</key>
+		<string>Recipes3.csv</string>
+		<key>2</key>
+		<string>Recipes2.csv</string>
+		<key>1</key>
+		<string>Recipes1.csv</string>
+	</dict>
+</dict>
+</plist>

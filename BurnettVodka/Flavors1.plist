@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<string>1.0</string>
+	<key>Flavors_Array</key>
+	<array>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_citrus.png</string>
+			<key>title</key>
+			<string>Citrus</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_Blackberry.png</string>
+			<key>title</key>
+			<string>Blackberry</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_watermelon.png</string>
+			<key>title</key>
+			<string>Watermelon</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_raspberry.png</string>
+			<key>title</key>
+			<string>Raspberry</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_sourapple.png</string>
+			<key>title</key>
+			<string>Sour Apple</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_strawberry.png</string>
+			<key>title</key>
+			<string>Strawberry</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_sugercookie.png</string>
+			<key>title</key>
+			<string>Sugar Cookie</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_sweettea.png</string>
+			<key>title</key>
+			<string>Sweet Tea</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_tropical.png</string>
+			<key>title</key>
+			<string>Tropical Fruit</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_vanilla.png</string>
+			<key>title</key>
+			<string>Vanilla</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_orange-ice-cream.png</string>
+			<key>title</key>
+			<string>Orange Cream</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_orange.png</string>
+			<key>title</key>
+			<string>Orange</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_peach.png</string>
+			<key>title</key>
+			<string>Peach</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_pears.png</string>
+			<key>title</key>
+			<string>Pear</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_pineapple.png</string>
+			<key>title</key>
+			<string>Pineapple</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_pink_lamonade.png</string>
+			<key>title</key>
+			<string>Pink Lemonade</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_pomegrande.png</string>
+			<key>title</key>
+			<string>Pomegranate</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_pumpkinspice.png</string>
+			<key>title</key>
+			<string>Pumpkin Spice</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_bananastrawberry.png</string>
+			<key>title</key>
+			<string>Strawberry Banana</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_Blueberry.png</string>
+			<key>title</key>
+			<string>Blueberry</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_blueraspberry.png</string>
+			<key>title</key>
+			<string>Blue Raspberry</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_candycane.png</string>
+			<key>title</key>
+			<string>Candy Cane</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_cherry.png</string>
+			<key>title</key>
+			<string>Cherry</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_cherrycola.png</string>
+			<key>title</key>
+			<string>Cherry Cola</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_coconut.png</string>
+			<key>title</key>
+			<string>Coconut</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_cranberry.png</string>
+			<key>title</key>
+			<string>Cranberry</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_cream.png</string>
+			<key>title</key>
+			<string>Whipped Cream</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_fruitpunch.png</string>
+			<key>title</key>
+			<string>Fruit Punch</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_grape.png</string>
+			<key>title</key>
+			<string>Grape</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_hotcinnamon.png</string>
+			<key>title</key>
+			<string>Hot Cinnamon</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_lemonade.png</string>
+			<key>title</key>
+			<string>Limeade</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_lime.png</string>
+			<key>title</key>
+			<string>Lime</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_mango.png</string>
+			<key>title</key>
+			<string>Mango</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_maplesyrup.png</string>
+			<key>title</key>
+			<string>Maple Syrup</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_rubyredgrapefruit.png</string>
+			<key>title</key>
+			<string>Ruby Red Grapefruit</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_mangopineapple.png</string>
+			<key>title</key>
+			<string>Mango Pineapple</string>
+		</dict>
+		<dict>
+			<key>image_file_name</key>
+			<string>Flavor_redberry.png</string>
+			<key>title</key>
+			<string>Red Berry</string>
+		</dict>
+	</array>
+</dict>
+</plist>
