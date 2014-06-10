@@ -209,7 +209,9 @@ static DataManager *sharedDataManager = nil;
 
 - (void)repairCoreDataForFlavorsAndRecipes
 {
+    
     DebugLog(@"%s", __PRETTY_FUNCTION__);
+    return;
     // Fetch Array Of Recipes In Current CSV File
     NSDictionary *recipesCSVFilesInfoDicFromDisk = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeFilesInfo" ofType:@"plist"]];
     NSString *latestVersion = [NSString stringWithString:[recipesCSVFilesInfoDicFromDisk valueForKey:@"latest_version"]];

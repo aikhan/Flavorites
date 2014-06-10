@@ -381,7 +381,7 @@ static NSString *const kTrackingId = @"UA-24508531-2";
     
     
     
-    [[DataManager sharedDataManager] checkAndRepairAppData];
+   // [[DataManager sharedDataManager] checkAndRepairAppData];
     
     
     

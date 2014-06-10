@@ -135,24 +135,13 @@ static NewServerFetchOperations *sharedManager = nil;
                                     recipe.directions = [recipeDic valueForKeyPath:@"directions"];
                                     recipe.flavor.title = [recipeDic valueForKeyPath:@"product"];
                                     
-                                    NSString *pathAndFileName = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@.png", recipe.imageName ] ofType:nil];
-                                    doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:pathAndFileName];//Check for file name in bundle
-                                    
-                                    
-                                    NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-                                    NSString* imageFilePNG = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", recipe.imageName ]];
-                                    doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:imageFilePNG];//Check in documents directory for png file
-                                    
-                                    NSString* imageFileJPG = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", recipe.imageName ]];
-                                    doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:imageFileJPG];//Check in documents directory for jpg file
-                                    
-                                    if (!doesFileExist) {
+                                    if (![self checkFileExistsLocallyWithFileName:recipe.imageName]) {
                                         [self downloadImageFileFromTheInternetForFileName:recipe.imageName isFlavor:NO];
                                     }
                                 }
                                 
                             }else{
-
+                            
                             Recipe *recipe = (Recipe *)[NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:[DataManager managedObjectContextOnMainThread]];
                             recipe.title = [recipeDic valueForKeyPath:@"drink_name"];
                             if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
@@ -163,7 +152,13 @@ static NewServerFetchOperations *sharedManager = nil;
                             recipe.imageName = [recipeDic valueForKeyPath:@"image"];
                             recipe.ingredients = [recipeDic valueForKeyPath:@"ingredients"];
                             recipe.directions = [recipeDic valueForKeyPath:@"directions"];
-                            recipe.flavor.title = [recipeDic valueForKeyPath:@"product"];
+                            recipe.flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorTitle:[recipeDic valueForKeyPath:@"product"]];
+                                if (!recipe.flavor) {
+                                    DebugLog(@"Flavor name is %@", [recipeDic valueForKeyPath:@"product"]);
+                                }
+                                if (![self checkFileExistsLocallyWithFileName:recipe.imageName]) {
+                                    [self downloadImageFileFromTheInternetForFileName:recipe.imageName isFlavor:NO];
+                                }
                             [self.myRecipesArray addObject:recipe];
                             [recipe release];
                         }
@@ -234,20 +229,10 @@ static NewServerFetchOperations *sharedManager = nil;
                             BOOL doesFileExist = NO;
                             if (flavor) {
                                 flavor.title = [flavorDic valueForKeyPath:@"name"];
-                                flavor.imageName = [flavorDic valueForKeyPath:@"imagename"];
-                                
-                                NSString *pathAndFileName = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@.png", flavor.imageName ] ofType:nil];
-                                doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:pathAndFileName];//Check for file name in bundle
+                                flavor.imageName = [flavorDic valueForKeyPath:@"image"];
                                 
                                 
-                                NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-                                NSString* imageFilePNG = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", flavor.imageName ]];
-                                doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:imageFilePNG];//Check in documents directory for png file
-                                
-                                NSString* imageFileJPG = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", flavor.imageName ]];
-                                doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:imageFileJPG];//Check in documents directory for jpg file
-                                
-                                if (!doesFileExist) {
+                                if (![self checkFileExistsLocallyWithFileName:flavor.imageName]) {
                                     [self downloadImageFileFromTheInternetForFileName:flavor.imageName isFlavor:YES];
                                 }
                                 
@@ -256,6 +241,11 @@ static NewServerFetchOperations *sharedManager = nil;
                         }else{
                             flavor = (Flavor *)[NSEntityDescription insertNewObjectForEntityForName:@"Flavor" inManagedObjectContext:[DataManager managedObjectContextOnMainThread]];
                             flavor.title = [flavorDic valueForKeyPath:@"name"];
+                            DebugLog(@"Flavor name is %@", flavor.title);
+                            flavor.imageName = [flavorDic valueForKeyPath:@"image"];
+                            if (![self checkFileExistsLocallyWithFileName:flavor.imageName]) {
+                                [self downloadImageFileFromTheInternetForFileName:flavor.imageName isFlavor:YES];
+                            }
                             flavor.flavorID = [NSNumber numberWithInteger:[[flavorDic valueForKeyPath:@"id"] integerValue]];
                         }
                     }
@@ -288,14 +278,32 @@ static NewServerFetchOperations *sharedManager = nil;
     [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"lastDate"];
 }
 
+- (BOOL)checkFileExistsLocallyWithFileName:(NSString*)fileName{
+    DebugLog(@"%s", __PRETTY_FUNCTION__);
+    BOOL doesFileExist = NO;
+    NSString *pathAndFileName = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@.png", fileName ] ofType:nil];
+    doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:pathAndFileName];//Check for file name in bundle
+    
+    
+    NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString* imageFilePNG = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", fileName ]];
+    doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:imageFilePNG];//Check in documents directory for png file
+    
+    NSString* imageFileJPG = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName ]];
+    doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:imageFileJPG];//Check in documents directory for jpg file
+    
+    return doesFileExist;
+}
+
 - (void)downloadImageFileFromTheInternetForFileName:(NSString*)fileName isFlavor:(BOOL)isFLavor{
+    DebugLog(@"%s", __PRETTY_FUNCTION__);
     NSString *urlString = nil;
     if (isFLavor) {
         urlString= [NSString stringWithFormat:@"%@%@", kFlavorsBaseURL, fileName ] ;
     }else{
         urlString = [NSString stringWithFormat:@"%@%@", kRecipeBaseURL, fileName ] ;
     }
-    
+   // urlString = @"http://burnetts14.xm0001.com/mobile_app/images/flavors/Flavor_100proof.png";
     DebugLog(@"URL string for image is %@", urlString);
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);

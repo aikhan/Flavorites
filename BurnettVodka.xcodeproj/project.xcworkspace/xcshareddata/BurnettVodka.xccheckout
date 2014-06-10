@@ -5,41 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4CA61246-0A16-4977-B7A7-AA3A9379B9F3</string>
+	<string>9AF585AF-CE3B-4ED9-87CF-BA3ABDFAF4DD</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BurnettVodka</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C46CF620-5951-4D52-8A00-DA7F5AC9C51D</key>
-		<string>file:///Users/admin/SVN%20Repository/Burnett%20Vodka</string>
+		<key>C6AE9D36-6977-469F-8224-B74FB45DFEA2</key>
+		<string>ssh://bitbucket.org/exaviar/flavorites.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BurnettVodka.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C46CF620-5951-4D52-8A00-DA7F5AC9C51D</key>
-		<string>../../../..</string>
-	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>C46CF620-5951-4D52-8A00-DA7F5AC9C51D</key>
-		<string>file:///Users/admin/SVN%20Repository/Burnett%20Vodka</string>
+		<key>C6AE9D36-6977-469F-8224-B74FB45DFEA2</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>file:///Users/admin/SVN%20Repository/Burnett%20Vodka/trunk/BurnettVodka/BurnettVodka.xcodeproj</string>
+	<string>ssh://bitbucket.org/exaviar/flavorites.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C46CF620-5951-4D52-8A00-DA7F5AC9C51D</string>
+	<string>C6AE9D36-6977-469F-8224-B74FB45DFEA2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
-			<string>trunk</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C46CF620-5951-4D52-8A00-DA7F5AC9C51D</string>
+			<string>C6AE9D36-6977-469F-8224-B74FB45DFEA2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BurnettVodka</string>
 		</dict>

@@ -206,9 +206,12 @@
                                  self.navigationController.view.frame.size.width,
                                  self.navigationController.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - iOS7OffsetAdjustmentForStatusBar);
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(flavorImageUpdated) name:@"notification" object:nil];
 }
 
+- (void)flavorImageUpdated{
+    DebugLog(@"%s", __PRETTY_FUNCTION__);
+}
 
 - (void)viewDidLoad
 {
