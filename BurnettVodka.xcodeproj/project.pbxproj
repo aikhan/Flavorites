@@ -60,7 +60,7 @@
 		84197AC1179887080003E75E /* Flavor_80proof.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197AB5179887080003E75E /* Flavor_80proof.png */; };
 		84197AC2179887080003E75E /* Flavor_100proof.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197AB6179887080003E75E /* Flavor_100proof.png */; };
 		84197AC3179887080003E75E /* Flavor_bananastrawberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197AB7179887080003E75E /* Flavor_bananastrawberry.png */; };
-		84197AC4179887080003E75E /* Flavor_Blueberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197AB8179887080003E75E /* Flavor_Blueberry.png */; };
+		84197AC4179887080003E75E /* Flavor_blueberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197AB8179887080003E75E /* Flavor_blueberry.png */; };
 		84197AC5179887080003E75E /* Flavor_blueraspberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197AB9179887080003E75E /* Flavor_blueraspberry.png */; };
 		84197AC6179887080003E75E /* Flavor_candycane.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197ABA179887080003E75E /* Flavor_candycane.png */; };
 		84197AC7179887080003E75E /* Flavor_cherry.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197ABB179887080003E75E /* Flavor_cherry.png */; };
@@ -154,7 +154,7 @@
 		844115F217A50DBA00CDF046 /* BigRatingStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844115F017A50DBA00CDF046 /* BigRatingStar@2x.png */; };
 		844115F517A50E5300CDF046 /* BVRatingOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844115F417A50E5300CDF046 /* BVRatingOverlayView.m */; };
 		844115F817A5222C00CDF046 /* BVApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 844115F717A5222C00CDF046 /* BVApp.m */; };
-		844115FC17A5B02C00CDF046 /* Flavor_Blackberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 844115FA17A5B02C00CDF046 /* Flavor_Blackberry.png */; };
+		844115FC17A5B02C00CDF046 /* Flavor_blackberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 844115FA17A5B02C00CDF046 /* Flavor_blackberry.png */; };
 		8441160017A5F6FC00CDF046 /* SystemSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 844115FF17A5F6F800CDF046 /* SystemSoundPlayer.m */; };
 		8441160217A5F76A00CDF046 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8441160117A5F76A00CDF046 /* AudioToolbox.framework */; };
 		8441160517A5F7A600CDF046 /* CoverFlow_Move.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 8441160417A5F7A600CDF046 /* CoverFlow_Move.aifc */; };
@@ -610,7 +610,7 @@
 		84197AB5179887080003E75E /* Flavor_80proof.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_80proof.png; sourceTree = "<group>"; };
 		84197AB6179887080003E75E /* Flavor_100proof.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_100proof.png; sourceTree = "<group>"; };
 		84197AB7179887080003E75E /* Flavor_bananastrawberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_bananastrawberry.png; sourceTree = "<group>"; };
-		84197AB8179887080003E75E /* Flavor_Blueberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_Blueberry.png; sourceTree = "<group>"; };
+		84197AB8179887080003E75E /* Flavor_blueberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_blueberry.png; sourceTree = "<group>"; };
 		84197AB9179887080003E75E /* Flavor_blueraspberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_blueraspberry.png; sourceTree = "<group>"; };
 		84197ABA179887080003E75E /* Flavor_candycane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_candycane.png; sourceTree = "<group>"; };
 		84197ABB179887080003E75E /* Flavor_cherry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_cherry.png; sourceTree = "<group>"; };
@@ -724,7 +724,7 @@
 		844115F617A5222C00CDF046 /* BVApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVApp.h; sourceTree = "<group>"; };
 		844115F717A5222C00CDF046 /* BVApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVApp.m; sourceTree = "<group>"; };
 		844115F917A5A9EC00CDF046 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		844115FA17A5B02C00CDF046 /* Flavor_Blackberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_Blackberry.png; sourceTree = "<group>"; };
+		844115FA17A5B02C00CDF046 /* Flavor_blackberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flavor_blackberry.png; sourceTree = "<group>"; };
 		844115FE17A5F6F600CDF046 /* SystemSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemSoundPlayer.h; sourceTree = "<group>"; };
 		844115FF17A5F6F800CDF046 /* SystemSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemSoundPlayer.m; sourceTree = "<group>"; };
 		8441160117A5F76A00CDF046 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -1985,7 +1985,7 @@
 				84197AB5179887080003E75E /* Flavor_80proof.png */,
 				84197AB6179887080003E75E /* Flavor_100proof.png */,
 				84197AB7179887080003E75E /* Flavor_bananastrawberry.png */,
-				84197AB8179887080003E75E /* Flavor_Blueberry.png */,
+				84197AB8179887080003E75E /* Flavor_blueberry.png */,
 				84197AB9179887080003E75E /* Flavor_blueraspberry.png */,
 				84197ABA179887080003E75E /* Flavor_candycane.png */,
 				84197ABB179887080003E75E /* Flavor_cherry.png */,
@@ -2020,7 +2020,7 @@
 				84197AE117988B1F0003E75E /* Flavor_tropical.png */,
 				84197AE217988B1F0003E75E /* Flavor_vanilla.png */,
 				84197AE317988B1F0003E75E /* Flavor_watermelon.png */,
-				844115FA17A5B02C00CDF046 /* Flavor_Blackberry.png */,
+				844115FA17A5B02C00CDF046 /* Flavor_blackberry.png */,
 			);
 			name = "Flavor Images";
 			sourceTree = "<group>";
@@ -2173,7 +2173,7 @@
 				84197AC2179887080003E75E /* Flavor_100proof.png in Resources */,
 				05256AEE1920C62C002955D5 /* HomeScreenFlavor_RubyRed.png in Resources */,
 				84197AC3179887080003E75E /* Flavor_bananastrawberry.png in Resources */,
-				84197AC4179887080003E75E /* Flavor_Blueberry.png in Resources */,
+				84197AC4179887080003E75E /* Flavor_blueberry.png in Resources */,
 				84197AC5179887080003E75E /* Flavor_blueraspberry.png in Resources */,
 				84197AC6179887080003E75E /* Flavor_candycane.png in Resources */,
 				84197AC7179887080003E75E /* Flavor_cherry.png in Resources */,
@@ -2497,7 +2497,7 @@
 				8404BF8E17A452A0003CB0E0 /* ShareTwitterIcon@2x.png in Resources */,
 				844115F117A50DBA00CDF046 /* BigRatingStar.png in Resources */,
 				844115F217A50DBA00CDF046 /* BigRatingStar@2x.png in Resources */,
-				844115FC17A5B02C00CDF046 /* Flavor_Blackberry.png in Resources */,
+				844115FC17A5B02C00CDF046 /* Flavor_blackberry.png in Resources */,
 				8441160517A5F7A600CDF046 /* CoverFlow_Move.aifc in Resources */,
 				8441161817A61A7100CDF046 /* LoadingScreenLowerHalf_4inch.png in Resources */,
 				8441161917A61A7100CDF046 /* LoadingScreenLowerHalf_4inch@2x.png in Resources */,

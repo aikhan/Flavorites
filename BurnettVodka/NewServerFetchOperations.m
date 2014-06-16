@@ -19,6 +19,8 @@
 @implementation NewServerFetchOperations
 @synthesize myConnectionStatus = _myConnectionStatus;
 BVAppDelegate *appDelegate;
+static int flavorDownloadImageCount = 0;
+static int recipeDownloadImageCount = 0;
 
 #pragma mark -
 #pragma mark Singleton Methods
@@ -63,6 +65,10 @@ static NewServerFetchOperations *sharedManager = nil;
             //init code
             appDelegate = (BVAppDelegate *)[[UIApplication sharedApplication] delegate];
             _myRecipesArray = [[NSMutableArray alloc] init];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(flavorImageDownloaded:) name:@"FlavorImageDownloadComplete" object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recipeImageDownloaded:) name:@"RecipeImageDownloadComplete" object:nil];
+            flavorDownloadImageCount = 0;
+            recipeDownloadImageCount = 0;
             _myConnectionStatus = [self isReachableVia];
             if(_myConnectionStatus == kNotReachable){
                 //[self fetchLatestFlavors];
@@ -122,7 +128,7 @@ static NewServerFetchOperations *sharedManager = nil;
                             Recipe *recipe = nil;
                             if (isUpdate) {
                                 recipe = [[DataManager sharedDataManager] recipesGetRecipeWithRecipeID:[[recipeDic valueForKeyPath:@"id"] integerValue]];
-                                BOOL doesFileExist = NO;
+                               // BOOL doesFileExist = NO;
                                 if (recipe) {
                                     recipe.title = [recipeDic valueForKeyPath:@"name"];
                                     if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
@@ -136,7 +142,7 @@ static NewServerFetchOperations *sharedManager = nil;
                                     recipe.flavor.title = [recipeDic valueForKeyPath:@"product"];
                                     
                                     if (![self checkFileExistsLocallyWithFileName:recipe.imageName]) {
-                                        [self downloadImageFileFromTheInternetForFileName:recipe.imageName isFlavor:NO];
+                                        [self downloadImageFileFromTheInternetForFileName:recipe.imageName withID:recipe.recipeID isFlavor:NO];
                                     }
                                 }
                                 
@@ -157,10 +163,10 @@ static NewServerFetchOperations *sharedManager = nil;
                                     DebugLog(@"Flavor name is %@", [recipeDic valueForKeyPath:@"product"]);
                                 }
                                 if (![self checkFileExistsLocallyWithFileName:recipe.imageName]) {
-                                    [self downloadImageFileFromTheInternetForFileName:recipe.imageName isFlavor:NO];
+                                    [self downloadImageFileFromTheInternetForFileName:recipe.imageName withID:recipe.recipeID isFlavor:NO];
                                 }
                             [self.myRecipesArray addObject:recipe];
-                            [recipe release];
+                            //[recipe release];
                         }
                     }
                 }
@@ -226,27 +232,23 @@ static NewServerFetchOperations *sharedManager = nil;
                         Flavor *flavor = nil;
                         if (isUpdate) {
                            flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorID:[[flavorDic valueForKeyPath:@"id"] integerValue]];
-                            BOOL doesFileExist = NO;
                             if (flavor) {
                                 flavor.title = [flavorDic valueForKeyPath:@"name"];
                                 flavor.imageName = [flavorDic valueForKeyPath:@"image"];
-                                
-                                
                                 if (![self checkFileExistsLocallyWithFileName:flavor.imageName]) {
-                                    [self downloadImageFileFromTheInternetForFileName:flavor.imageName isFlavor:YES];
+                                    [self downloadImageFileFromTheInternetForFileName:flavor.imageName withID:flavor.flavorID isFlavor:YES];
                                 }
-                                
                             }
                             
                         }else{
                             flavor = (Flavor *)[NSEntityDescription insertNewObjectForEntityForName:@"Flavor" inManagedObjectContext:[DataManager managedObjectContextOnMainThread]];
                             flavor.title = [flavorDic valueForKeyPath:@"name"];
-                            DebugLog(@"Flavor name is %@", flavor.title);
+                            //DebugLog(@"Flavor name is %@", flavor.title);
                             flavor.imageName = [flavorDic valueForKeyPath:@"image"];
-                            if (![self checkFileExistsLocallyWithFileName:flavor.imageName]) {
-                                [self downloadImageFileFromTheInternetForFileName:flavor.imageName isFlavor:YES];
-                            }
                             flavor.flavorID = [NSNumber numberWithInteger:[[flavorDic valueForKeyPath:@"id"] integerValue]];
+                            if (![self checkFileExistsLocallyWithFileName:flavor.imageName]) {
+                                [self downloadImageFileFromTheInternetForFileName:flavor.imageName withID:flavor.flavorID isFlavor:YES];
+                            }
                         }
                     }
                 }
@@ -279,32 +281,40 @@ static NewServerFetchOperations *sharedManager = nil;
 }
 
 - (BOOL)checkFileExistsLocallyWithFileName:(NSString*)fileName{
-    DebugLog(@"%s", __PRETTY_FUNCTION__);
+   // DebugLog(@"%s", __PRETTY_FUNCTION__);
+    DebugLog(@"File to check %@", fileName);
     BOOL doesFileExist = NO;
-    NSString *pathAndFileName = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@.png", fileName ] ofType:nil];
-    doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:pathAndFileName];//Check for file name in bundle
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *fileInResourcesFolder = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fileName];
+    doesFileExist = [fileManager fileExistsAtPath:fileInResourcesFolder];//Check for file name in bundle
+    if (doesFileExist) {
+        return YES;
+    }
     
     
     NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    NSString* imageFilePNG = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", fileName ]];
+    NSString* imageFilePNG = [documentsPath stringByAppendingPathComponent:fileName];
     doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:imageFilePNG];//Check in documents directory for png file
+    if (doesFileExist) {
+        return YES;
+    }
     
-    NSString* imageFileJPG = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName ]];
+    NSString* imageFileJPG = [documentsPath stringByAppendingPathComponent:fileName];
     doesFileExist = [[NSFileManager defaultManager] fileExistsAtPath:imageFileJPG];//Check in documents directory for jpg file
     
     return doesFileExist;
 }
 
-- (void)downloadImageFileFromTheInternetForFileName:(NSString*)fileName isFlavor:(BOOL)isFLavor{
-    DebugLog(@"%s", __PRETTY_FUNCTION__);
+- (void)downloadImageFileFromTheInternetForFileName:(NSString*)fileName withID:(NSNumber*)ID isFlavor:(BOOL)isFLavor{
+    DebugLog(@"download image %@ and object ID : %d", fileName, [ID integerValue]);
     NSString *urlString = nil;
     if (isFLavor) {
         urlString= [NSString stringWithFormat:@"%@%@", kFlavorsBaseURL, fileName ] ;
     }else{
         urlString = [NSString stringWithFormat:@"%@%@", kRecipeBaseURL, fileName ] ;
     }
-   // urlString = @"http://burnetts14.xm0001.com/mobile_app/images/flavors/Flavor_100proof.png";
-    DebugLog(@"URL string for image is %@", urlString);
+    urlString = @"http://burnetts14.xm0001.com/mobile_app/images/flavors/Flavor_100proof.png";
+    //DebugLog(@"URL string for image is %@", urlString);
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     dispatch_async(queue, ^(void) {
@@ -323,10 +333,12 @@ static NewServerFetchOperations *sharedManager = nil;
                 [data writeToFile:path atomically:YES];
                 
                 NSNotification* notification = nil;
+                NSDictionary *userInfo = [NSDictionary dictionaryWithObject:ID forKey:@"objectID"];
+                //[userInfo setValue:fileName forKey:@"objectImage"];
                 if (isFLavor) {
-                    notification = [NSNotification notificationWithName:@"FlavorImageDownloadComplete" object:nil];
+                    notification = [NSNotification notificationWithName:@"FlavorImageDownloadComplete:" object:nil userInfo:userInfo];
                 }else{
-                    notification = [NSNotification notificationWithName:@"RecipeImageDownloadComplete" object:nil];
+                    notification = [NSNotification notificationWithName:@"RecipeImageDownloadComplete" object:nil userInfo:userInfo];
                 }
                 
                 [[NSNotificationCenter defaultCenter] postNotification:notification];
@@ -336,8 +348,23 @@ static NewServerFetchOperations *sharedManager = nil;
     
 }
 
+- (void)flavorImageDownloaded:(NSNotification *)notification{
+    
+    flavorDownloadImageCount++;
+    
+    DebugLog(@"Download fimage numher %d", flavorDownloadImageCount);
+    
+}
+
+- (void)recipeImageDownloaded:(NSNotification *)notification{
+    recipeDownloadImageCount++;
+    DebugLog(@"Download rimage numher %d", recipeDownloadImageCount);
+
+}
+
 -(void)dealloc{
     [self.myRecipesArray release];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }
 @end

@@ -44,8 +44,12 @@
         NSString *imageExtention = [_imageObject.fileName pathExtension];
         NSString *imageFileNameWithoutExtension = [[_imageObject.fileName lastPathComponent] stringByDeletingPathExtension];
         UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+        if (!image) {
+            image = [self loadImageFromDocumentsDirectoryWithImageName:_imageObject.fileName];
+        }
         _imageObject.image = image;
-        [image release];
+        
+       // [image release];
 	}
     
     if([delegate respondsToSelector:@selector(lazyImageDownloadOperation:finishedLoadingForImageObject:)])
@@ -56,7 +60,16 @@
 	[pool release];
 }
 
-
+- (UIImage*)loadImageFromDocumentsDirectoryWithImageName:(NSString*)imageName
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithString: imageName] ];
+    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    return image;
+}
 
 
 @end

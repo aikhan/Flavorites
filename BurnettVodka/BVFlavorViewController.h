@@ -28,6 +28,7 @@
 }
 
 @property (nonatomic, assign) id <BVFlavorViewDelegate> viewDelegate;
+@property (nonatomic, strong) UIImageView *flavorBackImageView;
 
 - (id)initWithFrame:(CGRect)frame andFlavor:(Flavor *)flavorObject;
 - (id)initWithFrame:(CGRect)frame andFlavorDictionary:(NSDictionary *)flavorDic;
@@ -42,5 +43,7 @@
 }
 
 @property (nonatomic, retain) UIScrollView *mScrollView;
+
+- (void)flavorImageUpdated:(NSNotification*)notification;
 
 @end

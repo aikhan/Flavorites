@@ -56,6 +56,13 @@ static NSString *const kTrackingId = @"UA-24508531-2";
 @synthesize tabBarController = _tabBarController;
 @synthesize ageGateController = _ageGateController;
 
+
+
+void myExceptionHandler(NSException *exception)
+{
+    NSArray *stack = [exception callStackReturnAddresses];
+    NSLog(@"Stack trace: %@", stack);
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
@@ -83,7 +90,7 @@ static NSString *const kTrackingId = @"UA-24508531-2";
     [[UINavigationBar appearance] setBackgroundImage:navigationBarBackgroundImage forBarMetrics:UIBarMetricsDefault];
     [navigationBarBackgroundImage release];
     
-    
+     NSSetUncaughtExceptionHandler(&myExceptionHandler);
     if(kDisableAgeGateForDevelopment)
     {
         [self showTabBar];
@@ -98,6 +105,7 @@ static NSString *const kTrackingId = @"UA-24508531-2";
     
     return YES;
 }
+
 
 - (void)updateAppStartupCount{
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -426,9 +434,15 @@ static NSString *const kTrackingId = @"UA-24508531-2";
     [self managedObjectContext];
     [self deleteAllObjects:@"Flavor"];
     [self deleteAllObjects:@"Recipe"];
-
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSArray *filePathsArray = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:documentsDirectory  error:nil];
+    
+    NSLog(@"files array %@", filePathsArray);
     [[NewServerFetchOperations sharedManager] fetchLatestFlavors];
-   // [[DataManager sharedDataManager] checkAndRepairAppData];
+    //[[DataManager sharedDataManager] checkAndRepairAppData];
 }
 - (void) deleteAllObjects: (NSString *) entityDescription  {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];

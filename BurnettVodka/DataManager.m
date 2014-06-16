@@ -679,7 +679,7 @@ static DataManager *sharedDataManager = nil;
     BVApp *app = [self app];
     
     BOOL doWeNeedToRepairData = NO;
-    NSAssert(NO, @"Data should not be rebuilt from local database");
+   // NSAssert(NO, @"Data should not be rebuilt from local database");
     
     // Condition 1
     if(!doWeNeedToRepairData)

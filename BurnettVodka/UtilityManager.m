@@ -279,7 +279,9 @@ static UtilityManager *sharedUtilityManager = nil;
             NSString *imageExtention = [fileName pathExtension];
             NSString *imageFileNameWithoutExtension = [[fileName lastPathComponent] stringByDeletingPathExtension];
             imageToBeReturned = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
-            
+//            if (!imageToBeReturned) {
+//                imageToBeReturned = [self loadImageFromDocumentsDirectoryWithImageName:fileName];
+//            }
             if(fileName && imageToBeReturned)
             {
                 [self setCacheObject:imageToBeReturned forKey:fileName];
@@ -295,7 +297,16 @@ static UtilityManager *sharedUtilityManager = nil;
     
     return imageToBeReturned;
 }
-
+- (UIImage*)loadImageFromDocumentsDirectoryWithImageName:(NSString*)imageName
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithString: imageName] ];
+    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    return image;
+}
 - (void)cacheAddImage:(UIImage *)image againstCompleteFileName:(NSString *)fileName
 {    
     if(fileName && image)

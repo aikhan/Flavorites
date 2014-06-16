@@ -91,9 +91,12 @@
     NSString *imageExtention = [imageFileName pathExtension];
     NSString *imageFileNameWithoutExtension = [[imageFileName lastPathComponent] stringByDeletingPathExtension];
     UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+    if (!flavorImage) {
+        flavorImage = [self loadImageFromDocumentsDirectoryWithImageName:imageFileName];
+    }
     flavorImageView.image = flavorImage;
-    [flavorImage release];
-
+    //[flavorImage release];
+    self.flavorBackImageView = flavorImageView;
     [self addSubview:flavorImageView];
     [flavorImageView release];
     
@@ -137,7 +140,16 @@
     [titleLabel release];
 
 }
-
+- (UIImage*)loadImageFromDocumentsDirectoryWithImageName:(NSString*)imageName
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithString: imageName] ];
+    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    return image;
+}
 - (void)dealloc {
     
     [mFlavorInfoDictionary release];
@@ -206,11 +218,17 @@
                                  self.navigationController.view.frame.size.width,
                                  self.navigationController.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - iOS7OffsetAdjustmentForStatusBar);
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(flavorImageUpdated) name:@"notification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(flavorImageUpdated:) name:@"FlavorImageDownloadComplete:" object:nil];
 }
 
-- (void)flavorImageUpdated{
+- (void)flavorImageUpdated:(NSNotification*)notification{
     DebugLog(@"%s", __PRETTY_FUNCTION__);
+    NSNumber *tempID = [[notification userInfo] objectForKey:@"objectID"];
+    
+    BVFlavorView *getFView = (BVFlavorView*)[mScrollView viewWithTag:[tempID integerValue]];
+    Flavor *tempFlavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorID:[tempID integerValue]];
+    [getFView.flavorBackImageView setImage:[getFView loadImageFromDocumentsDirectoryWithImageName:tempFlavor.imageName]];
+    
 }
 
 - (void)viewDidLoad
@@ -235,7 +253,7 @@
 }
 
 - (void)dealloc {
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [mBackgroundImageView release];
     [mScrollView release];
     [super dealloc];
@@ -320,7 +338,11 @@
         }
 
         
+        flavorView.tag = [flavor.flavorID integerValue];
+        DebugLog(@"Added flavor with tag ID %d", flavorView.tag);
+        
         [mScrollView addSubview:flavorView];
+        
     }
     
     mScrollView.contentSize = CGSizeMake(mScrollView.frame.size.width,

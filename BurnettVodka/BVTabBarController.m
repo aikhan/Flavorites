@@ -400,6 +400,7 @@
         
     UIViewController *previousViewController = [_viewControllers objectAtIndex:previousIndex];
     UIViewController *newViewController = [_viewControllers objectAtIndex:newSelectedIndex];
+    //[newViewController retain];
     
     [self transitionFromViewController:previousViewController toViewController:newViewController];
 }
