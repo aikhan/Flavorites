@@ -27,11 +27,9 @@
 - (void)main
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-        
-    
     // First we shall fetch the JSON that represents the latest recipes to be shown on home screen.
     
-    NSString *urlString = [NSString stringWithFormat:@"%@/featured_recipe.php", kAPIServerPath];
+    NSString *urlString = [NSString stringWithFormat:@"%@/featured_recipe.php", kAPIServerPathNew];
     ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     request.timeOutSeconds = 30;
     request.cachePolicy = ASIDoNotReadFromCacheCachePolicy;
@@ -41,13 +39,12 @@
     {
         NSString *responseString = [request responseString];
         
-        
         // Temp:
-        responseString = [responseString stringByReplacingOccurrencesOfString:@"https:\\/\\/facebook.heavenhill.com\\/burnetts\\/images\\/Burnetts_DrinkImages\\/PinkLemonade_GingerFusion.jpg" withString:@"http://harmandeepsingh.info/burnetts/images/strawberry_banana_swirl.png"];
-        
-        responseString = [responseString stringByReplacingOccurrencesOfString:@"https:\\/\\/facebook.heavenhill.com\\/burnetts\\/images\\/Burnetts_DrinkImages\\/HotCinn_VanillaSpice.jpg" withString:@"http://harmandeepsingh.info/burnetts/images/club_cola.png"];
-        
-        responseString = [responseString stringByReplacingOccurrencesOfString:@"https:\\/\\/facebook.heavenhill.com\\/burnetts\\/images\\/Burnetts_DrinkImages\\/sugar-cookie-lemon-bar.jpg" withString:@"http://harmandeepsingh.info/burnetts/images/lemon_bar.png"];
+//        responseString = [responseString stringByReplacingOccurrencesOfString:@"https:\\/\\/facebook.heavenhill.com\\/burnetts\\/images\\/Burnetts_DrinkImages\\/PinkLemonade_GingerFusion.jpg" withString:@"http://harmandeepsingh.info/burnetts/images/strawberry_banana_swirl.png"];
+//        
+//        responseString = [responseString stringByReplacingOccurrencesOfString:@"https:\\/\\/facebook.heavenhill.com\\/burnetts\\/images\\/Burnetts_DrinkImages\\/HotCinn_VanillaSpice.jpg" withString:@"http://harmandeepsingh.info/burnetts/images/club_cola.png"];
+//        
+//        responseString = [responseString stringByReplacingOccurrencesOfString:@"https:\\/\\/facebook.heavenhill.com\\/burnetts\\/images\\/Burnetts_DrinkImages\\/sugar-cookie-lemon-bar.jpg" withString:@"http://harmandeepsingh.info/burnetts/images/lemon_bar.png"];
         
         
         NSDictionary *responseDic = [responseString JSONValue];
@@ -60,8 +57,8 @@
                 if([recipesArray isKindOfClass:[NSArray class]])
                 {
                     //TEMP: We are temporary simulating as if no new feature recipe is coming from server.
-//                    if([recipesArray count] > 0)
-                    if(NO)
+                   if([recipesArray count] > 0)
+//                    if(NO)
                     {
                         NSArray *sortedArrayFromLocalSystem = [[[DataManager sharedDataManager] featuredRecipesLatest] sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"db_id" ascending:YES]]];
                         
@@ -109,8 +106,6 @@
         // TODO: write error log
     }
     [request release];
-    
-    
     
     
     

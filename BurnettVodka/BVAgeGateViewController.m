@@ -1,10 +1,4 @@
-//
-//  BVAgeGateViewController.m
-//  BurnettVodka
-//
-//  Created by admin on 8/15/13.
-//  Copyright (c) 2013 XenoPsi Media. All rights reserved.
-//
+
 
 #import "BVAgeGateViewController.h"
 #import "UtilityManager.h"
@@ -68,6 +62,8 @@
     
     [mDatePickerView release];
     [mBackgroundImageView release];
+    [rememberButton release];
+    [datelbl release];
     [super dealloc];
 }
 
@@ -85,7 +81,7 @@
     {
         iOS7OffsetAdjustmentForStatusBar = 20;
     }
-
+    
     
     
     
@@ -96,7 +92,7 @@
                                                                          0 + iOS7OffsetAdjustmentForStatusBar,
                                                                          self.view.frame.size.width,
                                                                          self.view.frame.size.height)];
-
+    
     
     NSString *backgroundImageFileName = @"";
     if([UtilityManager isThisDeviceA4InchIphone])
@@ -114,9 +110,6 @@
     [self.view addSubview:mBackgroundImageView];
     
     
-    
-    
-    
     // Create Burnett Flavorite Occasion Logo
     UIImage *logoImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"BurnettFlavoriteOccasionLogo.png" andAddIfRequired:YES];
     UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(roundf((self.view.frame.size.width - logoImage.size.width) / 2),
@@ -128,46 +121,52 @@
     [logoImageView release];
     
     
+    UIImage *DateofBirth = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"enterdob.png" andAddIfRequired:YES];
+    UIImageView *DateofBirthView = [[UIImageView alloc] initWithFrame:CGRectMake(roundf((self.view.frame.size.width - DateofBirth.size.width) / 2),
+                                                                                 0,
+                                                                                 DateofBirth.size.width,
+                                                                                 DateofBirth.size.height)];
+    DateofBirthView.image = DateofBirth;
+    [self.view addSubview:DateofBirthView];
+    [DateofBirthView release];
     
+    UIImage *GetDateButtonImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"getDate.png" andAddIfRequired:YES];
     
-    // Label for Enter Your Birthday
-    NSString *instructionText1 = @"Enter Your Birthday";
-    UIFont *instructionText1Font = [UtilityManager fontGetRegularFontOfSize:24];
-    CGSize instructionTextSize1 = [instructionText1 sizeWithFont:instructionText1Font];
-    UILabel *instructionLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0,
-                                                                           0,
-                                                                           self.view.frame.size.width,
-                                                                           instructionTextSize1.height)];
-    instructionLabel1.font = instructionText1Font;
-    instructionLabel1.backgroundColor = [UIColor clearColor];
-    instructionLabel1.textColor = [UIColor blackColor];
-    instructionLabel1.text = instructionText1;
-    instructionLabel1.textAlignment = UITextAlignmentCenter;
-    [self.view addSubview:instructionLabel1];
-    [instructionLabel1 release];
+    UIButton *GetDateButton = [[UIButton alloc] initWithFrame:CGRectMake(roundf((self.view.frame.size.width - GetDateButtonImage.size.width) / 2),
+                                                                         0,
+                                                                         GetDateButtonImage.size.width,
+                                                                         GetDateButtonImage.size.height)];
+    [GetDateButton setImage:GetDateButtonImage forState:UIControlStateNormal];
+    [GetDateButton addTarget:self action:@selector(getDateButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:GetDateButton];
+    [GetDateButton release];
     
-    
-    
-    
-    
-    // Label for Legal Age Message
-    NSString *instructionText2 = @"You must be of legal drinking age to use this app";
-    UIFont *instructionText2Font = [UtilityManager fontGetRegularFontOfSize:13];
+    NSString *instructionText2 = @"When were you born?";
+    UIFont *instructionText2Font = [UtilityManager fontGetRegularFontOfSize:24];
     CGSize instructionTextSize2 = [instructionText2 sizeWithFont:instructionText2Font];
-    UILabel *instructionLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0,
-                                                                           0,
-                                                                           self.view.frame.size.width,
-                                                                           instructionTextSize2.height)];
-    instructionLabel2.font = instructionText2Font;
-    instructionLabel2.backgroundColor = [UIColor clearColor];
-    instructionLabel2.textColor = [UIColor colorWithRed:(105.0/256.0) green:(127.0/256.0) blue:(147.0/256.0) alpha:1.0];
-    instructionLabel2.text = instructionText2;
-    instructionLabel2.textAlignment = UITextAlignmentCenter;
-    [self.view addSubview:instructionLabel2];
-    [instructionLabel2 release];
+    
+    datelbl = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                        0,
+                                                        self.view.frame.size.width,
+                                                        instructionTextSize2.height)];
+    datelbl.font = instructionText2Font;
+    datelbl.backgroundColor = [UIColor clearColor];
+    datelbl.textColor = [UIColor colorWithRed:(256.0) green:(256.0) blue:(256.0) alpha:1.0];
+    datelbl.text = instructionText2;
+    datelbl.textAlignment = UITextAlignmentCenter;
+    [self.view addSubview:datelbl];
+    [datelbl release];
     
     
+    UIImage *remeberButtonImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"remember.png" andAddIfRequired:YES];
     
+    rememberButton = [[UIButton alloc] initWithFrame:CGRectMake(roundf((self.view.frame.size.width - remeberButtonImage.size.width) / 2),
+                                                                0,
+                                                                remeberButtonImage.size.width,
+                                                                remeberButtonImage.size.height)];
+    [rememberButton setImage:remeberButtonImage forState:UIControlStateNormal];
+    [rememberButton addTarget:self action:@selector(rememberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:rememberButton];
     
     // Continue Button
     UIImage *continueButtonImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AgeGateContinueButton.png" andAddIfRequired:YES];
@@ -181,6 +180,58 @@
     [self.view addSubview:continueButton];
     [continueButton release];
     
+    // Rearrange Frames
+    
+    CGFloat yCoordinateForDatePicker = kDatePickerCoordinateY;
+    if([UtilityManager isThisDeviceA4InchIphone])
+    {
+        yCoordinateForDatePicker = kDatePickerCoordinateY_4Inch;
+    }
+    
+    
+    // Adjustment for supporting iOS 7 status bar problem
+    yCoordinateForDatePicker = yCoordinateForDatePicker + iOS7OffsetAdjustmentForStatusBar;
+    
+    continueButton.frame = CGRectMake(continueButton.frame.origin.x,
+                                      self.view.frame.size.height*0.75,
+                                      continueButton.frame.size.width,
+                                      continueButton.frame.size.height);
+    
+    GetDateButton.frame = CGRectMake(GetDateButton.frame.origin.x,
+                                     self.view.frame.size.height*0.5,
+                                     GetDateButton.frame.size.width,
+                                     GetDateButton.frame.size.height);
+    
+    datelbl.frame = CGRectMake(self.view.frame.origin.x-20,
+                                     self.view.frame.size.height*0.52,
+                                     datelbl.frame.size.width,
+                                     datelbl.frame.size.height);
+
+    
+    DateofBirthView.frame = CGRectMake(DateofBirthView.frame.origin.x,
+                                       self.view.frame.size.height*0.35,
+                                       DateofBirthView.frame.size.width,
+                                       DateofBirthView.frame.size.height);
+    
+    rememberButton.frame = CGRectMake(rememberButton.frame.origin.x,
+                                      self.view.frame.size.height*0.63,
+                                      rememberButton.frame.size.width,
+                                      rememberButton.frame.size.height);
+    
+    
+    logoImageView.frame =CGRectMake(logoImageView.frame.origin.x,
+                                    self.view.frame.size.height*0.15,
+                                    logoImageView.frame.size.width,
+                                    logoImageView.frame.size.height);
+}
+
+
+
+
+#pragma mark - Action Methods
+
+- (void)getDateButtonClicked:(id)sender
+{
     
     
     // UIPicker View
@@ -216,74 +267,15 @@
     mDatePickerView.maximumDate = maxDate;
     [componentsForMaxDate release];
     
-
+    
     [self.view addSubview:mDatePickerView];
+    CGFloat iOS7OffsetAdjustmentForStatusBar = 0;
     
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        iOS7OffsetAdjustmentForStatusBar = 20;
+    }
     
-    
-    
-    
-    
-    // Bottom Privacy Button
-    CGFloat privacyButtonPadding = 3;
-    NSString *privacyString = @"Privacy Policy";
-    UIFont *privacyFont = [UtilityManager fontGetRegularFontOfSize:13];
-    CGSize privacySize = [privacyString sizeWithFont:privacyFont];
-    UIButton *privacyButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
-                                                                         0,
-                                                                         privacySize.width + privacyButtonPadding + privacyButtonPadding,
-                                                                         privacySize.height + privacyButtonPadding + privacyButtonPadding)];
-    [privacyButton setTitle:privacyString forState:UIControlStateNormal];
-    privacyButton.titleLabel.font = privacyFont;
-    [privacyButton setTitleColor:[UIColor colorWithRed:(105.0/256.0) green:(127.0/256.0) blue:(147.0/256.0) alpha:1.0] forState:UIControlStateNormal];
-    [privacyButton addTarget:self action:@selector(privacyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:privacyButton];
-    [privacyButton release];
-    
-    
-    
-    // Bottom Button Seperator Label
-    NSString *seperatorText = @"   |   ";
-    UIFont *seperatorFont = [UtilityManager fontGetRegularFontOfSize:13];
-    CGSize seperatorSize = [seperatorText sizeWithFont:seperatorFont];
-    UILabel *seperatorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
-                                                                        0,
-                                                                        seperatorSize.width,
-                                                                        seperatorSize.height)];
-    seperatorLabel.font = seperatorFont;
-    seperatorLabel.backgroundColor = [UIColor clearColor];
-    seperatorLabel.textColor = [UIColor colorWithRed:(105.0/256.0) green:(127.0/256.0) blue:(147.0/256.0) alpha:1.0];
-    seperatorLabel.text = seperatorText;
-    [self.view addSubview:seperatorLabel];
-    [seperatorLabel release];
-    
-    
-    
-    
-    // Bottom Responsible Button
-    CGFloat responsibleButtonPadding = 3;
-    NSString *responsibleString = @"Think Wisely. Drink Wisely.";
-    UIFont *responsibleFont = [UtilityManager fontGetRegularFontOfSize:13];
-    CGSize responsibleSize = [responsibleString sizeWithFont:responsibleFont];
-    UIButton *responsibleButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
-                                                                             0,
-                                                                             responsibleSize.width + responsibleButtonPadding + responsibleButtonPadding,
-                                                                             responsibleSize.height + responsibleButtonPadding + responsibleButtonPadding)];
-    [responsibleButton setTitle:responsibleString forState:UIControlStateNormal];
-    responsibleButton.titleLabel.font = responsibleFont;
-    [responsibleButton setTitleColor:[UIColor colorWithRed:(105.0/256.0) green:(127.0/256.0) blue:(147.0/256.0) alpha:1.0] forState:UIControlStateNormal];
-    [responsibleButton addTarget:self action:@selector(responsibleButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:responsibleButton];
-    [responsibleButton release];
-    
-    
-    
-    
-    
-
-    
-    
-    // Rearrange Frames
     
     CGFloat yCoordinateForDatePicker = kDatePickerCoordinateY;
     if([UtilityManager isThisDeviceA4InchIphone])
@@ -300,51 +292,12 @@
                                        mDatePickerView.frame.size.width,
                                        mDatePickerView.frame.size.height);
     
-    continueButton.frame = CGRectMake(continueButton.frame.origin.x,
-                                      mDatePickerView.frame.origin.y + mDatePickerView.frame.size.height + kGapBetweenDatePickerAndContinueButton,
-                                      continueButton.frame.size.width,
-                                      continueButton.frame.size.height);
-    
-    
-    privacyButton.frame = CGRectMake(roundf((self.view.frame.size.width - (privacyButton.frame.size.width + seperatorLabel.frame.size.width + responsibleButton.frame.size.width)) / 2),
-                                     continueButton.frame.origin.y + continueButton.frame.size.height + kGapBetweenContinueButtonAndBottomButtons,
-                                     privacyButton.frame.size.width,
-                                     privacyButton.frame.size.height);
-    
-    
-    seperatorLabel.frame = CGRectMake(privacyButton.frame.origin.x + privacyButton.frame.size.width,
-                                      privacyButton.frame.origin.y,
-                                      seperatorLabel.frame.size.width,
-                                      seperatorLabel.frame.size.height);
-    
-    
-    responsibleButton.frame = CGRectMake(seperatorLabel.frame.origin.x + seperatorLabel.frame.size.width,
-                                         privacyButton.frame.origin.y,
-                                         responsibleButton.frame.size.width,
-                                         responsibleButton.frame.size.height);
-    
-    
-    instructionLabel2.frame = CGRectMake(instructionLabel2.frame.origin.x,
-                                         mDatePickerView.frame.origin.y - kGapBetweenDatePickerAndLegalMessage - instructionLabel2.frame.size.height,
-                                         instructionLabel2.frame.size.width,
-                                         instructionLabel2.frame.size.height);
-    
-    instructionLabel1.frame = CGRectMake(instructionLabel1.frame.origin.x,
-                                         instructionLabel2.frame.origin.y - kGapBetweenLegalMessageAndBirthdayMessage - instructionLabel1.frame.size.height,
-                                         instructionLabel1.frame.size.width,
-                                         instructionLabel1.frame.size.height);
-    
-    logoImageView.frame = CGRectMake(logoImageView.frame.origin.x,
-                                         instructionLabel1.frame.origin.y - kGapBetweenBirthdayMessageAndLogo - logoImageView.frame.size.height,
-                                         logoImageView.frame.size.width,
-                                         logoImageView.frame.size.height);
-    
 }
 
-
-
-
-#pragma mark - Action Methods
+- (void)rememberButtonClicked:(id)sender
+{
+    
+}
 
 - (void)continueButtonClicked:(id)sender
 {

@@ -23,4 +23,5 @@ typedef NS_ENUM(NSUInteger, ConnectionStatus) {
 + (NewServerFetchOperations*)sharedManager;
 - (void)fetchLatestRecipeData;
 - (void)fetchLatestFlavors;
+- (BOOL)checkFileExistsLocallyWithFileName:(NSString*)fileName;
 @end

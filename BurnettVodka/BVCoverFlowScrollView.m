@@ -10,9 +10,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import "FeaturedRecipeItem.h"
 #import "SystemSoundPlayer.h"
+#import "BVRecipeDescriptionView.h"
 
 
-#define kGapBetweenCards -10
+#define kGapBetweenCards 15
 
 #define kFeaturedCardDimensionRatio 0.772
 
@@ -50,27 +51,27 @@
         mPosterImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth |
         UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
         
-
         
-
+        
+        
         [self addSubview:mPosterImageView];
         
         
         
         
-//        //Now check for image
-//        NSString *imageFilePath = [[DataManager sharedDataManager] filePathOfMoviePosterImageForMovie:mMovie];
-//        UIImage *image = [[UIImage alloc] initWithContentsOfFile:imageFilePath];
-//        if(image)
-//        {
-//            [self setAndModifyPosterImageViewForImage:image];
-//            [image release];
-//        }
-//        else
-//        {
-//            [self showActivityIndicator];
-//            [self performSelector:@selector(downloadAndSavePosterImage) withObject:nil afterDelay:0.01];
-//        }
+        //        //Now check for image
+        //        NSString *imageFilePath = [[DataManager sharedDataManager] filePathOfMoviePosterImageForMovie:mMovie];
+        //        UIImage *image = [[UIImage alloc] initWithContentsOfFile:imageFilePath];
+        //        if(image)
+        //        {
+        //            [self setAndModifyPosterImageViewForImage:image];
+        //            [image release];
+        //        }
+        //        else
+        //        {
+        //            [self showActivityIndicator];
+        //            [self performSelector:@selector(downloadAndSavePosterImage) withObject:nil afterDelay:0.01];
+        //        }
     }
     return self;
 }
@@ -92,14 +93,14 @@
 
 - (void)updateDistanceFromCenter:(CGFloat)distanceFromCenter
 {
-//    if(mDistanceFromCenter > 0 && distanceFromCenter < 0)
-//    {
-//        [[SystemSoundPlayer sharedSystemSoundPlayer] playCoverFlowMove];
-//    }
-//    else if(mDistanceFromCenter < 0 && distanceFromCenter > 0)
-//    {
-//        [[SystemSoundPlayer sharedSystemSoundPlayer] playCoverFlowMove];
-//    }
+    //    if(mDistanceFromCenter > 0 && distanceFromCenter < 0)
+    //    {
+    //        [[SystemSoundPlayer sharedSystemSoundPlayer] playCoverFlowMove];
+    //    }
+    //    else if(mDistanceFromCenter < 0 && distanceFromCenter > 0)
+    //    {
+    //        [[SystemSoundPlayer sharedSystemSoundPlayer] playCoverFlowMove];
+    //    }
     
     mDistanceFromCenter = distanceFromCenter;
 }
@@ -178,38 +179,49 @@
     
     
     CGFloat yCoord = 0;
-    CGFloat xCoord = mSideSpacingWhenSingleCard;
+    CGFloat xCoord = 0;
     CGFloat widthOfFeaturedCard = [self widthOfFeaturedCardView];
     
     for(int i=0; i<[mFeaturedRecipeItemsArray count]; i++)
     {
-        FeaturedRecipeItem *recipeItem = [mFeaturedRecipeItemsArray objectAtIndex:i];
-        
-        
-        BVFeaturedRecipeView *cardView = [[BVFeaturedRecipeView alloc] initWithFrame:CGRectMake(xCoord,
-                                                                                                yCoord,
-                                                                                                widthOfFeaturedCard,
-                                                                                                self.frame.size.height)
-                                                               andFeaturedRecipeItem:recipeItem];
-        cardView.viewDelegate = self;
-        cardView.backgroundColor = [UIColor clearColor];
-        cardView.tag = i + 1;
-        [self addSubview:cardView];
-        [mHomeScreenRecipeCardViewsArray addObject:cardView];
-        [cardView release];
-        
-        
-        
-        if(i == ([mFeaturedRecipeItemsArray count]  - 1))
-        {
-            xCoord = xCoord + widthOfFeaturedCard + mSideSpacingWhenSingleCard;
+        id obj = [mFeaturedRecipeItemsArray objectAtIndex:i];
+        if ([obj isKindOfClass:[FeaturedRecipeItem class]]) {
+            FeaturedRecipeItem *recipeItem = [mFeaturedRecipeItemsArray objectAtIndex:i];
+            
+            
+            BVFeaturedRecipeView *cardView = [[BVFeaturedRecipeView alloc] initWithFrame:CGRectMake(xCoord,
+                                                                                                    yCoord,
+                                                                                                    widthOfFeaturedCard,
+                                                                                                    self.frame.size.height)
+                                                                   andFeaturedRecipeItem:recipeItem];
+            cardView.viewDelegate = self;
+            cardView.backgroundColor = [UIColor clearColor];
+            cardView.tag = i + 1;
+            [self addSubview:cardView];
+            [mHomeScreenRecipeCardViewsArray addObject:cardView];
+            [cardView release];
+
         }
-        else
+        else {
+            [mHomeScreenRecipeCardViewsArray addObject:[mFeaturedRecipeItemsArray objectAtIndex:i]];
+            BVRecipeDescriptionView *obj1 = [mFeaturedRecipeItemsArray objectAtIndex:i];
+            obj1.frame = CGRectMake(xCoord, yCoord, 150, 340);
+            
+            [self addSubview:obj1];
+        }
+        
+        
+        
+//        if(i == ([mFeaturedRecipeItemsArray count]  - 1))
+//        {
+//            xCoord = xCoord + widthOfFeaturedCard + mSideSpacingWhenSingleCard;
+//        }
+//        else
         {
             xCoord = xCoord + widthOfFeaturedCard + kGapBetweenCards;
         }
     }
-
+    
     
     
     
@@ -225,7 +237,7 @@
     {
         NSInteger totalCount = [mHomeScreenRecipeCardViewsArray count];
         NSInteger initialPositionIndex = roundf(((float)totalCount / 2.0)) - 1;
-                
+        
         BVFeaturedRecipeView *secondCardView = [mHomeScreenRecipeCardViewsArray  objectAtIndex:initialPositionIndex];
         
         CGFloat centrePointInVisibleScrollView = (self.frame.size.width / 2);
@@ -238,12 +250,8 @@
     {
         [self setContentOffset:CGPointMake(0, 0)];
     }
-    
-    
-    
-    
     //To force UI update right from the beginning of the dispay of the movie cards
-    [self scrollViewScrolled];
+  //  [self scrollViewScrolled];
 }
 
 
@@ -400,7 +408,8 @@
 
 - (CGFloat)widthOfFeaturedCardView
 {
-    return (kFeaturedCardDimensionRatio * self.frame.size.height);
+    return 150;
+    //return (kFeaturedCardDimensionRatio * self.frame.size.height);
 }
 
 @end

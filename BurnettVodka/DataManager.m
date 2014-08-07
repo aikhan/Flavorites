@@ -732,11 +732,6 @@ static DataManager *sharedDataManager = nil;
         [self repairCoreDataForFlavorsAndRecipes];
 }
 
-
-
-
-
-
 - (void)fetchRecipesRatingsFromServer
 {
     BOOL doesThisAlreadyExistInQueue = NO;
@@ -808,16 +803,6 @@ static DataManager *sharedDataManager = nil;
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 - (NSArray *)featuredRecipesLatest
 {
     NSArray *featureRecipes = nil;
@@ -857,11 +842,6 @@ static DataManager *sharedDataManager = nil;
     NSArray *defaultFeaturedRecipes = [[jsonString JSONValue] valueForKey:@"featured_recipes"];
     return defaultFeaturedRecipes;
 }
-
-
-
-
-
 
 #pragma mark - BVFetchRatingsOperation Delegate Methods
 

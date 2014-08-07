@@ -10,6 +10,7 @@
 
 #define kFileNameForFeaturedRecipesJSON @"featured_recipes.json"
 
+#define kAPIServerPathNew @"http://secure.xm0001.net/heavenhill/burnetts/recipe_api"
 
 #define kAPIServerPath @"https://facebook.heavenhill.com/burnetts/recipe_api"
 

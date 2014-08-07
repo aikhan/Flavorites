@@ -21,6 +21,8 @@
     
     UIImageView *mBackgroundImageView;
     UIDatePicker *mDatePickerView;
+    UIButton *rememberButton;
+    UILabel *datelbl;
     
     id <BVAgeGateViewControllerDelegate> controllerDelegate;
 }

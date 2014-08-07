@@ -331,6 +331,14 @@
     }
 }
 
+- (void)getDateButtonClicked:(id)sender
+{
+    if([viewDelegate respondsToSelector:@selector(dropDownMenuView:userPressedContinueButtonWithSelectedOptions:)])
+    {
+        [viewDelegate dropDownMenuView:self userPressedContinueButtonWithSelectedOptions:[self arrayOfSelectedItems]];
+    }
+}
+
 - (void)continueButtonClicked:(id)sender
 {
     if([viewDelegate respondsToSelector:@selector(dropDownMenuView:userPressedContinueButtonWithSelectedOptions:)])

@@ -20,6 +20,10 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Flurry.h"
 #import "NewServerFetchOperations.h"
+#import "ASIHTTPRequest.h"
+#import "JSON.h"
+#import "UtilityManager.h"
+
 
 #define kMinimumDurationToShowLoadingScreen 0.0
 
@@ -56,8 +60,6 @@ static NSString *const kTrackingId = @"UA-24508531-2";
 @synthesize tabBarController = _tabBarController;
 @synthesize ageGateController = _ageGateController;
 
-
-
 void myExceptionHandler(NSException *exception)
 {
     NSArray *stack = [exception callStackReturnAddresses];
@@ -65,27 +67,16 @@ void myExceptionHandler(NSException *exception)
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-#ifdef DEBUG
-   // [Flurry setLogLevel:FlurryLogLevelAll];
-#endif
-    //Olf Flurry ID
-    //[Flurry startSession:@"WX88JJD4DMS6PBS83JD2"];
-    [self fetchRecipiesFromServer];
     [Flurry startSession:@"X79GF5XK8MPQC8489Q44"];
-    //Google Analytics Code
-    // Initialize Google Analytics with a 120-second dispatch interval. There is a
-    // tradeoff between battery usage and timely dispatch.
     [GAI sharedInstance].dispatchInterval = 80;
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     self.tracker = [[GAI sharedInstance] trackerWithName:@"BurnettVodka"
                                               trackingId:kTrackingId];
     
-    
+    [self CheckDateGetFeatureRecipes];
+    [self fetchRecipiesFromServer];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    // Change the appearance of UINavigationBar Application Wide
     UIImage *navigationBarBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NavigationBarBackground" ofType:@"png"]];
     [[UINavigationBar appearance] setBackgroundImage:navigationBarBackgroundImage forBarMetrics:UIBarMetricsDefault];
     [navigationBarBackgroundImage release];
@@ -106,6 +97,233 @@ void myExceptionHandler(NSException *exception)
     return YES;
 }
 
+- (void) CheckDateGetFeatureRecipes {
+    NSDate *newdate = [NSDate date];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"DateDict"]==NULL) {
+        NSMutableDictionary *dateDict = [[NSMutableDictionary alloc] init];
+        [dateDict setObject:newdate forKey:@"NewDate"];
+        [[NSUserDefaults standardUserDefaults] setObject:dateDict forKey:@"DateDict"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        
+        NSString *urlString = [NSString stringWithFormat:@"%@/featured_recipe.php", kAPIServerPathNew];
+        ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+        request.timeOutSeconds = 30;
+        request.cachePolicy = ASIDoNotReadFromCacheCachePolicy;
+        [request startSynchronous];
+        NSError *error = [request error];
+        if (!error)
+        {
+            NSString *responseString = [request responseString];
+            NSDictionary *responseDic = [responseString JSONValue];
+            NSString *successString = [responseDic valueForKey:@"success"];
+            if([[successString lowercaseString] isEqualToString:@"ok"])
+            {
+                NSString *temporaryFolderInFeaturedRecipesFolder = [UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]];
+                NSString *filePathForJSONStringToBeStoredInTempFolder = [temporaryFolderInFeaturedRecipesFolder stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
+                
+                NSError *jsonFileWriteError = nil;
+                BOOL jsonFileWriteSuccess = [responseString writeToFile:filePathForJSONStringToBeStoredInTempFolder atomically:YES encoding:4 error:&jsonFileWriteError];
+                NSLog(@"%hhd",jsonFileWriteSuccess);
+            }
+            else
+            {
+                // NSString *errorMessage = [responseDic valueForKey:@"error"];
+                // TODO: write error log
+            }
+        }
+        else
+        {
+            // TODO: write error log
+        }
+        [request release];
+        BOOL anyRecipeSetCompleted = [self checkAndCompleteARecipeSetFromTemporaryFolder];
+        NSLog(@"%hhd",anyRecipeSetCompleted);
+        [pool release];
+    }
+    else {
+        
+        NSMutableDictionary *OldDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"DateDict"];
+        NSDate *olddte = [OldDate objectForKey:@"NewDate"];
+        NSTimeInterval timeInterval =[newdate timeIntervalSinceDate:olddte];
+        double timecal = (double)timeInterval;
+        if (timecal>=172800) {
+            NSMutableDictionary *dateDict = [[NSMutableDictionary alloc] init];
+            [dateDict setObject:newdate forKey:@"NewDate"];
+            [[NSUserDefaults standardUserDefaults] setObject:dateDict forKey:@"DateDict"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+            
+            NSString *urlString = [NSString stringWithFormat:@"%@/featured_recipe.php", kAPIServerPathNew];
+            ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+            request.timeOutSeconds = 30;
+            request.cachePolicy = ASIDoNotReadFromCacheCachePolicy;
+            [request startSynchronous];
+            NSError *error = [request error];
+            if (!error)
+            {
+                NSString *responseString = [request responseString];
+                NSDictionary *responseDic = [responseString JSONValue];
+                NSString *successString = [responseDic valueForKey:@"success"];
+                if([[successString lowercaseString] isEqualToString:@"ok"])
+                {
+                    NSString *temporaryFolderInFeaturedRecipesFolder = [UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]];
+                    
+                    NSString *filePathForJSONStringToBeStoredInTempFolder = [temporaryFolderInFeaturedRecipesFolder stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
+                    
+                    NSError *jsonFileWriteError = nil;
+                    BOOL jsonFileWriteSuccess = [responseString writeToFile:filePathForJSONStringToBeStoredInTempFolder atomically:YES encoding:4 error:&jsonFileWriteError];
+                    NSLog(@"%hhd",jsonFileWriteSuccess);
+                }
+                else
+                {
+                    // NSString *errorMessage = [responseDic valueForKey:@"error"];
+                    // TODO: write error log
+                }
+            }
+            else
+            {
+                // TODO: write error log
+            }
+            [request release];
+            BOOL anyRecipeSetCompleted = [self checkAndCompleteARecipeSetFromTemporaryFolder];
+            NSLog(@"%hhd",anyRecipeSetCompleted);
+            [pool release];
+        }
+        else {
+            
+        }
+    }
+}
+
+- (BOOL)checkAndCompleteARecipeSetFromTemporaryFolder
+{
+    BOOL success = YES;
+    
+    NSString *jsonFilePath = [[UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]] stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
+    NSString *jsonString = [NSString stringWithContentsOfFile:jsonFilePath encoding:4 error:nil];
+    id recipesArray = [[jsonString JSONValue] valueForKey:@"featured_recipes"];
+    if(recipesArray && [recipesArray isKindOfClass:[NSArray class]])
+    {
+        NSMutableArray *arrayOfFilePathsToDownload = [[NSMutableArray alloc] init];
+        for(NSDictionary *recipeDic in recipesArray)
+        {
+            NSString *imagePath = [recipeDic valueForKey:@"drink_image"];
+            NSString *retinaVersionImagePath = [[[[[NSURL URLWithString:imagePath] URLByDeletingPathExtension] absoluteString] stringByAppendingString:@"@2x"] stringByAppendingFormat:@".%@", [imagePath pathExtension]];
+            NSString *imagePath1 = [recipeDic valueForKey:@"recipeimage"];
+            NSString *retinaVersionImagePath1 = [[[[[NSURL URLWithString:imagePath] URLByDeletingPathExtension] absoluteString] stringByAppendingString:@"@2x"] stringByAppendingFormat:@".%@", [imagePath pathExtension]];
+            
+            if(imagePath && retinaVersionImagePath)
+            {
+                [arrayOfFilePathsToDownload addObject:imagePath];
+                [arrayOfFilePathsToDownload addObject:retinaVersionImagePath];
+                [arrayOfFilePathsToDownload addObject:imagePath1];
+                [arrayOfFilePathsToDownload addObject:retinaVersionImagePath1];
+            }
+            else
+            {
+                success = NO;
+                break;
+            }
+        }
+        if(success)
+        {
+            for(NSString *filePath in arrayOfFilePathsToDownload)
+            {
+                NSString *filePathToSaveTheImageTo = [[UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]] stringByAppendingPathComponent:[filePath lastPathComponent]];
+                
+                NSString *imageFileNameWithoutExtension = [filePathToSaveTheImageTo lastPathComponent];
+                if (![[NewServerFetchOperations sharedManager] checkFileExistsLocallyWithFileName:imageFileNameWithoutExtension]) {
+                    
+                    if(![[NSFileManager defaultManager] fileExistsAtPath:filePathToSaveTheImageTo])
+                    {
+                        ASIHTTPRequest *fileDownloadRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:filePath]];
+                        [fileDownloadRequest startSynchronous];
+                        
+                        NSError *error = [fileDownloadRequest error];
+                        if (!error)
+                        {
+                            NSData *assetData = [fileDownloadRequest responseData];
+                            if(assetData)
+                            {
+                                NSError *fileWriteError = nil;
+                                BOOL fileWritesucces = [assetData writeToFile:filePathToSaveTheImageTo options:NSDataWritingFileProtectionNone error:&fileWriteError];
+                                if(!fileWritesucces)
+                                {
+                                    // TODO: write error log
+                                    success = NO;
+                                }
+                            }
+                            else
+                            {
+                                // TODO: write error log
+                                success = NO;
+                            }
+                        }
+                        else
+                        {
+                            // TODO: write error log
+                            success = NO;
+                        }
+                    }
+                }
+            }
+        }
+        [arrayOfFilePathsToDownload release];
+    }
+    else
+    {
+        success = NO;
+    }
+    
+    if(success)
+    {
+        // Before moving the items from Temporary Folder, we need to remove items from Featured Recipes Root Folder
+        BOOL completeDeleteProcessSuccess = YES;
+        NSArray *filePathsInFeaturedRecipesFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] error:nil];
+        for(NSString *itemName in filePathsInFeaturedRecipesFolder)
+        {
+            if(![[itemName lowercaseString] isEqualToString:@"temp"])
+            {
+                NSString *filePathToDelete = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:itemName];
+                BOOL deleteSuccess = [[NSFileManager defaultManager] removeItemAtPath:filePathToDelete error:nil];
+                if(!deleteSuccess)
+                {
+                    completeDeleteProcessSuccess = NO;
+                    break;
+                }
+            }
+        }
+        if(completeDeleteProcessSuccess)
+        {
+            BOOL completeShiftProcessSuccess = YES;
+            
+            // This means we have to transfer files from Temporary Folder To Featured Recipes Root Folder
+            NSArray *filePathsInTemporaryFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]] error:nil];
+            for(NSString *itemName in filePathsInTemporaryFolder)
+            {
+                NSString *filePathToMoveFrom = [[UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]] stringByAppendingPathComponent:itemName];
+                NSString *filePathToMoveTo = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:itemName];
+                BOOL shiftSuccess = [[NSFileManager defaultManager] moveItemAtPath:filePathToMoveFrom toPath:filePathToMoveTo error:nil];
+                if(!shiftSuccess)
+                {
+                    completeShiftProcessSuccess = NO;
+                    break;
+                }
+            }
+            if(!completeShiftProcessSuccess)
+            {
+                success = NO;
+            }
+        }
+        else
+        {
+            success = NO;
+        }
+    }
+    return success;
+}
 
 - (void)updateAppStartupCount{
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -114,77 +332,36 @@ void myExceptionHandler(NSException *exception)
     [standardUserDefaults setInteger:self.appStartupCount forKey:@"startupcount"];
 }
 
-#pragma mark -
-#pragma mark
-/*
-+ (NSString *) publisherId: (id) theWidget{
-    return @"";
-}
-
-+ (void) initialize {
-    [super initialize];
-    [JTAdWidget initializeAdService:YES];
-    
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    if (url == nil) {
-        return NO;
-    }
-    
-    [JumpTapAppReport handleApplicationLaunchUrl:url];
-    return YES;
-}
-- (void) doJumptapReport {
-    [JumpTapAppReport submitReportWithExtraInfo: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                  @"Bootup", @"event",    // the conversion type
-                                                  nil, nil
-                                                  ]
-     ];
-}
- */
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     
-
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
     [FBSettings setDefaultAppID:@"587896904602773"];
     [FBAppEvents activateApp];
-    
-    
     if(_ageGateController == nil)
     {
         DebugLog(@"Inside Fetch Recipes");
         [[DataManager sharedDataManager] fetchRecipesRatingsFromServer];
-        //[[DataManager sharedDataManager] fetchFeaturedRecipesDataFromServer];
-        
+        [self CheckDateGetFeatureRecipes];
     }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
-
 }
 
 - (void)saveContext
@@ -193,8 +370,6 @@ void myExceptionHandler(NSException *exception)
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         } 
@@ -203,8 +378,6 @@ void myExceptionHandler(NSException *exception)
 
 #pragma mark - Core Data stack
 
-// Returns the managed object context for the application.
-// If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
 - (NSManagedObjectContext *)managedObjectContext
 {
     if (_managedObjectContext != nil) {
@@ -219,8 +392,6 @@ void myExceptionHandler(NSException *exception)
     return _managedObjectContext;
 }
 
-// Returns the managed object model for the application.
-// If the model doesn't already exist, it is created from the application's model.
 - (NSManagedObjectModel *)managedObjectModel
 {
     if (_managedObjectModel != nil) {
@@ -231,8 +402,6 @@ void myExceptionHandler(NSException *exception)
     return _managedObjectModel;
 }
 
-// Returns the persistent store coordinator for the application.
-// If the coordinator doesn't already exist, it is created and the application's store added to it.
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
     if (_persistentStoreCoordinator != nil) {
@@ -244,29 +413,6 @@ void myExceptionHandler(NSException *exception)
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
-         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }    
@@ -276,12 +422,10 @@ void myExceptionHandler(NSException *exception)
 
 #pragma mark - Application's Documents directory
 
-// Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
-
 
 #pragma mark - Initial Loading Methods
 
@@ -299,9 +443,6 @@ void myExceptionHandler(NSException *exception)
     [viewController1 release];
     navController1.navigationBarHidden = YES;
     
-    
-    
-    
     BVFlavorViewController *viewController2 = [[BVFlavorViewController alloc] init];
     
     UIImage *itemImage2 = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"TabBarFlavors" ofType:@"png"]];
@@ -312,9 +453,6 @@ void myExceptionHandler(NSException *exception)
     
     UINavigationController *navController2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
     [viewController2 release];
-    
-    
-    
     
     BVRecipeViewController *viewController3 = [[BVRecipeViewController alloc] init];
     
@@ -327,10 +465,6 @@ void myExceptionHandler(NSException *exception)
     UINavigationController *navController3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
     [viewController3 release];
     
-    
-    
-    
-    
     BVTopRatedViewController *viewController4 = [[BVTopRatedViewController alloc] init];
     
     UIImage *itemImage4 = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"TabBarTopRated" ofType:@"png"]];
@@ -341,11 +475,6 @@ void myExceptionHandler(NSException *exception)
     
     UINavigationController *navController4 = [[UINavigationController alloc] initWithRootViewController:viewController4];
     [viewController4 release];
-    
-    
-    
-    
-    
     
     BVFavoritesViewController *viewController5 = [[BVFavoritesViewController alloc] init];
     
@@ -358,42 +487,27 @@ void myExceptionHandler(NSException *exception)
     UINavigationController *navController5 = [[UINavigationController alloc] initWithRootViewController:viewController5];
     [viewController5 release];
     
-    
     self.tabBarController = [[[BVTabBarController alloc] initWithViewControllers:[NSArray arrayWithObjects:navController1, navController2, navController3, navController4, navController5, nil]] autorelease];
     
-    
     [self.tabBarController showLoadingScreenAnimated:NO];
-    
     
     [navController1 release];
     [navController2 release];
     [navController3 release];
     [navController4 release];
     [navController5 release];
-    
-    
-    
+
     self.window.rootViewController = self.tabBarController;
-    
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
         
         [self configureTheApp];
     });
-
 }
 
 - (void)configureTheApp
 {
     NSTimeInterval timeStampBeforeTasks = [[NSDate date] timeIntervalSinceReferenceDate];
-    
-    
-    
-   // [[DataManager sharedDataManager] checkAndRepairAppData];
-    
-    
-    
-    
     NSTimeInterval timeStampeAfterTasks = [[NSDate date] timeIntervalSinceReferenceDate];
     
     NSTimeInterval difference = timeStampeAfterTasks - timeStampBeforeTasks;
@@ -411,9 +525,6 @@ void myExceptionHandler(NSException *exception)
     }
 }
 
-
-
-
 #pragma mark - BVAgeGateViewController Delegate Methods
 
 - (void)userDeterminedAsLegalOnBVAgeGateViewController:(BVAgeGateViewController *)controller
@@ -421,7 +532,6 @@ void myExceptionHandler(NSException *exception)
     [self showTabBar];
     
     [[DataManager sharedDataManager] fetchRecipesRatingsFromServer];
-//    [[DataManager sharedDataManager] fetchFeaturedRecipesDataFromServer];
     [[DataManager sharedDataManager] fetchLaterAppVersionAvailableFromServer];
     
     _ageGateController.controllerDelegate = nil;
@@ -430,6 +540,7 @@ void myExceptionHandler(NSException *exception)
 }
 
 #pragma mark - Fetch Recipies From Server
+
 - (void)fetchRecipiesFromServer{
     [self managedObjectContext];
     [self deleteAllObjects:@"Flavor"];
@@ -442,8 +553,8 @@ void myExceptionHandler(NSException *exception)
     
     NSLog(@"files array %@", filePathsArray);
     [[NewServerFetchOperations sharedManager] fetchLatestFlavors];
-    //[[DataManager sharedDataManager] checkAndRepairAppData];
 }
+
 - (void) deleteAllObjects: (NSString *) entityDescription  {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
@@ -461,7 +572,6 @@ void myExceptionHandler(NSException *exception)
     if (![_managedObjectContext save:&error]) {
     	DebugLog(@"Error deleting %@ - error:%@",entityDescription,error);
     }
-    
 }
 
 @end

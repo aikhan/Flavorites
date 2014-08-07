@@ -141,7 +141,9 @@ static NewServerFetchOperations *sharedManager = nil;
                                     recipe.directions = [recipeDic valueForKeyPath:@"directions"];
                                     recipe.flavor.title = [recipeDic valueForKeyPath:@"product"];
                                     
-                                    if (![self checkFileExistsLocallyWithFileName:recipe.imageName]) {
+                                    NSString *imageFileNameWithoutExtension = [recipe.imageName lastPathComponent];
+                                    
+                                    if (![self checkFileExistsLocallyWithFileName:imageFileNameWithoutExtension]) {
                                         [self downloadImageFileFromTheInternetForFileName:recipe.imageName withID:recipe.recipeID isFlavor:NO];
                                     }
                                 }
@@ -160,9 +162,12 @@ static NewServerFetchOperations *sharedManager = nil;
                             recipe.directions = [recipeDic valueForKeyPath:@"directions"];
                             recipe.flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorTitle:[recipeDic valueForKeyPath:@"product"]];
                                 if (!recipe.flavor) {
-                                    DebugLog(@"Flavor name is %@", [recipeDic valueForKeyPath:@"product"]);
+                                   // DebugLog(@"Flavor name is %@", [recipeDic valueForKeyPath:@"product"]);
                                 }
-                                if (![self checkFileExistsLocallyWithFileName:recipe.imageName]) {
+                                NSString *imageFileNameWithoutExtension = [recipe.imageName lastPathComponent];
+                                
+                                if (![self checkFileExistsLocallyWithFileName:imageFileNameWithoutExtension]) {
+                                    DebugLog(@"Missing Recipe name %@ and image name %@", recipe.title, recipe.imageName);
                                     [self downloadImageFileFromTheInternetForFileName:recipe.imageName withID:recipe.recipeID isFlavor:NO];
                                 }
                             [self.myRecipesArray addObject:recipe];
@@ -235,7 +240,9 @@ static NewServerFetchOperations *sharedManager = nil;
                             if (flavor) {
                                 flavor.title = [flavorDic valueForKeyPath:@"name"];
                                 flavor.imageName = [flavorDic valueForKeyPath:@"image"];
-                                if (![self checkFileExistsLocallyWithFileName:flavor.imageName]) {
+                                NSString *imageFileNameWithoutExtension = [flavor.imageName lastPathComponent];
+                                
+                                if (![self checkFileExistsLocallyWithFileName:imageFileNameWithoutExtension]) {
                                     [self downloadImageFileFromTheInternetForFileName:flavor.imageName withID:flavor.flavorID isFlavor:YES];
                                 }
                             }
@@ -246,7 +253,11 @@ static NewServerFetchOperations *sharedManager = nil;
                             //DebugLog(@"Flavor name is %@", flavor.title);
                             flavor.imageName = [flavorDic valueForKeyPath:@"image"];
                             flavor.flavorID = [NSNumber numberWithInteger:[[flavorDic valueForKeyPath:@"id"] integerValue]];
-                            if (![self checkFileExistsLocallyWithFileName:flavor.imageName]) {
+                            NSString *imageFileNameWithoutExtension = [flavor.imageName lastPathComponent];
+                          //  NSString *finalname =
+                            
+                            if (![self checkFileExistsLocallyWithFileName:imageFileNameWithoutExtension]) {
+                                DebugLog(@"Missing flavor name %@ and image name %@", flavor.title, flavor.imageName);
                                 [self downloadImageFileFromTheInternetForFileName:flavor.imageName withID:flavor.flavorID isFlavor:YES];
                             }
                         }
@@ -282,7 +293,7 @@ static NewServerFetchOperations *sharedManager = nil;
 
 - (BOOL)checkFileExistsLocallyWithFileName:(NSString*)fileName{
    // DebugLog(@"%s", __PRETTY_FUNCTION__);
-    DebugLog(@"File to check %@", fileName);
+    //DebugLog(@"File to check %@", fileName);
     BOOL doesFileExist = NO;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *fileInResourcesFolder = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fileName];
@@ -290,7 +301,6 @@ static NewServerFetchOperations *sharedManager = nil;
     if (doesFileExist) {
         return YES;
     }
-    
     
     NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSString* imageFilePNG = [documentsPath stringByAppendingPathComponent:fileName];
@@ -306,14 +316,14 @@ static NewServerFetchOperations *sharedManager = nil;
 }
 
 - (void)downloadImageFileFromTheInternetForFileName:(NSString*)fileName withID:(NSNumber*)ID isFlavor:(BOOL)isFLavor{
-    DebugLog(@"download image %@ and object ID : %d", fileName, [ID integerValue]);
+    //DebugLog(@"download image %@ and object ID : %d", fileName, [ID integerValue]);
     NSString *urlString = nil;
     if (isFLavor) {
         urlString= [NSString stringWithFormat:@"%@%@", kFlavorsBaseURL, fileName ] ;
     }else{
         urlString = [NSString stringWithFormat:@"%@%@", kRecipeBaseURL, fileName ] ;
     }
-    urlString = @"http://burnetts14.xm0001.com/mobile_app/images/flavors/Flavor_100proof.png";
+    //urlString = @"http://burnetts14.xm0001.com/mobile_app/images/flavors/Flavor_100proof.png";
     //DebugLog(@"URL string for image is %@", urlString);
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);

@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "BVCoverFlowScrollView.h"
 #import "GAITrackedViewController.h"
+#import "BVRecipeDescriptionView.h"
 
 
 @interface BVHomeViewController : GAITrackedViewController <UIScrollViewDelegate, BVCoverFlowScrollViewDelegate> {
     
     BVCoverFlowScrollView *mScrollView;
     UIImageView *mBackgroundImageView;
+    BVRecipeDescriptionView *RecipeDescription;
+    NSTimer *Scrolltimer;
+    
 }
 
 - (void)reload;
