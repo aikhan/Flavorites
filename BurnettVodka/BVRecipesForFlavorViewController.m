@@ -75,7 +75,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recipeRatingsDataChanged:) name:kNotificationRecipeRatingsChanged object:nil];
     
     
-    [UtilityManager addTitle:mFlavor.title toNavigationItem:self.navigationItem];
+   // [UtilityManager addTitle:mFlavor.title toNavigationItem:self.navigationItem];
     
     
     UIBarButtonItem *backButton = [UtilityManager navigationBarBackButtonItemWithTarget:self andAction:@selector(backButtonClicked:) andHeight:self.navigationController.navigationBar.frame.size.height];
@@ -92,6 +92,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
+
    // self.screenName = @"Recipies For Flavor View";
 }
 
@@ -128,7 +130,7 @@
                                                                          self.view.frame.size.width,
                                                                          self.view.frame.size.height)];
     
-    UIImage *backgroundImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"GeneralBackground.png" andAddIfRequired:YES];
+    UIImage *backgroundImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"reciepebg.png" andAddIfRequired:YES];
     mBackgroundImageView.image = backgroundImage;
     mBackgroundImageView.contentMode = UIViewContentModeTop;
     [self.view addSubview:mBackgroundImageView];
@@ -148,6 +150,7 @@
     mTableView.delegate = self;
     mTableView.backgroundColor = [UIColor clearColor];
     mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    mTableView.backgroundColor=[UIColor clearColor];
     [self.view addSubview:mTableView];
     
     
@@ -192,7 +195,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BVRecipeCell *cell = nil;
-    
     if([mTableData count] == 1)
     {
         static NSString *CellIdentifier = @"CellFirstAndLast";
@@ -210,6 +212,8 @@
         {
             static NSString *CellIdentifier = @"CellFirst";
             cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            cell.backgroundColor=[UIColor clearColor];
+
             if(cell == nil)
             {
                 cell = [[[BVRecipeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier andCellPosition:BVRecipeCellPositionFirst] autorelease];
@@ -221,6 +225,8 @@
         {
             static NSString *CellIdentifier = @"CellLast";
             cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            cell.backgroundColor=[UIColor clearColor];
+
             if(cell == nil)
             {
                 cell = [[[BVRecipeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier andCellPosition:BVRecipeCellPositionLast] autorelease];
@@ -232,6 +238,8 @@
         {
             static NSString *CellIdentifier = @"CellSandwiched";
             cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            cell.backgroundColor=[UIColor clearColor];
+
             if(cell == nil)
             {
                 cell = [[[BVRecipeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier andCellPosition:BVRecipeCellPositionSandwiched] autorelease];
@@ -247,7 +255,8 @@
     Recipe *recipeObject = [mTableData objectAtIndex:indexPath.row];
     [cell updateCellWithRecipe:recipeObject];
     
-    
+    cell.backgroundColor=[UIColor clearColor];
+
     return cell;
 }
 

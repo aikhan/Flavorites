@@ -138,7 +138,7 @@
                                                                              backgroundImage.size.width,
                                                                              backgroundImage.size.height)];
         mBackgroundImageView.image = backgroundImage;
-        [mContainerView addSubview:mBackgroundImageView];
+       // [mContainerView addSubview:mBackgroundImageView];
         
         
     
@@ -169,7 +169,8 @@
         mRecipeTitleLabel.font = recipeTitleFont;
         mRecipeTitleLabel.text = @"";
         mRecipeTitleLabel.backgroundColor = [UIColor clearColor];
-        mRecipeTitleLabel.textColor = [UIColor colorWithRed:0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1];
+        mRecipeTitleLabel.textColor = [UIColor whiteColor];
+                                       //colorWithRed:0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1];
         
         if([mRecipeTitleLabel respondsToSelector:@selector(minimumScaleFactor)])
         {
@@ -200,7 +201,7 @@
         mFlavorTitleLabel.font = flavorTitleFont;
         mFlavorTitleLabel.text = @"";
         mFlavorTitleLabel.backgroundColor = [UIColor clearColor];
-        mFlavorTitleLabel.textColor = [UIColor colorWithRed:(54.0/256.0) green:(47.0/256.0) blue:(45.0/256.0) alpha:1];
+        mFlavorTitleLabel.textColor = [UIColor whiteColor];
         if([mFlavorTitleLabel respondsToSelector:@selector(minimumScaleFactor)])
         {
             mFlavorTitleLabel.minimumScaleFactor = 0.3;
@@ -237,7 +238,7 @@
         mVotesLabel.font = votesTitleFont;
         mVotesLabel.text = @"";
         mVotesLabel.backgroundColor = [UIColor clearColor];
-        mVotesLabel.textColor = [UIColor colorWithRed:(161.0/256.0) green:(175.0/256.0) blue:(196.0/256.0) alpha:1];
+        mVotesLabel.textColor =  [UIColor whiteColor];
         [mContainerView addSubview:mVotesLabel];
         
         
@@ -273,7 +274,7 @@
                                                                                  headerImage.size.width,
                                                                                  headerImage.size.height)];
                 mHeaderImageView.image = headerImage;
-                [self.contentView addSubview:mHeaderImageView];
+               // [self.contentView addSubview:mHeaderImageView];
                 
                 
                 
@@ -294,7 +295,7 @@
                                                                                  footerImage.size.width,
                                                                                  footerImage.size.height)];
                 mFooterImageView.image = footerImage;
-                [self.contentView addSubview:mFooterImageView];
+                //[self.contentView addSubview:mFooterImageView];
                 
                 
                 [mSeperatorLineView removeFromSuperview];
@@ -312,7 +313,7 @@
                                                                                  headerImage.size.width,
                                                                                  headerImage.size.height)];
                 mHeaderImageView.image = headerImage;
-                [self.contentView addSubview:mHeaderImageView];
+                //[self.contentView addSubview:mHeaderImageView];
                 
                 
                 
@@ -328,7 +329,7 @@
                                                                                  footerImage.size.width,
                                                                                  footerImage.size.height)];
                 mFooterImageView.image = footerImage;
-                [self.contentView addSubview:mFooterImageView];
+                //[self.contentView addSubview:mFooterImageView];
                 
                 break;
             }

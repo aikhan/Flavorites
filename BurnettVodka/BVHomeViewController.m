@@ -61,8 +61,8 @@
     // Do any additional setup after loading the view from its nib.
     
     [self loadUserInterface];
-    
     [self loadRecipesFromDiskAndShowInScrollView];
+    
     Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.05 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
 
 }
@@ -168,10 +168,17 @@
         FeaturedRecipeItem *item = [[FeaturedRecipeItem alloc] init];
         
         NSString *imagePath = [recipeDic valueForKey:@"drink_image"];
-        NSString *filePathInLocalSystem = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
-        item.imageFilePath = filePathInLocalSystem;
+        NSString *imageExtention = [imagePath pathExtension];
+        NSString *imageFileNameWithoutExtension = [[imagePath lastPathComponent] stringByDeletingPathExtension];
+        UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+        if (!flavorImage) {
+            
+            imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
+            
+        }
+        item.imageFilePath = imageFileNameWithoutExtension;
         item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
-        
+
         [mutableArrayOfFeaturedItems addObject:item];
         [item release];
     }
@@ -183,11 +190,18 @@
         {
             FeaturedRecipeItem *item = [[FeaturedRecipeItem alloc] init];
             
-            NSString *fileName = [recipeDic valueForKey:@"defaultImageName"];
-            item.imageFilePath = [[NSBundle mainBundle] pathForResource:[fileName stringByDeletingPathExtension] ofType:[fileName pathExtension]];
-            
-            item.recipeID = [[recipeDic valueForKey:@"db_id"] integerValue];
-            
+            NSString *imagePath = [recipeDic valueForKey:@"defaultImageName"];
+            NSString *imageExtention = [imagePath pathExtension];
+            NSString *imageFileNameWithoutExtension = [[imagePath lastPathComponent] stringByDeletingPathExtension];
+            UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+            if (!flavorImage) {
+                
+                imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
+                
+            }
+            item.imageFilePath = imageFileNameWithoutExtension;
+            item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
+
             [mutableArrayOfFeaturedItems addObject:item];
             [item release];
         }
@@ -254,8 +268,15 @@
             [RecipeDescription.Ingredients setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"ingredients"]]];
             [RecipeDescription.Procedure setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"directions"]]];
             NSString *imagePath1 = [recipeDic valueForKey:@"recipeimage"];
-            NSString *filePathInLocalSystem1 = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath1 lastPathComponent]];
-            [RecipeDescription.RecipeTmg setImage:[UIImage imageWithContentsOfFile:filePathInLocalSystem1]];
+            NSString *imageExtention = [imagePath1 pathExtension];
+            NSString *imageFileNameWithoutExtension = [[imagePath1 lastPathComponent] stringByDeletingPathExtension];
+            UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+            if (!flavorImage) {
+                
+                flavorImage = [self loadImageFromDocumentsDirectoryWithImageName:imagePath1];
+                
+            }
+            [RecipeDescription.RecipeTmg setImage:flavorImage];
             [RecipeDescription.CrossBtn addTarget:self
                                            action:@selector(CrossTarget:)
                                  forControlEvents:UIControlEventTouchUpInside];
@@ -268,8 +289,15 @@
         else {
             FeaturedRecipeItem *item = [[FeaturedRecipeItem alloc] init];
             NSString *imagePath = [recipeDic valueForKey:@"drink_image"];
-            NSString *filePathInLocalSystem = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
-            item.imageFilePath = filePathInLocalSystem;
+            NSString *imageExtention = [imagePath pathExtension];
+            NSString *imageFileNameWithoutExtension = [[imagePath lastPathComponent] stringByDeletingPathExtension];
+            UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+            if (!flavorImage) {
+                
+                imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
+                
+            }
+            item.imageFilePath = imageFileNameWithoutExtension;
             item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
             [mutableArrayOfFeaturedItems addObject:item];
             [item release];
@@ -316,6 +344,30 @@
     [self loadRecipesFromDiskAndShowInScrollView];
     Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.05 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
 }
+
+
+- (UIImage*)loadImageFromDocumentsDirectoryWithImageName:(NSString*)imageName
+
+{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         
+                                                         NSUserDomainMask, YES);
+    
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      
+                      [NSString stringWithString: imageName] ];
+    
+    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    
+    return image;
+    
+}
+
+
+
 
 #pragma mark - Public methods
 

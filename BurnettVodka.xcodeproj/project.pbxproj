@@ -22,33 +22,21 @@
 		13FE36E51815D35D0088B170 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13FE36E41815D35D0088B170 /* iAd.framework */; };
 		13FE36E71815D3630088B170 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13FE36E61815D3630088B170 /* MediaPlayer.framework */; };
 		8404BF8917A452A0003CB0E0 /* ShareFacebookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8404BF8317A452A0003CB0E0 /* ShareFacebookIcon.png */; };
-		8404BF8A17A452A0003CB0E0 /* ShareFacebookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8404BF8417A452A0003CB0E0 /* ShareFacebookIcon@2x.png */; };
 		8404BF8B17A452A0003CB0E0 /* ShareMailIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8404BF8517A452A0003CB0E0 /* ShareMailIcon.png */; };
-		8404BF8C17A452A0003CB0E0 /* ShareMailIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8404BF8617A452A0003CB0E0 /* ShareMailIcon@2x.png */; };
 		8404BF8D17A452A0003CB0E0 /* ShareTwitterIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8404BF8717A452A0003CB0E0 /* ShareTwitterIcon.png */; };
-		8404BF8E17A452A0003CB0E0 /* ShareTwitterIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8404BF8817A452A0003CB0E0 /* ShareTwitterIcon@2x.png */; };
 		8404BF9017A45B00003CB0E0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8404BF8F17A45B00003CB0E0 /* MessageUI.framework */; };
 		8404BF9417A4D4BD003CB0E0 /* FeaturedRecipeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8404BF9317A4D4BD003CB0E0 /* FeaturedRecipeItem.m */; };
 		84197AFD1798EB3B0003E75E /* TableViewRowBackgroundRecipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197AFB1798EB3B0003E75E /* TableViewRowBackgroundRecipe.png */; };
-		84197AFE1798EB3B0003E75E /* TableViewRowBackgroundRecipe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197AFC1798EB3B0003E75E /* TableViewRowBackgroundRecipe@2x.png */; };
 		84197B051798EB4B0003E75E /* TableViewRowLastHeaderRecipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197B031798EB4B0003E75E /* TableViewRowLastHeaderRecipe.png */; };
-		84197B061798EB4B0003E75E /* TableViewRowLastHeaderRecipe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197B041798EB4B0003E75E /* TableViewRowLastHeaderRecipe@2x.png */; };
 		84197B091798EE0C0003E75E /* TableViewRowFirstHeaderRecipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197B071798EE0C0003E75E /* TableViewRowFirstHeaderRecipe.png */; };
-		84197B0A1798EE0C0003E75E /* TableViewRowFirstHeaderRecipe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84197B081798EE0C0003E75E /* TableViewRowFirstHeaderRecipe@2x.png */; };
 		84197B0D1798F4920003E75E /* BVRecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84197B0C1798F4920003E75E /* BVRecipeDetailViewController.m */; };
 		8423A2DC179A520D001497C1 /* RecipeDetailBgForRatingAndFav.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2D4179A520D001497C1 /* RecipeDetailBgForRatingAndFav.png */; };
-		8423A2DD179A520D001497C1 /* RecipeDetailBgForRatingAndFav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2D5179A520D001497C1 /* RecipeDetailBgForRatingAndFav@2x.png */; };
 		8423A2E0179A520D001497C1 /* RecipeDetailSeperatorAfterTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2D8179A520D001497C1 /* RecipeDetailSeperatorAfterTitle.png */; };
-		8423A2E1179A520D001497C1 /* RecipeDetailSeperatorAfterTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2D9179A520D001497C1 /* RecipeDetailSeperatorAfterTitle@2x.png */; };
 		8423A2E2179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2DA179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground.png */; };
-		8423A2E3179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2DB179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground@2x.png */; };
 		8423A2E6179A548C001497C1 /* SampleDrinkImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2E5179A548C001497C1 /* SampleDrinkImage1.png */; };
 		8423A2ED179A58D3001497C1 /* RecipeDetailBottomBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2E7179A58D2001497C1 /* RecipeDetailBottomBackground.png */; };
-		8423A2EE179A58D3001497C1 /* RecipeDetailBottomBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2E8179A58D3001497C1 /* RecipeDetailBottomBackground@2x.png */; };
 		8423A2F1179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2EB179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader.png */; };
-		8423A2F2179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2EC179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader@2x.png */; };
 		8423A2F5179AA3A4001497C1 /* RecipeDetailBulletPointIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2F3179AA3A4001497C1 /* RecipeDetailBulletPointIcon.png */; };
-		8423A2F6179AA3A4001497C1 /* RecipeDetailBulletPointIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2F4179AA3A4001497C1 /* RecipeDetailBulletPointIcon@2x.png */; };
 		8423A2F8179AB46E001497C1 /* temp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8423A2F7179AB46E001497C1 /* temp.xib */; };
 		8426AAC717A8276700051202 /* BVFetchRatingsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426AAC617A8276700051202 /* BVFetchRatingsOperation.m */; };
 		8426AADD17A8287800051202 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426AACA17A8287800051202 /* ASIAuthenticationDialog.m */; };
@@ -65,41 +53,27 @@
 		8426AAEE17A829D100051202 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8426AAED17A829D100051202 /* libz.dylib */; };
 		8426AAF017A829FB00051202 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8426AAEF17A829FB00051202 /* SystemConfiguration.framework */; };
 		8426AAF317A8DF2A00051202 /* CancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AAF117A8DF2A00051202 /* CancelButton.png */; };
-		8426AAF417A8DF2A00051202 /* CancelButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AAF217A8DF2A00051202 /* CancelButton@2x.png */; };
 		8426AAF717A94DBF00051202 /* BVDropDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426AAF617A94DBF00051202 /* BVDropDownMenuView.m */; };
 		8426AAFC17A9535900051202 /* DropDownMenuArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AAF817A9535900051202 /* DropDownMenuArrow.png */; };
-		8426AAFD17A9535900051202 /* DropDownMenuArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AAF917A9535900051202 /* DropDownMenuArrow@2x.png */; };
 		8426AB0217A9609200051202 /* DropDownMenuBodyBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AB0017A9609200051202 /* DropDownMenuBodyBackground.png */; };
-		8426AB0317A9609200051202 /* DropDownMenuBodyBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AB0117A9609200051202 /* DropDownMenuBodyBackground@2x.png */; };
 		8426AB0517A9659600051202 /* Mixers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8426AB0417A9659600051202 /* Mixers.plist */; };
 		8426AB0817A9722D00051202 /* RecipeDetailBottomBackgroundFooter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AB0617A9722C00051202 /* RecipeDetailBottomBackgroundFooter.png */; };
-		8426AB0917A9722D00051202 /* RecipeDetailBottomBackgroundFooter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AB0717A9722C00051202 /* RecipeDetailBottomBackgroundFooter@2x.png */; };
 		8426AB0C17A97F4000051202 /* BVMixerFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426AB0B17A97F3D00051202 /* BVMixerFilterView.m */; };
 		8426AB0F17A99F1400051202 /* MixerFilterDeleteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AB0D17A99F1400051202 /* MixerFilterDeleteButton.png */; };
-		8426AB1017A99F1400051202 /* MixerFilterDeleteButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426AB0E17A99F1400051202 /* MixerFilterDeleteButton@2x.png */; };
 		8439091C179872240021D69A /* RatingStarBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 84390914179872240021D69A /* RatingStarBlue.png */; };
-		8439091D179872240021D69A /* RatingStarBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84390915179872240021D69A /* RatingStarBlue@2x.png */; };
 		8439091E179872240021D69A /* RatingStarGray.png in Resources */ = {isa = PBXBuildFile; fileRef = 84390916179872240021D69A /* RatingStarGray.png */; };
-		8439091F179872240021D69A /* RatingStarGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84390917179872240021D69A /* RatingStarGray@2x.png */; };
 		84390920179872240021D69A /* RatingStarHalfBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 84390918179872240021D69A /* RatingStarHalfBlue.png */; };
-		84390921179872240021D69A /* RatingStarHalfBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84390919179872240021D69A /* RatingStarHalfBlue@2x.png */; };
 		84390922179872240021D69A /* RecipeImageViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439091A179872240021D69A /* RecipeImageViewBackground.png */; };
-		84390923179872240021D69A /* RecipeImageViewBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439091B179872240021D69A /* RecipeImageViewBackground@2x.png */; };
 		844115F117A50DBA00CDF046 /* BigRatingStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 844115EF17A50DBA00CDF046 /* BigRatingStar.png */; };
-		844115F217A50DBA00CDF046 /* BigRatingStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844115F017A50DBA00CDF046 /* BigRatingStar@2x.png */; };
 		844115F517A50E5300CDF046 /* BVRatingOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844115F417A50E5300CDF046 /* BVRatingOverlayView.m */; };
 		844115F817A5222C00CDF046 /* BVApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 844115F717A5222C00CDF046 /* BVApp.m */; };
 		8441160017A5F6FC00CDF046 /* SystemSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 844115FF17A5F6F800CDF046 /* SystemSoundPlayer.m */; };
 		8441160217A5F76A00CDF046 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8441160117A5F76A00CDF046 /* AudioToolbox.framework */; };
 		8441160517A5F7A600CDF046 /* CoverFlow_Move.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 8441160417A5F7A600CDF046 /* CoverFlow_Move.aifc */; };
 		8441161817A61A7100CDF046 /* LoadingScreenLowerHalf_4inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 8441161017A61A7100CDF046 /* LoadingScreenLowerHalf_4inch.png */; };
-		8441161917A61A7100CDF046 /* LoadingScreenLowerHalf_4inch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8441161117A61A7100CDF046 /* LoadingScreenLowerHalf_4inch@2x.png */; };
 		8441161A17A61A7100CDF046 /* LoadingScreenLowerHalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8441161217A61A7100CDF046 /* LoadingScreenLowerHalf.png */; };
-		8441161B17A61A7100CDF046 /* LoadingScreenLowerHalf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8441161317A61A7100CDF046 /* LoadingScreenLowerHalf@2x.png */; };
 		8441161C17A61A7100CDF046 /* LoadingScreenUpperHalf_4inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 8441161417A61A7100CDF046 /* LoadingScreenUpperHalf_4inch.png */; };
-		8441161D17A61A7100CDF046 /* LoadingScreenUpperHalf_4inch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8441161517A61A7100CDF046 /* LoadingScreenUpperHalf_4inch@2x.png */; };
 		8441161E17A61A7100CDF046 /* LoadingScreenUpperHalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8441161617A61A7100CDF046 /* LoadingScreenUpperHalf.png */; };
-		8441161F17A61A7100CDF046 /* LoadingScreenUpperHalf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8441161717A61A7100CDF046 /* LoadingScreenUpperHalf@2x.png */; };
 		8441162117A764AA00CDF046 /* featured_recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 8441162017A764AA00CDF046 /* featured_recipes.json */; };
 		8441163F17A76B7800CDF046 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441162717A76B7800CDF046 /* NSObject+SBJson.m */; };
 		8441164017A76B7800CDF046 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441162A17A76B7800CDF046 /* SBJsonParser.m */; };
@@ -126,43 +100,24 @@
 		844B071017FA882B00F875E9 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844B070A17FA882B00F875E9 /* Icon-76@2x.png */; };
 		848564DE17913495000CC9AE /* BVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848564DD17913495000CC9AE /* BVTabBarController.m */; };
 		848564ED17913EA2000CC9AE /* TabBarBackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 848564E117913EA2000CC9AE /* TabBarBackgroundImage.png */; };
-		848564EE17913EA2000CC9AE /* TabBarBackgroundImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848564E217913EA2000CC9AE /* TabBarBackgroundImage@2x.png */; };
 		848564FD17913FF5000CC9AE /* BVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 848564FC17913FF5000CC9AE /* BVTabBar.m */; };
 		849FC3CC17ACB47600DD9585 /* TabBarFlavors.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3C217ACB47600DD9585 /* TabBarFlavors.png */; };
-		849FC3CD17ACB47600DD9585 /* TabBarFlavors@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3C317ACB47600DD9585 /* TabBarFlavors@2x.png */; };
 		849FC3CE17ACB47600DD9585 /* TabBarHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3C417ACB47600DD9585 /* TabBarHome.png */; };
-		849FC3CF17ACB47600DD9585 /* TabBarHome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3C517ACB47600DD9585 /* TabBarHome@2x.png */; };
 		849FC3D017ACB47600DD9585 /* TabBarMyFav.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3C617ACB47600DD9585 /* TabBarMyFav.png */; };
-		849FC3D117ACB47600DD9585 /* TabBarMyFav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3C717ACB47600DD9585 /* TabBarMyFav@2x.png */; };
 		849FC3D217ACB47600DD9585 /* TabBarRecipes.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3C817ACB47600DD9585 /* TabBarRecipes.png */; };
-		849FC3D317ACB47600DD9585 /* TabBarRecipes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3C917ACB47600DD9585 /* TabBarRecipes@2x.png */; };
 		849FC3D417ACB47600DD9585 /* TabBarTopRated.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3CA17ACB47600DD9585 /* TabBarTopRated.png */; };
-		849FC3D517ACB47600DD9585 /* TabBarTopRated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3CB17ACB47600DD9585 /* TabBarTopRated@2x.png */; };
 		849FC3D817ACBC0100DD9585 /* ShareMessageIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3D617ACBC0100DD9585 /* ShareMessageIcon.png */; };
-		849FC3D917ACBC0100DD9585 /* ShareMessageIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3D717ACBC0100DD9585 /* ShareMessageIcon@2x.png */; };
 		849FC3EA17ACF04500DD9585 /* RecipeTabAZTabSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3DE17ACEFED00DD9585 /* RecipeTabAZTabSelected.png */; };
-		849FC3EB17ACF04500DD9585 /* RecipeTabAZTabSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3DF17ACEFEE00DD9585 /* RecipeTabAZTabSelected@2x.png */; };
 		849FC3EC17ACF04500DD9585 /* RecipeTabAZTabUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E017ACEFF000DD9585 /* RecipeTabAZTabUnselected.png */; };
-		849FC3ED17ACF04500DD9585 /* RecipeTabAZTabUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E117ACEFF400DD9585 /* RecipeTabAZTabUnselected@2x.png */; };
 		849FC3EE17ACF04500DD9585 /* RecipeTabFlavorsTabSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E217ACEFF900DD9585 /* RecipeTabFlavorsTabSelected.png */; };
-		849FC3EF17ACF04500DD9585 /* RecipeTabFlavorsTabSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E317ACEFFE00DD9585 /* RecipeTabFlavorsTabSelected@2x.png */; };
 		849FC3F017ACF04500DD9585 /* RecipeTabFlavorsTabUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E417ACF00300DD9585 /* RecipeTabFlavorsTabUnselected.png */; };
-		849FC3F117ACF04500DD9585 /* RecipeTabFlavorsTabUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E517ACF00900DD9585 /* RecipeTabFlavorsTabUnselected@2x.png */; };
 		849FC3F217ACF04500DD9585 /* RecipeTabMixersTabSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E617ACF01300DD9585 /* RecipeTabMixersTabSelected.png */; };
-		849FC3F317ACF04500DD9585 /* RecipeTabMixersTabSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E717ACF01E00DD9585 /* RecipeTabMixersTabSelected@2x.png */; };
 		849FC3F417ACF04500DD9585 /* RecipeTabMixersTabUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E817ACF02A00DD9585 /* RecipeTabMixersTabUnselected.png */; };
-		849FC3F517ACF04500DD9585 /* RecipeTabMixersTabUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849FC3E917ACF03700DD9585 /* RecipeTabMixersTabUnselected@2x.png */; };
 		84A3E52C17C748990027B9CC /* AddedInMyFaves.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A3E52A17C748990027B9CC /* AddedInMyFaves.png */; };
-		84A3E52D17C748990027B9CC /* AddedInMyFaves@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A3E52B17C748990027B9CC /* AddedInMyFaves@2x.png */; };
 		84AE085417B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE084E17B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6.png */; };
-		84AE085517B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE084F17B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6@2x.png */; };
 		84AE085617B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE085017B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6.png */; };
-		84AE085717B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE085117B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6@2x.png */; };
 		84AE085817B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE085217B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6.png */; };
-		84AE085917B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE085317B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6@2x.png */; };
 		84AE085C17B527BB00ED96F4 /* BVFetchFeaturedRecipesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE085B17B527BB00ED96F4 /* BVFetchFeaturedRecipesOperation.m */; };
-		84B84257179183790083203F /* NavigationBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B84255179183780083203F /* NavigationBarBackground.png */; };
-		84B84258179183790083203F /* NavigationBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B84256179183780083203F /* NavigationBarBackground@2x.png */; };
 		84BCB11C177DF339008F6058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BCB11B177DF339008F6058 /* UIKit.framework */; };
 		84BCB11E177DF339008F6058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BCB11D177DF339008F6058 /* Foundation.framework */; };
 		84BCB120177DF339008F6058 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BCB11F177DF339008F6058 /* CoreGraphics.framework */; };
@@ -194,9 +149,7 @@
 		84C01BB717BD0EA800ED34CA /* BurnettFlavoriteOccasionLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C01BB517BD0EA800ED34CA /* BurnettFlavoriteOccasionLogo.png */; };
 		84C01BBB17BD0EB000ED34CA /* AgeGateContinueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C01BB917BD0EB000ED34CA /* AgeGateContinueButton.png */; };
 		84C73C7E17A0122400AA0934 /* BackBarButtonArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C73C7C17A0122400AA0934 /* BackBarButtonArrow.png */; };
-		84C73C7F17A0122400AA0934 /* BackBarButtonArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C73C7D17A0122400AA0934 /* BackBarButtonArrow@2x.png */; };
 		84C73C8217A025DD00AA0934 /* TopRatedBackgroundCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C73C8017A025DD00AA0934 /* TopRatedBackgroundCircle.png */; };
-		84C73C8317A025DD00AA0934 /* TopRatedBackgroundCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C73C8117A025DD00AA0934 /* TopRatedBackgroundCircle@2x.png */; };
 		84C73C8617A025F700AA0934 /* BVTopRatedTabRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C73C8517A025F700AA0934 /* BVTopRatedTabRecipeCell.m */; };
 		84C73C8917A032FB00AA0934 /* BVFavTabRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C73C8817A032FA00AA0934 /* BVFavTabRecipeCell.m */; };
 		84C73C9217A04EB600AA0934 /* HSLazyLoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C73C8D17A04EB600AA0934 /* HSLazyLoadImage.m */; };
@@ -205,20 +158,15 @@
 		84E92F521795C1260057431A /* UtilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E92F511795C1260057431A /* UtilityManager.m */; };
 		84E92F551795C4760057431A /* Flavors1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E92F541795C4760057431A /* Flavors1.plist */; };
 		84E92F581795D5000057431A /* GeneralBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E92F561795D5000057431A /* GeneralBackground.png */; };
-		84E92F591795D5000057431A /* GeneralBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E92F571795D5000057431A /* GeneralBackground@2x.png */; };
 		84E92F5E17966F610057431A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E92F5D17966F610057431A /* QuartzCore.framework */; };
 		84E92F651796F7A80057431A /* TableViewSectionBackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E92F631796F7A80057431A /* TableViewSectionBackgroundImage.png */; };
-		84E92F661796F7A80057431A /* TableViewSectionBackgroundImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E92F641796F7A80057431A /* TableViewSectionBackgroundImage@2x.png */; };
 		84E92F78179736720057431A /* BVRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E92F77179736720057431A /* BVRecipeCell.m */; };
 		84E92F7F1797377C0057431A /* BVRatingStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E92F7E1797377C0057431A /* BVRatingStarView.m */; };
 		84E92F82179737D20057431A /* BVRecipeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E92F81179737D20057431A /* BVRecipeImageView.m */; };
 		84EAD2D717E7F50300D8C694 /* NewFlavorsTaggingInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84EAD2D617E7F50300D8C694 /* NewFlavorsTaggingInfo.plist */; };
 		84EAD2EA17EA059800D8C694 /* NewFlavorBadge.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EAD2E817EA059800D8C694 /* NewFlavorBadge.png */; };
-		84EAD2EB17EA059800D8C694 /* NewFlavorBadge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EAD2E917EA059800D8C694 /* NewFlavorBadge@2x.png */; };
 		84EEEC1417BE78B500136E16 /* AddToMyFaves.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EEEC1017BE78B500136E16 /* AddToMyFaves.png */; };
-		84EEEC1517BE78B500136E16 /* AddToMyFaves@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EEEC1117BE78B500136E16 /* AddToMyFaves@2x.png */; };
 		84EEEC1A17BE790500136E16 /* RecipeTabSearchBarCross.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EEEC1817BE790500136E16 /* RecipeTabSearchBarCross.png */; };
-		84EEEC1B17BE790500136E16 /* RecipeTabSearchBarCross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EEEC1917BE790500136E16 /* RecipeTabSearchBarCross@2x.png */; };
 		84EEEC2517C0C4CB00136E16 /* AgeGateBackground_4inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EEEC2317C0C4CB00136E16 /* AgeGateBackground_4inch.png */; };
 		84FA495717F1497300D13E27 /* Default4Inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FA495317F1497300D13E27 /* Default4Inch.png */; };
 		84FA495B17F154D400D13E27 /* BVHTMLContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA495A17F154D400D13E27 /* BVHTMLContentViewController.m */; };
@@ -228,19 +176,13 @@
 		84FA49CC17F2205A00D13E27 /* burnetts-recipe-email.html in Resources */ = {isa = PBXBuildFile; fileRef = 84FA49CB17F2205A00D13E27 /* burnetts-recipe-email.html */; };
 		84FBD7E417B4C4B7002F9FC4 /* BVRecipeTabRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FBD7E317B4C4B7002F9FC4 /* BVRecipeTabRecipeCell.m */; };
 		84FBD7EB17B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FBD7E517B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab.png */; };
-		84FBD7EC17B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FBD7E617B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab@2x.png */; };
 		84FBD7ED17B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FBD7E717B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab.png */; };
-		84FBD7EE17B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FBD7E817B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab@2x.png */; };
 		84FBD7EF17B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FBD7E917B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab.png */; };
-		84FBD7F017B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FBD7EA17B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab@2x.png */; };
 		84FC1FE317A1946F00B30403 /* FlavorFilesInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84FC1FE217A1946F00B30403 /* FlavorFilesInfo.plist */; };
 		84FC1FE617A276CF00B30403 /* BVRecipesForFlavorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC1FE517A276CE00B30403 /* BVRecipesForFlavorViewController.m */; };
 		84FC1FE917A2B42300B30403 /* RecipeTabSearchBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FC1FE717A2B42300B30403 /* RecipeTabSearchBarIcon.png */; };
-		84FC1FEA17A2B42300B30403 /* RecipeTabSearchBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FC1FE817A2B42300B30403 /* RecipeTabSearchBarIcon@2x.png */; };
 		84FC1FED17A2B44100B30403 /* RecipeTabSearchBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FC1FEB17A2B44100B30403 /* RecipeTabSearchBarBackground.png */; };
-		84FC1FEE17A2B44100B30403 /* RecipeTabSearchBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FC1FEC17A2B44100B30403 /* RecipeTabSearchBarBackground@2x.png */; };
 		84FC1FF517A316EF00B30403 /* burnett_home_datestring.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FC1FF117A316EF00B30403 /* burnett_home_datestring.png */; };
-		84FC1FF617A316EF00B30403 /* burnett_home_datestring@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FC1FF217A316EF00B30403 /* burnett_home_datestring@2x.png */; };
 		84FC1FF917A31C2E00B30403 /* BVCoverFlowScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC1FF817A31C2E00B30403 /* BVCoverFlowScrollView.m */; };
 		84FC228117A3EF5700B30403 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FC228017A3EF5600B30403 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		84FC228317A3F0E800B30403 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FC228217A3F0E600B30403 /* Twitter.framework */; };
@@ -592,6 +534,20 @@
 		E098937A1993B7E200694684 /* getDate.png in Resources */ = {isa = PBXBuildFile; fileRef = E09893791993B7E100694684 /* getDate.png */; };
 		E098937C1993B88400694684 /* remember.png in Resources */ = {isa = PBXBuildFile; fileRef = E098937B1993B88400694684 /* remember.png */; };
 		E098937E1993B9C800694684 /* remember1.png in Resources */ = {isa = PBXBuildFile; fileRef = E098937D1993B9C800694684 /* remember1.png */; };
+		E09A97341994B3520095DC02 /* burnett_home_datestring_4inch.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97331994B3520095DC02 /* burnett_home_datestring_4inch.png */; };
+		E09A973A1994B7B80095DC02 /* TabBarFlavorsS.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97351994B7B80095DC02 /* TabBarFlavorsS.png */; };
+		E09A973B1994B7B80095DC02 /* TabBarHomeS.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97361994B7B80095DC02 /* TabBarHomeS.png */; };
+		E09A973C1994B7B80095DC02 /* TabBarMyFavS.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97371994B7B80095DC02 /* TabBarMyFavS.png */; };
+		E09A973D1994B7B80095DC02 /* TabBarRecipesS.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97381994B7B80095DC02 /* TabBarRecipesS.png */; };
+		E09A973E1994B7B80095DC02 /* TabBarTopRatedS.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97391994B7B80095DC02 /* TabBarTopRatedS.png */; };
+		E09A97411994D7B60095DC02 /* flavourbg.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A973F1994D7B50095DC02 /* flavourbg.png */; };
+		E09A97421994D7B60095DC02 /* flavourTab.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97401994D7B50095DC02 /* flavourTab.png */; };
+		E09A97451994E20D0095DC02 /* reciepebg.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97431994E20D0095DC02 /* reciepebg.png */; };
+		E09A97461994E20D0095DC02 /* reciepeTab.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97441994E20D0095DC02 /* reciepeTab.png */; };
+		E09A97491994EABC0095DC02 /* favouritebg.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97471994EABC0095DC02 /* favouritebg.png */; };
+		E09A974A1994EABD0095DC02 /* favouriteTab.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A97481994EABC0095DC02 /* favouriteTab.png */; };
+		E09A974C1994ECB40095DC02 /* toprateTab.png in Resources */ = {isa = PBXBuildFile; fileRef = E09A974B1994ECB40095DC02 /* toprateTab.png */; };
+		E09A974E1994F51C0095DC02 /* HelveticaRoundedLT-BoldCondObl.otf in Resources */ = {isa = PBXBuildFile; fileRef = E09A974D1994F51C0095DC02 /* HelveticaRoundedLT-BoldCondObl.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -619,35 +575,23 @@
 		13FE36E41815D35D0088B170 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		13FE36E61815D3630088B170 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		8404BF8317A452A0003CB0E0 /* ShareFacebookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShareFacebookIcon.png; sourceTree = "<group>"; };
-		8404BF8417A452A0003CB0E0 /* ShareFacebookIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShareFacebookIcon@2x.png"; sourceTree = "<group>"; };
 		8404BF8517A452A0003CB0E0 /* ShareMailIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShareMailIcon.png; sourceTree = "<group>"; };
-		8404BF8617A452A0003CB0E0 /* ShareMailIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShareMailIcon@2x.png"; sourceTree = "<group>"; };
 		8404BF8717A452A0003CB0E0 /* ShareTwitterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShareTwitterIcon.png; sourceTree = "<group>"; };
-		8404BF8817A452A0003CB0E0 /* ShareTwitterIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShareTwitterIcon@2x.png"; sourceTree = "<group>"; };
 		8404BF8F17A45B00003CB0E0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8404BF9217A4D4BD003CB0E0 /* FeaturedRecipeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedRecipeItem.h; sourceTree = "<group>"; };
 		8404BF9317A4D4BD003CB0E0 /* FeaturedRecipeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedRecipeItem.m; sourceTree = "<group>"; };
 		84197AFB1798EB3B0003E75E /* TableViewRowBackgroundRecipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewRowBackgroundRecipe.png; sourceTree = "<group>"; };
-		84197AFC1798EB3B0003E75E /* TableViewRowBackgroundRecipe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewRowBackgroundRecipe@2x.png"; sourceTree = "<group>"; };
 		84197B031798EB4B0003E75E /* TableViewRowLastHeaderRecipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewRowLastHeaderRecipe.png; sourceTree = "<group>"; };
-		84197B041798EB4B0003E75E /* TableViewRowLastHeaderRecipe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewRowLastHeaderRecipe@2x.png"; sourceTree = "<group>"; };
 		84197B071798EE0C0003E75E /* TableViewRowFirstHeaderRecipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewRowFirstHeaderRecipe.png; sourceTree = "<group>"; };
-		84197B081798EE0C0003E75E /* TableViewRowFirstHeaderRecipe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewRowFirstHeaderRecipe@2x.png"; sourceTree = "<group>"; };
 		84197B0B1798F4920003E75E /* BVRecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVRecipeDetailViewController.h; sourceTree = "<group>"; };
 		84197B0C1798F4920003E75E /* BVRecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVRecipeDetailViewController.m; sourceTree = "<group>"; };
 		8423A2D4179A520D001497C1 /* RecipeDetailBgForRatingAndFav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailBgForRatingAndFav.png; sourceTree = "<group>"; };
-		8423A2D5179A520D001497C1 /* RecipeDetailBgForRatingAndFav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailBgForRatingAndFav@2x.png"; sourceTree = "<group>"; };
 		8423A2D8179A520D001497C1 /* RecipeDetailSeperatorAfterTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailSeperatorAfterTitle.png; sourceTree = "<group>"; };
-		8423A2D9179A520D001497C1 /* RecipeDetailSeperatorAfterTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailSeperatorAfterTitle@2x.png"; sourceTree = "<group>"; };
 		8423A2DA179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailSeperatorInBottomBackground.png; sourceTree = "<group>"; };
-		8423A2DB179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailSeperatorInBottomBackground@2x.png"; sourceTree = "<group>"; };
 		8423A2E5179A548C001497C1 /* SampleDrinkImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleDrinkImage1.png; sourceTree = "<group>"; };
 		8423A2E7179A58D2001497C1 /* RecipeDetailBottomBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailBottomBackground.png; sourceTree = "<group>"; };
-		8423A2E8179A58D3001497C1 /* RecipeDetailBottomBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailBottomBackground@2x.png"; sourceTree = "<group>"; };
 		8423A2EB179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailBottomBackgroundHeader.png; sourceTree = "<group>"; };
-		8423A2EC179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailBottomBackgroundHeader@2x.png"; sourceTree = "<group>"; };
 		8423A2F3179AA3A4001497C1 /* RecipeDetailBulletPointIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailBulletPointIcon.png; sourceTree = "<group>"; };
-		8423A2F4179AA3A4001497C1 /* RecipeDetailBulletPointIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailBulletPointIcon@2x.png"; sourceTree = "<group>"; };
 		8423A2F7179AB46E001497C1 /* temp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = temp.xib; sourceTree = "<group>"; };
 		8426AAC517A8276700051202 /* BVFetchRatingsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVFetchRatingsOperation.h; sourceTree = "<group>"; };
 		8426AAC617A8276700051202 /* BVFetchRatingsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVFetchRatingsOperation.m; sourceTree = "<group>"; };
@@ -678,30 +622,20 @@
 		8426AAED17A829D100051202 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8426AAEF17A829FB00051202 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8426AAF117A8DF2A00051202 /* CancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancelButton.png; sourceTree = "<group>"; };
-		8426AAF217A8DF2A00051202 /* CancelButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CancelButton@2x.png"; sourceTree = "<group>"; };
 		8426AAF517A94DBF00051202 /* BVDropDownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVDropDownMenuView.h; sourceTree = "<group>"; };
 		8426AAF617A94DBF00051202 /* BVDropDownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVDropDownMenuView.m; sourceTree = "<group>"; };
 		8426AAF817A9535900051202 /* DropDownMenuArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownMenuArrow.png; sourceTree = "<group>"; };
-		8426AAF917A9535900051202 /* DropDownMenuArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DropDownMenuArrow@2x.png"; sourceTree = "<group>"; };
 		8426AB0017A9609200051202 /* DropDownMenuBodyBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownMenuBodyBackground.png; sourceTree = "<group>"; };
-		8426AB0117A9609200051202 /* DropDownMenuBodyBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DropDownMenuBodyBackground@2x.png"; sourceTree = "<group>"; };
 		8426AB0417A9659600051202 /* Mixers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mixers.plist; sourceTree = "<group>"; };
 		8426AB0617A9722C00051202 /* RecipeDetailBottomBackgroundFooter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailBottomBackgroundFooter.png; sourceTree = "<group>"; };
-		8426AB0717A9722C00051202 /* RecipeDetailBottomBackgroundFooter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailBottomBackgroundFooter@2x.png"; sourceTree = "<group>"; };
 		8426AB0A17A97F3B00051202 /* BVMixerFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVMixerFilterView.h; sourceTree = "<group>"; };
 		8426AB0B17A97F3D00051202 /* BVMixerFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVMixerFilterView.m; sourceTree = "<group>"; };
 		8426AB0D17A99F1400051202 /* MixerFilterDeleteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MixerFilterDeleteButton.png; sourceTree = "<group>"; };
-		8426AB0E17A99F1400051202 /* MixerFilterDeleteButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MixerFilterDeleteButton@2x.png"; sourceTree = "<group>"; };
 		84390914179872240021D69A /* RatingStarBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RatingStarBlue.png; sourceTree = "<group>"; };
-		84390915179872240021D69A /* RatingStarBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarBlue@2x.png"; sourceTree = "<group>"; };
 		84390916179872240021D69A /* RatingStarGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RatingStarGray.png; sourceTree = "<group>"; };
-		84390917179872240021D69A /* RatingStarGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarGray@2x.png"; sourceTree = "<group>"; };
 		84390918179872240021D69A /* RatingStarHalfBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RatingStarHalfBlue.png; sourceTree = "<group>"; };
-		84390919179872240021D69A /* RatingStarHalfBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarHalfBlue@2x.png"; sourceTree = "<group>"; };
 		8439091A179872240021D69A /* RecipeImageViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeImageViewBackground.png; sourceTree = "<group>"; };
-		8439091B179872240021D69A /* RecipeImageViewBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeImageViewBackground@2x.png"; sourceTree = "<group>"; };
 		844115EF17A50DBA00CDF046 /* BigRatingStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BigRatingStar.png; sourceTree = "<group>"; };
-		844115F017A50DBA00CDF046 /* BigRatingStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BigRatingStar@2x.png"; sourceTree = "<group>"; };
 		844115F317A50E5300CDF046 /* BVRatingOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVRatingOverlayView.h; sourceTree = "<group>"; };
 		844115F417A50E5300CDF046 /* BVRatingOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVRatingOverlayView.m; sourceTree = "<group>"; };
 		844115F617A5222C00CDF046 /* BVApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVApp.h; sourceTree = "<group>"; };
@@ -712,13 +646,9 @@
 		8441160117A5F76A00CDF046 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8441160417A5F7A600CDF046 /* CoverFlow_Move.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoverFlow_Move.aifc; sourceTree = "<group>"; };
 		8441161017A61A7100CDF046 /* LoadingScreenLowerHalf_4inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadingScreenLowerHalf_4inch.png; sourceTree = "<group>"; };
-		8441161117A61A7100CDF046 /* LoadingScreenLowerHalf_4inch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoadingScreenLowerHalf_4inch@2x.png"; sourceTree = "<group>"; };
 		8441161217A61A7100CDF046 /* LoadingScreenLowerHalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadingScreenLowerHalf.png; sourceTree = "<group>"; };
-		8441161317A61A7100CDF046 /* LoadingScreenLowerHalf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoadingScreenLowerHalf@2x.png"; sourceTree = "<group>"; };
 		8441161417A61A7100CDF046 /* LoadingScreenUpperHalf_4inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadingScreenUpperHalf_4inch.png; sourceTree = "<group>"; };
-		8441161517A61A7100CDF046 /* LoadingScreenUpperHalf_4inch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoadingScreenUpperHalf_4inch@2x.png"; sourceTree = "<group>"; };
 		8441161617A61A7100CDF046 /* LoadingScreenUpperHalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadingScreenUpperHalf.png; sourceTree = "<group>"; };
-		8441161717A61A7100CDF046 /* LoadingScreenUpperHalf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoadingScreenUpperHalf@2x.png"; sourceTree = "<group>"; };
 		8441162017A764AA00CDF046 /* featured_recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = featured_recipes.json; sourceTree = "<group>"; };
 		8441162517A76B7800CDF046 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		8441162617A76B7800CDF046 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
@@ -763,45 +693,26 @@
 		848564DC17913495000CC9AE /* BVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVTabBarController.h; sourceTree = "<group>"; };
 		848564DD17913495000CC9AE /* BVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVTabBarController.m; sourceTree = "<group>"; };
 		848564E117913EA2000CC9AE /* TabBarBackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarBackgroundImage.png; sourceTree = "<group>"; };
-		848564E217913EA2000CC9AE /* TabBarBackgroundImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBarBackgroundImage@2x.png"; sourceTree = "<group>"; };
 		848564FB17913FF5000CC9AE /* BVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVTabBar.h; sourceTree = "<group>"; };
 		848564FC17913FF5000CC9AE /* BVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVTabBar.m; sourceTree = "<group>"; };
 		849FC3C217ACB47600DD9585 /* TabBarFlavors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarFlavors.png; sourceTree = "<group>"; };
-		849FC3C317ACB47600DD9585 /* TabBarFlavors@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBarFlavors@2x.png"; sourceTree = "<group>"; };
 		849FC3C417ACB47600DD9585 /* TabBarHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarHome.png; sourceTree = "<group>"; };
-		849FC3C517ACB47600DD9585 /* TabBarHome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBarHome@2x.png"; sourceTree = "<group>"; };
 		849FC3C617ACB47600DD9585 /* TabBarMyFav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarMyFav.png; sourceTree = "<group>"; };
-		849FC3C717ACB47600DD9585 /* TabBarMyFav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBarMyFav@2x.png"; sourceTree = "<group>"; };
 		849FC3C817ACB47600DD9585 /* TabBarRecipes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarRecipes.png; sourceTree = "<group>"; };
-		849FC3C917ACB47600DD9585 /* TabBarRecipes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBarRecipes@2x.png"; sourceTree = "<group>"; };
 		849FC3CA17ACB47600DD9585 /* TabBarTopRated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarTopRated.png; sourceTree = "<group>"; };
-		849FC3CB17ACB47600DD9585 /* TabBarTopRated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBarTopRated@2x.png"; sourceTree = "<group>"; };
 		849FC3D617ACBC0100DD9585 /* ShareMessageIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShareMessageIcon.png; sourceTree = "<group>"; };
-		849FC3D717ACBC0100DD9585 /* ShareMessageIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShareMessageIcon@2x.png"; sourceTree = "<group>"; };
 		849FC3DE17ACEFED00DD9585 /* RecipeTabAZTabSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabAZTabSelected.png; sourceTree = "<group>"; };
-		849FC3DF17ACEFEE00DD9585 /* RecipeTabAZTabSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeTabAZTabSelected@2x.png"; sourceTree = "<group>"; };
 		849FC3E017ACEFF000DD9585 /* RecipeTabAZTabUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabAZTabUnselected.png; sourceTree = "<group>"; };
-		849FC3E117ACEFF400DD9585 /* RecipeTabAZTabUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeTabAZTabUnselected@2x.png"; sourceTree = "<group>"; };
 		849FC3E217ACEFF900DD9585 /* RecipeTabFlavorsTabSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabFlavorsTabSelected.png; sourceTree = "<group>"; };
-		849FC3E317ACEFFE00DD9585 /* RecipeTabFlavorsTabSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeTabFlavorsTabSelected@2x.png"; sourceTree = "<group>"; };
 		849FC3E417ACF00300DD9585 /* RecipeTabFlavorsTabUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabFlavorsTabUnselected.png; sourceTree = "<group>"; };
-		849FC3E517ACF00900DD9585 /* RecipeTabFlavorsTabUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeTabFlavorsTabUnselected@2x.png"; sourceTree = "<group>"; };
 		849FC3E617ACF01300DD9585 /* RecipeTabMixersTabSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabMixersTabSelected.png; sourceTree = "<group>"; };
-		849FC3E717ACF01E00DD9585 /* RecipeTabMixersTabSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeTabMixersTabSelected@2x.png"; sourceTree = "<group>"; };
 		849FC3E817ACF02A00DD9585 /* RecipeTabMixersTabUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabMixersTabUnselected.png; sourceTree = "<group>"; };
-		849FC3E917ACF03700DD9585 /* RecipeTabMixersTabUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeTabMixersTabUnselected@2x.png"; sourceTree = "<group>"; };
 		84A3E52A17C748990027B9CC /* AddedInMyFaves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddedInMyFaves.png; sourceTree = "<group>"; };
-		84A3E52B17C748990027B9CC /* AddedInMyFaves@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AddedInMyFaves@2x.png"; sourceTree = "<group>"; };
 		84AE084E17B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewRowBackgroundRecipeForRecipeTabiOS6.png; sourceTree = "<group>"; };
-		84AE084F17B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewRowBackgroundRecipeForRecipeTabiOS6@2x.png"; sourceTree = "<group>"; };
 		84AE085017B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewRowFirstHeaderRecipeForRecipeTabiOS6.png; sourceTree = "<group>"; };
-		84AE085117B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewRowFirstHeaderRecipeForRecipeTabiOS6@2x.png"; sourceTree = "<group>"; };
 		84AE085217B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewRowLastHeaderRecipeForRecipeTabiOS6.png; sourceTree = "<group>"; };
-		84AE085317B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewRowLastHeaderRecipeForRecipeTabiOS6@2x.png"; sourceTree = "<group>"; };
 		84AE085A17B527BB00ED96F4 /* BVFetchFeaturedRecipesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVFetchFeaturedRecipesOperation.h; sourceTree = "<group>"; };
 		84AE085B17B527BB00ED96F4 /* BVFetchFeaturedRecipesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVFetchFeaturedRecipesOperation.m; sourceTree = "<group>"; };
-		84B84255179183780083203F /* NavigationBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBarBackground.png; sourceTree = "<group>"; };
-		84B84256179183780083203F /* NavigationBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavigationBarBackground@2x.png"; sourceTree = "<group>"; };
 		84BCB118177DF339008F6058 /* BurnettVodka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BurnettVodka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BCB11B177DF339008F6058 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84BCB11D177DF339008F6058 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -846,9 +757,7 @@
 		84C01BB517BD0EA800ED34CA /* BurnettFlavoriteOccasionLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BurnettFlavoriteOccasionLogo.png; sourceTree = "<group>"; };
 		84C01BB917BD0EB000ED34CA /* AgeGateContinueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AgeGateContinueButton.png; sourceTree = "<group>"; };
 		84C73C7C17A0122400AA0934 /* BackBarButtonArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackBarButtonArrow.png; sourceTree = "<group>"; };
-		84C73C7D17A0122400AA0934 /* BackBarButtonArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackBarButtonArrow@2x.png"; sourceTree = "<group>"; };
 		84C73C8017A025DD00AA0934 /* TopRatedBackgroundCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TopRatedBackgroundCircle.png; sourceTree = "<group>"; };
-		84C73C8117A025DD00AA0934 /* TopRatedBackgroundCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopRatedBackgroundCircle@2x.png"; sourceTree = "<group>"; };
 		84C73C8417A025F700AA0934 /* BVTopRatedTabRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVTopRatedTabRecipeCell.h; sourceTree = "<group>"; };
 		84C73C8517A025F700AA0934 /* BVTopRatedTabRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVTopRatedTabRecipeCell.m; sourceTree = "<group>"; };
 		84C73C8717A032FA00AA0934 /* BVFavTabRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVFavTabRecipeCell.h; sourceTree = "<group>"; };
@@ -863,10 +772,8 @@
 		84E92F511795C1260057431A /* UtilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityManager.m; sourceTree = "<group>"; };
 		84E92F541795C4760057431A /* Flavors1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Flavors1.plist; sourceTree = "<group>"; };
 		84E92F561795D5000057431A /* GeneralBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GeneralBackground.png; sourceTree = "<group>"; };
-		84E92F571795D5000057431A /* GeneralBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GeneralBackground@2x.png"; sourceTree = "<group>"; };
 		84E92F5D17966F610057431A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84E92F631796F7A80057431A /* TableViewSectionBackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewSectionBackgroundImage.png; sourceTree = "<group>"; };
-		84E92F641796F7A80057431A /* TableViewSectionBackgroundImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewSectionBackgroundImage@2x.png"; sourceTree = "<group>"; };
 		84E92F76179736720057431A /* BVRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVRecipeCell.h; sourceTree = "<group>"; };
 		84E92F77179736720057431A /* BVRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVRecipeCell.m; sourceTree = "<group>"; };
 		84E92F7D1797377C0057431A /* BVRatingStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVRatingStarView.h; sourceTree = "<group>"; };
@@ -875,11 +782,8 @@
 		84E92F81179737D20057431A /* BVRecipeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVRecipeImageView.m; sourceTree = "<group>"; };
 		84EAD2D617E7F50300D8C694 /* NewFlavorsTaggingInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewFlavorsTaggingInfo.plist; sourceTree = "<group>"; };
 		84EAD2E817EA059800D8C694 /* NewFlavorBadge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewFlavorBadge.png; sourceTree = "<group>"; };
-		84EAD2E917EA059800D8C694 /* NewFlavorBadge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewFlavorBadge@2x.png"; sourceTree = "<group>"; };
 		84EEEC1017BE78B500136E16 /* AddToMyFaves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddToMyFaves.png; sourceTree = "<group>"; };
-		84EEEC1117BE78B500136E16 /* AddToMyFaves@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AddToMyFaves@2x.png"; sourceTree = "<group>"; };
 		84EEEC1817BE790500136E16 /* RecipeTabSearchBarCross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabSearchBarCross.png; sourceTree = "<group>"; };
-		84EEEC1917BE790500136E16 /* RecipeTabSearchBarCross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeTabSearchBarCross@2x.png"; sourceTree = "<group>"; };
 		84EEEC2117C0BB9800136E16 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		84EEEC2317C0C4CB00136E16 /* AgeGateBackground_4inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AgeGateBackground_4inch.png; sourceTree = "<group>"; };
 		84FA495317F1497300D13E27 /* Default4Inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default4Inch.png; sourceTree = "<group>"; };
@@ -893,20 +797,14 @@
 		84FBD7E217B4C4B7002F9FC4 /* BVRecipeTabRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVRecipeTabRecipeCell.h; sourceTree = "<group>"; };
 		84FBD7E317B4C4B7002F9FC4 /* BVRecipeTabRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVRecipeTabRecipeCell.m; sourceTree = "<group>"; };
 		84FBD7E517B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewRowBackgroundRecipeForRecipeTab.png; sourceTree = "<group>"; };
-		84FBD7E617B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewRowBackgroundRecipeForRecipeTab@2x.png"; sourceTree = "<group>"; };
 		84FBD7E717B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewRowFirstHeaderRecipeForRecipeTab.png; sourceTree = "<group>"; };
-		84FBD7E817B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewRowFirstHeaderRecipeForRecipeTab@2x.png"; sourceTree = "<group>"; };
 		84FBD7E917B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewRowLastHeaderRecipeForRecipeTab.png; sourceTree = "<group>"; };
-		84FBD7EA17B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewRowLastHeaderRecipeForRecipeTab@2x.png"; sourceTree = "<group>"; };
 		84FC1FE217A1946F00B30403 /* FlavorFilesInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FlavorFilesInfo.plist; sourceTree = "<group>"; };
 		84FC1FE417A276CE00B30403 /* BVRecipesForFlavorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVRecipesForFlavorViewController.h; sourceTree = "<group>"; };
 		84FC1FE517A276CE00B30403 /* BVRecipesForFlavorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVRecipesForFlavorViewController.m; sourceTree = "<group>"; };
 		84FC1FE717A2B42300B30403 /* RecipeTabSearchBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabSearchBarIcon.png; sourceTree = "<group>"; };
-		84FC1FE817A2B42300B30403 /* RecipeTabSearchBarIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeTabSearchBarIcon@2x.png"; sourceTree = "<group>"; };
 		84FC1FEB17A2B44100B30403 /* RecipeTabSearchBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabSearchBarBackground.png; sourceTree = "<group>"; };
-		84FC1FEC17A2B44100B30403 /* RecipeTabSearchBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeTabSearchBarBackground@2x.png"; sourceTree = "<group>"; };
 		84FC1FF117A316EF00B30403 /* burnett_home_datestring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burnett_home_datestring.png; sourceTree = "<group>"; };
-		84FC1FF217A316EF00B30403 /* burnett_home_datestring@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burnett_home_datestring@2x.png"; sourceTree = "<group>"; };
 		84FC1FF717A31C2E00B30403 /* BVCoverFlowScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVCoverFlowScrollView.h; sourceTree = "<group>"; };
 		84FC1FF817A31C2E00B30403 /* BVCoverFlowScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVCoverFlowScrollView.m; sourceTree = "<group>"; };
 		84FC228017A3EF5600B30403 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -1261,6 +1159,20 @@
 		E09893791993B7E100694684 /* getDate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getDate.png; sourceTree = "<group>"; };
 		E098937B1993B88400694684 /* remember.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remember.png; sourceTree = "<group>"; };
 		E098937D1993B9C800694684 /* remember1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remember1.png; sourceTree = "<group>"; };
+		E09A97331994B3520095DC02 /* burnett_home_datestring_4inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burnett_home_datestring_4inch.png; sourceTree = "<group>"; };
+		E09A97351994B7B80095DC02 /* TabBarFlavorsS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarFlavorsS.png; sourceTree = "<group>"; };
+		E09A97361994B7B80095DC02 /* TabBarHomeS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarHomeS.png; sourceTree = "<group>"; };
+		E09A97371994B7B80095DC02 /* TabBarMyFavS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarMyFavS.png; sourceTree = "<group>"; };
+		E09A97381994B7B80095DC02 /* TabBarRecipesS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarRecipesS.png; sourceTree = "<group>"; };
+		E09A97391994B7B80095DC02 /* TabBarTopRatedS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBarTopRatedS.png; sourceTree = "<group>"; };
+		E09A973F1994D7B50095DC02 /* flavourbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flavourbg.png; sourceTree = "<group>"; };
+		E09A97401994D7B50095DC02 /* flavourTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flavourTab.png; sourceTree = "<group>"; };
+		E09A97431994E20D0095DC02 /* reciepebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reciepebg.png; sourceTree = "<group>"; };
+		E09A97441994E20D0095DC02 /* reciepeTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reciepeTab.png; sourceTree = "<group>"; };
+		E09A97471994EABC0095DC02 /* favouritebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favouritebg.png; sourceTree = "<group>"; };
+		E09A97481994EABC0095DC02 /* favouriteTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favouriteTab.png; sourceTree = "<group>"; };
+		E09A974B1994ECB40095DC02 /* toprateTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toprateTab.png; sourceTree = "<group>"; };
+		E09A974D1994F51C0095DC02 /* HelveticaRoundedLT-BoldCondObl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaRoundedLT-BoldCondObl.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1339,19 +1251,12 @@
 			children = (
 				8423A2E4179A547E001497C1 /* Sample Drink Images */,
 				8423A2D4179A520D001497C1 /* RecipeDetailBgForRatingAndFav.png */,
-				8423A2D5179A520D001497C1 /* RecipeDetailBgForRatingAndFav@2x.png */,
 				8423A2D8179A520D001497C1 /* RecipeDetailSeperatorAfterTitle.png */,
-				8423A2D9179A520D001497C1 /* RecipeDetailSeperatorAfterTitle@2x.png */,
 				8423A2DA179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground.png */,
-				8423A2DB179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground@2x.png */,
 				8423A2E7179A58D2001497C1 /* RecipeDetailBottomBackground.png */,
-				8423A2E8179A58D3001497C1 /* RecipeDetailBottomBackground@2x.png */,
 				8423A2EB179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader.png */,
-				8423A2EC179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader@2x.png */,
 				8426AB0617A9722C00051202 /* RecipeDetailBottomBackgroundFooter.png */,
-				8426AB0717A9722C00051202 /* RecipeDetailBottomBackgroundFooter@2x.png */,
 				8423A2F3179AA3A4001497C1 /* RecipeDetailBulletPointIcon.png */,
-				8423A2F4179AA3A4001497C1 /* RecipeDetailBulletPointIcon@2x.png */,
 			);
 			name = "Recipe Detail ";
 			sourceTree = "<group>";
@@ -1404,7 +1309,6 @@
 			isa = PBXGroup;
 			children = (
 				8439091A179872240021D69A /* RecipeImageViewBackground.png */,
-				8439091B179872240021D69A /* RecipeImageViewBackground@2x.png */,
 			);
 			name = "Recipe Cell";
 			sourceTree = "<group>";
@@ -1432,13 +1336,9 @@
 			isa = PBXGroup;
 			children = (
 				8441161017A61A7100CDF046 /* LoadingScreenLowerHalf_4inch.png */,
-				8441161117A61A7100CDF046 /* LoadingScreenLowerHalf_4inch@2x.png */,
 				8441161217A61A7100CDF046 /* LoadingScreenLowerHalf.png */,
-				8441161317A61A7100CDF046 /* LoadingScreenLowerHalf@2x.png */,
 				8441161417A61A7100CDF046 /* LoadingScreenUpperHalf_4inch.png */,
-				8441161517A61A7100CDF046 /* LoadingScreenUpperHalf_4inch@2x.png */,
 				8441161617A61A7100CDF046 /* LoadingScreenUpperHalf.png */,
-				8441161717A61A7100CDF046 /* LoadingScreenUpperHalf@2x.png */,
 			);
 			name = "Loading Screen";
 			sourceTree = "<group>";
@@ -1499,6 +1399,8 @@
 		845CBA171791A0BC00168FFA /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
+				E09A974D1994F51C0095DC02 /* HelveticaRoundedLT-BoldCondObl.otf */,
+				E09A97331994B3520095DC02 /* burnett_home_datestring_4inch.png */,
 				E098911B199387E600694684 /* featured_cherry.png */,
 				E098911C199387E600694684 /* featured_citrus.png */,
 				E098911D199387E600694684 /* featured_eighty_proof.png */,
@@ -1513,7 +1415,6 @@
 				E0989126199387E600694684 /* featured_watermelon.png */,
 				E0989127199387E600694684 /* featured_whippedcream.png */,
 				84FC1FF117A316EF00B30403 /* burnett_home_datestring.png */,
-				84FC1FF217A316EF00B30403 /* burnett_home_datestring@2x.png */,
 			);
 			name = "Home Screen";
 			sourceTree = "<group>";
@@ -1531,77 +1432,8 @@
 				84E92F67179735F00057431A /* Table View */,
 				84E92F5A17966AAF0057431A /* Flavor Images */,
 				845CBA171791A0BC00168FFA /* Home Screen */,
-				84C01BB517BD0EA800ED34CA /* BurnettFlavoriteOccasionLogo.png */,
-				84B84255179183780083203F /* NavigationBarBackground.png */,
-				84B84256179183780083203F /* NavigationBarBackground@2x.png */,
-				848564E117913EA2000CC9AE /* TabBarBackgroundImage.png */,
-				848564E217913EA2000CC9AE /* TabBarBackgroundImage@2x.png */,
-				849FC3C217ACB47600DD9585 /* TabBarFlavors.png */,
-				849FC3C317ACB47600DD9585 /* TabBarFlavors@2x.png */,
-				849FC3C417ACB47600DD9585 /* TabBarHome.png */,
-				849FC3C517ACB47600DD9585 /* TabBarHome@2x.png */,
-				849FC3C617ACB47600DD9585 /* TabBarMyFav.png */,
-				849FC3C717ACB47600DD9585 /* TabBarMyFav@2x.png */,
-				849FC3C817ACB47600DD9585 /* TabBarRecipes.png */,
-				849FC3C917ACB47600DD9585 /* TabBarRecipes@2x.png */,
-				849FC3CA17ACB47600DD9585 /* TabBarTopRated.png */,
-				849FC3CB17ACB47600DD9585 /* TabBarTopRated@2x.png */,
-				84E92F561795D5000057431A /* GeneralBackground.png */,
-				84E92F571795D5000057431A /* GeneralBackground@2x.png */,
-				84390914179872240021D69A /* RatingStarBlue.png */,
-				84390915179872240021D69A /* RatingStarBlue@2x.png */,
-				84390916179872240021D69A /* RatingStarGray.png */,
-				84390917179872240021D69A /* RatingStarGray@2x.png */,
-				84390918179872240021D69A /* RatingStarHalfBlue.png */,
-				84390919179872240021D69A /* RatingStarHalfBlue@2x.png */,
-				849FC3DE17ACEFED00DD9585 /* RecipeTabAZTabSelected.png */,
-				849FC3DF17ACEFEE00DD9585 /* RecipeTabAZTabSelected@2x.png */,
-				849FC3E017ACEFF000DD9585 /* RecipeTabAZTabUnselected.png */,
-				849FC3E117ACEFF400DD9585 /* RecipeTabAZTabUnselected@2x.png */,
-				849FC3E217ACEFF900DD9585 /* RecipeTabFlavorsTabSelected.png */,
-				849FC3E317ACEFFE00DD9585 /* RecipeTabFlavorsTabSelected@2x.png */,
-				849FC3E417ACF00300DD9585 /* RecipeTabFlavorsTabUnselected.png */,
-				849FC3E517ACF00900DD9585 /* RecipeTabFlavorsTabUnselected@2x.png */,
-				849FC3E617ACF01300DD9585 /* RecipeTabMixersTabSelected.png */,
-				849FC3E717ACF01E00DD9585 /* RecipeTabMixersTabSelected@2x.png */,
-				849FC3E817ACF02A00DD9585 /* RecipeTabMixersTabUnselected.png */,
-				849FC3E917ACF03700DD9585 /* RecipeTabMixersTabUnselected@2x.png */,
-				8448C49D179E50F50087D5C4 /* RecipeTabSegmentedControlBackground.png */,
-				8448C4A3179E52B60087D5C4 /* RecipeTabSegmentedControlDividerImage.png */,
-				84C73C7C17A0122400AA0934 /* BackBarButtonArrow.png */,
-				84C73C7D17A0122400AA0934 /* BackBarButtonArrow@2x.png */,
-				84C73C8017A025DD00AA0934 /* TopRatedBackgroundCircle.png */,
-				84C73C8117A025DD00AA0934 /* TopRatedBackgroundCircle@2x.png */,
-				84FC1FE717A2B42300B30403 /* RecipeTabSearchBarIcon.png */,
-				84FC1FE817A2B42300B30403 /* RecipeTabSearchBarIcon@2x.png */,
-				84FC1FEB17A2B44100B30403 /* RecipeTabSearchBarBackground.png */,
-				84FC1FEC17A2B44100B30403 /* RecipeTabSearchBarBackground@2x.png */,
-				8404BF8317A452A0003CB0E0 /* ShareFacebookIcon.png */,
-				8404BF8417A452A0003CB0E0 /* ShareFacebookIcon@2x.png */,
-				849FC3D617ACBC0100DD9585 /* ShareMessageIcon.png */,
-				849FC3D717ACBC0100DD9585 /* ShareMessageIcon@2x.png */,
-				8404BF8517A452A0003CB0E0 /* ShareMailIcon.png */,
-				8404BF8617A452A0003CB0E0 /* ShareMailIcon@2x.png */,
-				8404BF8717A452A0003CB0E0 /* ShareTwitterIcon.png */,
-				8404BF8817A452A0003CB0E0 /* ShareTwitterIcon@2x.png */,
-				844115EF17A50DBA00CDF046 /* BigRatingStar.png */,
-				844115F017A50DBA00CDF046 /* BigRatingStar@2x.png */,
-				8426AAF117A8DF2A00051202 /* CancelButton.png */,
-				8426AAF217A8DF2A00051202 /* CancelButton@2x.png */,
-				8426AAF817A9535900051202 /* DropDownMenuArrow.png */,
-				8426AAF917A9535900051202 /* DropDownMenuArrow@2x.png */,
-				8426AB0017A9609200051202 /* DropDownMenuBodyBackground.png */,
-				8426AB0117A9609200051202 /* DropDownMenuBodyBackground@2x.png */,
-				8426AB0D17A99F1400051202 /* MixerFilterDeleteButton.png */,
-				8426AB0E17A99F1400051202 /* MixerFilterDeleteButton@2x.png */,
-				84A3E52A17C748990027B9CC /* AddedInMyFaves.png */,
-				84A3E52B17C748990027B9CC /* AddedInMyFaves@2x.png */,
-				84EEEC1017BE78B500136E16 /* AddToMyFaves.png */,
-				84EEEC1117BE78B500136E16 /* AddToMyFaves@2x.png */,
-				84EEEC1817BE790500136E16 /* RecipeTabSearchBarCross.png */,
-				84EEEC1917BE790500136E16 /* RecipeTabSearchBarCross@2x.png */,
-				84EAD2E817EA059800D8C694 /* NewFlavorBadge.png */,
-				84EAD2E917EA059800D8C694 /* NewFlavorBadge@2x.png */,
+				E09A974F1994F8700095DC02 /* TabBarNavigation */,
+				E09A97501994F8930095DC02 /* General Resources */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -2176,7 +2008,6 @@
 			children = (
 				84E92F741797360B0057431A /* Recipe Tab Specific */,
 				84E92F631796F7A80057431A /* TableViewSectionBackgroundImage.png */,
-				84E92F641796F7A80057431A /* TableViewSectionBackgroundImage@2x.png */,
 			);
 			name = "Table View";
 			sourceTree = "<group>";
@@ -2185,23 +2016,14 @@
 			isa = PBXGroup;
 			children = (
 				84197AFB1798EB3B0003E75E /* TableViewRowBackgroundRecipe.png */,
-				84197AFC1798EB3B0003E75E /* TableViewRowBackgroundRecipe@2x.png */,
 				84197B071798EE0C0003E75E /* TableViewRowFirstHeaderRecipe.png */,
-				84197B081798EE0C0003E75E /* TableViewRowFirstHeaderRecipe@2x.png */,
 				84197B031798EB4B0003E75E /* TableViewRowLastHeaderRecipe.png */,
-				84197B041798EB4B0003E75E /* TableViewRowLastHeaderRecipe@2x.png */,
 				84FBD7E517B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab.png */,
-				84FBD7E617B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab@2x.png */,
 				84FBD7E717B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab.png */,
-				84FBD7E817B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab@2x.png */,
 				84FBD7E917B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab.png */,
-				84FBD7EA17B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab@2x.png */,
 				84AE084E17B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6.png */,
-				84AE084F17B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6@2x.png */,
 				84AE085017B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6.png */,
-				84AE085117B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6@2x.png */,
 				84AE085217B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6.png */,
-				84AE085317B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6@2x.png */,
 			);
 			name = "Recipe Tab Specific";
 			sourceTree = "<group>";
@@ -2236,6 +2058,68 @@
 				84FA496117F1608100D13E27 /* check_update.json */,
 			);
 			name = "Recipe and Flavor Data Files";
+			sourceTree = "<group>";
+		};
+		E09A974F1994F8700095DC02 /* TabBarNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				84C01BB517BD0EA800ED34CA /* BurnettFlavoriteOccasionLogo.png */,
+				848564E117913EA2000CC9AE /* TabBarBackgroundImage.png */,
+				849FC3C217ACB47600DD9585 /* TabBarFlavors.png */,
+				849FC3C417ACB47600DD9585 /* TabBarHome.png */,
+				E09A97351994B7B80095DC02 /* TabBarFlavorsS.png */,
+				E09A97361994B7B80095DC02 /* TabBarHomeS.png */,
+				E09A97371994B7B80095DC02 /* TabBarMyFavS.png */,
+				E09A97381994B7B80095DC02 /* TabBarRecipesS.png */,
+				E09A973F1994D7B50095DC02 /* flavourbg.png */,
+				E09A97471994EABC0095DC02 /* favouritebg.png */,
+				E09A97481994EABC0095DC02 /* favouriteTab.png */,
+				E09A97401994D7B50095DC02 /* flavourTab.png */,
+				E09A974B1994ECB40095DC02 /* toprateTab.png */,
+				E09A97431994E20D0095DC02 /* reciepebg.png */,
+				E09A97441994E20D0095DC02 /* reciepeTab.png */,
+				E09A97391994B7B80095DC02 /* TabBarTopRatedS.png */,
+				849FC3C617ACB47600DD9585 /* TabBarMyFav.png */,
+				849FC3C817ACB47600DD9585 /* TabBarRecipes.png */,
+				849FC3CA17ACB47600DD9585 /* TabBarTopRated.png */,
+			);
+			name = TabBarNavigation;
+			sourceTree = "<group>";
+		};
+		E09A97501994F8930095DC02 /* General Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84E92F561795D5000057431A /* GeneralBackground.png */,
+				84390914179872240021D69A /* RatingStarBlue.png */,
+				84390916179872240021D69A /* RatingStarGray.png */,
+				84390918179872240021D69A /* RatingStarHalfBlue.png */,
+				849FC3DE17ACEFED00DD9585 /* RecipeTabAZTabSelected.png */,
+				849FC3E017ACEFF000DD9585 /* RecipeTabAZTabUnselected.png */,
+				849FC3E217ACEFF900DD9585 /* RecipeTabFlavorsTabSelected.png */,
+				849FC3E417ACF00300DD9585 /* RecipeTabFlavorsTabUnselected.png */,
+				849FC3E617ACF01300DD9585 /* RecipeTabMixersTabSelected.png */,
+				849FC3E817ACF02A00DD9585 /* RecipeTabMixersTabUnselected.png */,
+				8448C49D179E50F50087D5C4 /* RecipeTabSegmentedControlBackground.png */,
+				8448C4A3179E52B60087D5C4 /* RecipeTabSegmentedControlDividerImage.png */,
+				84C73C7C17A0122400AA0934 /* BackBarButtonArrow.png */,
+				84C73C8017A025DD00AA0934 /* TopRatedBackgroundCircle.png */,
+				84FC1FE717A2B42300B30403 /* RecipeTabSearchBarIcon.png */,
+				84FC1FEB17A2B44100B30403 /* RecipeTabSearchBarBackground.png */,
+				8404BF8317A452A0003CB0E0 /* ShareFacebookIcon.png */,
+				849FC3D617ACBC0100DD9585 /* ShareMessageIcon.png */,
+				8404BF8517A452A0003CB0E0 /* ShareMailIcon.png */,
+				8404BF8717A452A0003CB0E0 /* ShareTwitterIcon.png */,
+				844115EF17A50DBA00CDF046 /* BigRatingStar.png */,
+				8426AAF117A8DF2A00051202 /* CancelButton.png */,
+				8426AAF817A9535900051202 /* DropDownMenuArrow.png */,
+				8426AB0017A9609200051202 /* DropDownMenuBodyBackground.png */,
+				8426AB0D17A99F1400051202 /* MixerFilterDeleteButton.png */,
+				84A3E52A17C748990027B9CC /* AddedInMyFaves.png */,
+				84EEEC1017BE78B500136E16 /* AddToMyFaves.png */,
+				84EEEC1817BE790500136E16 /* RecipeTabSearchBarCross.png */,
+				84EAD2E817EA059800D8C694 /* NewFlavorBadge.png */,
+			);
+			name = "General Resources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2301,10 +2185,7 @@
 				848564ED17913EA2000CC9AE /* TabBarBackgroundImage.png in Resources */,
 				E09892D71993897700694684 /* orange_burnettsorangeslice.png in Resources */,
 				E09892691993897700694684 /* blueraspberry_icepop.png in Resources */,
-				848564EE17913EA2000CC9AE /* TabBarBackgroundImage@2x.png in Resources */,
-				84B84257179183790083203F /* NavigationBarBackground.png in Resources */,
 				E09892E51993897700694684 /* orangecream_tangtini.png in Resources */,
-				84B84258179183790083203F /* NavigationBarBackground@2x.png in Resources */,
 				E098936C1993897700694684 /* whippedcream_butteredpancakes.png in Resources */,
 				E098927E1993897700694684 /* coconut_cocobeach.png in Resources */,
 				84E92F551795C4760057431A /* Flavors1.plist in Resources */,
@@ -2313,7 +2194,6 @@
 				E098929D1993897700694684 /* gin_negroni.png in Resources */,
 				E09892F41993897700694684 /* pinapple_pinapplesunset.png in Resources */,
 				E098925D1993897700694684 /* blueberry_blueberrylemonade.png in Resources */,
-				84E92F591795D5000057431A /* GeneralBackground@2x.png in Resources */,
 				E09890FE1993866000694684 /* cranberry.png in Resources */,
 				84FA49CC17F2205A00D13E27 /* burnetts-recipe-email.html in Resources */,
 				E09892E21993897700694684 /* orangecream_dreamtini.png in Resources */,
@@ -2321,71 +2201,60 @@
 				E09892B31993897700694684 /* hotcinn_fierymoonshine.png in Resources */,
 				E09893241993897700694684 /* rumgold_calypso.png in Resources */,
 				E09893701993897700694684 /* whippedcream_peachesandcream.png in Resources */,
-				84E92F661796F7A80057431A /* TableViewSectionBackgroundImage@2x.png in Resources */,
 				E09892561993897700694684 /* adult_hot_chocolate.png in Resources */,
 				E09892971993897700694684 /* gin_ginswizzle.png in Resources */,
 				E09891031993866000694684 /* limeade.png in Resources */,
 				8439091C179872240021D69A /* RatingStarBlue.png in Resources */,
-				8439091D179872240021D69A /* RatingStarBlue@2x.png in Resources */,
 				8439091E179872240021D69A /* RatingStarGray.png in Resources */,
-				8439091F179872240021D69A /* RatingStarGray@2x.png in Resources */,
 				E09892D01993897700694684 /* mango_mangotini.png in Resources */,
 				E09893481993897700694684 /* sweettea_sweetteacooler.png in Resources */,
 				84390920179872240021D69A /* RatingStarHalfBlue.png in Resources */,
-				84390921179872240021D69A /* RatingStarHalfBlue@2x.png in Resources */,
 				84390922179872240021D69A /* RecipeImageViewBackground.png in Resources */,
-				84390923179872240021D69A /* RecipeImageViewBackground@2x.png in Resources */,
 				E09892E91993897700694684 /* peach_peachfizz.png in Resources */,
 				E09892BC1993897700694684 /* lime_limefizz.png in Resources */,
 				05256B3519219186002955D5 /* Recipes2.csv in Resources */,
 				E09892711993897700694684 /* cherry_cherrybreeze.png in Resources */,
 				E09892BF1993897700694684 /* limeade_keylimeade.png in Resources */,
 				84197AFD1798EB3B0003E75E /* TableViewRowBackgroundRecipe.png in Resources */,
-				84197AFE1798EB3B0003E75E /* TableViewRowBackgroundRecipe@2x.png in Resources */,
 				E09892A11993897700694684 /* gin_pompano.png in Resources */,
 				84197B051798EB4B0003E75E /* TableViewRowLastHeaderRecipe.png in Resources */,
 				E09893381993897700694684 /* sourapple_appletini.png in Resources */,
 				E09891181993866000694684 /* vanilla.png in Resources */,
-				84197B061798EB4B0003E75E /* TableViewRowLastHeaderRecipe@2x.png in Resources */,
 				E09892C01993897700694684 /* limeade_limeadepunch.png in Resources */,
 				84197B091798EE0C0003E75E /* TableViewRowFirstHeaderRecipe.png in Resources */,
 				E09893161993897700694684 /* raspberry_raspberrybreeze.png in Resources */,
-				84197B0A1798EE0C0003E75E /* TableViewRowFirstHeaderRecipe@2x.png in Resources */,
 				E098928B1993897700694684 /* fruitpunch_aquapunch.png in Resources */,
 				E09893171993897700694684 /* raspberry_raspberrydreamsicle.png in Resources */,
 				8423A2DC179A520D001497C1 /* RecipeDetailBgForRatingAndFav.png in Resources */,
 				E09890FA1993866000694684 /* cherry.png in Resources */,
-				8423A2DD179A520D001497C1 /* RecipeDetailBgForRatingAndFav@2x.png in Resources */,
 				8423A2E0179A520D001497C1 /* RecipeDetailSeperatorAfterTitle.png in Resources */,
 				E098926B1993897700694684 /* blueraspberry_tropicalbliss.png in Resources */,
+				E09A974A1994EABD0095DC02 /* favouriteTab.png in Resources */,
 				E09892831993897700694684 /* cranberry_killercapecod.png in Resources */,
 				E098927C1993897700694684 /* club_cola.png in Resources */,
-				8423A2E1179A520D001497C1 /* RecipeDetailSeperatorAfterTitle@2x.png in Resources */,
 				E098928F1993897700694684 /* fruitpunch_mountainpunch.png in Resources */,
 				E09892C11993897700694684 /* limeade_limecrush.png in Resources */,
+				E09A97461994E20D0095DC02 /* reciepeTab.png in Resources */,
 				E09892D81993897700694684 /* orange_burnettsorangesplash.png in Resources */,
 				8423A2E2179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground.png in Resources */,
 				E09893251993897700694684 /* rumgold_painkiller.png in Resources */,
 				E098934E1993897700694684 /* vanilla_vanillapinacolada.png in Resources */,
 				E09892D91993897700694684 /* orange_orangeblossom.png in Resources */,
-				8423A2E3179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground@2x.png in Resources */,
 				E09892681993897700694684 /* blueraspberry_hawaiiansunrise.png in Resources */,
 				8423A2E6179A548C001497C1 /* SampleDrinkImage1.png in Resources */,
 				8423A2ED179A58D3001497C1 /* RecipeDetailBottomBackground.png in Resources */,
-				8423A2EE179A58D3001497C1 /* RecipeDetailBottomBackground@2x.png in Resources */,
 				E09892821993897700694684 /* cranberry_cocofizz.png in Resources */,
 				E09892F51993897700694684 /* pinapple_tropicalbreeze.png in Resources */,
 				E09892811993897700694684 /* coconut_tropicalstorm.png in Resources */,
 				E0989132199387E600694684 /* featured_vanilla.png in Resources */,
 				E09893371993897700694684 /* sourapple_applekamikaze.png in Resources */,
 				8423A2F1179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader.png in Resources */,
-				8423A2F2179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader@2x.png in Resources */,
 				E09892B61993897700694684 /* hotcinn_hotshot.png in Resources */,
 				E09893591993897700694684 /* vodka_chiquita.png in Resources */,
+				E09A973A1994B7B80095DC02 /* TabBarFlavorsS.png in Resources */,
 				E09892631993897700694684 /* blueberry_bluetini.png in Resources */,
 				8423A2F5179AA3A4001497C1 /* RecipeDetailBulletPointIcon.png in Resources */,
 				E09892FB1993897700694684 /* pinklemonade_pinkbubbles.png in Resources */,
-				8423A2F6179AA3A4001497C1 /* RecipeDetailBulletPointIcon@2x.png in Resources */,
 				E09892661993897700694684 /* blueraspberry_bluefuzz.png in Resources */,
 				E09890F61993866000694684 /* blackberry.png in Resources */,
 				E098932F1993897700694684 /* rumwhite_pinapplefizz.png in Resources */,
@@ -2403,12 +2272,10 @@
 				E09893541993897700694684 /* vodka_boodyblossom.png in Resources */,
 				84C73C7E17A0122400AA0934 /* BackBarButtonArrow.png in Resources */,
 				E098933E1993897700694684 /* sugar_cooki_chocolate_cookie_martini.png in Resources */,
-				84C73C7F17A0122400AA0934 /* BackBarButtonArrow@2x.png in Resources */,
 				E098925E1993897700694684 /* blueberry_blueberrymojito.png in Resources */,
 				E09892B21993897700694684 /* hotcinn_cinnsoda.png in Resources */,
 				84C73C8217A025DD00AA0934 /* TopRatedBackgroundCircle.png in Resources */,
 				E09892EA1993897700694684 /* peach_tropicalpeachmartini.png in Resources */,
-				84C73C8317A025DD00AA0934 /* TopRatedBackgroundCircle@2x.png in Resources */,
 				E098935D1993897700694684 /* vodka_peacockmartini.png in Resources */,
 				E09893521993897700694684 /* vodka_blackburnettsmartini.png in Resources */,
 				E09892761993897700694684 /* citrus_citruscooler.png in Resources */,
@@ -2425,11 +2292,9 @@
 				E09893691993897700694684 /* watermelon_watermelonfizz.png in Resources */,
 				E09891011993866000694684 /* hotcinnamon.png in Resources */,
 				E09892841993897700694684 /* cranberry_tropicalmadras.png in Resources */,
-				84FC1FEA17A2B42300B30403 /* RecipeTabSearchBarIcon@2x.png in Resources */,
 				E09891021993866000694684 /* lime.png in Resources */,
 				E09892671993897700694684 /* blueraspberry_cottoncandy.png in Resources */,
 				84FC1FED17A2B44100B30403 /* RecipeTabSearchBarBackground.png in Resources */,
-				84FC1FEE17A2B44100B30403 /* RecipeTabSearchBarBackground@2x.png in Resources */,
 				E09893511993897700694684 /* vodka_beachcomber.png in Resources */,
 				E098933B1993897700694684 /* strawberry_strawberrydream.png in Resources */,
 				E098910F1993866000694684 /* raspberry.png in Resources */,
@@ -2440,7 +2305,6 @@
 				E09892991993897700694684 /* gin_horsesneck.png in Resources */,
 				E09892C31993897700694684 /* limeade_locolimeade.png in Resources */,
 				E09892591993897700694684 /* blueberry_berryblast.png in Resources */,
-				84FC1FF617A316EF00B30403 /* burnett_home_datestring@2x.png in Resources */,
 				E09892CB1993897700694684 /* mango_mangofizz.png in Resources */,
 				05256B3419219186002955D5 /* Recipes1.csv in Resources */,
 				E098926A1993897700694684 /* blueraspberry_mountainbluetini.png in Resources */,
@@ -2473,6 +2337,7 @@
 				E098926F1993897700694684 /* candy_cola.png in Resources */,
 				84FA495717F1497300D13E27 /* Default4Inch.png in Resources */,
 				E098932A1993897700694684 /* rumwhite_corkscrew.png in Resources */,
+				E09A97411994D7B60095DC02 /* flavourbg.png in Resources */,
 				844B071017FA882B00F875E9 /* Icon-76@2x.png in Resources */,
 				8404BF8917A452A0003CB0E0 /* ShareFacebookIcon.png in Resources */,
 				E09893111993897700694684 /* pumpkin_spicedchocolate.png in Resources */,
@@ -2490,17 +2355,14 @@
 				E09892E11993897700694684 /* orangecream_dreamsicle.png in Resources */,
 				E098929A1993897700694684 /* gin_mintedgin.png in Resources */,
 				E09892AB1993897700694684 /* grape_grapefruitycooler.png in Resources */,
-				8404BF8A17A452A0003CB0E0 /* ShareFacebookIcon@2x.png in Resources */,
 				E09893641993897700694684 /* vodka_warsawcocktail.png in Resources */,
 				8404BF8B17A452A0003CB0E0 /* ShareMailIcon.png in Resources */,
 				E09892EE1993897700694684 /* pear_pearberry_cooler.png in Resources */,
-				8404BF8C17A452A0003CB0E0 /* ShareMailIcon@2x.png in Resources */,
 				E09892A21993897700694684 /* gin_queenscocktail.png in Resources */,
 				E09892CD1993897700694684 /* mango_mangorazzmatazz.png in Resources */,
 				8404BF8D17A452A0003CB0E0 /* ShareTwitterIcon.png in Resources */,
 				E098929B1993897700694684 /* gin_morro.png in Resources */,
 				E09892771993897700694684 /* citrus_citrusmojito.png in Resources */,
-				8404BF8E17A452A0003CB0E0 /* ShareTwitterIcon@2x.png in Resources */,
 				E09892FE1993897700694684 /* pinklemonade_pinkpop.png in Resources */,
 				E09893291993897700694684 /* rumspiced_whalespout.png in Resources */,
 				E09893611993897700694684 /* vodka_twister.png in Resources */,
@@ -2510,27 +2372,22 @@
 				E09893721993897700694684 /* whippedcream_rootbeerfloat.png in Resources */,
 				E09890FC1993866000694684 /* citrus.png in Resources */,
 				E09892BD1993897700694684 /* lime_sublimecosmo.png in Resources */,
-				844115F217A50DBA00CDF046 /* BigRatingStar@2x.png in Resources */,
 				E09893281993897700694684 /* rumspiced_whalesbreath.png in Resources */,
 				8441160517A5F7A600CDF046 /* CoverFlow_Move.aifc in Resources */,
 				E09892A61993897700694684 /* gin_willrogerscocktail.png in Resources */,
 				E09892CE1993897700694684 /* mango_mangosunset.png in Resources */,
 				E098910B1993866000694684 /* pineapple.png in Resources */,
 				8441161817A61A7100CDF046 /* LoadingScreenLowerHalf_4inch.png in Resources */,
-				8441161917A61A7100CDF046 /* LoadingScreenLowerHalf_4inch@2x.png in Resources */,
 				E09893661993897700694684 /* watermelon_kissthefloor.png in Resources */,
 				8441161A17A61A7100CDF046 /* LoadingScreenLowerHalf.png in Resources */,
-				8441161B17A61A7100CDF046 /* LoadingScreenLowerHalf@2x.png in Resources */,
 				8441161C17A61A7100CDF046 /* LoadingScreenUpperHalf_4inch.png in Resources */,
 				E09893651993897700694684 /* watermelon_burnettsmelontini.png in Resources */,
 				E098931E1993897700694684 /* rumcoconut_bluebird.png in Resources */,
 				E09892B01993897700694684 /* hotcinn_applepiespice.png in Resources */,
-				8441161D17A61A7100CDF046 /* LoadingScreenUpperHalf_4inch@2x.png in Resources */,
 				E09893001993897700694684 /* pinklemonade_ultimatelemonade.png in Resources */,
 				E09892F31993897700694684 /* pinapple_pinapplefizz.png in Resources */,
 				8441161E17A61A7100CDF046 /* LoadingScreenUpperHalf.png in Resources */,
 				E098928D1993897700694684 /* fruitpunch_fruitpunchfizz.png in Resources */,
-				8441161F17A61A7100CDF046 /* LoadingScreenUpperHalf@2x.png in Resources */,
 				8441162117A764AA00CDF046 /* featured_recipes.json in Resources */,
 				E09892AF1993897700694684 /* holiday_lemonade.png in Resources */,
 				8426AAF317A8DF2A00051202 /* CancelButton.png in Resources */,
@@ -2539,30 +2396,26 @@
 				E0989131199387E600694684 /* featured_strawberrybanana.png in Resources */,
 				E09893781993A42C00694684 /* enterdob.png in Resources */,
 				E09893441993897700694684 /* sugar_cookie_mint_chocolate_cookie.png in Resources */,
-				8426AAF417A8DF2A00051202 /* CancelButton@2x.png in Resources */,
 				E0989129199387E600694684 /* featured_citrus.png in Resources */,
 				E098910A1993866000694684 /* pear.png in Resources */,
 				E098930E1993897700694684 /* pomegranate_seabreeze.png in Resources */,
 				8426AAFC17A9535900051202 /* DropDownMenuArrow.png in Resources */,
 				E09891171993866000694684 /* tropicalfruit.png in Resources */,
-				8426AAFD17A9535900051202 /* DropDownMenuArrow@2x.png in Resources */,
 				E09892881993897700694684 /* espresso_espressotini.png in Resources */,
 				8426AB0217A9609200051202 /* DropDownMenuBodyBackground.png in Resources */,
 				E09891051993866000694684 /* mangopineapple.png in Resources */,
 				E09893031993897700694684 /* pomegranate_megafruity.png in Resources */,
 				844B070F17FA882B00F875E9 /* Icon-76.png in Resources */,
+				E09A973C1994B7B80095DC02 /* TabBarMyFavS.png in Resources */,
 				E09893221993897700694684 /* rumcoconut_tidalwave.png in Resources */,
 				E098929C1993897700694684 /* gin_muleshindleg.png in Resources */,
 				E09892AA1993897700694684 /* grape_grapefizz.png in Resources */,
-				8426AB0317A9609200051202 /* DropDownMenuBodyBackground@2x.png in Resources */,
 				E09892EC1993897700694684 /* pear_lemon_pear_fizz.png in Resources */,
 				8426AB0517A9659600051202 /* Mixers.plist in Resources */,
 				E09891001993866000694684 /* grape.png in Resources */,
 				8426AB0817A9722D00051202 /* RecipeDetailBottomBackgroundFooter.png in Resources */,
 				E09892641993897700694684 /* blueberry_redbrightbrightblueberry.png in Resources */,
-				8426AB0917A9722D00051202 /* RecipeDetailBottomBackgroundFooter@2x.png in Resources */,
 				8426AB0F17A99F1400051202 /* MixerFilterDeleteButton.png in Resources */,
-				8426AB1017A99F1400051202 /* MixerFilterDeleteButton@2x.png in Resources */,
 				E09892EF1993897700694684 /* pear_sparkling_pears.png in Resources */,
 				E09892871993897700694684 /* espresso_espressocosmo.png in Resources */,
 				849FC3CC17ACB47600DD9585 /* TabBarFlavors.png in Resources */,
@@ -2573,23 +2426,23 @@
 				E098912B199387E600694684 /* featured_hundred_proof.png in Resources */,
 				E09892791993897700694684 /* citrus_lemondrop.png in Resources */,
 				E09892911993897700694684 /* fruitpunch_punchandorange.png in Resources */,
-				849FC3CD17ACB47600DD9585 /* TabBarFlavors@2x.png in Resources */,
 				E098937E1993B9C800694684 /* remember1.png in Resources */,
 				849FC3CE17ACB47600DD9585 /* TabBarHome.png in Resources */,
 				E098912E199387E600694684 /* featured_peach.png in Resources */,
-				849FC3CF17ACB47600DD9585 /* TabBarHome@2x.png in Resources */,
+				E09A97491994EABC0095DC02 /* favouritebg.png in Resources */,
 				E09892ED1993897700694684 /* pear_pear_fruit.png in Resources */,
 				E09892EB1993897700694684 /* pear_champagne_celebration.png in Resources */,
 				E09892611993897700694684 /* blueberry_bluepommartini.png in Resources */,
 				E09893751993897700694684 /* whippedcream_whiptbreeze.png in Resources */,
 				E09892FC1993897700694684 /* pinklemonade_pinkcottoncandy.png in Resources */,
 				E09892651993897700694684 /* blueraspberry_bluebreeze.png in Resources */,
+				E09A97421994D7B60095DC02 /* flavourTab.png in Resources */,
 				E09893451993897700694684 /* sweettea_charlestonlemonade.png in Resources */,
 				E09893331993897700694684 /* rumwhite_sharkattack.png in Resources */,
+				E09A97341994B3520095DC02 /* burnett_home_datestring_4inch.png in Resources */,
 				E09892851993897700694684 /* creme_de_candy_cane.png in Resources */,
 				E09893271993897700694684 /* rumspiced_fluke.png in Resources */,
 				849FC3D017ACB47600DD9585 /* TabBarMyFav.png in Resources */,
-				849FC3D117ACB47600DD9585 /* TabBarMyFav@2x.png in Resources */,
 				E09892C41993897700694684 /* limeade_pinklimeade.png in Resources */,
 				E09892C91993897700694684 /* mango_mangobreeze.png in Resources */,
 				E09892801993897700694684 /* coconut_coconutfizz.png in Resources */,
@@ -2600,17 +2453,15 @@
 				E09892B71993897700694684 /* hotcinn_vanillaspice.png in Resources */,
 				E09893301993897700694684 /* rumwhite_rumfraise.png in Resources */,
 				E098932B1993897700694684 /* rumwhite_kinickerbocker.png in Resources */,
-				849FC3D317ACB47600DD9585 /* TabBarRecipes@2x.png in Resources */,
 				E09892A91993897700694684 /* grape_doublepurpletickler.png in Resources */,
 				E09893041993897700694684 /* pomegranate_metropolitan.png in Resources */,
 				849FC3D417ACB47600DD9585 /* TabBarTopRated.png in Resources */,
-				849FC3D517ACB47600DD9585 /* TabBarTopRated@2x.png in Resources */,
 				E09893101993897700694684 /* pumpkin_pumpkinpunch.png in Resources */,
 				E09892F61993897700694684 /* pinklemonade_berrypinktini.png in Resources */,
 				849FC3D817ACBC0100DD9585 /* ShareMessageIcon.png in Resources */,
+				E09A973E1994B7B80095DC02 /* TabBarTopRatedS.png in Resources */,
 				E098930C1993897700694684 /* pomegranate_pomflirtini.png in Resources */,
 				E098937C1993B88400694684 /* remember.png in Resources */,
-				849FC3D917ACBC0100DD9585 /* ShareMessageIcon@2x.png in Resources */,
 				E09893351993897700694684 /* sourapple_applebreeze.png in Resources */,
 				E098936D1993897700694684 /* whippedcream_creamcooler.png in Resources */,
 				849FC3EA17ACF04500DD9585 /* RecipeTabAZTabSelected.png in Resources */,
@@ -2620,28 +2471,24 @@
 				E09892721993897700694684 /* cherry_cherrycoke.png in Resources */,
 				E09892AD1993897700694684 /* hawaiian_sunrise.png in Resources */,
 				E09890F51993866000694684 /* 100proof.png in Resources */,
-				849FC3EB17ACF04500DD9585 /* RecipeTabAZTabSelected@2x.png in Resources */,
 				E09892601993897700694684 /* blueberry_bluelagoonmartini.png in Resources */,
 				E098925C1993897700694684 /* blueberry_blueberrycransplash.png in Resources */,
 				E098931A1993897700694684 /* raspberry_raspberrylifesaver.png in Resources */,
 				849FC3EC17ACF04500DD9585 /* RecipeTabAZTabUnselected.png in Resources */,
 				E09893621993897700694684 /* vodka_vodkacooler.png in Resources */,
 				E09892A81993897700694684 /* girl_scout_cookie.png in Resources */,
-				849FC3ED17ACF04500DD9585 /* RecipeTabAZTabUnselected@2x.png in Resources */,
 				849FC3EE17ACF04500DD9585 /* RecipeTabFlavorsTabSelected.png in Resources */,
-				849FC3EF17ACF04500DD9585 /* RecipeTabFlavorsTabSelected@2x.png in Resources */,
 				E09892DF1993897700694684 /* orangecream_creamsoda.png in Resources */,
 				E0989128199387E600694684 /* featured_cherry.png in Resources */,
 				E09892E01993897700694684 /* orangecream_daydream.png in Resources */,
+				E09A974C1994ECB40095DC02 /* toprateTab.png in Resources */,
 				849FC3F017ACF04500DD9585 /* RecipeTabFlavorsTabUnselected.png in Resources */,
-				849FC3F117ACF04500DD9585 /* RecipeTabFlavorsTabUnselected@2x.png in Resources */,
 				E09893151993897700694684 /* raspberry_oldhagscocktail.png in Resources */,
 				E09892C61993897700694684 /* m_apple_fizz.png in Resources */,
 				849FC3F217ACF04500DD9585 /* RecipeTabMixersTabSelected.png in Resources */,
 				E09893051993897700694684 /* pomegranate_oasisrefresher.png in Resources */,
 				E098933F1993897700694684 /* sugar_cooki_cookies_cream.png in Resources */,
 				E09893261993897700694684 /* rumgold_sharbite.png in Resources */,
-				849FC3F317ACF04500DD9585 /* RecipeTabMixersTabSelected@2x.png in Resources */,
 				E09890FF1993866000694684 /* fruitpunch.png in Resources */,
 				E098928E1993897700694684 /* fruitpunch_hawaiiantini.png in Resources */,
 				E09893571993897700694684 /* vodka_burnettscranberry.png in Resources */,
@@ -2650,15 +2497,12 @@
 				E09892F21993897700694684 /* pinapple_islandruby.png in Resources */,
 				E09892FF1993897700694684 /* pinklemonade_sunnysangria.png in Resources */,
 				849FC3F417ACF04500DD9585 /* RecipeTabMixersTabUnselected.png in Resources */,
-				849FC3F517ACF04500DD9585 /* RecipeTabMixersTabUnselected@2x.png in Resources */,
 				84FBD7EB17B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab.png in Resources */,
 				E09893471993897700694684 /* sweettea_sweetginger.png in Resources */,
-				84FBD7EC17B4C5C5002F9FC4 /* TableViewRowBackgroundRecipeForRecipeTab@2x.png in Resources */,
 				E09893081993897700694684 /* pomegranate_pomegranatecosmo.png in Resources */,
 				E098936B1993897700694684 /* watermelon_watermelonsplash.png in Resources */,
 				84FBD7ED17B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab.png in Resources */,
 				E09890F71993866000694684 /* blueberry.png in Resources */,
-				84FBD7EE17B4C5C5002F9FC4 /* TableViewRowFirstHeaderRecipeForRecipeTab@2x.png in Resources */,
 				84FBD7EF17B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab.png in Resources */,
 				E09893761993897700694684 /* winter_fizz.png in Resources */,
 				E09892A31993897700694684 /* gin_southside.png in Resources */,
@@ -2673,17 +2517,13 @@
 				E098912A199387E600694684 /* featured_eighty_proof.png in Resources */,
 				E098935E1993897700694684 /* vodka_screwdriver.png in Resources */,
 				E098934F1993897700694684 /* vermont_cooler.png in Resources */,
-				84FBD7F017B4C5C5002F9FC4 /* TableViewRowLastHeaderRecipeForRecipeTab@2x.png in Resources */,
 				84AE085417B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6.png in Resources */,
 				E09892AE1993897700694684 /* holiday_cheer.png in Resources */,
-				84AE085517B4DF4300ED96F4 /* TableViewRowBackgroundRecipeForRecipeTabiOS6@2x.png in Resources */,
 				E098912C199387E600694684 /* featured_mangopineapple.png in Resources */,
 				84AE085617B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6.png in Resources */,
-				84AE085717B4DF4300ED96F4 /* TableViewRowFirstHeaderRecipeForRecipeTabiOS6@2x.png in Resources */,
 				E09892BE1993897700694684 /* limeade_cherrylimeade.png in Resources */,
 				84AE085817B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6.png in Resources */,
 				E09893211993897700694684 /* rumcoconut_killerita.png in Resources */,
-				84AE085917B4DF4300ED96F4 /* TableViewRowLastHeaderRecipeForRecipeTabiOS6@2x.png in Resources */,
 				84C01B7017BC15AD00ED34CA /* Icon-72.png in Resources */,
 				E09893131993897700694684 /* raspberry_anonymouscocktail.png in Resources */,
 				E09890FB1993866000694684 /* cherrycola.png in Resources */,
@@ -2699,6 +2539,7 @@
 				E09892901993897700694684 /* fruitpunch_originalhawaiianpunch.png in Resources */,
 				E09893141993897700694684 /* raspberry_octobersky.png in Resources */,
 				84C01B7717BC15AD00ED34CA /* Icon@2x.png in Resources */,
+				E09A973D1994B7B80095DC02 /* TabBarRecipesS.png in Resources */,
 				E09893011993897700694684 /* pinklemonade_ultimatepalmer.png in Resources */,
 				E0989134199387E600694684 /* featured_whippedcream.png in Resources */,
 				E09892DA1993897700694684 /* orange_orangesodavodka.png in Resources */,
@@ -2736,14 +2577,13 @@
 				84C01BBB17BD0EB000ED34CA /* AgeGateContinueButton.png in Resources */,
 				E098930B1993897700694684 /* pomegranate_pomegranatetruffle.png in Resources */,
 				E09892781993897700694684 /* citrus_classiclemonade.png in Resources */,
+				E09A973B1994B7B80095DC02 /* TabBarHomeS.png in Resources */,
 				E09892C71993897700694684 /* maine_champagne.png in Resources */,
 				E09890FD1993866000694684 /* coconut.png in Resources */,
 				84EEEC1417BE78B500136E16 /* AddToMyFaves.png in Resources */,
 				E098935B1993897700694684 /* vodka_flyingchocopearmartini.png in Resources */,
-				84EEEC1517BE78B500136E16 /* AddToMyFaves@2x.png in Resources */,
 				E09891041993866000694684 /* mango.png in Resources */,
 				84EEEC1A17BE790500136E16 /* RecipeTabSearchBarCross.png in Resources */,
-				84EEEC1B17BE790500136E16 /* RecipeTabSearchBarCross@2x.png in Resources */,
 				84EEEC2517C0C4CB00136E16 /* AgeGateBackground_4inch.png in Resources */,
 				E098930D1993897700694684 /* pomegranate_pompress.png in Resources */,
 				E09892CC1993897700694684 /* mango_mangopassion.png in Resources */,
@@ -2760,7 +2600,7 @@
 				E09892F71993897700694684 /* pinklemonade_blushingbride.png in Resources */,
 				E09893091993897700694684 /* pomegranate_pomegranatelemonade.png in Resources */,
 				E09892FD1993897700694684 /* pinklemonade_pinkflamingo.png in Resources */,
-				84A3E52D17C748990027B9CC /* AddedInMyFaves@2x.png in Resources */,
+				E09A974E1994F51C0095DC02 /* HelveticaRoundedLT-BoldCondObl.otf in Resources */,
 				E09891161993866000694684 /* sweettea.png in Resources */,
 				E09892DD1993897700694684 /* orange_pastry.png in Resources */,
 				E098930F1993897700694684 /* pumpkin_applecider.png in Resources */,
@@ -2772,6 +2612,7 @@
 				E09892F91993897700694684 /* pinklemonade_martinipink.png in Resources */,
 				E098935F1993897700694684 /* vodka_seabreeze.png in Resources */,
 				E09891101993866000694684 /* redberry.png in Resources */,
+				E09A97451994E20D0095DC02 /* reciepebg.png in Resources */,
 				E098910E1993866000694684 /* pumpkinspice.png in Resources */,
 				E098934C1993897700694684 /* vanilla_vanilla_applejuice.png in Resources */,
 				E09892731993897700694684 /* cherry_cherryfizz.png in Resources */,
@@ -2787,7 +2628,6 @@
 				84EAD2EA17EA059800D8C694 /* NewFlavorBadge.png in Resources */,
 				E09893551993897700694684 /* vodka_broadstreettreat.png in Resources */,
 				E0989130199387E600694684 /* featured_rubyredgrapefruit.png in Resources */,
-				84EAD2EB17EA059800D8C694 /* NewFlavorBadge@2x.png in Resources */,
 				E098931C1993897700694684 /* raspberry_raspberrypucker.png in Resources */,
 				E098910D1993866000694684 /* pomegranate.png in Resources */,
 				E09892CF1993897700694684 /* mango_mangotangolemonade.png in Resources */,

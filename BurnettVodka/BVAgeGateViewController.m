@@ -202,7 +202,7 @@
                                      GetDateButton.frame.size.width,
                                      GetDateButton.frame.size.height);
     
-    datelbl.frame = CGRectMake(self.view.frame.origin.x-20,
+    datelbl.frame = CGRectMake(self.view.frame.origin.x-30,
                                      self.view.frame.size.height*0.52,
                                      datelbl.frame.size.width,
                                      datelbl.frame.size.height);
@@ -225,15 +225,10 @@
                                     logoImageView.frame.size.height);
 }
 
-
-
-
 #pragma mark - Action Methods
 
 - (void)getDateButtonClicked:(id)sender
 {
-    
-    
     // UIPicker View
     [mDatePickerView removeFromSuperview];
     [mDatePickerView release];
@@ -253,9 +248,6 @@
     mDatePickerView.date = startingDate;
     [componentsForStartingDate release];
     
-    
-    
-    
     NSDateComponents *currentDateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:[NSDate date]];
     NSInteger currentYear = [currentDateComponents year];
     
@@ -267,31 +259,31 @@
     mDatePickerView.maximumDate = maxDate;
     [componentsForMaxDate release];
     
-    
-    [self.view addSubview:mDatePickerView];
-    CGFloat iOS7OffsetAdjustmentForStatusBar = 0;
-    
+    UIAlertView *setBirthDate = [[UIAlertView alloc] initWithTitle:@"Date of Birth:"
+                                                           message:nil
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Cancel"
+                                                 otherButtonTitles:@"Set", nil];
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
     {
-        iOS7OffsetAdjustmentForStatusBar = 20;
+        [setBirthDate setValue:mDatePickerView forKey:@"accessoryView"];
     }
     
-    
-    CGFloat yCoordinateForDatePicker = kDatePickerCoordinateY;
-    if([UtilityManager isThisDeviceA4InchIphone])
-    {
-        yCoordinateForDatePicker = kDatePickerCoordinateY_4Inch;
-    }
-    
-    
-    // Adjustment for supporting iOS 7 status bar problem
-    yCoordinateForDatePicker = yCoordinateForDatePicker + iOS7OffsetAdjustmentForStatusBar;
-    
-    mDatePickerView.frame = CGRectMake(roundf((self.view.frame.size.width - mDatePickerView.frame.size.width) / 2),
-                                       yCoordinateForDatePicker,
+    [setBirthDate addSubview:mDatePickerView];
+    [setBirthDate show];
+    mDatePickerView.frame = CGRectMake(setBirthDate.frame.origin.x+5,
+                                       setBirthDate.frame.origin.y,
                                        mDatePickerView.frame.size.width,
                                        mDatePickerView.frame.size.height);
     
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex==1) {
+        NSString *datestr = [NSString stringWithFormat:@"%@",mDatePickerView.date];
+        NSArray *datearr = [datestr componentsSeparatedByString:@" "];
+        datelbl.text = [NSString stringWithFormat:@"%@",[datearr firstObject]];
+    }
 }
 
 - (void)rememberButtonClicked:(id)sender

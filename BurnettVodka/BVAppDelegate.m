@@ -74,11 +74,10 @@ void myExceptionHandler(NSException *exception)
                                               trackingId:kTrackingId];
     
     [self CheckDateGetFeatureRecipes];
-    [self fetchRecipiesFromServer];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     UIImage *navigationBarBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NavigationBarBackground" ofType:@"png"]];
-    [[UINavigationBar appearance] setBackgroundImage:navigationBarBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:navigationBarBackgroundImage forBarMetrics:UIBarMetricsDefaultPrompt];
     [navigationBarBackgroundImage release];
     
      NSSetUncaughtExceptionHandler(&myExceptionHandler);
@@ -101,6 +100,7 @@ void myExceptionHandler(NSException *exception)
     NSDate *newdate = [NSDate date];
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"DateDict"]==NULL) {
+        [self fetchRecipiesFromServer];
         NSMutableDictionary *dateDict = [[NSMutableDictionary alloc] init];
         [dateDict setObject:newdate forKey:@"NewDate"];
         [[NSUserDefaults standardUserDefaults] setObject:dateDict forKey:@"DateDict"];
@@ -149,6 +149,8 @@ void myExceptionHandler(NSException *exception)
         NSTimeInterval timeInterval =[newdate timeIntervalSinceDate:olddte];
         double timecal = (double)timeInterval;
         if (timecal>=172800) {
+            [self fetchRecipiesFromServer];
+
             NSMutableDictionary *dateDict = [[NSMutableDictionary alloc] init];
             [dateDict setObject:newdate forKey:@"NewDate"];
             [[NSUserDefaults standardUserDefaults] setObject:dateDict forKey:@"DateDict"];

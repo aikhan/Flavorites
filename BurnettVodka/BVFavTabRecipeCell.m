@@ -49,7 +49,7 @@
                                                                 titleSize.width,
                                                                 titleSize.height)];
         mTitleLabel.backgroundColor = [UIColor clearColor];
-        mTitleLabel.textColor = [UIColor blackColor];
+        mTitleLabel.textColor = [UIColor whiteColor];
         mTitleLabel.text = titleString;
         mTitleLabel.font = titleFont;
         [self addSubview:mTitleLabel];
@@ -65,7 +65,8 @@
                                                                       descriptionSize.width,
                                                                       descriptionSize.height)];
         mDescriptionLabel.backgroundColor = [UIColor clearColor];
-        mDescriptionLabel.textColor = [UIColor colorWithRed:(161.0/256.0) green:(175.0/256.0) blue:(196.0/256.0) alpha:1];
+        mDescriptionLabel.textColor = [UIColor whiteColor];
+                                       //colorWithRed:(161.0/256.0) green:(175.0/256.0) blue:(196.0/256.0) alpha:1];
         mDescriptionLabel.text = descriptionString;
         mDescriptionLabel.font = descriptionFont;
         [self addSubview:mDescriptionLabel];

@@ -252,17 +252,17 @@ static UtilityManager *sharedUtilityManager = nil;
 
 + (UIFont *)fontGetRegularFontOfSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"GillSans" size:size];
+    return [UIFont fontWithName:@"HelveticaRoundedLT-BoldCondObl" size:size];
 }
 
 + (UIFont *)fontGetBoldFontOfSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"GillSans-Bold" size:size];
+    return [UIFont fontWithName:@"HelveticaRoundedLT-BoldCondObl" size:size];
 }
 
 + (UIFont *)fontGetLightFontOfSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"GillSans-Light" size:size];
+    return [UIFont fontWithName:@"HelveticaRoundedLT-BoldCondObl" size:size];
 }
 
 
@@ -279,9 +279,9 @@ static UtilityManager *sharedUtilityManager = nil;
             NSString *imageExtention = [fileName pathExtension];
             NSString *imageFileNameWithoutExtension = [[fileName lastPathComponent] stringByDeletingPathExtension];
             imageToBeReturned = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
-//            if (!imageToBeReturned) {
-//                imageToBeReturned = [self loadImageFromDocumentsDirectoryWithImageName:fileName];
-//            }
+            if (!imageToBeReturned) {
+                imageToBeReturned = [self loadImageFromDocumentsDirectoryWithImageName:fileName];
+            }
             if(fileName && imageToBeReturned)
             {
                 [self setCacheObject:imageToBeReturned forKey:fileName];

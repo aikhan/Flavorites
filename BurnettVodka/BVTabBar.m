@@ -80,7 +80,7 @@
         if([_buttons count] > 0)
         {
             UIButton *buttonToBeSelected = [_buttons objectAtIndex:0];
-            buttonToBeSelected.backgroundColor = [self selectionColor];
+            [buttonToBeSelected setImage:[UIImage imageNamed:@"TabBarHomeS.png"] forState:UIControlStateNormal];
         }
     }
     [backgroundImage release];
@@ -139,7 +139,21 @@
     if([_buttons count] >= (_selectedIndex + 1))
     {
         UIButton *previousSelectedButton = [_buttons objectAtIndex:_selectedIndex];
-        previousSelectedButton.backgroundColor = [UIColor clearColor];
+        if (_selectedIndex==0) {
+            [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarHome.png"] forState:UIControlStateNormal];
+        }
+        else if (_selectedIndex==1) {
+            [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarFlavors.png"] forState:UIControlStateNormal];
+        }
+        else if (_selectedIndex==2) {
+            [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarRecipes.png"] forState:UIControlStateNormal];
+        }
+        else if (_selectedIndex==3) {
+            [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarTopRated.png"] forState:UIControlStateNormal];
+        }
+        else if (_selectedIndex==4) {
+            [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarMyFav.png"] forState:UIControlStateNormal];
+        }
     }
     
     
@@ -152,9 +166,22 @@
     
     
     
-    // Update the UI for newly selected button
-    UIButton *newSelectedButton = [_buttons objectAtIndex:_selectedIndex];
-    newSelectedButton.backgroundColor = [self selectionColor];
+    UIButton *previousSelectedButton = [_buttons objectAtIndex:_selectedIndex];
+    if (_selectedIndex==0) {
+        [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarHomeS.png"] forState:UIControlStateNormal];
+    }
+    else if (_selectedIndex==1) {
+        [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarFlavorsS.png"] forState:UIControlStateNormal];
+    }
+    else if (_selectedIndex==2) {
+        [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarRecipesS.png"] forState:UIControlStateNormal];
+    }
+    else if (_selectedIndex==3) {
+        [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarTopRatedS.png"] forState:UIControlStateNormal];
+    }
+    else if (_selectedIndex==4) {
+        [previousSelectedButton setImage:[UIImage imageNamed:@"TabBarMyFavS.png"] forState:UIControlStateNormal];
+    }
     
     
     //Inform the Delegate

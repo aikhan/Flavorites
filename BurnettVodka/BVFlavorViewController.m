@@ -94,9 +94,11 @@
     if (!flavorImage) {
         flavorImage = [self loadImageFromDocumentsDirectoryWithImageName:imageFileName];
     }
+    flavorImageView.contentMode=UIViewContentModeScaleAspectFit;
     flavorImageView.image = flavorImage;
     //[flavorImage release];
     self.flavorBackImageView = flavorImageView;
+    
     [self addSubview:flavorImageView];
     [flavorImageView release];
     
@@ -104,14 +106,14 @@
     
     if([[DataManager sharedDataManager] flavorsIsThisANewFlavor:mFlavor])
     {
-        UIImage *newFlavorTagImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"NewFlavorBadge.png" andAddIfRequired:YES];
-        UIImageView *badgeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-                                                                                    0,
-                                                                                    newFlavorTagImage.size.width,
-                                                                                    newFlavorTagImage.size.height)];
-        badgeImageView.image = newFlavorTagImage;
-        [self addSubview:badgeImageView];
-        [badgeImageView release];
+//        UIImage *newFlavorTagImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"NewFlavorBadge.png" andAddIfRequired:YES];
+//        UIImageView *badgeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
+//                                                                                    0,
+//                                                                                    newFlavorTagImage.size.width,
+//                                                                                    newFlavorTagImage.size.height)];
+//        badgeImageView.image = newFlavorTagImage;
+//        [self addSubview:badgeImageView];
+//        [badgeImageView release];
     }
     
     
@@ -134,7 +136,8 @@
     titleLabel.font = titleFont;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.text = titleString;
-    titleLabel.textColor = [UIColor colorWithRed:0 green:(73.0 / 256.0) blue:(144.0 / 256.0) alpha:1.0];
+    titleLabel.textColor =[UIColor blackColor];
+    //[UIColor colorWithRed:0 green:(73.0 / 256.0) blue:(144.0 / 256.0) alpha:1.0];
     titleLabel.numberOfLines = 2;
     [self addSubview:titleLabel];
     [titleLabel release];
@@ -237,13 +240,13 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    [UtilityManager addTitle:@"Flavors" toNavigationItem:self.navigationItem];
+   // [UtilityManager addTitle:@"Flavors" toNavigationItem:self.navigationItem];
     
     [self loadUserInterface];
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    //self.screenName = @"Flavor View";
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"flavourTab.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning
@@ -272,7 +275,7 @@
                                                                          self.view.frame.size.width,
                                                                          self.view.frame.size.height)];
 
-    UIImage *backgroundImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"GeneralBackground.png" andAddIfRequired:YES];
+    UIImage *backgroundImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"flavourbg.png" andAddIfRequired:YES];
     mBackgroundImageView.image = backgroundImage;
     mBackgroundImageView.contentMode = UIViewContentModeTop;
     [self.view addSubview:mBackgroundImageView];
@@ -337,7 +340,7 @@
             yCoordinatePointer = flavorView.frame.origin.y + flavorView.frame.size.height + kPaddingBottom;
         }
 
-        
+     //   [flavorView setContentMode:uicontentsize]
         flavorView.tag = [flavor.flavorID integerValue];
         DebugLog(@"Added flavor with tag ID %d", flavorView.tag);
         

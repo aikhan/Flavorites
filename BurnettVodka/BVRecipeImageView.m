@@ -36,7 +36,7 @@
                                                                              self.frame.size.width,
                                                                              self.frame.size.height)];
         mBackgroundImageView.image = backgroundImage;
-        [self addSubview:mBackgroundImageView];
+      //  [self addSubview:mBackgroundImageView];
         
         
         

@@ -220,7 +220,7 @@ static NewServerFetchOperations *sharedManager = nil;
             request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
             isUpdate = YES;
         }
-        request.timeOutSeconds = 30;
+        request.timeOutSeconds = 120;
         request.cachePolicy = ASIDoNotReadFromCacheCachePolicy;
         [request startSynchronous];
         NSError *error = [request error];
@@ -275,6 +275,7 @@ static NewServerFetchOperations *sharedManager = nil;
             }
             
         }
+        NSLog(@"%@",error);
         [request release];
         //}
     }];

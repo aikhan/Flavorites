@@ -82,7 +82,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recipeRatingsDataChanged:) name:kNotificationRecipeRatingsChanged object:nil];
     
 
-    [UtilityManager addTitle:@"Top Rated" toNavigationItem:self.navigationItem];
+   // [UtilityManager addTitle:@"Top Rated" toNavigationItem:self.navigationItem];
     
     [self loadUserInterface];
     
@@ -100,6 +100,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"toprateTab.png"] forBarMetrics:UIBarMetricsDefault];
+
    // self.screenName = @"Top Rated View";
 }
 
@@ -138,13 +140,10 @@
                                                                          self.view.frame.size.width,
                                                                          self.view.frame.size.height)];
 
-    UIImage *backgroundImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"GeneralBackground.png" andAddIfRequired:YES];
+    UIImage *backgroundImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"reciepebg.png" andAddIfRequired:YES];
     mBackgroundImageView.image = backgroundImage;
     mBackgroundImageView.contentMode = UIViewContentModeTop;
     [self.view addSubview:mBackgroundImageView];
-    
-    
-    
     
     
     // TableView
@@ -174,7 +173,8 @@
                                                                               self.view.frame.size.width - 10 - 10,
                                                                               self.view.frame.size.height)];
         mInformatiiveMessageLabel.font = [UtilityManager fontGetRegularFontOfSize:18];
-        mInformatiiveMessageLabel.textColor = [UIColor colorWithRed:0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1.0];
+        mInformatiiveMessageLabel.textColor = [UIColor whiteColor];
+                                               //colorWithRed:0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1.0];
         mInformatiiveMessageLabel.backgroundColor = [UIColor clearColor];
         mInformatiiveMessageLabel.textAlignment = UITextAlignmentCenter;
         mInformatiiveMessageLabel.numberOfLines = 10;
@@ -363,7 +363,7 @@
     Recipe *recipeObject = [mTableData objectAtIndex:indexPath.row];
     [cell updateCellWithRecipe:recipeObject andRatingNumber:(indexPath.row + 1)];
     
-    
+    cell.backgroundColor=[UIColor clearColor];
     return cell;
 }
 
