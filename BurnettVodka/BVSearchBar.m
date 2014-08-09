@@ -92,11 +92,11 @@
         mTextField.autocorrectionType = UITextAutocorrectionTypeNo;
         [self addSubview:mTextField];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(textChanged:)
-                                                     name:UITextFieldTextDidChangeNotification
-                                                   object:mTextField];
-        
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(textChanged:)
+//                                                     name:UITextFieldTextDidChangeNotification
+//                                                   object:mTextField];
+//        
     }
     return self;
 }
@@ -117,7 +117,11 @@
         [searchDelegate searchBarUserTappedCancel:self];
     }
     
-    mTextField.text = @"";
+    //if([searchDelegate respondsToSelector:@selector(searchBar:searchTextChangedTo:)])
+    {
+        [searchDelegate searchBar:self searchTextChangedTo:mTextField.text];
+    }
+    //mTextField.text = @"";
     
     [mTextField resignFirstResponder];
 }
@@ -135,10 +139,7 @@
 
 - (void)textChanged:(NSNotification *)notification
 {
-    if([searchDelegate respondsToSelector:@selector(searchBar:searchTextChangedTo:)])
-    {
-        [searchDelegate searchBar:self searchTextChangedTo:mTextField.text];
-    }
+    
 }
 
 - (void)resignSearchBar

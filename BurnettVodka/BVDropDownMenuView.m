@@ -111,7 +111,7 @@
         [mResetButton setTitleColor:[UIColor colorWithRed:(91.0/256.0) green:(128.0/256.0) blue:(169.0/256.0) alpha:1.0] forState:UIControlStateNormal];
         [mResetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [mResetButton addTarget:self action:@selector(resetButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        mResetButton.backgroundColor = [UIColor colorWithRed:(231.0/256.0) green:(236.0/256.0) blue:(243.0/256.0) alpha:1.0];
+        mResetButton.backgroundColor = [UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
         [mContentView addSubview:mResetButton];
         
         
@@ -125,7 +125,7 @@
         [mCancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [mCancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
         [mCancelButton addTarget:self action:@selector(cancelButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        mCancelButton.backgroundColor = [UIColor colorWithRed:(91.0/256.0) green:(128.0/256.0) blue:(170.0/256.0) alpha:1.0];
+        mCancelButton.backgroundColor = [UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
         [mContentView addSubview:mCancelButton];
         
         
@@ -139,12 +139,9 @@
         [mContinueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [mContinueButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
         [mContinueButton addTarget:self action:@selector(continueButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        mContinueButton.backgroundColor = [UIColor colorWithRed:(0.0/256.0) green:(73.0/256.0) blue:(144.0/256.0) alpha:1.0];
+        mContinueButton.backgroundColor = [UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
         [mContentView addSubview:mContinueButton];
 
-        
-        
-        
         
         if([mTableData count] > 0)
         {
@@ -245,8 +242,8 @@
     }
     else
     {
-        cell.contentView.backgroundColor = [UIColor whiteColor];
-//        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.contentView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1.0];
+        //        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     return cell;

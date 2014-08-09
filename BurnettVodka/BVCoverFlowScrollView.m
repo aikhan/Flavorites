@@ -13,7 +13,7 @@
 #import "BVRecipeDescriptionView.h"
 
 
-#define kGapBetweenCards 15
+#define kGapBetweenCards 10
 
 #define kFeaturedCardDimensionRatio 0.772
 
@@ -39,8 +39,15 @@
                                                                          0,
                                                                          self.frame.size.width,
                                                                          self.frame.size.height)];
-        
-        UIImage *posterImage = [[UIImage alloc] initWithContentsOfFile:mRecipeItem.imageFilePath];
+        UIImage *posterImage;
+        if ([mRecipeItem.imageFilePath componentsSeparatedByString:@"/"].count>1) {
+            posterImage = [[UIImage alloc] initWithContentsOfFile:mRecipeItem.imageFilePath];
+
+        }
+        else {
+            posterImage = [UIImage imageNamed:mRecipeItem.imageFilePath];
+ 
+        }
         mPosterImageView.image = posterImage;
         [posterImage release];
         
@@ -173,7 +180,6 @@
         [view removeFromSuperview];
     }
     
-    
     [mHomeScreenRecipeCardViewsArray release];
     mHomeScreenRecipeCardViewsArray = [[NSMutableArray alloc] init];
     
@@ -205,7 +211,7 @@
         else {
             [mHomeScreenRecipeCardViewsArray addObject:[mFeaturedRecipeItemsArray objectAtIndex:i]];
             BVRecipeDescriptionView *obj1 = [mFeaturedRecipeItemsArray objectAtIndex:i];
-            obj1.frame = CGRectMake(xCoord, yCoord, 150, 340);
+            obj1.frame = CGRectMake(xCoord, yCoord, 120, 340);
             
             [self addSubview:obj1];
         }
@@ -408,7 +414,7 @@
 
 - (CGFloat)widthOfFeaturedCardView
 {
-    return 150;
+    return 120;
     //return (kFeaturedCardDimensionRatio * self.frame.size.height);
 }
 

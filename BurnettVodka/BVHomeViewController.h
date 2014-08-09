@@ -18,6 +18,7 @@
     UIImageView *mBackgroundImageView;
     BVRecipeDescriptionView *RecipeDescription;
     NSTimer *Scrolltimer;
+    int checkOldDesc;
     
 }
 

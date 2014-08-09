@@ -60,7 +60,7 @@
                                                                   0,
                                                                   kSelfWidth,
                                                                   (kNonCancelRowHeight * 6) + (kSeperatorHeight * 6) + kCancelRowHeight)];
-        mContainerView.backgroundColor = [UIColor whiteColor];
+        mContainerView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1];
         [self addSubview:mContainerView];
         
         
@@ -109,7 +109,8 @@
                                                                        seperatorView.frame.origin.y + seperatorView.frame.size.height,
                                                                        mContainerView.frame.size.width,
                                                                        kNonCancelRowHeight)];
-            rowView.backgroundColor = [UIColor whiteColor];
+            rowView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1];
+
             
             
             
@@ -190,8 +191,9 @@
                                                                             cancelButtonSizeWithExtraPadding.height)];
         [cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
         [cancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
-        [cancelButton setTitleColor:[UIColor colorWithRed:0 green:(115.0/256.0) blue:(255.0/256.0) alpha:1.0] forState:UIControlStateNormal];
-        [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+        [cancelButton setTitleColor: [UIColor whiteColor]forState:UIControlStateNormal];
+         [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+         cancelButton.backgroundColor =[UIColor colorWithRed:(236.0/256) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
         cancelButton.titleLabel.font = cancelButtonFont;
         [cancelBackgroundView addSubview:cancelButton];
         [cancelButton release];

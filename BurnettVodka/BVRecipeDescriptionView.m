@@ -9,7 +9,7 @@
 #import "BVRecipeDescriptionView.h"
 
 @implementation BVRecipeDescriptionView
-@synthesize Procedure,Ingredients,Heading,CrossBtn,LoadmoreBtn,RecipeTmg;
+@synthesize Procedure,Ingredients,Heading,LoadmoreBtn,RecipeTmg,Crossbtn;
 
 - (id)initWithFrame:(CGRect)frame
 {

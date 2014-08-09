@@ -134,7 +134,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recipeRatingsDataChanged:) name:kNotificationRecipeRatingsChanged object:nil];
     
 
-    [UtilityManager addTitle:@"Recipes" toNavigationItem:self.navigationItem];
+   // [UtilityManager addTitle:@"Recipes" toNavigationItem:self.navigationItem];
     
     [self loadUserInterface];
 }
@@ -142,6 +142,8 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
+
     
     if(mIsSearchModeActive)
     {
@@ -219,7 +221,7 @@
                                                                          self.view.frame.size.width,
                                                                          self.view.frame.size.height)];
 
-    UIImage *backgroundImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"GeneralBackground.png" andAddIfRequired:YES];
+    UIImage *backgroundImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"reciepebg.png" andAddIfRequired:YES];
     mBackgroundImageView.image = backgroundImage;
     mBackgroundImageView.contentMode = UIViewContentModeTop;
     [self.view addSubview:mBackgroundImageView];
@@ -1043,7 +1045,7 @@
     // Configure the cell...
     Recipe *recipeObject = [sectionContentArray objectAtIndex:indexPath.row];
     [cell updateCellWithRecipe:recipeObject];
-
+    cell.backgroundColor=[UIColor clearColor];
     
     return cell;
 }
@@ -1957,7 +1959,7 @@
 
 - (void)searchBarUserTappedCancel:(BVSearchBar *)searchBar
 {
-    mIsSearchModeActive = NO;
+    //mIsSearchModeActive = NO;
     
     [mSearchModeTableData release];
     mSearchModeTableData = nil;

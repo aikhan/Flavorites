@@ -15,8 +15,8 @@
 
 @property (retain,nonatomic) IBOutlet UILabel* Heading;
 @property (retain,nonatomic) IBOutlet UIImageView* RecipeTmg;
-@property (retain,nonatomic) IBOutlet UIButton* CrossBtn;
 @property (retain,nonatomic) IBOutlet UIButton* LoadmoreBtn;
+@property (retain,nonatomic) IBOutlet UIButton* Crossbtn;
 @property (retain,nonatomic) IBOutlet UITextView* Ingredients;
 @property (retain,nonatomic) IBOutlet UITextView* Procedure;
 

@@ -155,7 +155,7 @@ static UtilityManager *sharedUtilityManager = nil;
     
     
     
-    NSString *titleString = @"Back";
+    NSString *titleString = @"";
     UIFont *titleFont = [self fontGetRegularFontOfSize:17];
     CGSize titleSize = [titleString sizeWithFont:titleFont];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(arrowImageView.frame.origin.x + arrowImageView.frame.size.width + 4,
@@ -207,6 +207,7 @@ static UtilityManager *sharedUtilityManager = nil;
                                                                            buttonView.frame.size.width,
                                                                            buttonView.frame.size.height)];
     [invisibleButton addTarget:targer action:action forControlEvents:UIControlEventTouchUpInside];
+    invisibleButton.backgroundColor = [UIColor colorWithRed:0.0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1];
     [buttonView addSubview:invisibleButton];
     [invisibleButton release];
     
@@ -220,7 +221,7 @@ static UtilityManager *sharedUtilityManager = nil;
                                                                     titleSize.width + horizontalPadding + horizontalPadding,
                                                                     titleSize.height)];
     titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.textColor = [UIColor colorWithRed:0.0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1];
+    titleLabel.textColor = [UIColor whiteColor];
     titleLabel.font = titleFont;
     titleLabel.text = titleString;
     [buttonView addSubview:titleLabel];
@@ -229,12 +230,12 @@ static UtilityManager *sharedUtilityManager = nil;
     
     
     
-    buttonView.frame = CGRectMake(0,
+    buttonView.frame = CGRectMake(-5,
                                   0,
                                   titleLabel.frame.origin.x + titleLabel.frame.size.width,
                                   buttonView.frame.size.height);
     
-    invisibleButton.frame = CGRectMake(0,
+    invisibleButton.frame = CGRectMake(-5,
                                        0,
                                        buttonView.frame.size.width,
                                        buttonView.frame.size.height);

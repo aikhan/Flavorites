@@ -62,8 +62,8 @@
     
     [self loadUserInterface];
     [self loadRecipesFromDiskAndShowInScrollView];
-    
-    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.05 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
+    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
+    [[NSRunLoop currentRunLoop] addTimer:Scrolltimer forMode:UITrackingRunLoopMode];
 
 }
 
@@ -94,6 +94,7 @@
     
     [mBackgroundImageView release];
     [mScrollView release];
+    [Scrolltimer release];
     [super dealloc];
 }
 
@@ -171,8 +172,8 @@
         NSString *imageExtention = [imagePath pathExtension];
         NSString *imageFileNameWithoutExtension = [[imagePath lastPathComponent] stringByDeletingPathExtension];
         UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+        imageFileNameWithoutExtension = [NSString stringWithFormat:@"%@.%@",imageFileNameWithoutExtension,imageExtention];
         if (!flavorImage) {
-            
             imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
             
         }
@@ -194,6 +195,7 @@
             NSString *imageExtention = [imagePath pathExtension];
             NSString *imageFileNameWithoutExtension = [[imagePath lastPathComponent] stringByDeletingPathExtension];
             UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+            imageFileNameWithoutExtension = [NSString stringWithFormat:@"%@.%@",imageFileNameWithoutExtension,imageExtention];
             if (!flavorImage) {
                 
                 imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
@@ -211,21 +213,23 @@
 
 -(void) onTimer {
     if (mScrollView.contentOffset.x<mScrollView.contentSize.width-[[UIScreen mainScreen] bounds].size.width) {
-        mScrollView.contentOffset = CGPointMake(mScrollView.contentOffset.x+2.0,0);
+        mScrollView.contentOffset = CGPointMake(mScrollView.contentOffset.x+0.5,0);
     }
     else {
-        [Scrolltimer invalidate];
-        Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.05 target: self selector: @selector(onTimer2) userInfo: nil repeats: YES];
+//        [Scrolltimer invalidate];
+//        Scrolltimer=Nil;
+//        Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer2) userInfo: nil repeats: YES];
     }
 }
 
 -(void)onTimer2 {
     if (mScrollView.contentOffset.x>0) {
-        mScrollView.contentOffset = CGPointMake(mScrollView.contentOffset.x-2.0,0);
+        mScrollView.contentOffset = CGPointMake(mScrollView.contentOffset.x-0.5,0);
     }
     else {
-        [Scrolltimer invalidate];
-        Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.05 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
+//        [Scrolltimer invalidate];
+//        Scrolltimer = Nil;
+//        Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
     }
 }
 
@@ -245,9 +249,7 @@
 {
     int count=0;
     int finalCount=0;;
-    RecipeDescription = [[BVRecipeDescriptionView alloc] initWithFrame:CGRectMake(0,0/*
-                                                                                  [UIScreen mainScreen].bounds.size.width/2-750, [UIScreen mainScreen].bounds.size.height/2-170*/, 150, 340)];
-    
+
     NSMutableArray *mutableArrayOfFeaturedItems = [NSMutableArray array];
     NSArray *featuredRecipesLatest = [[DataManager sharedDataManager] featuredRecipesLatest];
     
@@ -256,35 +258,67 @@
         count++;
         NSString *fileName = [recipeDic valueForKey:@"id"];
         if ([fileName integerValue]==recipeID) {
-            finalCount=count;
-            FeaturedRecipeItem *item = [[FeaturedRecipeItem alloc] init];
-            NSString *imagePath = [recipeDic valueForKey:@"drink_image"];
-            NSString *filePathInLocalSystem = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
-            item.imageFilePath = filePathInLocalSystem;
-            item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
-            [mutableArrayOfFeaturedItems addObject:item];
-            [item release];
-            [RecipeDescription.Heading setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"name"]]];
-            [RecipeDescription.Ingredients setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"ingredients"]]];
-            [RecipeDescription.Procedure setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"directions"]]];
-            NSString *imagePath1 = [recipeDic valueForKey:@"recipeimage"];
-            NSString *imageExtention = [imagePath1 pathExtension];
-            NSString *imageFileNameWithoutExtension = [[imagePath1 lastPathComponent] stringByDeletingPathExtension];
-            UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
-            if (!flavorImage) {
-                
-                flavorImage = [self loadImageFromDocumentsDirectoryWithImageName:imagePath1];
-                
+            if ([fileName integerValue]==checkOldDesc) {
+                FeaturedRecipeItem *item = [[FeaturedRecipeItem alloc] init];
+                NSString *imagePath = [recipeDic valueForKey:@"drink_image"];
+                NSString *imageExtention1 = [imagePath pathExtension];
+                NSString *imageFileNameWithoutExtension1 = [[imagePath lastPathComponent] stringByDeletingPathExtension];
+                UIImage *flavorImage1 = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension1 ofType:imageExtention1]];
+                imageFileNameWithoutExtension1 = [NSString stringWithFormat:@"%@.%@",imageFileNameWithoutExtension1,imageExtention1];
+                if (!flavorImage1) {
+                    
+                    imageFileNameWithoutExtension1 = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
+                }
+                item.imageFilePath = imageFileNameWithoutExtension1;
+                item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
+                checkOldDesc = 0;
+                [mutableArrayOfFeaturedItems addObject:item];
+                [item release];
             }
-            [RecipeDescription.RecipeTmg setImage:flavorImage];
-            [RecipeDescription.CrossBtn addTarget:self
-                                           action:@selector(CrossTarget:)
-                                 forControlEvents:UIControlEventTouchUpInside];
-            [RecipeDescription.LoadmoreBtn addTarget:self
-                                              action:@selector(ViewMore:)
-                                    forControlEvents:UIControlEventTouchUpInside];
-            [RecipeDescription.LoadmoreBtn setTag:recipeID];
-            [mutableArrayOfFeaturedItems addObject:RecipeDescription];
+            else {
+                finalCount=count;
+                FeaturedRecipeItem *item = [[FeaturedRecipeItem alloc] init];
+                NSString *imagePath = [recipeDic valueForKey:@"drink_image"];
+                NSString *imageExtention1 = [imagePath pathExtension];
+                NSString *imageFileNameWithoutExtension1 = [[imagePath lastPathComponent] stringByDeletingPathExtension];
+                UIImage *flavorImage1 = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension1 ofType:imageExtention1]];
+                imageFileNameWithoutExtension1 = [NSString stringWithFormat:@"%@.%@",imageFileNameWithoutExtension1,imageExtention1];
+                if (!flavorImage1) {
+                    
+                    imageFileNameWithoutExtension1 = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
+                }
+                item.imageFilePath = imageFileNameWithoutExtension1;
+                item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
+                checkOldDesc = item.recipeID;
+                [mutableArrayOfFeaturedItems addObject:item];
+                [item release];
+                RecipeDescription = [[BVRecipeDescriptionView alloc] initWithFrame:CGRectMake(0,0/*
+                                                                                                  [UIScreen mainScreen].bounds.size.width/2-750, [UIScreen mainScreen].bounds.size.height/2-170*/, 120, 340)];
+                [RecipeDescription.Heading setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"name"]]];
+                NSString *str = [NSString stringWithFormat:@"\u2022 %@",[recipeDic valueForKey:@"ingredients"]];
+                str = [str stringByReplacingOccurrencesOfString:@"\r\n" withString:[NSString stringWithFormat:@"\r\n\u2022 "]];
+                [RecipeDescription.Ingredients setText:str];
+                [RecipeDescription.Procedure setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"directions"]]];
+                NSString *imagePath1 = [recipeDic valueForKey:@"recipeimage"];
+                NSString *imageExtention = [imagePath1 pathExtension];
+                NSString *imageFileNameWithoutExtension = [[imagePath1 lastPathComponent] stringByDeletingPathExtension];
+                imageFileNameWithoutExtension = [imageFileNameWithoutExtension lowercaseString];
+                UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+                if (!flavorImage) {
+                    
+                    flavorImage = [self loadImageFromDocumentsDirectoryWithImageName:imageFileNameWithoutExtension];
+                    
+                }
+                [RecipeDescription.RecipeTmg setImage:flavorImage];
+                [RecipeDescription.LoadmoreBtn addTarget:self
+                                                  action:@selector(ViewMore:)
+                                        forControlEvents:UIControlEventTouchUpInside];
+                [RecipeDescription.Crossbtn addTarget:self
+                                               action:@selector(CrossTarget:)
+                                     forControlEvents:UIControlEventTouchUpInside];
+                [RecipeDescription.LoadmoreBtn setTag:recipeID];
+                [mutableArrayOfFeaturedItems addObject:RecipeDescription];
+            }
         }
         else {
             FeaturedRecipeItem *item = [[FeaturedRecipeItem alloc] init];
@@ -292,10 +326,10 @@
             NSString *imageExtention = [imagePath pathExtension];
             NSString *imageFileNameWithoutExtension = [[imagePath lastPathComponent] stringByDeletingPathExtension];
             UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
+            imageFileNameWithoutExtension = [NSString stringWithFormat:@"%@.%@",imageFileNameWithoutExtension,imageExtention];
             if (!flavorImage) {
                 
                 imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
-                
             }
             item.imageFilePath = imageFileNameWithoutExtension;
             item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
@@ -304,14 +338,20 @@
         }
     }
     [mScrollView resetScrollViewWithRecipesArray:[NSArray arrayWithArray:mutableArrayOfFeaturedItems]];
-    [mScrollView setContentOffset:CGPointMake(150*finalCount ,[UIScreen mainScreen].bounds.origin.y)];
-    [Scrolltimer invalidate];
+    [mScrollView setContentOffset:CGPointMake((120*(finalCount-1))+(10*(finalCount-1)) ,[UIScreen mainScreen].bounds.origin.y)];
+   // [Scrolltimer invalidate];
+//    if (![Scrolltimer isValid]) {
+//    }
+//    else {
+//        [Scrolltimer invalidate];
+//    }
 }
 
 -(void)CrossTarget:(id)sender {
     [RecipeDescription removeFromSuperview];
     [self loadRecipesFromDiskAndShowInScrollView];
-    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.05 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
+//    Scrolltimer = Nil;
+//    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
 }
 
 - (void)ViewMore:(id)Sender {
@@ -342,7 +382,8 @@
     [viewController release];
     [RecipeDescription removeFromSuperview];
     [self loadRecipesFromDiskAndShowInScrollView];
-    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.05 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
+//    Scrolltimer = Nil;
+//    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
 }
 
 
