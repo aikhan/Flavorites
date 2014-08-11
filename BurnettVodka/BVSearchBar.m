@@ -79,7 +79,7 @@
         
         
         
-        NSString *placeholderText = @"Search";
+        NSString *placeholderText = @"search all recipes";
         UIFont *textFieldFont = [UtilityManager fontGetRegularFontOfSize:18];
         CGSize sampleSize = [placeholderText sizeWithFont:textFieldFont];
         mTextField = [[UITextField alloc] initWithFrame:CGRectMake(mIconImageView.frame.origin.x + mIconImageView.frame.size.width + kGapBetweenSearchIconAndTextField,
@@ -88,6 +88,9 @@
                                                                    sampleSize.height)];
         mTextField.font = textFieldFont;
         mTextField.placeholder = placeholderText;
+        mTextField.returnKeyType = UIReturnKeySearch;
+        mTextField.enablesReturnKeyAutomatically=NO;
+        mTextField.keyboardType = UIKeyboardTypeDefault;
         mTextField.delegate = self;
         mTextField.autocorrectionType = UITextAutocorrectionTypeNo;
         [self addSubview:mTextField];
@@ -124,6 +127,24 @@
     //mTextField.text = @"";
     
     [mTextField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)aTextField
+{
+    if([searchDelegate respondsToSelector:@selector(searchBarUserTappedCancel:)])
+    {
+        [searchDelegate searchBarUserTappedCancel:self];
+    }
+    
+    //if([searchDelegate respondsToSelector:@selector(searchBar:searchTextChangedTo:)])
+    {
+        [searchDelegate searchBar:self searchTextChangedTo:mTextField.text];
+    }
+    //mTextField.text = @"";
+    
+
+    [aTextField resignFirstResponder];
+    return YES;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField

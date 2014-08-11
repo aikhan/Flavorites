@@ -23,6 +23,7 @@
     UIDatePicker *mDatePickerView;
     UIButton *rememberButton;
     UILabel *datelbl;
+    BOOL remmberfl;
     
     id <BVAgeGateViewControllerDelegate> controllerDelegate;
 }

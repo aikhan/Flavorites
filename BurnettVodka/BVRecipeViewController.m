@@ -241,12 +241,13 @@
     mSegmentControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:[self imageForAZTabSelected:YES], [self imageForFlavorTabSelected:NO], [self imageForMixersTabSelected:NO], nil]];
     
     mSegmentControl.selectedSegmentIndex = 0;
-    mSegmentControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    mSegmentControl.segmentedControlStyle = UISegmentedControlStylePlain;
+    mSegmentControl.backgroundColor=[UIColor clearColor];
     mSegmentControl.frame = CGRectMake(roundf((self.view.frame.size.width - kSegmentedControlWidth) / 2),
                                        kGapBetweenNavigationBarAndSegmentControl,
                                        kSegmentedControlWidth,
                                        30);
-    mSegmentControl.tintColor = [UIColor colorWithRed:(91.0/255.0) green:(127.0/255.0) blue:(173.0/255.0) alpha:1.0];
+    mSegmentControl.tintColor = [UIColor colorWithRed:(40.0/255.0) green:(45.0/255.0) blue:(85.0/255.0) alpha:1.0];
     
     
     
@@ -325,13 +326,14 @@
     mOriginalFrameOfTableView = mTableView.frame;
     mTableView.dataSource = self;
     mTableView.delegate = self;
+    mTableView.sectionIndexBackgroundColor = [UIColor clearColor];
     mTableView.backgroundColor = [UIColor clearColor];
     mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:mTableView];
     
     if([mTableView respondsToSelector:@selector(setSectionIndexColor:)])
     {
-        [mTableView performSelector:@selector(setSectionIndexColor:) withObject:[UIColor colorWithRed:0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1.0]];
+        [mTableView performSelector:@selector(setSectionIndexColor:) withObject:[UIColor blackColor]];
     }
 }
 
@@ -773,27 +775,32 @@
     
     for(Recipe *recipeObject in sortedRecipes)
     {
-        // Grab the first character of the title
-        NSString *firstCharacter = [[recipeObject.title substringToIndex:1] uppercaseString];
-        
-        NSMutableDictionary *sectionDic = [mapForSectionsOfTable valueForKey:firstCharacter];
-        if(sectionDic == nil)
-        {
-            sectionDic = [[NSMutableDictionary alloc] init];
-            [sectionDic setValue:firstCharacter forKey:@"sectionTitle"];
-            [mapForSectionsOfTable setValue:sectionDic forKey:firstCharacter];
-            [sectionDic release];
+        if (recipeObject.flavor==Nil) {
+            
         }
-        
-        NSMutableArray *sectionContent = [sectionDic valueForKey:@"sectionContent"];
-        if(sectionContent == nil)
-        {
-            sectionContent = [[NSMutableArray alloc] init];
-            [sectionDic setValue:sectionContent forKey:@"sectionContent"];
-            [sectionContent release];
+        else {
+            // Grab the first character of the title
+            NSString *firstCharacter = [[recipeObject.title substringToIndex:1] uppercaseString];
+            
+            NSMutableDictionary *sectionDic = [mapForSectionsOfTable valueForKey:firstCharacter];
+            if(sectionDic == nil)
+            {
+                sectionDic = [[NSMutableDictionary alloc] init];
+                [sectionDic setValue:firstCharacter forKey:@"sectionTitle"];
+                [mapForSectionsOfTable setValue:sectionDic forKey:firstCharacter];
+                [sectionDic release];
+            }
+            
+            NSMutableArray *sectionContent = [sectionDic valueForKey:@"sectionContent"];
+            if(sectionContent == nil)
+            {
+                sectionContent = [[NSMutableArray alloc] init];
+                [sectionDic setValue:sectionContent forKey:@"sectionContent"];
+                [sectionContent release];
+            }
+            
+            [sectionContent addObject:recipeObject];
         }
-        
-        [sectionContent addObject:recipeObject];
     }
     
     
@@ -992,6 +999,7 @@
     BVRecipeTabRecipeCell *cell = nil;
     
     NSArray *sectionContentArray = [[[self dataForTableView]  objectAtIndex:indexPath.section] valueForKey:@"sectionContent"];
+    
     if([sectionContentArray count] == 1)
     {
         static NSString *CellIdentifier = @"CellFirstAndLast";
@@ -1161,12 +1169,12 @@
     CGSize titleSize = [titleString sizeWithFont:titleFont];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,
                                                                     0,
-                                                                    titleSize.width,
+                                                                    titleSize.width+10,
                                                                     headerView.frame.size.height)];
     titleLabel.text = titleString;
     titleLabel.font = titleFont;
     titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.textColor = [UIColor blackColor];
     [headerView addSubview:titleLabel];
     [titleLabel release];
     

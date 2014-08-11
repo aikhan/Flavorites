@@ -30,12 +30,14 @@
         
         self.clipsToBounds = YES;
         
+        [self setBackgroundColor:[UIColor colorWithRed:(1.0/256.0) green:(167.0/256.0) blue:(225.0/256.0) alpha:1]];
+
         
         mTranslucentBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                               0,
                                                                               self.frame.size.width,
                                                                               self.frame.size.height)];
-        mTranslucentBackgroundView.backgroundColor = [UIColor whiteColor];
+        [mTranslucentBackgroundView setBackgroundColor:[UIColor colorWithRed:(1.0/256.0) green:(167.0/256.0) blue:(225.0/256.0) alpha:1]];
         [self addSubview:mTranslucentBackgroundView];
         mOriginalFrameForTranslucentView = mTranslucentBackgroundView.frame;
         
@@ -79,27 +81,31 @@
         
         NSString *noString = @"No";
         CGSize noButtonSize = [noString sizeWithFont:fontForButtons];
+        NSString *yesString = @"Yes";
+        CGSize yesButtonSize = [yesString sizeWithFont:fontForButtons];
+
         mNoButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
                                                                0,
-                                                               noButtonSize.width + sidePaddingForButtons + sidePaddingForButtons,
-                                                               noButtonSize.height + sidePaddingForButtons + sidePaddingForButtons)];
+                                                               yesButtonSize.width + sidePaddingForButtons + sidePaddingForButtons,
+                                                               yesButtonSize.height + sidePaddingForButtons + sidePaddingForButtons)];
         [mNoButton setTitle:noString forState:UIControlStateNormal];
-        [mNoButton setTitleColor:[UIColor colorWithRed:0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1] forState:UIControlStateNormal];
+        [mNoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [mNoButton addTarget:self action:@selector(noButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         mNoButton.titleLabel.font = fontForButtons;
+        [mNoButton setBackgroundColor:[UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1]];
         [self addSubview:mNoButton];
 
         
-        NSString *yesString = @"Yes";
-        CGSize yesButtonSize = [yesString sizeWithFont:fontForButtons];
         mYesButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
                                                                0,
                                                                yesButtonSize.width + sidePaddingForButtons + sidePaddingForButtons,
                                                                yesButtonSize.height + sidePaddingForButtons + sidePaddingForButtons)];
         [mYesButton setTitle:yesString forState:UIControlStateNormal];
-        [mYesButton setTitleColor:[UIColor colorWithRed:0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1] forState:UIControlStateNormal];
+        [mYesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [mYesButton addTarget:self action:@selector(yesButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         mYesButton.titleLabel.font = fontForButtons;
+        [mYesButton setBackgroundColor:[UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1]];
+
         [self addSubview:mYesButton];
 
         
@@ -278,6 +284,7 @@
                                                                                        mContainerView.frame.size.height)];
         mRemoveFroFavView.viewDelegate = self;
         [mContainerView addSubview:mRemoveFroFavView];
+
     }
     
     return mRemoveFroFavView;

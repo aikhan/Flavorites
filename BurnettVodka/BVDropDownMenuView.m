@@ -93,7 +93,7 @@
                                                                 kCenterUsableContentCoordinateY,
                                                                 kCenterUsableContentViewWidth,
                                                                 kCenterUsableContentViewHeight)];
-        mContentView.backgroundColor = [UIColor whiteColor];
+        mContentView.backgroundColor = [UIColor clearColor];
         [self addSubview:mContentView];
         
         
@@ -108,8 +108,8 @@
                                                                    kBottomButtonHeight)];
         [mResetButton setTitle:@"RESET" forState:UIControlStateNormal];
         mResetButton.titleLabel.font = [UtilityManager fontGetRegularFontOfSize:14];
-        [mResetButton setTitleColor:[UIColor colorWithRed:(91.0/256.0) green:(128.0/256.0) blue:(169.0/256.0) alpha:1.0] forState:UIControlStateNormal];
-        [mResetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [mResetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [mResetButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
         [mResetButton addTarget:self action:@selector(resetButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         mResetButton.backgroundColor = [UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
         [mContentView addSubview:mResetButton];
@@ -153,8 +153,9 @@
             mTableView.delegate = self;
             mTableView.dataSource = self;
             mTableView.rowHeight = kTableViewRowHeight;
-            mTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-            mTableView.separatorColor = [UIColor colorWithRed:(204.0/256.0) green:(204.0/256.0) blue:(204.0/256.0) alpha:1.0];
+            mTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+            mTableView.separatorColor = [UIColor grayColor];
+                                         //colorWithRed:(204.0/256.0) green:(204.0/256.0) blue:(204.0/256.0) alpha:1.0];
             [mContentView addSubview:mTableView];
         }
         else
@@ -167,7 +168,7 @@
                                                                       kCenterUsableContentViewWidth - 10 - 10,
                                                                       messageSize.height)];
             mMessageLabel.backgroundColor = [UIColor clearColor];
-            mMessageLabel.textColor = [UIColor colorWithRed:(37.0/256.0) green:(37.0/256.0) blue:(37.0/256.0) alpha:1.0];
+            mMessageLabel.textColor = [UIColor whiteColor];
             mMessageLabel.font = messageFont;
             mMessageLabel.text = message;
             mMessageLabel.textAlignment = UITextAlignmentCenter;
@@ -176,7 +177,7 @@
         
         
         
-        
+
         
         
         self.frame = CGRectMake(self.frame.origin.x,
@@ -227,7 +228,7 @@
     {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.textColor = [UIColor colorWithRed:(37.0/256.0) green:(37.0/256.0) blue:(37.0/256.0) alpha:1.0];
+        cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.font = [UtilityManager fontGetRegularFontOfSize:18];
     }
 
@@ -237,12 +238,14 @@
     cell.textLabel.text = item.itemTitle;
     if(item.isItemSelected)
     {
-        cell.contentView.backgroundColor = [UIColor colorWithRed:(230.0/256.0) green:(236.0/256.0) blue:(244.0/256.0) alpha:1.0];
+        cell.contentView.backgroundColor = [UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
+
 //        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     else
     {
         cell.contentView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1.0];
+        
         //        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
@@ -262,12 +265,13 @@
     if(item.isItemSelected)
     {
         item.isItemSelected = NO;
-        cell.contentView.backgroundColor = [UIColor whiteColor];
+        cell.contentView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1.0];
+        
     }
     else
     {
         item.isItemSelected = YES;
-        cell.contentView.backgroundColor = [UIColor colorWithRed:(230.0/256.0) green:(236.0/256.0) blue:(244.0/256.0) alpha:1.0];
+        cell.contentView.backgroundColor = [UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
     }
 }
 

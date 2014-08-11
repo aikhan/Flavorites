@@ -141,8 +141,8 @@
     [self.view addSubview:GetDateButton];
     [GetDateButton release];
     
-    NSString *instructionText2 = @"When were you born?";
-    UIFont *instructionText2Font = [UtilityManager fontGetRegularFontOfSize:24];
+    NSString *instructionText2 = @"when were you born?";
+    UIFont *instructionText2Font = [UtilityManager fontGetRegularFontOfSize:18.5];
     CGSize instructionTextSize2 = [instructionText2 sizeWithFont:instructionText2Font];
     
     datelbl = [[UILabel alloc] initWithFrame:CGRectMake(0,
@@ -167,7 +167,7 @@
     [rememberButton setImage:remeberButtonImage forState:UIControlStateNormal];
     [rememberButton addTarget:self action:@selector(rememberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:rememberButton];
-    
+    remmberfl = FALSE;
     // Continue Button
     UIImage *continueButtonImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AgeGateContinueButton.png" andAddIfRequired:YES];
     
@@ -288,7 +288,14 @@
 
 - (void)rememberButtonClicked:(id)sender
 {
-    
+    if (remmberfl==FALSE) {
+        remmberfl=TRUE;
+        [rememberButton setImage:[UIImage imageNamed:@"remember1.png"] forState:UIControlStateNormal];
+    }
+    else if (remmberfl==TRUE) {
+        remmberfl=FALSE;
+        [rememberButton setImage:[UIImage imageNamed:@"remember.png"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)continueButtonClicked:(id)sender

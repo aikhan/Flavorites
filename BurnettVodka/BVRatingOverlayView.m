@@ -69,7 +69,7 @@
         
         
         
-        NSString *title = @"Rate This Recipe";
+        NSString *title = @"rate this recipe";
         UIFont *titleFont = [UtilityManager fontGetRegularFontOfSize:18];
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
                                                                         0,
@@ -79,7 +79,7 @@
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.font = titleFont;
         titleLabel.textAlignment = UITextAlignmentCenter;
-        titleLabel.textColor = [UIColor blackColor];
+        titleLabel.textColor = [UIColor whiteColor];
         [mContainerView addSubview:titleLabel];
         [titleLabel release];
         
@@ -97,7 +97,7 @@
             UIView *seperatorView = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                              yCoordinatePointer,
                                                                              mContainerView.frame.size.width,
-                                                                             kSeperatorHeight)];
+                                                                             0.5)];
             seperatorView.backgroundColor = [UIColor colorWithRed:(196.0/256.0) green:(196.0/256.0) blue:(196.0/256.0) alpha:1];
             [mContainerView addSubview:seperatorView];
             [seperatorView release];
@@ -174,7 +174,7 @@
                                                                                 mContainerView.frame.size.height - kCancelRowHeight,
                                                                                 mContainerView.frame.size.width,
                                                                                 kCancelRowHeight)];
-        cancelBackgroundView.backgroundColor = [UIColor colorWithRed:(235.0/256.0) green:(235.0/256.0) blue:(235.0/256.0) alpha:1.0];
+        cancelBackgroundView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1];
         [mContainerView addSubview:cancelBackgroundView];
         [cancelBackgroundView release];
         
@@ -185,16 +185,16 @@
         CGSize cancelButtonSize = [cancelButtonTitle sizeWithFont:cancelButtonFont];
         CGSize cancelButtonSizeWithExtraPadding = CGSizeMake(cancelButtonSize.width + extraPaddingInCancelButton + extraPaddingInCancelButton,
                                                              cancelButtonSize.height + extraPaddingInCancelButton + extraPaddingInCancelButton);
-        UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(roundf((cancelBackgroundView.frame.size.width - cancelButtonSizeWithExtraPadding.width) / 2),
-                                                                            roundf((cancelBackgroundView.frame.size.height - cancelButtonSizeWithExtraPadding.height) / 2),
-                                                                            cancelButtonSizeWithExtraPadding.width,
+        UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(10,
+                                                                            roundf((cancelBackgroundView.frame.size.height - cancelButtonSizeWithExtraPadding.height)/2 ),
+                                                                            300,
                                                                             cancelButtonSizeWithExtraPadding.height)];
         [cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
         [cancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
         [cancelButton setTitleColor: [UIColor whiteColor]forState:UIControlStateNormal];
          [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
          cancelButton.backgroundColor =[UIColor colorWithRed:(236.0/256) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
-        cancelButton.titleLabel.font = cancelButtonFont;
+        cancelButton.titleLabel.font = [UtilityManager fontGetRegularFontOfSize:20];;
         [cancelBackgroundView addSubview:cancelButton];
         [cancelButton release];
     }
