@@ -79,7 +79,7 @@
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
     {
-        iOS7OffsetAdjustmentForStatusBar = 20;
+        iOS7OffsetAdjustmentForStatusBar = 0;
     }
     
     
@@ -282,7 +282,9 @@
     if (buttonIndex==1) {
         NSString *datestr = [NSString stringWithFormat:@"%@",mDatePickerView.date];
         NSArray *datearr = [datestr componentsSeparatedByString:@" "];
-        datelbl.text = [NSString stringWithFormat:@"%@",[datearr firstObject]];
+        NSString *finalstr = [NSString stringWithFormat:@"%@",[datearr firstObject]];
+        finalstr = [finalstr stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+        datelbl.text = [NSString stringWithFormat:@"%@",finalstr];
     }
 }
 

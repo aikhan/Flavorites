@@ -30,7 +30,7 @@
 @interface BVRecipeDetailAddToFavoriteView : UIView {
     
     UIButton *mAddToFavButton;
-    UISwipeGestureRecognizer *mSwipeGestureRecognizer;
+    UITapGestureRecognizer *mSwipeGestureRecognizer;
     
     id <BVRecipeDetailAddToFavoriteViewDelegate> viewDelegate;
 }

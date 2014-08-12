@@ -23,6 +23,8 @@
 
 + (void)addTitle:(NSString *)titleString toNavigationItem:(UINavigationItem *)navItem;
 + (UIBarButtonItem *)navigationBarBackButtonItemWithTarget:(id)targer andAction:(SEL)action andHeight:(CGFloat)height;
++ (UIBarButtonItem *)navigationBarBackButtonItemWithTarget1:(id)targer andAction:(SEL)action andHeight:(CGFloat)height;
+
 + (UIBarButtonItem *)navigationBarButtonItemWithTitle:(NSString *)title andTarget:(id)targer andAction:(SEL)action andHeight:(CGFloat)height;
 
 + (UIFont *)fontGetRegularFontOfSize:(CGFloat)size;

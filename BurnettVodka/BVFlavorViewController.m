@@ -124,12 +124,12 @@
     
     CGFloat widthAvailableForTitle = self.frame.size.width - kFlavorViewTitlePaddingLeft - kFlavorViewTitlePaddingRight;
     NSString *sampleOneLineString = @"Sample";
-    UIFont *titleFont = [UtilityManager fontGetRegularFontOfSize:11];
+    UIFont *titleFont = [UtilityManager fontGetRegularFontOfSize:14];
     CGSize oneLinetitleSize = [sampleOneLineString sizeWithFont:titleFont];
     
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kFlavorViewTitlePaddingLeft,
-                                                                    self.frame.size.height - (kFlavorViewTitlePaddingBottom + (oneLinetitleSize.height * 2)),
+                                                                    self.frame.size.height - (kFlavorViewTitlePaddingBottom + (oneLinetitleSize.height * 2)-18),
                                                                     widthAvailableForTitle,
                                                                     oneLinetitleSize.height * 2)];
     titleLabel.textAlignment = UITextAlignmentCenter;
@@ -204,6 +204,10 @@
     return self;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 - (void)loadView {
     
@@ -213,7 +217,7 @@
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
     {
-        iOS7OffsetAdjustmentForStatusBar = 20;
+        iOS7OffsetAdjustmentForStatusBar = 0;
     }
     
     self.view.frame = CGRectMake(0,
@@ -246,6 +250,8 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"flavourTab.png"] forBarMetrics:UIBarMetricsDefault];
 }
 

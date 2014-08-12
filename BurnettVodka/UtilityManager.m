@@ -119,6 +119,81 @@ static UtilityManager *sharedUtilityManager = nil;
     [titleLabel release];
 }
 
++ (UIBarButtonItem *)navigationBarBackButtonItemWithTarget1:(id)targer andAction:(SEL)action andHeight:(CGFloat)height
+{
+    UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                  0,
+                                                                  0,
+                                                                  height)];
+    
+    
+    UIButton *invisibleButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
+                                                                           0,
+                                                                           buttonView.frame.size.width,
+                                                                           buttonView.frame.size.height)];
+    [invisibleButton addTarget:targer action:action forControlEvents:UIControlEventTouchUpInside];
+    [buttonView addSubview:invisibleButton];
+    [invisibleButton release];
+    
+    
+    
+    
+    
+    UIImage *arrowImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"share" ofType:@"png"]];
+    UIImageView *arrowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
+                                                                                roundf((height - arrowImage.size.height) / 2-10),
+                                                                                arrowImage.size.width,
+                                                                                arrowImage.size.height)];
+    arrowImageView.image = arrowImage;
+    [arrowImage release];
+    
+    [buttonView addSubview:arrowImageView];
+    [arrowImageView release];
+    
+    
+    
+    
+    
+    
+    NSString *titleString = @"";
+    UIFont *titleFont = [self fontGetRegularFontOfSize:17];
+    CGSize titleSize = [titleString sizeWithFont:titleFont];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(arrowImageView.frame.origin.x + arrowImageView.frame.size.width + 4,
+                                                                    roundf((height - titleSize.height) / 2),
+                                                                    titleSize.width,
+                                                                    titleSize.height)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.textColor = [UIColor colorWithRed:0.0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1];
+    titleLabel.font = titleFont;
+    titleLabel.text = titleString;
+    [buttonView addSubview:titleLabel];
+    [titleLabel release];
+    
+    
+    
+    
+    buttonView.frame = CGRectMake(0,
+                                  0,
+                                  titleLabel.frame.origin.x + titleLabel.frame.size.width,
+                                  buttonView.frame.size.height);
+    
+    invisibleButton.frame = CGRectMake(0,
+                                       0,
+                                       buttonView.frame.size.width,
+                                       buttonView.frame.size.height);
+    
+    
+    
+    
+    
+    UIBarButtonItem *backButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:buttonView] autorelease];
+    [buttonView release];
+    
+    return backButtonItem;
+}
+
+
+
 + (UIBarButtonItem *)navigationBarBackButtonItemWithTarget:(id)targer andAction:(SEL)action andHeight:(CGFloat)height
 {
     UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(0,
@@ -141,7 +216,7 @@ static UtilityManager *sharedUtilityManager = nil;
     
     UIImage *arrowImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BackBarButtonArrow" ofType:@"png"]];
     UIImageView *arrowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-                                                                                roundf((height - arrowImage.size.height) / 2),
+                                                                                roundf((height - arrowImage.size.height) / 2-10),
                                                                                 arrowImage.size.width,
                                                                                 arrowImage.size.height)];
     arrowImageView.image = arrowImage;
@@ -258,12 +333,12 @@ static UtilityManager *sharedUtilityManager = nil;
 
 + (UIFont *)fontGetBoldFontOfSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"HelveticaRoundedLT-BoldCondObl" size:size];
+    return [UIFont fontWithName:@"ProximaNova-Regular" size:size];
 }
 
 + (UIFont *)fontGetLightFontOfSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"HelveticaRoundedLT-BoldCondObl" size:size];
+    return [UIFont fontWithName:@"Proxima_Nova-Sbold" size:size];
 }
 
 

@@ -23,8 +23,8 @@
 #define kAlertViewForMail 1
 
 
-#define kPaddingLeft 10
-#define kPaddingRight 10
+#define kPaddingLeft 20
+#define kPaddingRight 20
 #define kPaddingTop 10
 #define kPaddingBottom 10
 
@@ -38,7 +38,7 @@
 
 #define kRecipeImageViewHeightIncludingTopAndBottomPadding 174
 
-#define kRatingViewWidth 174
+#define kRatingViewWidth 151
 #define kRatingViewGapBetweenRatingLabelAndStarView 4
 
 #define kBottomViewPaddingLeft 10
@@ -60,7 +60,7 @@
 static NSString *event = @"Recipe Detail";
 @interface BVRecipeDetailAddToFavoriteView ()
 
-- (UISwipeGestureRecognizer *)swipeGestureToRemoveFromFaves;
+- (UITapGestureRecognizer *)swipeGestureToRemoveFromFaves;
 
 @end
 
@@ -79,9 +79,9 @@ static NSString *event = @"Recipe Detail";
                                                                      self.frame.size.width,
                                                                      self.frame.size.height)];
         [mAddToFavButton addTarget:self action:@selector(addToFav:) forControlEvents:UIControlEventTouchUpInside];
-        [mAddToFavButton setTitleColor:[UIColor colorWithRed:(134.0/256.0) green:(158.0/256.0) blue:(194.0/256.0) alpha:1.0] forState:
+        [mAddToFavButton setTitleColor:[UIColor whiteColor] forState:
          UIControlStateNormal];
-        mAddToFavButton.titleLabel.font = [UtilityManager fontGetRegularFontOfSize:17];
+        mAddToFavButton.titleLabel.font = [UtilityManager fontGetRegularFontOfSize:14];
         
         [self addSubview:mAddToFavButton];
     }
@@ -143,9 +143,9 @@ static NSString *event = @"Recipe Detail";
                                  mAddToFavButton.userInteractionEnabled = NO;
                                  
                                  UIImage *addedInFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddedInMyFaves.png" andAddIfRequired:YES];
-                                 [mAddToFavButton setImage:addedInFavImage forState:UIControlStateNormal];
+                                // [mAddToFavButton setImage:addedInFavImage forState:UIControlStateNormal];
                                  
-                                 UISwipeGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
+                                 UITapGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
                                  [self addGestureRecognizer:gesture];
                              }
                              else
@@ -154,9 +154,9 @@ static NSString *event = @"Recipe Detail";
                                  mAddToFavButton.userInteractionEnabled = YES;
                                  
                                  UIImage *addToFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddToMyFaves.png" andAddIfRequired:YES];
-                                 [mAddToFavButton setImage:addToFavImage forState:UIControlStateNormal];
+                                // [mAddToFavButton setImage:addToFavImage forState:UIControlStateNormal];
                                  
-                                 UISwipeGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
+                                 UITapGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
                                  [self removeGestureRecognizer:gesture];
                              }
                              
@@ -182,9 +182,9 @@ static NSString *event = @"Recipe Detail";
             mAddToFavButton.userInteractionEnabled = NO;
             
             UIImage *addedInFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddedInMyFaves.png" andAddIfRequired:YES];
-            [mAddToFavButton setImage:addedInFavImage forState:UIControlStateNormal];
+          //  [mAddToFavButton setImage:addedInFavImage forState:UIControlStateNormal];
             
-            UISwipeGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
+            UITapGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
             [self addGestureRecognizer:gesture];
         }
         else
@@ -193,9 +193,9 @@ static NSString *event = @"Recipe Detail";
             mAddToFavButton.userInteractionEnabled = YES;
             
             UIImage *addToFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddToMyFaves.png" andAddIfRequired:YES];
-            [mAddToFavButton setImage:addToFavImage forState:UIControlStateNormal];
+            //[mAddToFavButton setImage:addToFavImage forState:UIControlStateNormal];
             
-            UISwipeGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
+            UITapGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
             [self removeGestureRecognizer:gesture];
         }
         
@@ -204,17 +204,17 @@ static NSString *event = @"Recipe Detail";
 }
 
 
-- (UISwipeGestureRecognizer *)swipeGestureToRemoveFromFaves
+- (UITapGestureRecognizer *)swipeGestureToRemoveFromFaves
 {
     if(mSwipeGestureRecognizer == nil)
     {
-        mSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
+        mSwipeGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
     }
     
     return mSwipeGestureRecognizer;
 }
 
-- (void)swipeRight:(UISwipeGestureRecognizer *)gesture
+- (void)swipeRight:(UITapGestureRecognizer *)gesture
 {
     if([viewDelegate respondsToSelector:@selector(recipeDetailAddToFavoriteViewUserSwippedToRemoveFromFavorites:)])
     {
@@ -281,7 +281,7 @@ static NSString *event = @"Recipe Detail";
     self.view.frame = CGRectMake(0,
                                  0,
                                  self.navigationController.view.frame.size.width,
-                                 self.navigationController.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - iOS7OffsetAdjustmentForStatusBar);
+                                 self.navigationController.view.frame.size.height - self.navigationController.navigationBar.frame.size.height + iOS7OffsetAdjustmentForStatusBar);
 }
 
 - (void)viewDidLoad
@@ -302,12 +302,12 @@ static NSString *event = @"Recipe Detail";
  //   [UtilityManager addTitle:@"Recipes" toNavigationItem:self.navigationItem];
     
     
-    UIBarButtonItem *backButton = [UtilityManager navigationBarBackButtonItemWithTarget:self andAction:@selector(backButtonClicked:) andHeight:self.navigationController.navigationBar.frame.size.height];
+    UIBarButtonItem *backButton = [UtilityManager navigationBarBackButtonItemWithTarget:self andAction:@selector(backButtonClicked:) andHeight:self.navigationController.navigationBar.frame.size.height+15];
     self.navigationItem.leftBarButtonItem = backButton;
 
     
 
-    UIBarButtonItem *shareButton = [UtilityManager navigationBarButtonItemWithTitle:@"Share" andTarget:self andAction:@selector(share:) andHeight:32];
+    UIBarButtonItem *shareButton =[UtilityManager navigationBarBackButtonItemWithTarget1:self andAction:@selector(share:) andHeight:self.navigationController.navigationBar.frame.size.height+15];
     self.navigationItem.rightBarButtonItem = shareButton;
     
     
@@ -316,9 +316,19 @@ static NSString *event = @"Recipe Detail";
 
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
+}
+
+
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+
     //self.screenName = @"Recipies Detail View";
 }
 
@@ -357,7 +367,7 @@ static NSString *event = @"Recipe Detail";
 {
     // Background Image View
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-                                                                                     0,
+                                                                                     20,
                                                                                      self.view.frame.size.width,
                                                                                      self.view.frame.size.height)];
 
@@ -373,7 +383,7 @@ static NSString *event = @"Recipe Detail";
     
     // Scroll View
     mScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,
-                                                                 0,
+                                                                 20,
                                                                  self.view.frame.size.width,
                                                                  self.view.frame.size.height)];
     
@@ -399,7 +409,7 @@ static NSString *event = @"Recipe Detail";
     UILabel *recipeTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPaddingLeft,
                                                                           kPaddingTop,
                                                                           widthAvailableForRecipeTitle,
-                                                                          50)];
+                                                                          40)];
     recipeTitleLabel.text = recipeTitleString;
     recipeTitleLabel.backgroundColor = [UIColor colorWithRed:(205.0/256.0) green:(17.0/256.0) blue:(60.0/256.0) alpha:1.0];
     recipeTitleLabel.textColor = [UIColor whiteColor];
@@ -446,7 +456,7 @@ static NSString *event = @"Recipe Detail";
     
     
     
-    CGFloat minimumHeightForBottomView = mScrollView.frame.size.height - (recipeImageView.frame.origin.y + recipeImageView.frame.size.height);
+    CGFloat minimumHeightForBottomView = mScrollView.frame.size.height - (recipeImageView.frame.origin.y + recipeImageView.frame.size.height)-50;
     
     UIView *bottomView = [[self bottomViewWithIngredientsArray:[mRecipeObject arrayOfIngredients] andProcess:mRecipeObject.directions andMinimumHieght:minimumHeightForBottomView] retain];
     bottomView.frame = CGRectMake(roundf((self.view.frame.size.width - bottomView.frame.size.width) / 2),
@@ -463,21 +473,19 @@ static NSString *event = @"Recipe Detail";
     // Rating And Favorite Background ImageView
     UIImage *backgroundImageForRatingAndFavView = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailBgForRatingAndFav" ofType:@"png"]];
     
-//    UIImageView *ratingAndFavBackgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-//                                                                                                 recipeImageView.frame.origin.y + recipeImageView.frame.size.height + kGapBetweenImageAndRateFavView,
-//                                                                                                 self.view.frame.size.width,
-//                                                                                                 backgroundImageForRatingAndFavView.size.height)];
-//    ratingAndFavBackgroundImageView.image = backgroundImageForRatingAndFavView;
-//    [backgroundImageForRatingAndFavView release];
-//    
-//    //  [mScrollView addSubview:ratingAndFavBackgroundImageView];
-//    [ratingAndFavBackgroundImageView release];
+    UIImageView *ratingAndFavBackgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(9,
+                                                                                                 bottomView.frame.origin.y + bottomView.frame.size.height + kGapBetweenImageAndRateFavView,backgroundImageForRatingAndFavView.size.width,                                                                                                 backgroundImageForRatingAndFavView.size.height)];
+    ratingAndFavBackgroundImageView.image = backgroundImageForRatingAndFavView;
+    [backgroundImageForRatingAndFavView release];
+    
+    [mScrollView addSubview:ratingAndFavBackgroundImageView];
+    [ratingAndFavBackgroundImageView release];
     
     
     
     // Rating View
     
-    UIView *ratingView = [[UIView alloc] initWithFrame:CGRectMake(0,
+    UIView *ratingView = [[UIView alloc] initWithFrame:CGRectMake(9,
                                                                   bottomView.frame.origin.y + bottomView.frame.size.height + kGapBetweenImageAndRateFavView,
                                                                   kRatingViewWidth,
                                                                   backgroundImageForRatingAndFavView.size.height)];
@@ -496,12 +504,12 @@ static NSString *event = @"Recipe Detail";
     
     
 
-    NSString *ratingString = @"My Rating:";
+    NSString *ratingString = @"rate:";
     if(mRecipeObject.ratingValueSubmittedByUser == nil || [mRecipeObject.ratingValueSubmittedByUser floatValue] == 0)
     {
-        ratingString = @"Rate This:";
+        ratingString = @"rate:";
     }
-    UIFont *ratingFont = [UtilityManager fontGetRegularFontOfSize:17];
+    UIFont *ratingFont = [UtilityManager fontGetRegularFontOfSize:14];
     CGSize ratitngSize = [ratingString sizeWithFont:ratingFont];
     mRatingTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
                                                                      roundf((ratingView.frame.size.height - ratitngSize.height) / 2),
@@ -521,7 +529,8 @@ static NSString *event = @"Recipe Detail";
     }
     
     mRatingTitleLabel.adjustsFontSizeToFitWidth = YES;
-    ratingView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1.0];
+    ratingView.backgroundColor = [UIColor clearColor];
+                                  //colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1.0];
     [ratingView addSubview:mRatingTitleLabel];
 
     
@@ -549,13 +558,6 @@ static NSString *event = @"Recipe Detail";
     
     
     
-    
-    
-    
-    
-    
-    
-    
     // Favorite View
     
     mAddToFavoriteView.viewDelegate = nil;
@@ -566,7 +568,8 @@ static NSString *event = @"Recipe Detail";
                                                                                            self.view.frame.size.width - (ratingView.frame.origin.x + ratingView.frame.size.width),
                                                                                            backgroundImageForRatingAndFavView.size.height)];
     mAddToFavoriteView.viewDelegate = self;
-    mAddToFavoriteView.backgroundColor = [UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
+    mAddToFavoriteView.backgroundColor = [UIColor clearColor];
+                                          //colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
 
     if(mRecipeObject.associatedApp == [[DataManager sharedDataManager] app])
     {
@@ -585,7 +588,7 @@ static NSString *event = @"Recipe Detail";
     
     // Resize Content Size Of Scroll View
     mScrollView.contentSize = CGSizeMake(mScrollView.frame.size.width,
-                                         ratingView.frame.origin.y + ratingView.frame.size.height + kPaddingBottom);
+                                         ratingView.frame.origin.y + ratingView.frame.size.height + kPaddingBottom+50);
     
 }
 
@@ -683,8 +686,8 @@ static NSString *event = @"Recipe Detail";
     UIImage *seperatorInBottomImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailSeperatorInBottomBackground" ofType:@"png"]];
     UIImage *bottomViewCenterBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailBottomBackground" ofType:@"png"]];
     
-    UIFont *bottomViewSectionTitleFont = [UtilityManager fontGetRegularFontOfSize:22];
-    UIFont *bottomViewSectionContentFont = [UtilityManager fontGetRegularFontOfSize:15];
+    UIFont *bottomViewSectionTitleFont = [UtilityManager fontGetBoldFontOfSize:22.0];
+    UIFont *bottomViewSectionContentFont = [UtilityManager fontGetBoldFontOfSize:16.0];
     
     CGFloat widthAvailableForContentsInBottomView = availableWidth - kBottomViewPaddingLeft - kBottomViewPaddingRight;
     
@@ -719,7 +722,7 @@ static NSString *event = @"Recipe Detail";
     
     // Bottom View Section Ingredients
     
-    NSString *ingredientsTitleString = @"Ingredients";
+    NSString *ingredientsTitleString = @"Ingredients:";
     CGSize ingredientsTitleSize = [ingredientsTitleString sizeWithFont:bottomViewSectionTitleFont];
     UILabel *ingredientsTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kBottomViewPaddingLeft,
                                                                                kBottomViewPaddingTop,
@@ -749,6 +752,7 @@ static NSString *event = @"Recipe Detail";
     ingredientsContentView.frame = CGRectMake(kBottomViewPaddingLeft,
                                               seperatorInBottomImageView1.frame.origin.y + seperatorInBottomImageView1.frame.size.height + kBottomViewGapBetweenSeperatorAndSectionContent,
                                               ingredientsContentView.frame.size.width,
+                                              
                                               ingredientsContentView.frame.size.height);
     [centerView addSubview:ingredientsContentView];
     [ingredientsContentView release];
@@ -778,7 +782,7 @@ static NSString *event = @"Recipe Detail";
     
     
     UIImageView *seperatorInBottomImageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(kBottomViewPaddingLeft,
-                                                                                             processTitleLabel.frame.origin.y + processTitleLabel.frame.size.height + kBottomViewGapBetweenSectionTitleAndSeperator,
+                                                                                             ingredientsContentView.frame.origin.y + ingredientsContentView.frame.size.height + kBottomViewGapBetweenTwoSections,
                                                                                              seperatorInBottomImage.size.width,
                                                                                              seperatorInBottomImage.size.height)];
     seperatorInBottomImageView2.image = seperatorInBottomImage;
@@ -794,7 +798,7 @@ static NSString *event = @"Recipe Detail";
     CGSize processContentsSize = [processContentsString sizeWithFont:bottomViewSectionContentFont constrainedToSize:CGSizeMake(widthAvailableForContentsInBottomView, 9999) lineBreakMode:UILineBreakModeWordWrap];
     
     UILabel *processContentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(kBottomViewPaddingLeft,
-                                                                              seperatorInBottomImageView2.frame.origin.y + seperatorInBottomImageView2.frame.size.height + kBottomViewGapBetweenSeperatorAndSectionContent,
+                                                                              seperatorInBottomImageView2.frame.origin.y + seperatorInBottomImageView2.frame.size.height + kBottomViewGapBetweenSeperatorAndSectionContent+1,
                                                                               widthAvailableForContentsInBottomView,
                                                                               processContentsSize.height)];
     processContentsLabel.text = processContentsString;
@@ -967,7 +971,7 @@ static NSString *event = @"Recipe Detail";
                                                                            self.view.frame.size.width,
                                                                            kRemoveFromFavViewHeight)];
         mOriginalRectForRemoveFromFavView = mRemoveFromFavoriteView.frame;
-        mRemoveFromFavoriteView.backgroundColor = [UIColor whiteColor];
+        mRemoveFromFavoriteView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1];
         
         
         
@@ -998,8 +1002,9 @@ static NSString *event = @"Recipe Detail";
                                                                         noButtonSize.width + sidePaddingForButtons + sidePaddingForButtons,
                                                                         noButtonSize.height + sidePaddingForButtons + sidePaddingForButtons)];
         [noButton setTitle:noString forState:UIControlStateNormal];
-        [noButton setTitleColor:[UIColor colorWithRed:0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1] forState:UIControlStateNormal];
+        [noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [noButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+        [noButton setBackgroundColor:[UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0]];
         [noButton addTarget:self action:@selector(noButtonClickedOnRemoveFromFavView:) forControlEvents:UIControlEventTouchUpInside];
         noButton.titleLabel.font = fontForButtons;
         [mRemoveFromFavoriteView addSubview:noButton];
@@ -1015,8 +1020,9 @@ static NSString *event = @"Recipe Detail";
                                                                          yesButtonSize.width + sidePaddingForButtons + sidePaddingForButtons,
                                                                          yesButtonSize.height + sidePaddingForButtons + sidePaddingForButtons)];
         [yesButton setTitle:yesString forState:UIControlStateNormal];
-        [yesButton setTitleColor:[UIColor colorWithRed:0 green:(73.0/256.0) blue:(144.0/256.0) alpha:1] forState:UIControlStateNormal];
+        [yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [yesButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+        [yesButton setBackgroundColor:[UIColor colorWithRed:(236.0/256.0) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0]];
         [yesButton addTarget:self action:@selector(yesButtonClickedOnRemoveFromFavView:) forControlEvents:UIControlEventTouchUpInside];
         yesButton.titleLabel.font = fontForButtons;
         [mRemoveFromFavoriteView addSubview:yesButton];
@@ -1097,7 +1103,7 @@ static NSString *event = @"Recipe Detail";
 
 - (void)backButtonClicked:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)noButtonClickedOnRemoveFromFavView:(id)sender

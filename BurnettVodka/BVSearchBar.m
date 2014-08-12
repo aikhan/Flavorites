@@ -87,7 +87,9 @@
                                                                    mCancelButton.frame.origin.x - (mIconImageView.frame.origin.x + mIconImageView.frame.size.width + kGapBetweenSearchIconAndTextField),
                                                                    sampleSize.height)];
         mTextField.font = textFieldFont;
-        mTextField.placeholder = placeholderText;
+       // mTextField.placeholder = placeholderText;
+        UIColor *color = [UIColor whiteColor];
+        mTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholderText attributes:@{NSForegroundColorAttributeName: color}];
         mTextField.returnKeyType = UIReturnKeySearch;
         mTextField.enablesReturnKeyAutomatically=NO;
         mTextField.keyboardType = UIKeyboardTypeDefault;

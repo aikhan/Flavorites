@@ -205,15 +205,18 @@
             cardView.tag = i + 1;
             [self addSubview:cardView];
             [mHomeScreenRecipeCardViewsArray addObject:cardView];
+            xCoord = xCoord + widthOfFeaturedCard + kGapBetweenCards;
             [cardView release];
 
         }
         else {
             [mHomeScreenRecipeCardViewsArray addObject:[mFeaturedRecipeItemsArray objectAtIndex:i]];
             BVRecipeDescriptionView *obj1 = [mFeaturedRecipeItemsArray objectAtIndex:i];
-            obj1.frame = CGRectMake(xCoord, yCoord, 120, 340);
+            obj1.frame = CGRectMake(xCoord, yCoord, 180, 340);
             
             [self addSubview:obj1];
+            xCoord = xCoord + 180 + kGapBetweenCards;
+
         }
         
         
@@ -224,7 +227,6 @@
 //        }
 //        else
         {
-            xCoord = xCoord + widthOfFeaturedCard + kGapBetweenCards;
         }
     }
     

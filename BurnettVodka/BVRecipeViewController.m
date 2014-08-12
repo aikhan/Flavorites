@@ -20,7 +20,7 @@
 #import "GAITracker.h"
 #import "GAIDictionaryBuilder.h"
 
-#define kGapBetweenNavigationBarAndSegmentControl 9
+#define kGapBetweenNavigationBarAndSegmentControl 29
 #define kGapBetweenSegmentControlAndSearchBar 7
 #define kGapBetweenSearchBarAndTableView 8
 
@@ -102,7 +102,7 @@
     self.view.frame = CGRectMake(0,
                                  0,
                                  self.navigationController.view.frame.size.width,
-                                 self.navigationController.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - iOS7OffsetAdjustmentForStatusBar);
+                                 self.navigationController.view.frame.size.height - self.navigationController.navigationBar.frame.size.height + iOS7OffsetAdjustmentForStatusBar);
 }
 
 
@@ -142,22 +142,28 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
 
     
     if(mIsSearchModeActive)
     {
-        [self.navigationController setNavigationBarHidden:YES animated:animated];
+       // [self.navigationController setNavigationBarHidden:YES animated:animated];
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+
     [super viewDidAppear:animated];
    // self.screenName = @"Recipe View";
 }
@@ -241,13 +247,13 @@
     mSegmentControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:[self imageForAZTabSelected:YES], [self imageForFlavorTabSelected:NO], [self imageForMixersTabSelected:NO], nil]];
     
     mSegmentControl.selectedSegmentIndex = 0;
-    mSegmentControl.segmentedControlStyle = UISegmentedControlStylePlain;
+    mSegmentControl.segmentedControlStyle = UISegmentedControlStyleBar;
     mSegmentControl.backgroundColor=[UIColor clearColor];
     mSegmentControl.frame = CGRectMake(roundf((self.view.frame.size.width - kSegmentedControlWidth) / 2),
                                        kGapBetweenNavigationBarAndSegmentControl,
                                        kSegmentedControlWidth,
                                        30);
-    mSegmentControl.tintColor = [UIColor colorWithRed:(40.0/255.0) green:(45.0/255.0) blue:(85.0/255.0) alpha:1.0];
+    mSegmentControl.tintColor = [UIColor colorWithRed:(57.0/255.0) green:(67.0/255.0) blue:(98.0/255.0) alpha:1.0];
     
     
     
@@ -336,14 +342,21 @@
         [mTableView performSelector:@selector(setSectionIndexColor:) withObject:[UIColor blackColor]];
     }
 }
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 
 - (void)configureViewOutOfSearchMode
 {
     [mTableView reloadData];
     [mTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
-    
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+//    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+//    
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
+//
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     [UIView animateWithDuration:0.25
                           delay:0
@@ -919,19 +932,24 @@
     
     for(Recipe *recipeObject in allRecipes)
     {
-        BOOL passesFilterationTest = YES;
-        
-        for(NSString *filterString in [self currentActiveMixerFilters])
-        {
-            if(![self isThisString:[filterString lowercaseString] aseperateEntityInTheString:[recipeObject.ingredients lowercaseString]])
-            {
-                passesFilterationTest = NO;
-                break;
-            }
+        if (recipeObject.flavor==Nil) {
+            
         }
-        
-        if(passesFilterationTest)
-            [filteredArray addObject:recipeObject];
+        else {
+            BOOL passesFilterationTest = YES;
+            
+            for(NSString *filterString in [self currentActiveMixerFilters])
+            {
+                if(![self isThisString:[filterString lowercaseString] aseperateEntityInTheString:[recipeObject.ingredients lowercaseString]])
+                {
+                    passesFilterationTest = NO;
+                    break;
+                }
+            }
+            
+            if(passesFilterationTest)
+                [filteredArray addObject:recipeObject];
+        }
     }
     
 
@@ -1165,11 +1183,11 @@
     
     
     // Title Label
-    UIFont *titleFont = [UtilityManager fontGetRegularFontOfSize:17];
+    UIFont *titleFont = [UtilityManager fontGetLightFontOfSize:17];
     CGSize titleSize = [titleString sizeWithFont:titleFont];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,
                                                                     0,
-                                                                    titleSize.width+10,
+                                                                    titleSize.width+20,
                                                                     headerView.frame.size.height)];
     titleLabel.text = titleString;
     titleLabel.font = titleFont;
@@ -1777,13 +1795,16 @@
     if([self.navigationController.viewControllers objectAtIndex:([self.navigationController.viewControllers count] -1)] == self)
     {
         mIsSearchModeActive = YES;
-        
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
+//        self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+//        
+//        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
+//
+//        [self.navigationController setNavigationBarHidden:YES animated:YES];
         
         CGRect beginKeyboardRect = [[[notificaiton userInfo] valueForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
         CGFloat heightOfTabBar = [(BVTabBarController *)self.parentViewController.parentViewController tabBar].frame.size.height;
         CGRect newFrameOfTheTableAfterAnimation = CGRectMake(mOriginalFrameOfTableView.origin.x,
-                                                             mOriginalFrameOfTableView.origin.y - (mOriginalFrameOfSegmentControl.origin.y + mOriginalFrameOfSegmentControl.size.height),
+                                                             mOriginalFrameOfTableView.origin.y - (mOriginalFrameOfSegmentControl.origin.y + mOriginalFrameOfSegmentControl.size.height-20),
                                                              mOriginalFrameOfTableView.size.width,
                                                              mOriginalFrameOfSegmentControl.origin.y + mOriginalFrameOfSegmentControl.size.height + mOriginalFrameOfTableView.size.height + self.navigationController.navigationBar.frame.size.height - (beginKeyboardRect.size.height - heightOfTabBar));
         
@@ -1809,12 +1830,12 @@
                          animations:^{
                              
                              mSearchBar.frame = CGRectMake(mOriginalFrameOfSearchBar.origin.x,
-                                                           mOriginalFrameOfSearchBar.origin.y - (mOriginalFrameOfSegmentControl.origin.y + mOriginalFrameOfSegmentControl.size.height),
+                                                           mOriginalFrameOfSearchBar.origin.y - (mOriginalFrameOfSegmentControl.origin.y + mOriginalFrameOfSegmentControl.size.height-20),
                                                            mOriginalFrameOfSearchBar.size.width,
                                                            mOriginalFrameOfSearchBar.size.height);
                              
                              mSegmentControl.frame = CGRectMake(mOriginalFrameOfSegmentControl.origin.x,
-                                                                mOriginalFrameOfSegmentControl.origin.y - (mOriginalFrameOfSegmentControl.origin.y + mOriginalFrameOfSegmentControl.size.height),
+                                                                mOriginalFrameOfSegmentControl.origin.y - (mOriginalFrameOfSegmentControl.origin.y + mOriginalFrameOfSegmentControl.size.height-20),
                                                                 mOriginalFrameOfSegmentControl.size.width,
                                                                 mOriginalFrameOfSegmentControl.size.height);
                              
@@ -1967,7 +1988,7 @@
 
 - (void)searchBarUserTappedCancel:(BVSearchBar *)searchBar
 {
-    //mIsSearchModeActive = NO;
+    mIsSearchModeActive = NO;
     
     [mSearchModeTableData release];
     mSearchModeTableData = nil;

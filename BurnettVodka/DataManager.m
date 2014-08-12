@@ -832,7 +832,6 @@ static DataManager *sharedDataManager = nil;
             //TODO: write statement here to delete all files in the featured recipe foleder as the JSON is not readable
         }
     }
-
     return featureRecipes;
 }
 

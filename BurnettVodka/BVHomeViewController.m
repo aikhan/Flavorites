@@ -55,6 +55,12 @@
                                  self.navigationController.view.frame.size.height);
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -63,7 +69,7 @@
     [self loadUserInterface];
     [self loadRecipesFromDiskAndShowInScrollView];
     Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
-    [[NSRunLoop currentRunLoop] addTimer:Scrolltimer forMode:UITrackingRunLoopMode];
+    ScroolFl=FALSE;
 
 }
 
@@ -108,7 +114,7 @@
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
     {
-        iOS7OffsetAdjustmentForStatusBar = 20;
+        iOS7OffsetAdjustmentForStatusBar = 0;
     }
     
     
@@ -216,9 +222,9 @@
         mScrollView.contentOffset = CGPointMake(mScrollView.contentOffset.x+0.5,0);
     }
     else {
-//        [Scrolltimer invalidate];
-//        Scrolltimer=Nil;
-//        Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer2) userInfo: nil repeats: YES];
+        [Scrolltimer invalidate];
+        Scrolltimer=Nil;
+        Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer2) userInfo: nil repeats: YES];
     }
 }
 
@@ -227,9 +233,9 @@
         mScrollView.contentOffset = CGPointMake(mScrollView.contentOffset.x-0.5,0);
     }
     else {
-//        [Scrolltimer invalidate];
-//        Scrolltimer = Nil;
-//        Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
+        [Scrolltimer invalidate];
+        Scrolltimer = Nil;
+        Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
     }
 }
 
@@ -259,21 +265,11 @@
         NSString *fileName = [recipeDic valueForKey:@"id"];
         if ([fileName integerValue]==recipeID) {
             if ([fileName integerValue]==checkOldDesc) {
-                FeaturedRecipeItem *item = [[FeaturedRecipeItem alloc] init];
-                NSString *imagePath = [recipeDic valueForKey:@"drink_image"];
-                NSString *imageExtention1 = [imagePath pathExtension];
-                NSString *imageFileNameWithoutExtension1 = [[imagePath lastPathComponent] stringByDeletingPathExtension];
-                UIImage *flavorImage1 = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension1 ofType:imageExtention1]];
-                imageFileNameWithoutExtension1 = [NSString stringWithFormat:@"%@.%@",imageFileNameWithoutExtension1,imageExtention1];
-                if (!flavorImage1) {
+                if (ScroolFl==TRUE) {
+                    [self crosstg];
                     
-                    imageFileNameWithoutExtension1 = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
+                    return;
                 }
-                item.imageFilePath = imageFileNameWithoutExtension1;
-                item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
-                checkOldDesc = 0;
-                [mutableArrayOfFeaturedItems addObject:item];
-                [item release];
             }
             else {
                 finalCount=count;
@@ -339,19 +335,27 @@
     }
     [mScrollView resetScrollViewWithRecipesArray:[NSArray arrayWithArray:mutableArrayOfFeaturedItems]];
     [mScrollView setContentOffset:CGPointMake((120*(finalCount-1))+(10*(finalCount-1)) ,[UIScreen mainScreen].bounds.origin.y)];
-   // [Scrolltimer invalidate];
-//    if (![Scrolltimer isValid]) {
-//    }
-//    else {
-//        [Scrolltimer invalidate];
-//    }
+    if (ScroolFl==FALSE) {
+        [Scrolltimer invalidate];
+        ScroolFl=TRUE;
+    }
+}
+
+- (void)crosstg {
+    ScroolFl=FALSE;
+    checkOldDesc = 0;
+    [RecipeDescription removeFromSuperview];
+    [self loadRecipesFromDiskAndShowInScrollView];
+    Scrolltimer = Nil;
+    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
 }
 
 -(void)CrossTarget:(id)sender {
+    ScroolFl=FALSE;
     [RecipeDescription removeFromSuperview];
     [self loadRecipesFromDiskAndShowInScrollView];
-//    Scrolltimer = Nil;
-//    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
+    Scrolltimer = Nil;
+    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
 }
 
 - (void)ViewMore:(id)Sender {
@@ -382,8 +386,8 @@
     [viewController release];
     [RecipeDescription removeFromSuperview];
     [self loadRecipesFromDiskAndShowInScrollView];
-//    Scrolltimer = Nil;
-//    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
+    Scrolltimer = Nil;
+    Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
 }
 
 

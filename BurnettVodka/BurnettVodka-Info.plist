@@ -48,6 +48,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>HelveticaRoundedLT-BoldCondObl.otf</string>
+		<string>Proxima_Nova-Sbold.otf</string>
+		<string>ProximaNova-Regular.otf</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
@@ -56,9 +58,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarHidden</key>
-	<false/>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

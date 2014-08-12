@@ -57,7 +57,7 @@
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
     {
-        iOS7OffsetAdjustmentForStatusBar = 20;
+        iOS7OffsetAdjustmentForStatusBar = 0;
     }
     
     self.view.frame = CGRectMake(0,
@@ -92,6 +92,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
 
    // self.screenName = @"Recipies For Flavor View";
@@ -401,7 +403,7 @@
 - (void)backButtonClicked:(id)sender
 {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 

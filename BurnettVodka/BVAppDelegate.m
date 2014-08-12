@@ -78,6 +78,8 @@ void myExceptionHandler(NSException *exception)
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     UIImage *navigationBarBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NavigationBarBackground" ofType:@"png"]];
     [[UINavigationBar appearance] setBackgroundImage:navigationBarBackgroundImage forBarMetrics:UIBarMetricsDefaultPrompt];
+    
+    //.size.height=65.0;
     [navigationBarBackgroundImage release];
     
      NSSetUncaughtExceptionHandler(&myExceptionHandler);
@@ -135,7 +137,24 @@ void myExceptionHandler(NSException *exception)
         }
         else
         {
-            // TODO: write error log
+            NSDictionary *plistdic = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"PropertyList" ofType:@"plist"]];
+            NSString *pliststr = [plistdic objectForKey:urlString];
+            NSDictionary *responseDic = [pliststr JSONValue];
+            NSString *successString = [responseDic valueForKey:@"success"];
+            if([[successString lowercaseString] isEqualToString:@"ok"])
+            {
+                NSString *temporaryFolderInFeaturedRecipesFolder = [UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]];
+                NSString *filePathForJSONStringToBeStoredInTempFolder = [temporaryFolderInFeaturedRecipesFolder stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
+                
+                NSError *jsonFileWriteError = nil;
+                BOOL jsonFileWriteSuccess = [pliststr writeToFile:filePathForJSONStringToBeStoredInTempFolder atomically:YES encoding:4 error:&jsonFileWriteError];
+                NSLog(@"%hhd",jsonFileWriteSuccess);
+            }
+            else
+            {
+                // NSString *errorMessage = [responseDic valueForKey:@"error"];
+                // TODO: write error log
+            }
         }
         [request release];
         BOOL anyRecipeSetCompleted = [self checkAndCompleteARecipeSetFromTemporaryFolder];
@@ -186,7 +205,25 @@ void myExceptionHandler(NSException *exception)
             }
             else
             {
-                // TODO: write error log
+                NSDictionary *plistdic = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"PropertyList" ofType:@"plist"]];
+                NSString *pliststr = [plistdic objectForKey:urlString];
+                NSDictionary *responseDic = [pliststr JSONValue];
+                NSString *successString = [responseDic valueForKey:@"success"];
+                if([[successString lowercaseString] isEqualToString:@"ok"])
+                {
+                    NSString *temporaryFolderInFeaturedRecipesFolder = [UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]];
+                    
+                    NSString *filePathForJSONStringToBeStoredInTempFolder = [temporaryFolderInFeaturedRecipesFolder stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
+                    
+                    NSError *jsonFileWriteError = nil;
+                    BOOL jsonFileWriteSuccess = [pliststr writeToFile:filePathForJSONStringToBeStoredInTempFolder atomically:YES encoding:4 error:&jsonFileWriteError];
+                    NSLog(@"%hhd",jsonFileWriteSuccess);
+                }
+                else
+                {
+                    // NSString *errorMessage = [responseDic valueForKey:@"error"];
+                    // TODO: write error log
+                }
             }
             [request release];
             BOOL anyRecipeSetCompleted = [self checkAndCompleteARecipeSetFromTemporaryFolder];
@@ -254,19 +291,19 @@ void myExceptionHandler(NSException *exception)
                                 if(!fileWritesucces)
                                 {
                                     // TODO: write error log
-                                    success = NO;
+                                   // success = NO;
                                 }
                             }
                             else
                             {
                                 // TODO: write error log
-                                success = NO;
+                                //success = NO;
                             }
                         }
                         else
                         {
                             // TODO: write error log
-                            success = NO;
+                            //success = NO;
                         }
                     }
                 }
@@ -420,6 +457,11 @@ void myExceptionHandler(NSException *exception)
     }    
     
     return _persistentStoreCoordinator;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 #pragma mark - Application's Documents directory

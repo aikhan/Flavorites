@@ -19,6 +19,7 @@
     BVRecipeDescriptionView *RecipeDescription;
     NSTimer *Scrolltimer;
     int checkOldDesc;
+    BOOL ScroolFl;
     
 }
 
