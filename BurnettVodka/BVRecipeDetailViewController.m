@@ -302,12 +302,12 @@ static NSString *event = @"Recipe Detail";
  //   [UtilityManager addTitle:@"Recipes" toNavigationItem:self.navigationItem];
     
     
-    UIBarButtonItem *backButton = [UtilityManager navigationBarBackButtonItemWithTarget:self andAction:@selector(backButtonClicked:) andHeight:self.navigationController.navigationBar.frame.size.height+15];
+    UIBarButtonItem *backButton = [UtilityManager navigationBarBackButtonItemWithTarget:self andAction:@selector(backButtonClicked:) andHeight:self.navigationController.navigationBar.frame.size.height+16];
     self.navigationItem.leftBarButtonItem = backButton;
 
     
 
-    UIBarButtonItem *shareButton =[UtilityManager navigationBarBackButtonItemWithTarget1:self andAction:@selector(share:) andHeight:self.navigationController.navigationBar.frame.size.height+15];
+    UIBarButtonItem *shareButton =[UtilityManager navigationBarBackButtonItemWithTarget1:self andAction:@selector(share:) andHeight:self.navigationController.navigationBar.frame.size.height+16];
     self.navigationItem.rightBarButtonItem = shareButton;
     
     
@@ -328,8 +328,8 @@ static NSString *event = @"Recipe Detail";
     
     [super viewDidAppear:animated];
     self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
-
-    //self.screenName = @"Recipies Detail View";
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning
@@ -407,9 +407,9 @@ static NSString *event = @"Recipe Detail";
     UIFont *recipeTitleFont = [UtilityManager fontGetRegularFontOfSize:26];
     CGSize recipeTitleSize = [recipeTitleString sizeWithFont:recipeTitleFont constrainedToSize:CGSizeMake(widthAvailableForRecipeTitle, 9999) lineBreakMode:UILineBreakModeWordWrap];
     UILabel *recipeTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPaddingLeft,
-                                                                          kPaddingTop,
+                                                                          kPaddingTop+10,
                                                                           widthAvailableForRecipeTitle,
-                                                                          40)];
+                                                                          45)];
     recipeTitleLabel.text = recipeTitleString;
     recipeTitleLabel.backgroundColor = [UIColor colorWithRed:(205.0/256.0) green:(17.0/256.0) blue:(60.0/256.0) alpha:1.0];
     recipeTitleLabel.textColor = [UIColor whiteColor];
@@ -441,7 +441,7 @@ static NSString *event = @"Recipe Detail";
     // Recipe ImageView
     
     UIImageView *recipeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-                                                                                 recipeTitleLabel.frame.origin.y + recipeTitleLabel.frame.size.height + kGapBetweenSeperatorAndImage,
+                                                                                 recipeTitleLabel.frame.origin.y + recipeTitleLabel.frame.size.height + kGapBetweenSeperatorAndImage+15,
                                                                                  self.view.frame.size.width,
                                                                                  kRecipeImageViewHeightIncludingTopAndBottomPadding - kGapBetweenSeperatorAndImage - kGapBetweenImageAndRateFavView)];
     recipeImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -504,24 +504,25 @@ static NSString *event = @"Recipe Detail";
     
     
 
-    NSString *ratingString = @"rate:";
+    NSString *ratingString = @"My Rating:";
+    UIFont *ratingFont = [UtilityManager fontGetRegularFontOfSize:14];
     if(mRecipeObject.ratingValueSubmittedByUser == nil || [mRecipeObject.ratingValueSubmittedByUser floatValue] == 0)
     {
-        ratingString = @"rate:";
+        ratingString = @"Rate:";
     }
-    UIFont *ratingFont = [UtilityManager fontGetRegularFontOfSize:14];
     CGSize ratitngSize = [ratingString sizeWithFont:ratingFont];
     mRatingTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
                                                                      roundf((ratingView.frame.size.height - ratitngSize.height) / 2),
                                                                      ratitngSize.width,
                                                                      ratitngSize.height)];
     mRatingTitleLabel.text = ratingString;
+    mRatingTitleLabel.textAlignment = NSTextAlignmentCenter;
     mRatingTitleLabel.backgroundColor = [UIColor clearColor];
     mRatingTitleLabel.textColor = [UIColor whiteColor];
     mRatingTitleLabel.font = ratingFont;
     if([mRatingTitleLabel respondsToSelector:@selector(minimumScaleFactor)])
     {
-        mRatingTitleLabel.minimumScaleFactor = 0.5;
+        mRatingTitleLabel.minimumScaleFactor = 1.0;
     }
     else
     {
@@ -659,12 +660,12 @@ static NSString *event = @"Recipe Detail";
     
     
     // Resize Bottom View Height
-    if(bottomView.frame.size.height < (footerImageViewForBottomView.frame.origin.y + footerImageViewForBottomView.frame.size.height))
+    //if(bottomView.frame.size.height < (footerImageViewForBottomView.frame.origin.y + footerImageViewForBottomView.frame.size.height))
     {
         bottomView.frame = CGRectMake(bottomView.frame.origin.x,
                                       bottomView.frame.origin.y,
-                                      bottomView.frame.size.width,
-                                      footerImageViewForBottomView.frame.origin.y + footerImageViewForBottomView.frame.size.height);
+                                      centerView.frame.size.width,
+                                      centerView.frame.size.height);
     }
     
     
@@ -686,7 +687,7 @@ static NSString *event = @"Recipe Detail";
     UIImage *seperatorInBottomImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailSeperatorInBottomBackground" ofType:@"png"]];
     UIImage *bottomViewCenterBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailBottomBackground" ofType:@"png"]];
     
-    UIFont *bottomViewSectionTitleFont = [UtilityManager fontGetBoldFontOfSize:22.0];
+    UIFont *bottomViewSectionTitleFont = [UtilityManager fontGetBoldFontOfSize:18.0];
     UIFont *bottomViewSectionContentFont = [UtilityManager fontGetBoldFontOfSize:16.0];
     
     CGFloat widthAvailableForContentsInBottomView = availableWidth - kBottomViewPaddingLeft - kBottomViewPaddingRight;
@@ -952,10 +953,10 @@ static NSString *event = @"Recipe Detail";
 
 - (void)updateRatingTitleLabel
 {
-    NSString *ratingString = @"My Rating:";
+    NSString *ratingString = @"Rate:";
     if(mRecipeObject.ratingValueSubmittedByUser == nil || [mRecipeObject.ratingValueSubmittedByUser floatValue] == 0)
     {
-        ratingString = @"Rate This:";
+        ratingString = @"Rate:";
     }
     
     mRatingTitleLabel.text = ratingString;
@@ -999,8 +1000,8 @@ static NSString *event = @"Recipe Detail";
         CGSize noButtonSize = [noString sizeWithFont:fontForButtons];
         UIButton *noButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
                                                                         0,
-                                                                        noButtonSize.width + sidePaddingForButtons + sidePaddingForButtons,
-                                                                        noButtonSize.height + sidePaddingForButtons + sidePaddingForButtons)];
+                                                                        40,
+                                                                        20)];
         [noButton setTitle:noString forState:UIControlStateNormal];
         [noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [noButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
@@ -1017,8 +1018,8 @@ static NSString *event = @"Recipe Detail";
         CGSize yesButtonSize = [yesString sizeWithFont:fontForButtons];
         UIButton *yesButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
                                                                          0,
-                                                                         yesButtonSize.width + sidePaddingForButtons + sidePaddingForButtons,
-                                                                         yesButtonSize.height + sidePaddingForButtons + sidePaddingForButtons)];
+                                                                         40,
+                                                                         20)];
         [yesButton setTitle:yesString forState:UIControlStateNormal];
         [yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [yesButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
@@ -1063,7 +1064,6 @@ static NSString *event = @"Recipe Detail";
         [messageItem release];
     }
 
-    
     BVShareItem *mailItem = [[BVShareItem alloc] initWithItemName:@"Mail" andIconImage:[[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"ShareMailIcon.png" andAddIfRequired:YES]];
     [arrayOfShareItems addObject:mailItem];
     [mailItem release];
@@ -1152,7 +1152,9 @@ static NSString *event = @"Recipe Detail";
         MFMessageComposeViewController *smsViewController = [[MFMessageComposeViewController alloc] init];
         smsViewController.messageComposeDelegate = self;
         smsViewController.body = messageString;
-        [self presentModalViewController:smsViewController animated:YES];
+        [self presentViewController:smsViewController animated:YES completion:nil];
+
+     //   [self presentViewController:smsViewController animated:YES];
         [smsViewController release];
     }
     else
@@ -1192,7 +1194,7 @@ static NSString *event = @"Recipe Detail";
     htmlTemplateString = [htmlTemplateString stringByReplacingOccurrencesOfString:@"%PROCESS%" withString:mRecipeObject.directions];
     
     // Replace Recipe Image URL
-    NSString *recipleImageURL = [NSString stringWithFormat:@"http://burnettsvodka.com/php/images/Burnetts_DrinkImages/%@", mRecipeObject.imageName];
+    NSString *recipleImageURL = [NSString stringWithFormat:@"%@", mRecipeObject.imageName];
     htmlTemplateString = [htmlTemplateString stringByReplacingOccurrencesOfString:@"%IMAGE_URL%" withString:recipleImageURL];
     NSLog(@"URL: %@",recipleImageURL);
     
@@ -1211,8 +1213,9 @@ static NSString *event = @"Recipe Detail";
     
     [mailComposer setMessageBody:htmlTemplateString isHTML:YES];
 
-    
-	[self presentModalViewController:mailComposer animated:YES];
+    [self presentViewController:mailComposer animated:YES completion:nil];
+
+	//[self presentViewController:mailComposer animated:YES];
 	
 	[mailComposer release];
 }

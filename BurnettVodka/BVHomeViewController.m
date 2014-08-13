@@ -98,7 +98,7 @@
 
 - (void)dealloc {
     
-    [mBackgroundImageView release];
+  //  [mBackgroundImageView release];
     [mScrollView release];
     [Scrolltimer release];
     [super dealloc];
@@ -182,6 +182,13 @@
         if (!flavorImage) {
             imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
             
+        }
+        NSString *isnew = [NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"isnew"]];
+        if ([isnew isEqualToString:@"1"]) {
+            item.isNewimg=TRUE;
+        }
+        else {
+            item.isNewimg=FALSE;
         }
         item.imageFilePath = imageFileNameWithoutExtension;
         item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
@@ -283,6 +290,13 @@
                     
                     imageFileNameWithoutExtension1 = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
                 }
+                NSString *isnew = [NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"isnew"]];
+                if ([isnew isEqualToString:@"1"]) {
+                    item.isNewimg=TRUE;
+                }
+                else {
+                    item.isNewimg=FALSE;
+                }
                 item.imageFilePath = imageFileNameWithoutExtension1;
                 item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
                 checkOldDesc = item.recipeID;
@@ -291,10 +305,13 @@
                 RecipeDescription = [[BVRecipeDescriptionView alloc] initWithFrame:CGRectMake(0,0/*
                                                                                                   [UIScreen mainScreen].bounds.size.width/2-750, [UIScreen mainScreen].bounds.size.height/2-170*/, 120, 340)];
                 [RecipeDescription.Heading setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"name"]]];
+                [RecipeDescription.Heading setFont:[UtilityManager fontGetRegularFontOfSize:18]];
                 NSString *str = [NSString stringWithFormat:@"\u2022 %@",[recipeDic valueForKey:@"ingredients"]];
                 str = [str stringByReplacingOccurrencesOfString:@"\r\n" withString:[NSString stringWithFormat:@"\r\n\u2022 "]];
                 [RecipeDescription.Ingredients setText:str];
+                [RecipeDescription.Ingredients setFont:[UtilityManager fontGetLightFontOfSize:15]];
                 [RecipeDescription.Procedure setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"directions"]]];
+                [RecipeDescription.Procedure setFont:[UtilityManager fontGetLightFontOfSize:13]];
                 NSString *imagePath1 = [recipeDic valueForKey:@"recipeimage"];
                 NSString *imageExtention = [imagePath1 pathExtension];
                 NSString *imageFileNameWithoutExtension = [[imagePath1 lastPathComponent] stringByDeletingPathExtension];
@@ -327,6 +344,13 @@
                 
                 imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
             }
+            NSString *isnew = [NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"isnew"]];
+            if ([isnew isEqualToString:@"1"]) {
+                item.isNewimg=TRUE;
+            }
+            else {
+                item.isNewimg=FALSE;
+            }
             item.imageFilePath = imageFileNameWithoutExtension;
             item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
             [mutableArrayOfFeaturedItems addObject:item];
@@ -352,6 +376,7 @@
 
 -(void)CrossTarget:(id)sender {
     ScroolFl=FALSE;
+    checkOldDesc = 0;
     [RecipeDescription removeFromSuperview];
     [self loadRecipesFromDiskAndShowInScrollView];
     Scrolltimer = Nil;
@@ -384,6 +409,8 @@
     BVRecipesForFlavorViewController *viewController = [[BVRecipesForFlavorViewController alloc] initWithFlavor:flavor];
     [self.navigationController pushViewController:viewController animated:YES];
     [viewController release];
+    ScroolFl=FALSE;
+    checkOldDesc = 0;
     [RecipeDescription removeFromSuperview];
     [self loadRecipesFromDiskAndShowInScrollView];
     Scrolltimer = Nil;

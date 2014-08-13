@@ -37,7 +37,7 @@
 @property (nonatomic, assign) id <BVFeaturedRecipeViewDelegate> viewDelegate;
 
 
-- (id)initWithFrame:(CGRect)frame andFeaturedRecipeItem:(FeaturedRecipeItem *)item;
+- (id)initWithFrame:(CGRect)frame andFeaturedRecipeItem:(FeaturedRecipeItem *)item andNew:(BOOL)isnew;
 - (void)updateDistanceFromCenter:(CGFloat)distanceFromCenter;
 
 @end

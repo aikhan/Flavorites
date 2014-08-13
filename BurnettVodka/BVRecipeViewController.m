@@ -455,11 +455,16 @@
                      completion:^(BOOL finished) {
                          
                          mTranslucentOverlayDuringMixerDropDown.hidden = YES;
-                         
-                         mMixerDropDownMenuView.viewDelegate = nil;
-                         [mMixerDropDownMenuView removeFromSuperview];
-                         [mMixerDropDownMenuView release];
-                         mMixerDropDownMenuView = nil;
+                         mMixerDropDownMenuView.hidden=YES;
+//                         mMixerDropDownMenuView.viewDelegate = nil;
+//                         [mMixerDropDownMenuView removeFromSuperview];
+//                         [mMixerDropDownMenuView release];
+//                         mMixerDropDownMenuView = nil;
+//                         mFlavorDropDownMenuView.viewDelegate = nil;
+//                         [mFlavorDropDownMenuView removeFromSuperview];
+//                         [mFlavorDropDownMenuView release];
+//                         mFlavorDropDownMenuView = nil;
+
                      }];
 }
 
@@ -536,11 +541,11 @@
                      completion:^(BOOL finished) {
                          
                          mTranslucentOverlayDuringFlavorDropDown.hidden = YES;
-                         
-                         mFlavorDropDownMenuView.viewDelegate = nil;
-                         [mFlavorDropDownMenuView removeFromSuperview];
-                         [mFlavorDropDownMenuView release];
-                         mFlavorDropDownMenuView = nil;
+                         mFlavorDropDownMenuView.hidden=YES;
+//                         mFlavorDropDownMenuView.viewDelegate = nil;
+//                         [mFlavorDropDownMenuView removeFromSuperview];
+//                         [mFlavorDropDownMenuView release];
+//                         mFlavorDropDownMenuView = nil;
                      }];
 }
 
@@ -781,7 +786,6 @@
     mAZTableData = [[NSMutableArray alloc] init];
     
     
-    
     NSArray *allRecipes = [[DataManager sharedDataManager] recipesGetAllRecipes];
     NSArray *sortedRecipes = [allRecipes sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]]];
     NSMutableDictionary *mapForSectionsOfTable = [[NSMutableDictionary alloc] init];
@@ -836,7 +840,7 @@
     mFlavorTableData = [[NSMutableArray alloc] init];
     
 
-    
+
     
     NSArray *allFlavors = [[DataManager sharedDataManager] flavorsGetAllFlavors];
     NSMutableArray *flavorsWithAtleastOneRecipe = [[NSMutableArray alloc] init];
@@ -924,7 +928,7 @@
     [mMixerTableData removeAllObjects];
     [mMixerTableData release];
     mMixerTableData = [[NSMutableArray alloc] init];
-    
+
     
     
     NSArray *allRecipes = [[DataManager sharedDataManager] recipesGetAllRecipes];
@@ -1529,7 +1533,23 @@
         case 0:
         {
             segmentNameForWDASubmission = @"A-Z";
-            
+            [mFlavorDropDownMenuView resetButtonClicked:nil];
+            [mMixerDropDownMenuView resetButtonClicked:nil];
+            [mFlavorDropDownMenuView continueButtonClicked:nil];
+            [mMixerDropDownMenuView continueButtonClicked:nil];
+            if (mMixerDropDownMenuView!=nil) {
+                mMixerDropDownMenuView.viewDelegate = nil;
+                [mMixerDropDownMenuView removeFromSuperview];
+                [mMixerDropDownMenuView release];
+                mMixerDropDownMenuView = nil;
+            }
+            else if (mFlavorDropDownMenuView!=nil) {
+                mFlavorDropDownMenuView.viewDelegate = nil;
+                [mFlavorDropDownMenuView removeFromSuperview];
+                [mFlavorDropDownMenuView release];
+                mFlavorDropDownMenuView = nil;
+            }
+
             [segmentedControl setImage:[self imageForAZTabSelected:YES] forSegmentAtIndex:0];
             [segmentedControl setImage:[self imageForFlavorTabSelected:NO] forSegmentAtIndex:1];
             [segmentedControl setImage:[self imageForMixersTabSelected:NO] forSegmentAtIndex:2];
@@ -1636,11 +1656,13 @@
 {
     UIImage *image = nil;
     
+    
     if(isSelected)
     {
         if(mImageAZTabSelected == nil)
         {
             mImageAZTabSelected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabAZTabSelected" ofType:@"png"]];
+
             
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             
@@ -1653,7 +1675,8 @@
             }
 #endif
         }
-    
+        UIColor *color = [UIColor whiteColor];
+       mSearchBar.mTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"search all recipes" attributes:@{NSForegroundColorAttributeName: color}];
         image = mImageAZTabSelected;
     }
     else
@@ -1661,7 +1684,7 @@
         if(mImageAZTabUnselected == nil)
         {
             mImageAZTabUnselected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabAZTabUnselected" ofType:@"png"]];
-            
+
             
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             
@@ -1685,13 +1708,14 @@
 - (UIImage *)imageForFlavorTabSelected:(BOOL)isSelected
 {
     UIImage *image = nil;
+
     
     if(isSelected)
     {
         if(mImageFlavorTabSelected == nil)
         {
             mImageFlavorTabSelected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabFlavorsTabSelected" ofType:@"png"]];
-            
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             
             if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
@@ -1703,7 +1727,8 @@
             }
 #endif
         }
-        
+        UIColor *color = [UIColor whiteColor];
+        mSearchBar.mTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName: color}];
         image = mImageFlavorTabSelected;
     }
     else
@@ -1711,7 +1736,7 @@
         if(mImageFlavorTabUnselected == nil)
         {
             mImageFlavorTabUnselected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabFlavorsTabUnselected" ofType:@"png"]];
-            
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             
             if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
@@ -1734,13 +1759,14 @@
 - (UIImage *)imageForMixersTabSelected:(BOOL)isSelected
 {
     UIImage *image = nil;
+
     
     if(isSelected)
     {
         if(mImageRecipesTabSelected == nil)
         {
             mImageRecipesTabSelected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabMixersTabSelected" ofType:@"png"]];
-            
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             
             if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
@@ -1753,7 +1779,8 @@
 #endif
         }
         
-        
+        UIColor *color = [UIColor whiteColor];
+        mSearchBar.mTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName: color}];
         image = mImageRecipesTabSelected;
     }
     else
@@ -1761,7 +1788,7 @@
         if(mImageRecipesTabUnselected == nil)
         {
             mImageRecipesTabUnselected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabMixersTabUnselected" ofType:@"png"]];
-            
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             
             if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
@@ -1795,12 +1822,7 @@
     if([self.navigationController.viewControllers objectAtIndex:([self.navigationController.viewControllers count] -1)] == self)
     {
         mIsSearchModeActive = YES;
-//        self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
-//        
-//        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
-//
-//        [self.navigationController setNavigationBarHidden:YES animated:YES];
-        
+
         CGRect beginKeyboardRect = [[[notificaiton userInfo] valueForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
         CGFloat heightOfTabBar = [(BVTabBarController *)self.parentViewController.parentViewController tabBar].frame.size.height;
         CGRect newFrameOfTheTableAfterAnimation = CGRectMake(mOriginalFrameOfTableView.origin.x,
@@ -1981,7 +2003,7 @@
         }
     }
     
-    
+    [self configureViewOutOfSearchMode];
     
     [searchResultsArray release];
 }

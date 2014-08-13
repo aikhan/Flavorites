@@ -27,7 +27,7 @@
 
 @synthesize viewDelegate;
 
-- (id)initWithFrame:(CGRect)frame andFeaturedRecipeItem:(FeaturedRecipeItem *)item
+- (id)initWithFrame:(CGRect)frame andFeaturedRecipeItem:(FeaturedRecipeItem *)item andNew:(BOOL)isnew
 {
     self = [super initWithFrame:frame];
     if(self)
@@ -59,11 +59,18 @@
         UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
         
         
-        
-        
         [self addSubview:mPosterImageView];
         
         
+        if (isnew==TRUE) {
+            UIImage *img = [UIImage imageNamed:@"new.png"];
+            UIImageView *isnewimagevier = [[UIImageView alloc] initWithFrame:CGRectMake(10,
+                                                                             20,
+                                                                             img.size.width,
+                                                                             img.size.height)];
+            isnewimagevier.image= img;
+            [mPosterImageView addSubview:isnewimagevier];
+        }
         
         
         //        //Now check for image
@@ -199,7 +206,8 @@
                                                                                                     yCoord,
                                                                                                     widthOfFeaturedCard,
                                                                                                     self.frame.size.height)
-                                                                   andFeaturedRecipeItem:recipeItem];
+                                                                   andFeaturedRecipeItem:recipeItem
+                                              andNew:recipeItem.isNewimg];
             cardView.viewDelegate = self;
             cardView.backgroundColor = [UIColor clearColor];
             cardView.tag = i + 1;

@@ -186,7 +186,7 @@
         CGSize cancelButtonSizeWithExtraPadding = CGSizeMake(cancelButtonSize.width + extraPaddingInCancelButton + extraPaddingInCancelButton,
                                                              cancelButtonSize.height + extraPaddingInCancelButton + extraPaddingInCancelButton);
         UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(10,
-                                                                            roundf((cancelBackgroundView.frame.size.height - cancelButtonSizeWithExtraPadding.height)/2 ),
+                                                                            roundf((cancelBackgroundView.frame.size.height - cancelButtonSizeWithExtraPadding.height)/2- 10 ),
                                                                             300,
                                                                             cancelButtonSizeWithExtraPadding.height)];
         [cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];

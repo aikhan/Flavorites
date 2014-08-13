@@ -57,13 +57,13 @@
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
     {
-        iOS7OffsetAdjustmentForStatusBar = 0;
+        iOS7OffsetAdjustmentForStatusBar = 20;
     }
     
     self.view.frame = CGRectMake(0,
                                  0,
                                  self.navigationController.view.frame.size.width,
-                                 self.navigationController.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - iOS7OffsetAdjustmentForStatusBar);
+                                 self.navigationController.view.frame.size.height - self.navigationController.navigationBar.frame.size.height + iOS7OffsetAdjustmentForStatusBar);
 }
 
 - (void)viewDidLoad
@@ -94,7 +94,7 @@
     [super viewDidAppear:animated];
     self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
 
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"flavourTab.png"] forBarMetrics:UIBarMetricsDefault];
 
    // self.screenName = @"Recipies For Flavor View";
 }

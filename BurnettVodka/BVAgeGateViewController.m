@@ -166,7 +166,7 @@
                                                                 remeberButtonImage.size.height)];
     [rememberButton setImage:remeberButtonImage forState:UIControlStateNormal];
     [rememberButton addTarget:self action:@selector(rememberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:rememberButton];
+    //[self.view addSubview:rememberButton];
     remmberfl = FALSE;
     // Continue Button
     UIImage *continueButtonImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AgeGateContinueButton.png" andAddIfRequired:YES];
@@ -193,7 +193,7 @@
     yCoordinateForDatePicker = yCoordinateForDatePicker + iOS7OffsetAdjustmentForStatusBar;
     
     continueButton.frame = CGRectMake(continueButton.frame.origin.x,
-                                      self.view.frame.size.height*0.75,
+                                      self.view.frame.size.height*0.63,
                                       continueButton.frame.size.width,
                                       continueButton.frame.size.height);
     

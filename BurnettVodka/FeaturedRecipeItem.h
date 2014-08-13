@@ -12,8 +12,9 @@
     
     NSInteger recipeID;
     NSString *imageFilePath;
+    BOOL isNewimg;
 }
-
+@property (nonatomic, assign) BOOL isNewimg;
 @property (nonatomic, assign) NSInteger recipeID;
 @property (nonatomic, copy) NSString *imageFilePath;
 

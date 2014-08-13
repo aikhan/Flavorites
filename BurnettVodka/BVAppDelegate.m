@@ -76,7 +76,7 @@ void myExceptionHandler(NSException *exception)
     [self CheckDateGetFeatureRecipes];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    UIImage *navigationBarBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NavigationBarBackground" ofType:@"png"]];
+    UIImage *navigationBarBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"favouriteTab" ofType:@"png"]];
     [[UINavigationBar appearance] setBackgroundImage:navigationBarBackgroundImage forBarMetrics:UIBarMetricsDefaultPrompt];
     
     //.size.height=65.0;

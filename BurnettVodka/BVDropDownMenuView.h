@@ -50,6 +50,8 @@
 
 @property (nonatomic, assign) id <BVDropDownMenuViewDelegate> viewDelegate;
 
+- (void)resetButtonClicked:(id)sender;
+- (void)continueButtonClicked:(id)sender;
 - (id)initWithOptions:(NSArray *)arrayOfOptions;
 - (void)showInView:(UIView *)view withArrowPointingAt:(CGPoint)arrowPoint;
 - (NSArray *)arrayOfSelectedItems;

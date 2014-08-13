@@ -26,7 +26,7 @@
     
     id <BVSearchBarDelegate> searchDelegate;
 }
-
+@property (nonatomic, retain) UITextField *mTextField;
 @property (nonatomic, assign) id <BVSearchBarDelegate> searchDelegate;
 
 - (void)resignSearchBar;

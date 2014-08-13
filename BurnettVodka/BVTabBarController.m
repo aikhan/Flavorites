@@ -431,7 +431,6 @@
 	[fromViewController willMoveToParentViewController:nil];
 	[self addChildViewController:toViewController];
     
-    
     // add it to container view, calls willMoveToParentViewController for us
 	[self.view addSubview:toViewController.view];
     [toViewController didMoveToParentViewController:self];

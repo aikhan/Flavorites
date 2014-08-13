@@ -160,7 +160,7 @@
         // Recipe Title
         CGFloat widthAvailableForRecipeTitle = backgroundImage.size.width - (mRecipeImageView.frame.origin.x + mRecipeImageView.frame.size.width + kGapBetweenRecipeImageViewAndRecipeTitle + kPaddingRight);
         NSString *sampleRecipeTitleText = @"Recipe";
-        UIFont *recipeTitleFont = [UtilityManager fontGetRegularFontOfSize:23];
+        UIFont *recipeTitleFont = [UtilityManager fontGetRegularFontOfSize:22];
         CGSize recipeTitleSize = [sampleRecipeTitleText sizeWithFont:recipeTitleFont constrainedToSize:CGSizeMake(widthAvailableForRecipeTitle, 9999) lineBreakMode:UILineBreakModeWordWrap];
         mRecipeTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(mRecipeImageView.frame.origin.x + mRecipeImageView.frame.size.width + kGapBetweenRecipeImageViewAndRecipeTitle,
                                                                       mRecipeImageView.frame.origin.y + kRecipeTitleYCoordinateAdjustment,

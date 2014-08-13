@@ -22,7 +22,7 @@
 
 @implementation BVSearchBar
 
-@synthesize searchDelegate;
+@synthesize searchDelegate,mTextField;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -87,11 +87,12 @@
                                                                    mCancelButton.frame.origin.x - (mIconImageView.frame.origin.x + mIconImageView.frame.size.width + kGapBetweenSearchIconAndTextField),
                                                                    sampleSize.height)];
         mTextField.font = textFieldFont;
+        mTextField.textColor = [UIColor whiteColor];
        // mTextField.placeholder = placeholderText;
         UIColor *color = [UIColor whiteColor];
         mTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholderText attributes:@{NSForegroundColorAttributeName: color}];
         mTextField.returnKeyType = UIReturnKeySearch;
-        mTextField.enablesReturnKeyAutomatically=NO;
+        mTextField.enablesReturnKeyAutomatically=YES;
         mTextField.keyboardType = UIKeyboardTypeDefault;
         mTextField.delegate = self;
         mTextField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -122,29 +123,19 @@
         [searchDelegate searchBarUserTappedCancel:self];
     }
     
-    //if([searchDelegate respondsToSelector:@selector(searchBar:searchTextChangedTo:)])
-    {
-        [searchDelegate searchBar:self searchTextChangedTo:mTextField.text];
-    }
-    //mTextField.text = @"";
+    mTextField.text = @"";
     
     [mTextField resignFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)aTextField
 {
-    if([searchDelegate respondsToSelector:@selector(searchBarUserTappedCancel:)])
-    {
-        [searchDelegate searchBarUserTappedCancel:self];
-    }
-    
-    //if([searchDelegate respondsToSelector:@selector(searchBar:searchTextChangedTo:)])
+    if([searchDelegate respondsToSelector:@selector(searchBar:searchTextChangedTo:)])
     {
         [searchDelegate searchBar:self searchTextChangedTo:mTextField.text];
     }
-    //mTextField.text = @"";
     
-
+    mTextField.text = @"";
     [aTextField resignFirstResponder];
     return YES;
 }

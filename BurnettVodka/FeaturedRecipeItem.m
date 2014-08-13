@@ -12,6 +12,7 @@
 
 @synthesize recipeID;
 @synthesize imageFilePath;
+@synthesize isNewimg;
 
 - (void)dealloc {
     
