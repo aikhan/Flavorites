@@ -53,6 +53,7 @@
                                  0,
                                  self.navigationController.view.frame.size.width,
                                  self.navigationController.view.frame.size.height);
+    [self.view retain];
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -68,6 +69,7 @@
     
     [self loadUserInterface];
     [self loadRecipesFromDiskAndShowInScrollView];
+    mScrollView.contentOffset = CGPointMake(0,0);
     Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
     ScroolFl=FALSE;
 
@@ -97,7 +99,8 @@
 
 
 - (void)dealloc {
-    
+    return;
+    NSLog(@"Home View COontroller is released");
   //  [mBackgroundImageView release];
     [mScrollView release];
     [Scrolltimer release];
@@ -161,6 +164,7 @@
     mScrollView.coverFlowDelegate = self;
     [mScrollView setCanCancelContentTouches:YES];
     [self.view addSubview:mScrollView];
+    
 }
 
 
@@ -199,29 +203,11 @@
     
     if([mutableArrayOfFeaturedItems count] == 0)
     {
-        NSArray *featuredRecipesDefault = [[DataManager sharedDataManager] featuredRecipesDefault];
-        for(NSDictionary *recipeDic in featuredRecipesDefault)
-        {
-            FeaturedRecipeItem *item = [[FeaturedRecipeItem alloc] init];
-            
-            NSString *imagePath = [recipeDic valueForKey:@"defaultImageName"];
-            NSString *imageExtention = [imagePath pathExtension];
-            NSString *imageFileNameWithoutExtension = [[imagePath lastPathComponent] stringByDeletingPathExtension];
-            UIImage *flavorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageFileNameWithoutExtension ofType:imageExtention]];
-            imageFileNameWithoutExtension = [NSString stringWithFormat:@"%@.%@",imageFileNameWithoutExtension,imageExtention];
-            if (!flavorImage) {
-                
-                imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
-                
-            }
-            item.imageFilePath = imageFileNameWithoutExtension;
-            item.recipeID = [[recipeDic valueForKey:@"id"] integerValue];
-
-            [mutableArrayOfFeaturedItems addObject:item];
-            [item release];
-        }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error" message:@"error loading featurede" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
     }
     [mScrollView resetScrollViewWithRecipesArray:[NSArray arrayWithArray:mutableArrayOfFeaturedItems]];
+    
 }
 
 -(void) onTimer {

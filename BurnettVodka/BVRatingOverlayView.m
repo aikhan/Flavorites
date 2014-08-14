@@ -172,29 +172,32 @@
         
         UIView *cancelBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                                 mContainerView.frame.size.height - kCancelRowHeight,
-                                                                                mContainerView.frame.size.width,
+                                                                                mContainerView.frame.size.width+10,
                                                                                 kCancelRowHeight)];
-        cancelBackgroundView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1];
+       cancelBackgroundView.backgroundColor = [UIColor colorWithRed:(40.0/256.0) green:(45.0/256.0) blue:(85.0/256.0) alpha:1];
         [mContainerView addSubview:cancelBackgroundView];
         [cancelBackgroundView release];
         
         
-        CGFloat extraPaddingInCancelButton = 5;
+        CGFloat extraPaddingInCancelButton = 2;
         UIFont *cancelButtonFont = [UtilityManager fontGetRegularFontOfSize:24];
         NSString *cancelButtonTitle = @"Cancel";
         CGSize cancelButtonSize = [cancelButtonTitle sizeWithFont:cancelButtonFont];
         CGSize cancelButtonSizeWithExtraPadding = CGSizeMake(cancelButtonSize.width + extraPaddingInCancelButton + extraPaddingInCancelButton,
-                                                             cancelButtonSize.height + extraPaddingInCancelButton + extraPaddingInCancelButton);
+                                                             cancelButtonSize.height + extraPaddingInCancelButton + extraPaddingInCancelButton +10);
         UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(10,
                                                                             roundf((cancelBackgroundView.frame.size.height - cancelButtonSizeWithExtraPadding.height)/2- 10 ),
                                                                             300,
                                                                             cancelButtonSizeWithExtraPadding.height)];
-        [cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
+//        [cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
+//        [cancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+//        [cancelButton setTitleColor: [UIColor whiteColor]forState:UIControlStateNormal];
+//         [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+//         cancelButton.backgroundColor =[UIColor colorWithRed:(236.0/256) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
+//        cancelButton.titleLabel.font = [UtilityManager fontGetRegularFontOfSize:20];;
         [cancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
-        [cancelButton setTitleColor: [UIColor whiteColor]forState:UIControlStateNormal];
-         [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-         cancelButton.backgroundColor =[UIColor colorWithRed:(236.0/256) green:(0.0/256.0) blue:(139.0/256.0) alpha:1.0];
-        cancelButton.titleLabel.font = [UtilityManager fontGetRegularFontOfSize:20];;
+        [cancelButton setBackgroundImage:[UIImage imageNamed:@"cancel_button.png"] forState:UIControlStateNormal];
+        
         [cancelBackgroundView addSubview:cancelButton];
         [cancelButton release];
     }

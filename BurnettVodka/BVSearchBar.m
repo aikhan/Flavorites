@@ -73,7 +73,7 @@
                                                                    self.frame.size.height)];
         [mCancelButton setImage:cancelButtonImage forState:UIControlStateNormal];
         [cancelButtonImage release];
-        [mCancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+        [mCancelButton addTarget:self action:@selector(userSearched) forControlEvents:UIControlEventTouchUpInside];
         mCancelButton.hidden = YES;
         [self addSubview:mCancelButton];
         
@@ -115,7 +115,15 @@
     [super dealloc];
 }
 
-
+- (void)userSearched{
+    if([searchDelegate respondsToSelector:@selector(searchBar:searchTextChangedTo:)])
+    {
+        [searchDelegate searchBar:self searchTextChangedTo:mTextField.text];
+    }
+    
+    mTextField.text = @"";
+    [mTextField resignFirstResponder];
+}
 - (void)cancel:(id)sender
 {
     if([searchDelegate respondsToSelector:@selector(searchBarUserTappedCancel:)])

@@ -142,7 +142,7 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
 
@@ -155,14 +155,14 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
 
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
 
     [super viewDidAppear:animated];
    // self.screenName = @"Recipe View";

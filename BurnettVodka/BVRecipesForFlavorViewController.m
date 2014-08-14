@@ -29,7 +29,7 @@
 @end
 
 @implementation BVRecipesForFlavorViewController
-
+UIView *myViewForBackButton;
 - (id)initWithFlavor:(Flavor *)flavor
 {
     self = [super init];
@@ -79,7 +79,7 @@
     
     
     UIBarButtonItem *backButton = [UtilityManager navigationBarBackButtonItemWithTarget:self andAction:@selector(backButtonClicked:) andHeight:self.navigationController.navigationBar.frame.size.height];
-    self.navigationItem.leftBarButtonItem = backButton;
+   // self.navigationItem.leftBarButtonItem = backButton;
     
     
     
@@ -92,13 +92,33 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
-
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
+    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"flavourTab.png"] forBarMetrics:UIBarMetricsDefault];
 
    // self.screenName = @"Recipies For Flavor View";
+    myViewForBackButton = [[UIView alloc] initWithFrame:CGRectMake(20,12,71,36)];
+    
+    UIButton *mybutton = [UIButton buttonWithType: UIButtonTypeCustom];
+    // [mybutton setImage:[UIImage imageNamed:@"BackBarButtonArrow.png"] forState:UIControlStateNormal];
+    // [mybutton setBackgroundColor:[UIColor greenColor]];
+    [mybutton setFrame:CGRectMake(0,0,71,36)];
+    [mybutton setBackgroundImage:[UIImage imageNamed:@"BackBarButtonArrow.png"] forState:UIControlStateNormal];
+    [mybutton addTarget:self action:@selector(backButtonClicked:) forControlEvents: UIControlEventTouchUpInside];
+    [myViewForBackButton addSubview:mybutton];
+    [self.navigationController.navigationBar addSubview:myViewForBackButton];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationItem setHidesBackButton:YES];
+    [super viewWillAppear:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [myViewForBackButton removeFromSuperview];
+    myViewForBackButton = nil;
+    [myViewForBackButton dealloc];
+    [super viewWillDisappear:animated];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

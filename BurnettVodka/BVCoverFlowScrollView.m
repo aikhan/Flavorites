@@ -95,7 +95,7 @@
     [mPosterImageView release];
     [mActivityIndicator release];
     [mRecipeItem release];
-    [super dealloc];
+    //[super dealloc];
 }
 
 
@@ -270,6 +270,12 @@
   //  [self scrollViewScrolled];
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+    NSLog(@"%f", scrollView.contentOffset.x);
+    
+}
 
 
 - (void)scrollViewScrolled

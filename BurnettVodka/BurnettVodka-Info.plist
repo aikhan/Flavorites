@@ -10,6 +10,12 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
+		<string>Burnetts_iOS_120px</string>
+		<string>Burnetts_iOS_114px</string>
+		<string>Burnetts_iOS_57px</string>
+		<string>Burnetts_iOS_80px</string>
+		<string>Burnetts_iOS_58px</string>
+		<string>Burnetts_iOS_29px</string>
 		<string>Icon-60</string>
 		<string>Icon-76</string>
 		<string>Icon-40</string>
@@ -19,7 +25,7 @@
 		<string>Icon-72</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.burnettsvodka.flavorites</string>
+	<string>com.burnettsvodka.BurnettVodka</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

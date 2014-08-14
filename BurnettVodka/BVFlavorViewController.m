@@ -250,7 +250,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 65);
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"flavourTab.png"] forBarMetrics:UIBarMetricsDefault];
 }
