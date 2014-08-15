@@ -49,7 +49,7 @@
  
         }
         mPosterImageView.image = posterImage;
-        [posterImage release];
+ //       [posterImage release];
         
         mPosterImageView.layer.masksToBounds = YES;
         mPosterImageView.layer.cornerRadius = 15.0;
@@ -177,7 +177,7 @@
 - (void)resetScrollViewWithRecipesArray:(NSArray *)recipesArray
 {
     [recipesArray retain];
-    [recipesArray release];
+  //  [recipesArray release];
     mFeaturedRecipeItemsArray = recipesArray;
     
     
@@ -187,7 +187,7 @@
         [view removeFromSuperview];
     }
     
-    [mHomeScreenRecipeCardViewsArray release];
+//    [mHomeScreenRecipeCardViewsArray release];
     mHomeScreenRecipeCardViewsArray = [[NSMutableArray alloc] init];
     
     
@@ -214,7 +214,7 @@
             [self addSubview:cardView];
             [mHomeScreenRecipeCardViewsArray addObject:cardView];
             xCoord = xCoord + widthOfFeaturedCard + kGapBetweenCards;
-            [cardView release];
+         //   [cardView release];
 
         }
         else {

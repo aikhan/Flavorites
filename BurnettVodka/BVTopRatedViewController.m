@@ -407,7 +407,7 @@
                                                            value:nil] build]];
     
     BVRecipeDetailViewController *viewController = [[BVRecipeDetailViewController alloc] initWithRecipe:recipeObject];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self.navigationController pushViewController:viewController animated:NO];
     [viewController release];
 }
 

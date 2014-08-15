@@ -291,7 +291,7 @@ static NewServerFetchOperations *sharedManager = nil;
             request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
             isUpdate = YES;
         }
-        request.timeOutSeconds = 120;
+        request.timeOutSeconds = 30;
         request.cachePolicy = ASIDoNotReadFromCacheCachePolicy;
         [request startSynchronous];
         NSError *error = [request error];
@@ -482,17 +482,13 @@ static NewServerFetchOperations *sharedManager = nil;
 }
 
 - (void)flavorImageDownloaded:(NSNotification *)notification{
-    
     flavorDownloadImageCount++;
-    
     DebugLog(@"Download fimage numher %d", flavorDownloadImageCount);
-    
 }
 
 - (void)recipeImageDownloaded:(NSNotification *)notification{
     recipeDownloadImageCount++;
     DebugLog(@"Download rimage numher %d", recipeDownloadImageCount);
-
 }
 
 -(void)dealloc{

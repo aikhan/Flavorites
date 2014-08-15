@@ -110,53 +110,56 @@ void myExceptionHandler(NSException *exception)
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
         
         NSString *urlString = [NSString stringWithFormat:@"%@/featured_recipe.php", kAPIServerPathNew];
-        ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-        request.timeOutSeconds = 30;
-        request.cachePolicy = ASIDoNotReadFromCacheCachePolicy;
-        [request startSynchronous];
-        NSError *error = [request error];
-        if (!error)
+
+        NSDictionary *plistdic = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"PropertyList" ofType:@"plist"]];
+        NSString *pliststr = [plistdic objectForKey:urlString];
+        NSDictionary *responseDic = [pliststr JSONValue];
+        NSString *successString = [responseDic valueForKey:@"success"];
+        if([[successString lowercaseString] isEqualToString:@"ok"])
         {
-            NSString *responseString = [request responseString];
-            NSDictionary *responseDic = [responseString JSONValue];
-            NSString *successString = [responseDic valueForKey:@"success"];
-            if([[successString lowercaseString] isEqualToString:@"ok"])
-            {
-                NSString *temporaryFolderInFeaturedRecipesFolder = [UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]];
-                NSString *filePathForJSONStringToBeStoredInTempFolder = [temporaryFolderInFeaturedRecipesFolder stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
-                
-                NSError *jsonFileWriteError = nil;
-                BOOL jsonFileWriteSuccess = [responseString writeToFile:filePathForJSONStringToBeStoredInTempFolder atomically:YES encoding:4 error:&jsonFileWriteError];
-                NSLog(@"%hhd",jsonFileWriteSuccess);
-            }
-            else
-            {
-                // NSString *errorMessage = [responseDic valueForKey:@"error"];
-                // TODO: write error log
-            }
+            NSString *temporaryFolderInFeaturedRecipesFolder = [UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]];
+            NSString *filePathForJSONStringToBeStoredInTempFolder = [temporaryFolderInFeaturedRecipesFolder stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
+            
+            NSError *jsonFileWriteError = nil;
+            BOOL jsonFileWriteSuccess = [pliststr writeToFile:filePathForJSONStringToBeStoredInTempFolder atomically:YES encoding:4 error:&jsonFileWriteError];
+            NSLog(@"%hhd",jsonFileWriteSuccess);
         }
         else
         {
-            NSDictionary *plistdic = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"PropertyList" ofType:@"plist"]];
-            NSString *pliststr = [plistdic objectForKey:urlString];
-            NSDictionary *responseDic = [pliststr JSONValue];
-            NSString *successString = [responseDic valueForKey:@"success"];
-            if([[successString lowercaseString] isEqualToString:@"ok"])
-            {
-                NSString *temporaryFolderInFeaturedRecipesFolder = [UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]];
-                NSString *filePathForJSONStringToBeStoredInTempFolder = [temporaryFolderInFeaturedRecipesFolder stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
-                
-                NSError *jsonFileWriteError = nil;
-                BOOL jsonFileWriteSuccess = [pliststr writeToFile:filePathForJSONStringToBeStoredInTempFolder atomically:YES encoding:4 error:&jsonFileWriteError];
-                NSLog(@"%hhd",jsonFileWriteSuccess);
-            }
-            else
-            {
-                // NSString *errorMessage = [responseDic valueForKey:@"error"];
-                // TODO: write error log
-            }
+            // NSString *errorMessage = [responseDic valueForKey:@"error"];
+            // TODO: write error log
         }
-        [request release];
+        
+//        ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+//        request.timeOutSeconds = 30;
+//        request.cachePolicy = ASIDoNotReadFromCacheCachePolicy;
+//        [request startSynchronous];
+//        NSError *error = [request error];
+//        if (!error)
+//        {
+//            NSString *responseString = [request responseString];
+//            NSDictionary *responseDic = [responseString JSONValue];
+//            NSString *successString = [responseDic valueForKey:@"success"];
+//            if([[successString lowercaseString] isEqualToString:@"ok"])
+//            {
+//                NSString *temporaryFolderInFeaturedRecipesFolder = [UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]];
+//                NSString *filePathForJSONStringToBeStoredInTempFolder = [temporaryFolderInFeaturedRecipesFolder stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
+//                
+//                NSError *jsonFileWriteError = nil;
+//                BOOL jsonFileWriteSuccess = [responseString writeToFile:filePathForJSONStringToBeStoredInTempFolder atomically:YES encoding:4 error:&jsonFileWriteError];
+//                NSLog(@"%hhd",jsonFileWriteSuccess);
+//            }
+//            else
+//            {
+//                // NSString *errorMessage = [responseDic valueForKey:@"error"];
+//                // TODO: write error log
+//            }
+//        }
+//        else
+//        {
+//            
+//        }
+//        [request release];
         BOOL anyRecipeSetCompleted = [self checkAndCompleteARecipeSetFromTemporaryFolder];
         NSLog(@"%hhd",anyRecipeSetCompleted);
         [pool release];

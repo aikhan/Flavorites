@@ -388,7 +388,7 @@
                                                            value:nil] build]];
     
     BVRecipesForFlavorViewController *viewController = [[BVRecipesForFlavorViewController alloc] initWithFlavor:flavor];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self.navigationController pushViewController:viewController animated:NO];
     [viewController release];
 }
 

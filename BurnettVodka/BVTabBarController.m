@@ -428,6 +428,7 @@
 	toViewController.view.autoresizingMask = self.view.autoresizingMask;
     
 	// notify
+   
 	[fromViewController willMoveToParentViewController:nil];
 	[self addChildViewController:toViewController];
     

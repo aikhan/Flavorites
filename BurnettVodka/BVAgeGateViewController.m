@@ -268,7 +268,10 @@
     {
         [setBirthDate setValue:mDatePickerView forKey:@"accessoryView"];
     }
-    
+    else {
+        [setBirthDate setFrame:CGRectMake(0,0,
+                                         300,300)];
+    }
     [setBirthDate addSubview:mDatePickerView];
     [setBirthDate show];
     mDatePickerView.frame = CGRectMake(setBirthDate.frame.origin.x+5,
@@ -303,9 +306,6 @@
 - (void)continueButtonClicked:(id)sender
 {
     NSInteger legalAge = 21;
-    
-    
-    
     NSDate* birthday = mDatePickerView.date;
     
     NSDate* now = [NSDate date];
@@ -318,7 +318,6 @@
     
     if(age >= legalAge)
     {
-        
         if([controllerDelegate respondsToSelector:@selector(userDeterminedAsLegalOnBVAgeGateViewController:)])
         {
             [controllerDelegate userDeterminedAsLegalOnBVAgeGateViewController:self];

@@ -64,7 +64,6 @@
         
         
         
-        
         UIImage *cancelButtonImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabSearchBarCross" ofType:@"png"]];
         CGFloat extraPaddingForCancelButton = roundf((self.frame.size.height - cancelButtonImage.size.height) / 2);
         mCancelButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - (cancelButtonImage.size.width + extraPaddingForCancelButton + extraPaddingForCancelButton),
@@ -79,12 +78,27 @@
         
         
         
+        
+        UIImage *cancelButtonImage1 = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"searchR" ofType:@"png"]];
+        CGFloat extraPaddingForCancelButton1 = roundf((self.frame.size.height - cancelButtonImage.size.height) / 2);
+        mSearchCancel = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - (cancelButtonImage1.size.width + extraPaddingForCancelButton1 + extraPaddingForCancelButton1)-(cancelButtonImage.size.width + extraPaddingForCancelButton + extraPaddingForCancelButton)-5,
+                                                                   0,
+                                                                   cancelButtonImage1.size.width + extraPaddingForCancelButton1 + extraPaddingForCancelButton1,
+                                                                   self.frame.size.height)];
+        [mSearchCancel setImage:cancelButtonImage1 forState:UIControlStateNormal];
+        [cancelButtonImage1 release];
+        [mSearchCancel addTarget:self action:@selector(UserCancel) forControlEvents:UIControlEventTouchUpInside];
+        mSearchCancel.hidden = YES;
+        [self addSubview:mSearchCancel];
+        
+        
+        
         NSString *placeholderText = @"search all recipes";
         UIFont *textFieldFont = [UtilityManager fontGetRegularFontOfSize:18];
         CGSize sampleSize = [placeholderText sizeWithFont:textFieldFont];
         mTextField = [[UITextField alloc] initWithFrame:CGRectMake(mIconImageView.frame.origin.x + mIconImageView.frame.size.width + kGapBetweenSearchIconAndTextField,
                                                                    roundf((self.frame.size.height - sampleSize.height) / 2),
-                                                                   mCancelButton.frame.origin.x - (mIconImageView.frame.origin.x + mIconImageView.frame.size.width + kGapBetweenSearchIconAndTextField),
+                                                                   mCancelButton.frame.origin.x - (mIconImageView.frame.origin.x + mIconImageView.frame.size.width + kGapBetweenSearchIconAndTextField)-30,
                                                                    sampleSize.height)];
         mTextField.font = textFieldFont;
         mTextField.textColor = [UIColor whiteColor];
@@ -92,9 +106,10 @@
         UIColor *color = [UIColor whiteColor];
         mTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholderText attributes:@{NSForegroundColorAttributeName: color}];
         mTextField.returnKeyType = UIReturnKeySearch;
-        mTextField.enablesReturnKeyAutomatically=YES;
+        mTextField.enablesReturnKeyAutomatically=NO;
         mTextField.keyboardType = UIKeyboardTypeDefault;
         mTextField.delegate = self;
+        //mTextField.clearButtonMode = UITextFieldViewModeUnlessEditing;
         mTextField.autocorrectionType = UITextAutocorrectionTypeNo;
         [self addSubview:mTextField];
         
@@ -115,13 +130,25 @@
     [super dealloc];
 }
 
+
+- (void) UserCancel {
+    mTextField.text = @"";
+
+    if([searchDelegate respondsToSelector:@selector(searchBar:searchTextChangedTo:)])
+    {
+        [searchDelegate searchBar:self searchTextChangedTo:mTextField.text];
+    }
+    mSearchCancel.hidden=YES;
+    [mTextField resignFirstResponder];
+}
+
 - (void)userSearched{
     if([searchDelegate respondsToSelector:@selector(searchBar:searchTextChangedTo:)])
     {
         [searchDelegate searchBar:self searchTextChangedTo:mTextField.text];
     }
     
-    mTextField.text = @"";
+    //mTextField.text = @"";
     [mTextField resignFirstResponder];
 }
 - (void)cancel:(id)sender
@@ -143,7 +170,7 @@
         [searchDelegate searchBar:self searchTextChangedTo:mTextField.text];
     }
     
-    mTextField.text = @"";
+   // mTextField.text = @"";
     [aTextField resignFirstResponder];
     return YES;
 }
@@ -151,11 +178,15 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     mCancelButton.hidden = NO;
+    mSearchCancel.hidden = NO;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     mCancelButton.hidden = YES;
+    if ([textField.text isEqualToString:@""]) {
+        mSearchCancel.hidden = YES;
+    }
 }
 
 

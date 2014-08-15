@@ -332,7 +332,10 @@
     mOriginalFrameOfTableView = mTableView.frame;
     mTableView.dataSource = self;
     mTableView.delegate = self;
-    mTableView.sectionIndexBackgroundColor = [UIColor clearColor];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        mTableView.sectionIndexBackgroundColor = [UIColor clearColor];
+    }
     mTableView.backgroundColor = [UIColor clearColor];
     mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:mTableView];
@@ -453,18 +456,11 @@
                          mMixerDropDownMenuView.alpha = 0.0;
                      }
                      completion:^(BOOL finished) {
-                         
                          mTranslucentOverlayDuringMixerDropDown.hidden = YES;
-                         mMixerDropDownMenuView.hidden=YES;
-//                         mMixerDropDownMenuView.viewDelegate = nil;
-//                         [mMixerDropDownMenuView removeFromSuperview];
-//                         [mMixerDropDownMenuView release];
-//                         mMixerDropDownMenuView = nil;
-//                         mFlavorDropDownMenuView.viewDelegate = nil;
-//                         [mFlavorDropDownMenuView removeFromSuperview];
-//                         [mFlavorDropDownMenuView release];
-//                         mFlavorDropDownMenuView = nil;
-
+                         mMixerDropDownMenuView.viewDelegate = nil;
+                         [mMixerDropDownMenuView removeFromSuperview];
+                         [mMixerDropDownMenuView release];
+                         mMixerDropDownMenuView = nil;
                      }];
 }
 
@@ -539,13 +535,11 @@
                          mFlavorDropDownMenuView.alpha = 0.0;
                      }
                      completion:^(BOOL finished) {
-                         
-                         mTranslucentOverlayDuringFlavorDropDown.hidden = YES;
-                         mFlavorDropDownMenuView.hidden=YES;
-//                         mFlavorDropDownMenuView.viewDelegate = nil;
-//                         [mFlavorDropDownMenuView removeFromSuperview];
-//                         [mFlavorDropDownMenuView release];
-//                         mFlavorDropDownMenuView = nil;
+                        mTranslucentOverlayDuringFlavorDropDown.hidden = YES;
+                        mFlavorDropDownMenuView.viewDelegate = nil;
+                        [mFlavorDropDownMenuView removeFromSuperview];
+                        [mFlavorDropDownMenuView release];
+                        mFlavorDropDownMenuView = nil;
                      }];
 }
 
@@ -1221,7 +1215,7 @@
                                                            value:nil] build]];
     
     BVRecipeDetailViewController *viewController = [[BVRecipeDetailViewController alloc] initWithRecipe:recipeObject];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self.navigationController pushViewController:viewController animated:NO];
     [viewController release];
 }
 
@@ -1524,6 +1518,9 @@
 
 - (void)segmentControlValueChanged:(id)sender
 {
+    if ([mSearchBar.mTextField.text isEqualToString:@""]) {
+        [self searchBar:mSearchBar searchTextChangedTo:@""];
+    }
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     
     NSString *segmentNameForWDASubmission = @"";
@@ -1533,23 +1530,6 @@
         case 0:
         {
             segmentNameForWDASubmission = @"A-Z";
-            [mFlavorDropDownMenuView resetButtonClicked:nil];
-            [mMixerDropDownMenuView resetButtonClicked:nil];
-            [mFlavorDropDownMenuView continueButtonClicked:nil];
-            [mMixerDropDownMenuView continueButtonClicked:nil];
-            if (mMixerDropDownMenuView!=nil) {
-                mMixerDropDownMenuView.viewDelegate = nil;
-                [mMixerDropDownMenuView removeFromSuperview];
-                [mMixerDropDownMenuView release];
-                mMixerDropDownMenuView = nil;
-            }
-            else if (mFlavorDropDownMenuView!=nil) {
-                mFlavorDropDownMenuView.viewDelegate = nil;
-                [mFlavorDropDownMenuView removeFromSuperview];
-                [mFlavorDropDownMenuView release];
-                mFlavorDropDownMenuView = nil;
-            }
-
             [segmentedControl setImage:[self imageForAZTabSelected:YES] forSegmentAtIndex:0];
             [segmentedControl setImage:[self imageForFlavorTabSelected:NO] forSegmentAtIndex:1];
             [segmentedControl setImage:[self imageForMixersTabSelected:NO] forSegmentAtIndex:2];
@@ -1567,6 +1547,29 @@
             if(mFlavorDropDownMenuView)
                 [self hideFlavorSelectionDropDown];
             
+            mMixerDropDownMenuView = [[BVDropDownMenuView alloc] initWithOptions:[self arrayOfOptionsForMixerDropDownMenuBasedOnCurrentSelectedMixerFilters]];
+            mMixerDropDownMenuView.viewDelegate = self;
+            mMixerDropDownMenuView.alpha = 0.0;
+            [mMixerDropDownMenuView resetButtonClicked:nil];
+            [mMixerDropDownMenuView continueButtonClicked:nil];
+            mTranslucentOverlayDuringMixerDropDown.hidden = YES;
+            mMixerDropDownMenuView.viewDelegate = nil;
+            [mMixerDropDownMenuView removeFromSuperview];
+            [mMixerDropDownMenuView release];
+            mMixerDropDownMenuView = nil;
+
+            mFlavorDropDownMenuView = [[BVDropDownMenuView alloc] initWithOptions:[self arrayOfOptionsForFlavorDropDownMenuBasedOnCurrentSelectedFlavorFilters]];
+            mFlavorDropDownMenuView.viewDelegate = self;
+            mFlavorDropDownMenuView.alpha = 0.0;
+            mTranslucentOverlayDuringFlavorDropDown.hidden = YES;
+            [mFlavorDropDownMenuView resetButtonClicked:nil];
+            [mFlavorDropDownMenuView continueButtonClicked:nil];
+            mFlavorDropDownMenuView.viewDelegate = nil;
+            [mFlavorDropDownMenuView removeFromSuperview];
+            [mFlavorDropDownMenuView release];
+            mFlavorDropDownMenuView = nil;
+
+            
             
             break;
         }
@@ -1574,7 +1577,6 @@
         case 1:
         {
             segmentNameForWDASubmission = @"Flavor";
-            
             [segmentedControl setImage:[self imageForAZTabSelected:NO] forSegmentAtIndex:0];
             [segmentedControl setImage:[self imageForFlavorTabSelected:YES] forSegmentAtIndex:1];
             [segmentedControl setImage:[self imageForMixersTabSelected:NO] forSegmentAtIndex:2];
@@ -1606,7 +1608,6 @@
         case 2:
         {
             segmentNameForWDASubmission = @"Mixer";
-            
             [segmentedControl setImage:[self imageForAZTabSelected:NO] forSegmentAtIndex:0];
             [segmentedControl setImage:[self imageForFlavorTabSelected:NO] forSegmentAtIndex:1];
             [segmentedControl setImage:[self imageForMixersTabSelected:YES] forSegmentAtIndex:2];
@@ -1639,7 +1640,7 @@
     }
     
     
-    
+
     
     
     [mTableView reloadData];
@@ -2300,11 +2301,11 @@
     
     if(mTableView.contentOffset.y > 0 && !mIsSearchBarAndSegmentedControlHidden)
     {
-        [self hideSegmentedControlAndSearchBarAnimated:YES];
+       // [self hideSegmentedControlAndSearchBarAnimated:YES];
     }
     else if(mTableView.contentOffset.y < -kMinimumPullToShowSearchBarAndSegmentedControl && mIsSearchBarAndSegmentedControlHidden)
     {
-        [self showSegmentedControlAndSearchBarAnimated:YES];
+       // [self showSegmentedControlAndSearchBarAnimated:YES];
     }
 }
 

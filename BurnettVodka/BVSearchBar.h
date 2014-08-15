@@ -22,6 +22,7 @@
     UIImageView *mBackgroundImageView;
     UIImageView *mIconImageView;
     UIButton *mCancelButton;
+    UIButton *mSearchCancel;
     UITextField *mTextField;
     
     id <BVSearchBarDelegate> searchDelegate;

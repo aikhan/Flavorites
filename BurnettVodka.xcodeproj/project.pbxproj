@@ -212,6 +212,7 @@
 		84FC228617A4469A00B30403 /* BVShareOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC228517A4469A00B30403 /* BVShareOverlayView.m */; };
 		E0068A53197F1FB000C3948D /* BVRecipeDescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0068A52197F1FB000C3948D /* BVRecipeDescriptionView.m */; };
 		E0068A55197F1FF800C3948D /* BVRecipeDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0068A54197F1FF800C3948D /* BVRecipeDescriptionView.xib */; };
+		E008A20A199E2681007C4963 /* searchR.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A209199E2681007C4963 /* searchR.png */; };
 		E025E337199B9F0C000C251C /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = E025E336199B9F0B000C251C /* new.png */; };
 		E071E4041996086C00AA67E7 /* Descriptionheading.png in Resources */ = {isa = PBXBuildFile; fileRef = E071E4021996086C00AA67E7 /* Descriptionheading.png */; };
 		E071E4051996086C00AA67E7 /* Viewmore.png in Resources */ = {isa = PBXBuildFile; fileRef = E071E4031996086C00AA67E7 /* Viewmore.png */; };
@@ -898,6 +899,7 @@
 		E0068A51197F1FAF00C3948D /* BVRecipeDescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVRecipeDescriptionView.h; sourceTree = "<group>"; };
 		E0068A52197F1FB000C3948D /* BVRecipeDescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVRecipeDescriptionView.m; sourceTree = "<group>"; };
 		E0068A54197F1FF800C3948D /* BVRecipeDescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BVRecipeDescriptionView.xib; sourceTree = "<group>"; };
+		E008A209199E2681007C4963 /* searchR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchR.png; sourceTree = "<group>"; };
 		E025E336199B9F0B000C251C /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
 		E071E4021996086C00AA67E7 /* Descriptionheading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Descriptionheading.png; sourceTree = "<group>"; };
 		E071E4031996086C00AA67E7 /* Viewmore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Viewmore.png; sourceTree = "<group>"; };
@@ -2261,6 +2263,7 @@
 		E09A97501994F8930095DC02 /* General Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E008A209199E2681007C4963 /* searchR.png */,
 				05F2799A199C45CE00B0F284 /* BigRatingStar.png */,
 				05F27998199C458C00B0F284 /* BigRatingStar@2x.png */,
 				05F27980199C2C5C00B0F284 /* share@2x.png */,
@@ -2819,6 +2822,7 @@
 				E0B2A8261998EBEB00FC5EC7 /* gin_peterpancocktail.png in Resources */,
 				E0B2A7E61998EBEB00FC5EC7 /* blueraspberry_icepop.png in Resources */,
 				E09A973B1994B7B80095DC02 /* TabBarHomeS.png in Resources */,
+				E008A20A199E2681007C4963 /* searchR.png in Resources */,
 				E09890FD1993866000694684 /* coconut.png in Resources */,
 				84EEEC1417BE78B500136E16 /* AddToMyFaves.png in Resources */,
 				E09891041993866000694684 /* mango.png in Resources */,
@@ -3042,6 +3046,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BurnettVodka/BurnettVodka-Prefix.pch";
 				INFOPLIST_FILE = "BurnettVodka/BurnettVodka-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\\\\\\\\\\\\\"$(SRCROOT)/BurnettVodka/WDA\\\\\\\\\\\\\\ AppTracker\\\\\\\\\\\\\\ SDK\\\\\\\\\\\\\\\"",
@@ -3083,6 +3088,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BurnettVodka/BurnettVodka-Prefix.pch";
 				INFOPLIST_FILE = "BurnettVodka/BurnettVodka-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\\\\\\\\\\\\\"$(SRCROOT)/BurnettVodka/WDA\\\\\\\\\\\\\\ AppTracker\\\\\\\\\\\\\\ SDK\\\\\\\\\\\\\\\"",

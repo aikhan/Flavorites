@@ -100,7 +100,7 @@
 
 - (void)dealloc {
     return;
-    NSLog(@"Home View COontroller is released");
+    NSLog(@"Home View Coontroller is released");
   //  [mBackgroundImageView release];
     [mScrollView release];
     [Scrolltimer release];
@@ -393,7 +393,7 @@
     
     
     BVRecipesForFlavorViewController *viewController = [[BVRecipesForFlavorViewController alloc] initWithFlavor:flavor];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self.navigationController pushViewController:viewController animated:NO];
     [viewController release];
     ScroolFl=FALSE;
     checkOldDesc = 0;
