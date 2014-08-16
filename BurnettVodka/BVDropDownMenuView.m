@@ -8,6 +8,9 @@
 
 #import "BVDropDownMenuView.h"
 #import "UtilityManager.h"
+#import "DataManager.h"
+#import "Constants.h"
+
 
 #define kArrowImageViewOverlapOverBody 2
 
@@ -145,16 +148,20 @@
         
         if([mTableData count] > 0)
         {
-            mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,
+            mTableView = [[UITableView alloc] initWithFrame:CGRectMake(20,
                                                                        0,
-                                                                       mContentView.frame.size.width,
+                                                                       mContentView.frame.size.width-40,
                                                                        mCancelButton.frame.origin.y - kGapBetweenTableViewAndBottomButtons)];
             mTableView.backgroundColor = [UIColor clearColor];
             mTableView.delegate = self;
             mTableView.dataSource = self;
             mTableView.rowHeight = kTableViewRowHeight;
-            mTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
-            mTableView.separatorColor = [UIColor grayColor];
+            mTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                mTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+            }
+            mTableView.separatorColor = [UIColor colorWithRed:(94.0/256.0) green:(98.0/256.0) blue:(128.0/256.0) alpha:1];
                                          //colorWithRed:(204.0/256.0) green:(204.0/256.0) blue:(204.0/256.0) alpha:1.0];
             [mContentView addSubview:mTableView];
         }

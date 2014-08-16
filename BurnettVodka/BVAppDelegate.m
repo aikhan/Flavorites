@@ -73,7 +73,8 @@ void myExceptionHandler(NSException *exception)
     self.tracker = [[GAI sharedInstance] trackerWithName:@"BurnettVodka"
                                               trackingId:kTrackingId];
     
-    [self CheckDateGetFeatureRecipes];
+    [self performSelectorInBackground:@selector(CheckDateGetFeatureRecipes) withObject:Nil];
+  //  [self CheckDateGetFeatureRecipes];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     UIImage *navigationBarBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"favouriteTab" ofType:@"png"]];

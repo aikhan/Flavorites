@@ -213,6 +213,12 @@
 		E0068A53197F1FB000C3948D /* BVRecipeDescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0068A52197F1FB000C3948D /* BVRecipeDescriptionView.m */; };
 		E0068A55197F1FF800C3948D /* BVRecipeDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0068A54197F1FF800C3948D /* BVRecipeDescriptionView.xib */; };
 		E008A20A199E2681007C4963 /* searchR.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A209199E2681007C4963 /* searchR.png */; };
+		E008A211199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A20B199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png */; };
+		E008A212199FF0EE007C4963 /* RecipeTabAZTabUnselectedS.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A20C199FF0EE007C4963 /* RecipeTabAZTabUnselectedS.png */; };
+		E008A213199FF0EE007C4963 /* RecipeTabFlavorsTabSelectedS.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A20D199FF0EE007C4963 /* RecipeTabFlavorsTabSelectedS.png */; };
+		E008A214199FF0EE007C4963 /* RecipeTabFlavorsTabUnselectedS.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A20E199FF0EE007C4963 /* RecipeTabFlavorsTabUnselectedS.png */; };
+		E008A215199FF0EE007C4963 /* RecipeTabMixersTabSelectedS.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A20F199FF0EE007C4963 /* RecipeTabMixersTabSelectedS.png */; };
+		E008A216199FF0EE007C4963 /* RecipeTabMixersTabUnselectedS.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A210199FF0EE007C4963 /* RecipeTabMixersTabUnselectedS.png */; };
 		E025E337199B9F0C000C251C /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = E025E336199B9F0B000C251C /* new.png */; };
 		E071E4041996086C00AA67E7 /* Descriptionheading.png in Resources */ = {isa = PBXBuildFile; fileRef = E071E4021996086C00AA67E7 /* Descriptionheading.png */; };
 		E071E4051996086C00AA67E7 /* Viewmore.png in Resources */ = {isa = PBXBuildFile; fileRef = E071E4031996086C00AA67E7 /* Viewmore.png */; };
@@ -900,6 +906,12 @@
 		E0068A52197F1FB000C3948D /* BVRecipeDescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVRecipeDescriptionView.m; sourceTree = "<group>"; };
 		E0068A54197F1FF800C3948D /* BVRecipeDescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BVRecipeDescriptionView.xib; sourceTree = "<group>"; };
 		E008A209199E2681007C4963 /* searchR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchR.png; sourceTree = "<group>"; };
+		E008A20B199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabAZTabSelectedS.png; sourceTree = "<group>"; };
+		E008A20C199FF0EE007C4963 /* RecipeTabAZTabUnselectedS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabAZTabUnselectedS.png; sourceTree = "<group>"; };
+		E008A20D199FF0EE007C4963 /* RecipeTabFlavorsTabSelectedS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabFlavorsTabSelectedS.png; sourceTree = "<group>"; };
+		E008A20E199FF0EE007C4963 /* RecipeTabFlavorsTabUnselectedS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabFlavorsTabUnselectedS.png; sourceTree = "<group>"; };
+		E008A20F199FF0EE007C4963 /* RecipeTabMixersTabSelectedS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabMixersTabSelectedS.png; sourceTree = "<group>"; };
+		E008A210199FF0EE007C4963 /* RecipeTabMixersTabUnselectedS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabMixersTabUnselectedS.png; sourceTree = "<group>"; };
 		E025E336199B9F0B000C251C /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
 		E071E4021996086C00AA67E7 /* Descriptionheading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Descriptionheading.png; sourceTree = "<group>"; };
 		E071E4031996086C00AA67E7 /* Viewmore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Viewmore.png; sourceTree = "<group>"; };
@@ -2276,6 +2288,12 @@
 				84390916179872240021D69A /* RatingStarGray.png */,
 				84390918179872240021D69A /* RatingStarHalfBlue.png */,
 				849FC3DE17ACEFED00DD9585 /* RecipeTabAZTabSelected.png */,
+				E008A20B199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png */,
+				E008A20C199FF0EE007C4963 /* RecipeTabAZTabUnselectedS.png */,
+				E008A20D199FF0EE007C4963 /* RecipeTabFlavorsTabSelectedS.png */,
+				E008A20E199FF0EE007C4963 /* RecipeTabFlavorsTabUnselectedS.png */,
+				E008A20F199FF0EE007C4963 /* RecipeTabMixersTabSelectedS.png */,
+				E008A210199FF0EE007C4963 /* RecipeTabMixersTabUnselectedS.png */,
 				849FC3E017ACEFF000DD9585 /* RecipeTabAZTabUnselected.png */,
 				849FC3E217ACEFF900DD9585 /* RecipeTabFlavorsTabSelected.png */,
 				849FC3E417ACF00300DD9585 /* RecipeTabFlavorsTabUnselected.png */,
@@ -2485,6 +2503,7 @@
 				E0B2A7DA1998EBEB00FC5EC7 /* blueberry_blueberrylemonade.png in Resources */,
 				E0B2A8DE1998EBEB00FC5EC7 /* sweettea_sweetteacooler.png in Resources */,
 				84FC1FF517A316EF00B30403 /* burnett_home_datestring.png in Resources */,
+				E008A211199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png in Resources */,
 				E0B2A8321998EBEB00FC5EC7 /* grape_grapefizz.png in Resources */,
 				E09AAF1319965EA80050B705 /* detailbg.png in Resources */,
 				05256B3419219186002955D5 /* Recipes1.csv in Resources */,
@@ -2552,6 +2571,7 @@
 				E0B2A7E71998EBEB00FC5EC7 /* blueraspberry_mountainbluetini.png in Resources */,
 				E09AAF1719966E770050B705 /* rate.png in Resources */,
 				E0B2A8391998EBEB00FC5EC7 /* holiday_lemonade.png in Resources */,
+				E008A213199FF0EE007C4963 /* RecipeTabFlavorsTabSelectedS.png in Resources */,
 				E09890FC1993866000694684 /* citrus.png in Resources */,
 				E0B2A8EF1998EBEB00FC5EC7 /* vodka_burnettscranberry.png in Resources */,
 				8441160517A5F7A600CDF046 /* CoverFlow_Move.aifc in Resources */,
@@ -2583,6 +2603,7 @@
 				E0B2A88E1998EBEB00FC5EC7 /* pinklemonade_pinkpop.png in Resources */,
 				8441161C17A61A7100CDF046 /* LoadingScreenUpperHalf_4inch.png in Resources */,
 				E0B2A8A41998EBEB00FC5EC7 /* raspberry_octobersky.png in Resources */,
+				E008A216199FF0EE007C4963 /* RecipeTabMixersTabUnselectedS.png in Resources */,
 				E0B2A80E1998EBEB00FC5EC7 /* fruitpunch_aquapunch.png in Resources */,
 				8441161E17A61A7100CDF046 /* LoadingScreenUpperHalf.png in Resources */,
 				8441162117A764AA00CDF046 /* featured_recipes.json in Resources */,
@@ -2855,7 +2876,9 @@
 				E09891161993866000694684 /* sweettea.png in Resources */,
 				E09891071993866000694684 /* orange.png in Resources */,
 				E09891101993866000694684 /* redberry.png in Resources */,
+				E008A212199FF0EE007C4963 /* RecipeTabAZTabUnselectedS.png in Resources */,
 				E0B2A8AF1998EBEB00FC5EC7 /* red_berry_cooler.png in Resources */,
+				E008A214199FF0EE007C4963 /* RecipeTabFlavorsTabUnselectedS.png in Resources */,
 				E0B2A8FB1998EBEB00FC5EC7 /* vodka_vodkaoldfashioned.png in Resources */,
 				E0B2A8271998EBEB00FC5EC7 /* gin_pompano.png in Resources */,
 				E09A97451994E20D0095DC02 /* reciepebg.png in Resources */,
@@ -2867,6 +2890,7 @@
 				E0B2A8A81998EBEB00FC5EC7 /* raspberry_raspberryfizz.png in Resources */,
 				E0B2A8041998EBEB00FC5EC7 /* cran_mango_martini.png in Resources */,
 				E0B2A86C1998EBEB00FC5EC7 /* orangecream_daydream.png in Resources */,
+				E008A215199FF0EE007C4963 /* RecipeTabMixersTabSelectedS.png in Resources */,
 				84EAD2D717E7F50300D8C694 /* NewFlavorsTaggingInfo.plist in Resources */,
 				E0989133199387E600694684 /* featured_watermelon.png in Resources */,
 				E0B2A7FB1998EBEB00FC5EC7 /* citrus_sunset.png in Resources */,

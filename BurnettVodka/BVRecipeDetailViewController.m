@@ -998,7 +998,7 @@ UIView *myViewForShareButton;
     if(mRemoveFromFavoriteView == nil)
     {
         mRemoveFromFavoriteView = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width,
-                                                                           mAddToFavoriteView.frame.origin.y + 1,
+                                                                           mAddToFavoriteView.frame.origin.y - 5,
                                                                            self.view.frame.size.width,
                                                                            kRemoveFromFavViewHeight)];
         mOriginalRectForRemoveFromFavView = mRemoveFromFavoriteView.frame;
