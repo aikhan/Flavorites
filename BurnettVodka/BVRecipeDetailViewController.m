@@ -316,8 +316,30 @@ UIView *myViewForShareButton;
     self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
     [self.navigationItem setHidesBackButton:YES];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
-    myViewForBackButton = [[UIView alloc] initWithFrame:CGRectMake(20,12,71,36)];
+
     
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [myViewForBackButton removeFromSuperview];
+    myViewForBackButton = nil;
+    [myViewForBackButton dealloc];
+    
+    [myViewForShareButton removeFromSuperview];
+    myViewForShareButton = nil;
+    [myViewForShareButton dealloc];
+    NSLog(@"Hide both buttons");
+    [super viewWillDisappear:animated];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    
+    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
+    myViewForBackButton = [[UIView alloc] initWithFrame:CGRectMake(20,12,71,36)];
     UIButton *mybutton = [UIButton buttonWithType: UIButtonTypeCustom];
     // [mybutton setImage:[UIImage imageNamed:@"BackBarButtonArrow.png"] forState:UIControlStateNormal];
     // [mybutton setBackgroundColor:[UIColor greenColor]];
@@ -328,11 +350,7 @@ UIView *myViewForShareButton;
     [self.navigationController.navigationBar addSubview:myViewForBackButton];
     
     
-    
-    
-    UIBarButtonItem *shareButton =[UtilityManager navigationBarBackButtonItemWithTarget1:self andAction:@selector(share:) andHeight:self.navigationController.navigationBar.frame.size.height+20];
-    //self.navigationItem.rightBarButtonItem = shareButton;
-    
+
     myViewForShareButton = [[UIView alloc] initWithFrame:CGRectMake(229,12,71,36)];
     
     UIButton *mybuttonShare = [UIButton buttonWithType: UIButtonTypeCustom];
@@ -341,27 +359,14 @@ UIView *myViewForShareButton;
     [mybuttonShare addTarget:self action:@selector(share:) forControlEvents: UIControlEventTouchUpInside];
     [myViewForShareButton addSubview:mybuttonShare];
     [self.navigationController.navigationBar addSubview:myViewForShareButton];
-}
-- (void)viewWillDisappear:(BOOL)animated{
-    [myViewForBackButton removeFromSuperview];
-    myViewForBackButton = nil;
-    [myViewForBackButton dealloc];
-    
-    [myViewForShareButton removeFromSuperview];
-    myViewForShareButton = nil;
-    [myViewForShareButton dealloc];
-    
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    
     [super viewDidAppear:animated];
-    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
-    
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"reciepeTab.png"] forBarMetrics:UIBarMetricsDefault];
+    NSLog(@"Show both buttons");
 }
-
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:animated];
+   
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -1278,7 +1283,8 @@ UIView *myViewForShareButton;
         {
             NSLog(@"Unable to fit all content in tweet because of shortage of space");
         }
-        
+        UIImage *recipeImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:[mRecipeObject pngImageFileName] andAddIfRequired:YES];
+        [tweetSheet addImage:recipeImage];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
     else

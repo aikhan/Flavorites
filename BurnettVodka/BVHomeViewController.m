@@ -203,7 +203,7 @@
     
     if([mutableArrayOfFeaturedItems count] == 0)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error" message:@"error loading featurede" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error" message:@"Error Loading Featured Items" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
     [mScrollView resetScrollViewWithRecipesArray:[NSArray arrayWithArray:mutableArrayOfFeaturedItems]];

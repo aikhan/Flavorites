@@ -809,6 +809,7 @@ static DataManager *sharedDataManager = nil;
     
     NSString *folderPathForFeaturedRecipes = [UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData];
     NSString *filePath = [folderPathForFeaturedRecipes stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
+//    NSString *jsonFilePath = [[UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]] stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];
     if([[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {
         NSString *jsonString = [NSString stringWithContentsOfFile:filePath encoding:4 error:nil];
@@ -831,14 +832,22 @@ static DataManager *sharedDataManager = nil;
         {
             //TODO: write statement here to delete all files in the featured recipe foleder as the JSON is not readable
         }
+    }else{
+        featureRecipes = [self featuredRecipesDefault];
     }
     return featureRecipes;
 }
 
 - (NSArray *)featuredRecipesDefault
 {
-    NSString *jsonString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[kFileNameForFeaturedRecipesJSON stringByDeletingPathExtension] ofType:[kFileNameForFeaturedRecipesJSON pathExtension]] encoding:4 error:nil];
+    /*NSString *jsonString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[kFileNameForFeaturedRecipesJSON stringByDeletingPathExtension] ofType:[kFileNameForFeaturedRecipesJSON pathExtension]] encoding:4 error:nil];
     NSArray *defaultFeaturedRecipes = [[jsonString JSONValue] valueForKey:@"featured_recipes"];
+    return defaultFeaturedRecipes;
+     */
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"PropertyList" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    id obj = [dict objectForKey: @"http://secure.xm0001.net/heavenhill/burnetts/recipe_api/featured_recipe.php"];
+    NSArray *defaultFeaturedRecipes = [[obj JSONValue] valueForKey:@"featured_recipes"];
     return defaultFeaturedRecipes;
 }
 

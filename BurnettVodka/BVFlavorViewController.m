@@ -348,7 +348,7 @@
 
      //   [flavorView setContentMode:uicontentsize]
         flavorView.tag = [flavor.flavorID integerValue];
-        DebugLog(@"Added flavor with tag ID %d", flavorView.tag);
+        //DebugLog(@"Added flavor with tag ID %d", flavorView.tag);
         
         [mScrollView addSubview:flavorView];
         

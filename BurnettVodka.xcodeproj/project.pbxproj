@@ -16,6 +16,7 @@
 		05256B3819224209002955D5 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05256B3719224209002955D5 /* libGoogleAnalyticsServices.a */; };
 		05256B4119224339002955D5 /* libFlurry_5.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05256B4019224339002955D5 /* libFlurry_5.0.0.a */; };
 		05427CFF185758C1009FDCB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05427CFE185758C0009FDCB0 /* Security.framework */; };
+		05655F33199E6A880061988B /* pina_mango-lada.png in Resources */ = {isa = PBXBuildFile; fileRef = 05655F32199E6A880061988B /* pina_mango-lada.png */; };
 		05A1041C18899E9C00B7D898 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A1041B18899E9C00B7D898 /* FacebookSDK.framework */; };
 		05AA29A0199BDB2D00181B20 /* rumwhite_sharktooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 05AA299F199BDB2D00181B20 /* rumwhite_sharktooth.png */; };
 		05C67E56193E4B85008AFB38 /* NewServerFetchOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C67E55193E4B85008AFB38 /* NewServerFetchOperations.m */; };
@@ -629,6 +630,7 @@
 		05256B3F19224339002955D5 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		05256B4019224339002955D5 /* libFlurry_5.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.0.0.a; sourceTree = "<group>"; };
 		05427CFE185758C0009FDCB0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		05655F32199E6A880061988B /* pina_mango-lada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pina_mango-lada.png"; path = "Reciepe/pina_mango-lada.png"; sourceTree = "<group>"; };
 		05A1041B18899E9C00B7D898 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		05AA299F199BDB2D00181B20 /* rumwhite_sharktooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rumwhite_sharktooth.png; sourceTree = "<group>"; };
 		05C67E54193E4B85008AFB38 /* NewServerFetchOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewServerFetchOperations.h; sourceTree = "<group>"; };
@@ -1757,6 +1759,7 @@
 		84C73C21179F6DEF00AA0934 /* Recipe Images */ = {
 			isa = PBXGroup;
 			children = (
+				05655F32199E6A880061988B /* pina_mango-lada.png */,
 				05AA299F199BDB2D00181B20 /* rumwhite_sharktooth.png */,
 				E0B2A6901998EBE900FC5EC7 /* adult_hot_chocolate.png */,
 				E0B2A6911998EBE900FC5EC7 /* berry_lemonade.png */,
@@ -2511,6 +2514,7 @@
 				E09891111993866000694684 /* rubyredgrapefruit.png in Resources */,
 				844B070D17FA882B00F875E9 /* Icon-60.png in Resources */,
 				E0B2A8C31998EBEB00FC5EC7 /* rumwhite_mojito.png in Resources */,
+				05655F33199E6A880061988B /* pina_mango-lada.png in Resources */,
 				E09890F81993866000694684 /* blueraspberry.png in Resources */,
 				05256B2A19217B32002955D5 /* Default-568h@2x.png in Resources */,
 				E0B2A7E21998EBEB00FC5EC7 /* blueraspberry_bluebreeze.png in Resources */,
