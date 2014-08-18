@@ -72,7 +72,6 @@
     mScrollView.contentOffset = CGPointMake(0,0);
     Scrolltimer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(onTimer) userInfo: nil repeats: YES];
     ScroolFl=FALSE;
-
 }
 
 - (void) viewWillAppear:(BOOL)animated

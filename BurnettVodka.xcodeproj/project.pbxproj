@@ -330,7 +330,6 @@
 		E0B2A7F01998EBEB00FC5EC7 /* cherry_cherryfizz.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A6AF1998EBE900FC5EC7 /* cherry_cherryfizz.png */; };
 		E0B2A7F11998EBEB00FC5EC7 /* cherry_cherrymartini.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A6B01998EBE900FC5EC7 /* cherry_cherrymartini.png */; };
 		E0B2A7F21998EBEB00FC5EC7 /* cherry_pinklemonade.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A6B11998EBE900FC5EC7 /* cherry_pinklemonade.png */; };
-		E0B2A7F31998EBEB00FC5EC7 /* cherrycola.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A6B21998EBE900FC5EC7 /* cherrycola.png */; };
 		E0B2A7F41998EBEB00FC5EC7 /* citrus_blueicemartini.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A6B31998EBE900FC5EC7 /* citrus_blueicemartini.png */; };
 		E0B2A7F51998EBEB00FC5EC7 /* citrus_citruscooler.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A6B41998EBE900FC5EC7 /* citrus_citruscooler.png */; };
 		E0B2A7F61998EBEB00FC5EC7 /* citrus_citrusmojito.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A6B51998EBE900FC5EC7 /* citrus_citrusmojito.png */; };
@@ -1024,7 +1023,6 @@
 		E0B2A6AF1998EBE900FC5EC7 /* cherry_cherryfizz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cherry_cherryfizz.png; path = Reciepe/cherry_cherryfizz.png; sourceTree = "<group>"; };
 		E0B2A6B01998EBE900FC5EC7 /* cherry_cherrymartini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cherry_cherrymartini.png; path = Reciepe/cherry_cherrymartini.png; sourceTree = "<group>"; };
 		E0B2A6B11998EBE900FC5EC7 /* cherry_pinklemonade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cherry_pinklemonade.png; path = Reciepe/cherry_pinklemonade.png; sourceTree = "<group>"; };
-		E0B2A6B21998EBE900FC5EC7 /* cherrycola.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cherrycola.png; path = Reciepe/cherrycola.png; sourceTree = "<group>"; };
 		E0B2A6B31998EBE900FC5EC7 /* citrus_blueicemartini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = citrus_blueicemartini.png; path = Reciepe/citrus_blueicemartini.png; sourceTree = "<group>"; };
 		E0B2A6B41998EBE900FC5EC7 /* citrus_citruscooler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = citrus_citruscooler.png; path = Reciepe/citrus_citruscooler.png; sourceTree = "<group>"; };
 		E0B2A6B51998EBE900FC5EC7 /* citrus_citrusmojito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = citrus_citrusmojito.png; path = Reciepe/citrus_citrusmojito.png; sourceTree = "<group>"; };
@@ -1807,7 +1805,6 @@
 				E0B2A6AF1998EBE900FC5EC7 /* cherry_cherryfizz.png */,
 				E0B2A6B01998EBE900FC5EC7 /* cherry_cherrymartini.png */,
 				E0B2A6B11998EBE900FC5EC7 /* cherry_pinklemonade.png */,
-				E0B2A6B21998EBE900FC5EC7 /* cherrycola.png */,
 				E0B2A6B31998EBE900FC5EC7 /* citrus_blueicemartini.png */,
 				E0B2A6B41998EBE900FC5EC7 /* citrus_citruscooler.png */,
 				E0B2A6B51998EBE900FC5EC7 /* citrus_citrusmojito.png */,
@@ -2861,7 +2858,6 @@
 				84EEEC2517C0C4CB00136E16 /* AgeGateBackground_4inch.png in Resources */,
 				E0B2A7DB1998EBEB00FC5EC7 /* blueberry_blueberrymojito.png in Resources */,
 				E0B2A8381998EBEB00FC5EC7 /* holiday_cheer.png in Resources */,
-				E0B2A7F31998EBEB00FC5EC7 /* cherrycola.png in Resources */,
 				E0B2A8811998EBEB00FC5EC7 /* pinapple_islandruby.png in Resources */,
 				E0B2A7E81998EBEB00FC5EC7 /* blueraspberry_tropicalbliss.png in Resources */,
 				05F27983199C31FF00B0F284 /* favouriteTab.png in Resources */,

@@ -156,13 +156,14 @@
             mTableView.delegate = self;
             mTableView.dataSource = self;
             mTableView.rowHeight = kTableViewRowHeight;
-            mTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
-            {
-                mTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
-            }
-            mTableView.separatorColor = [UIColor colorWithRed:(94.0/256.0) green:(98.0/256.0) blue:(128.0/256.0) alpha:1];
-                                         //colorWithRed:(204.0/256.0) green:(204.0/256.0) blue:(204.0/256.0) alpha:1.0];
+            mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//            mTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+//            {
+//                mTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//            }
+//            mTableView.separatorColor = [UIColor colorWithRed:(94.0/256.0) green:(98.0/256.0) blue:(128.0/256.0) alpha:1];
+//                                         //colorWithRed:(204.0/256.0) green:(204.0/256.0) blue:(204.0/256.0) alpha:1.0];
             [mContentView addSubview:mTableView];
         }
         else
@@ -255,7 +256,14 @@
         
         //        cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    UIView *seperatorView = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                     36,
+                                                                     cell.frame.size.width,
+                                                                     1)];
     
+    seperatorView.backgroundColor = [UIColor colorWithRed:(94.0/256.0) green:(98.0/256.0) blue:(128.0/256.0) alpha:1];
+    [cell.contentView addSubview:seperatorView];
+    [seperatorView release];
     return cell;
 }
 
