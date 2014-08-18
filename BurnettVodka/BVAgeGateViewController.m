@@ -259,29 +259,36 @@
     mDatePickerView.maximumDate = maxDate;
     [componentsForMaxDate release];
     
-    UIAlertView *setBirthDate = [[UIAlertView alloc] initWithTitle:@"Date of Birth:"
-                                                           message:nil
-                                                          delegate:self
-                                                 cancelButtonTitle:@"Cancel"
-                                                 otherButtonTitles:@"Set", nil];
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
     {
+        UIAlertView *setBirthDate = [[UIAlertView alloc] initWithTitle:@"Date of Birth:"
+                                                               message:nil
+                                                              delegate:self
+                                                     cancelButtonTitle:@"Cancel"
+                                                     otherButtonTitles:@"Set", nil];
         [setBirthDate setValue:mDatePickerView forKey:@"accessoryView"];
+        [setBirthDate show];
+        mDatePickerView.frame = CGRectMake(setBirthDate.frame.origin.x+5,
+                                           setBirthDate.frame.origin.y,
+                                           mDatePickerView.frame.size.width,
+                                           mDatePickerView.frame.size.height);
     }
     else {
-        [setBirthDate setFrame:CGRectMake(0,0,
-                                         300,300)];
+        UIAlertView *setBirthDate = [[UIAlertView alloc] initWithTitle:@"Date of Birth:"
+                                                               message:@"\n\n\n\n\n\n\n\n\n\n\n"
+                                                              delegate:self
+                                                     cancelButtonTitle:@"Cancel"
+                                                     otherButtonTitles:@"Set", nil];
+        setBirthDate.delegate = self;
+        mDatePickerView.frame=CGRectMake(5, 50.0, 275.0, 265.0);
+        [setBirthDate addSubview:mDatePickerView];
+        [setBirthDate show];
     }
-    [setBirthDate addSubview:mDatePickerView];
-    [setBirthDate show];
-    mDatePickerView.frame = CGRectMake(setBirthDate.frame.origin.x+5,
-                                       setBirthDate.frame.origin.y,
-                                       mDatePickerView.frame.size.width,
-                                       mDatePickerView.frame.size.height);
-    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex==0) {
+    }
     if (buttonIndex==1) {
         NSString *datestr = [NSString stringWithFormat:@"%@",mDatePickerView.date];
         NSArray *datearr = [datestr componentsSeparatedByString:@" "];
@@ -305,28 +312,35 @@
 
 - (void)continueButtonClicked:(id)sender
 {
-    NSInteger legalAge = 21;
-    NSDate* birthday = mDatePickerView.date;
     
-    NSDate* now = [NSDate date];
-    NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
-                                       components:NSYearCalendarUnit
-                                       fromDate:birthday
-                                       toDate:now
-                                       options:0];
-    NSInteger age = [ageComponents year];
-    
-    if(age >= legalAge)
-    {
-        if([controllerDelegate respondsToSelector:@selector(userDeterminedAsLegalOnBVAgeGateViewController:)])
-        {
-            [controllerDelegate userDeterminedAsLegalOnBVAgeGateViewController:self];
-        }
-    }
-    else
-    {
+    if ([datelbl.text isEqualToString:@"when were you born?"]) {
         NSURL *url = [NSURL URLWithString:@"http://www.centurycouncil.org/"];
         [[UIApplication sharedApplication] openURL:url];
+    }
+    else {
+        NSInteger legalAge = 21;
+        NSDate* birthday = mDatePickerView.date;
+        
+        NSDate* now = [NSDate date];
+        NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
+                                           components:NSYearCalendarUnit
+                                           fromDate:birthday
+                                           toDate:now
+                                           options:0];
+        NSInteger age = [ageComponents year];
+        
+        if(age >= legalAge)
+        {
+            if([controllerDelegate respondsToSelector:@selector(userDeterminedAsLegalOnBVAgeGateViewController:)])
+            {
+                [controllerDelegate userDeterminedAsLegalOnBVAgeGateViewController:self];
+            }
+        }
+        else
+        {
+            NSURL *url = [NSURL URLWithString:@"http://www.centurycouncil.org/"];
+            [[UIApplication sharedApplication] openURL:url];
+        }
     }
 }
 

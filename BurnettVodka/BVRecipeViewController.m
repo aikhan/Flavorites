@@ -1657,12 +1657,20 @@
 {
     UIImage *image = nil;
     
-    
     if(isSelected)
     {
+        NSString *imgstr;
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            imgstr = @"RecipeTabAZTabSelected";
+        }
+        else {
+            imgstr = @"RecipeTabAZTabSelectedS";
+        }
+
         if(mImageAZTabSelected == nil)
         {
-            mImageAZTabSelected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabAZTabSelected" ofType:@"png"]];
+            mImageAZTabSelected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imgstr ofType:@"png"]];
 
             
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
@@ -1682,9 +1690,18 @@
     }
     else
     {
+        NSString *imgstr;
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            imgstr = @"RecipeTabAZTabUnselected";
+        }
+        else {
+            imgstr = @"RecipeTabAZTabUnselectedS";
+        }
+
         if(mImageAZTabUnselected == nil)
         {
-            mImageAZTabUnselected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabAZTabUnselected" ofType:@"png"]];
+            mImageAZTabUnselected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imgstr ofType:@"png"]];
 
             
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
@@ -1713,9 +1730,17 @@
     
     if(isSelected)
     {
+        NSString *imgstr;
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            imgstr = @"RecipeTabFlavorsTabSelected";
+        }
+        else {
+            imgstr = @"RecipeTabFlavorsTabSelectedS";
+        }
         if(mImageFlavorTabSelected == nil)
         {
-            mImageFlavorTabSelected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabFlavorsTabSelected" ofType:@"png"]];
+            mImageFlavorTabSelected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imgstr ofType:@"png"]];
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             
@@ -1734,9 +1759,17 @@
     }
     else
     {
+        NSString *imgstr;
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            imgstr = @"RecipeTabFlavorsTabUnselected";
+        }
+        else {
+            imgstr = @"RecipeTabFlavorsTabUnselectedS";
+        }
         if(mImageFlavorTabUnselected == nil)
         {
-            mImageFlavorTabUnselected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabFlavorsTabUnselected" ofType:@"png"]];
+            mImageFlavorTabUnselected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imgstr ofType:@"png"]];
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             
@@ -1764,9 +1797,18 @@
     
     if(isSelected)
     {
+        NSString *imgstr;
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            imgstr = @"RecipeTabMixersTabSelected";
+        }
+        else {
+            imgstr = @"RecipeTabMixersTabSelectedS";
+        }
+
         if(mImageRecipesTabSelected == nil)
         {
-            mImageRecipesTabSelected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabMixersTabSelected" ofType:@"png"]];
+            mImageRecipesTabSelected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imgstr ofType:@"png"]];
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             
@@ -1786,9 +1828,17 @@
     }
     else
     {
+        NSString *imgstr;
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            imgstr = @"RecipeTabMixersTabUnselected";
+        }
+        else {
+            imgstr = @"RecipeTabMixersTabUnselectedS";
+        }
         if(mImageRecipesTabUnselected == nil)
         {
-            mImageRecipesTabUnselected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeTabMixersTabUnselected" ofType:@"png"]];
+            mImageRecipesTabUnselected = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imgstr ofType:@"png"]];
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 // iOS 7.0 supported
             

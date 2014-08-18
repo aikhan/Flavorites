@@ -249,23 +249,23 @@
     
     
     // Set up the initial position of the Feature Recipe Views to display the second card in the middle if possible.
-    if([mHomeScreenRecipeCardViewsArray count] >= 1)
-    {
-        NSInteger totalCount = [mHomeScreenRecipeCardViewsArray count];
-        NSInteger initialPositionIndex = roundf(((float)totalCount / 2.0)) - 1;
-        
-        BVFeaturedRecipeView *secondCardView = [mHomeScreenRecipeCardViewsArray  objectAtIndex:initialPositionIndex];
-        
-        CGFloat centrePointInVisibleScrollView = (self.frame.size.width / 2);
-        
-        CGFloat difference = centrePointInVisibleScrollView - secondCardView.center.x;
-        
-        [self setContentOffset:CGPointMake(0 - difference, 0)];
-    }
-    else
-    {
-        [self setContentOffset:CGPointMake(0, 0)];
-    }
+//    if([mHomeScreenRecipeCardViewsArray count] >= 1)
+//    {
+//        NSInteger totalCount = [mHomeScreenRecipeCardViewsArray count];
+//        NSInteger initialPositionIndex = roundf(((float)totalCount / 2.0)) - 1;
+//        
+//        BVFeaturedRecipeView *secondCardView = [mHomeScreenRecipeCardViewsArray  objectAtIndex:initialPositionIndex];
+//        
+//        CGFloat centrePointInVisibleScrollView = (self.frame.size.width / 2);
+//        
+//        CGFloat difference = centrePointInVisibleScrollView - secondCardView.center.x;
+//        
+//        [self setContentOffset:CGPointMake(0 - difference, 0)];
+//    }
+//    else
+//    {
+//        [self setContentOffset:CGPointMake(0, 0)];
+//    }
     //To force UI update right from the beginning of the dispay of the movie cards
   //  [self scrollViewScrolled];
 }

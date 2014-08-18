@@ -94,11 +94,11 @@
         
         for(int i=5; i>0; i--)
         {
-            UIView *seperatorView = [[UIView alloc] initWithFrame:CGRectMake(0,
+            UIView *seperatorView = [[UIView alloc] initWithFrame:CGRectMake(20,
                                                                              yCoordinatePointer,
-                                                                             mContainerView.frame.size.width,
+                                                                             mContainerView.frame.size.width-40,
                                                                              0.5)];
-            seperatorView.backgroundColor = [UIColor colorWithRed:(196.0/256.0) green:(196.0/256.0) blue:(196.0/256.0) alpha:1];
+            seperatorView.backgroundColor = [UIColor colorWithRed:(94.0/256.0) green:(98.0/256.0) blue:(128.0/256.0) alpha:1];
             [mContainerView addSubview:seperatorView];
             [seperatorView release];
             
