@@ -245,7 +245,7 @@
     [componentsForStartingDate setMonth:1];
     [componentsForStartingDate setYear:1992];
     NSDate *startingDate = [gregorian dateFromComponents:componentsForStartingDate];
-    mDatePickerView.date = startingDate;
+  //  mDatePickerView.date = startingDate;
     [componentsForStartingDate release];
     
     NSDateComponents *currentDateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:[NSDate date]];
