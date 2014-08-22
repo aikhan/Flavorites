@@ -374,7 +374,8 @@
     if(recipeID != 0)
     {
         Recipe *recipeObject = [[DataManager sharedDataManager] recipesGetRecipeWithRecipeID:recipeID];
-        flavor = recipeObject.flavor;
+        //flavor = recipeObject.flavor;
+        flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorID:recipeID];
     }
     else
     {
@@ -422,9 +423,6 @@
     return image;
     
 }
-
-
-
 
 #pragma mark - Public methods
 

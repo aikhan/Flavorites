@@ -430,7 +430,7 @@
 
 - (CGFloat)widthOfFeaturedCardView
 {
-    return 120;
+    return 110;
     //return (kFeaturedCardDimensionRatio * self.frame.size.height);
 }
 
