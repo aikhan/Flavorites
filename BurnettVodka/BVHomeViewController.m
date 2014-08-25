@@ -293,6 +293,7 @@
                 [RecipeDescription.Heading setFont:[UtilityManager fontGetRegularFontOfSize:18]];
                 NSString *str = [NSString stringWithFormat:@"\u2022 %@",[recipeDic valueForKey:@"ingredients"]];
                 str = [str stringByReplacingOccurrencesOfString:@"\r\n" withString:[NSString stringWithFormat:@"\r\n\u2022 "]];
+                str = [str stringByReplacingOccurrencesOfString:@"Burnett's" withString:[NSString stringWithFormat:@""]];
                 [RecipeDescription.Ingredients setText:str];
                 [RecipeDescription.Ingredients setFont:[UtilityManager fontGetLightFontOfSize:15]];
                 [RecipeDescription.Procedure setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"directions"]]];

@@ -294,6 +294,8 @@
         NSArray *datearr = [datestr componentsSeparatedByString:@" "];
         NSString *finalstr = [NSString stringWithFormat:@"%@",[datearr firstObject]];
         finalstr = [finalstr stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+        NSArray *datearr1 = [finalstr componentsSeparatedByString:@"/"];
+        finalstr = [NSString stringWithFormat:@"%@/%@/%@",[datearr1 objectAtIndex:1],[datearr1 lastObject],[datearr1 firstObject]];
         datelbl.text = [NSString stringWithFormat:@"%@",finalstr];
     }
 }

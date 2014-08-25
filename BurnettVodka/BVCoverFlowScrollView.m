@@ -64,8 +64,8 @@
         
         if (isnew==TRUE) {
             UIImage *img = [UIImage imageNamed:@"new.png"];
-            UIImageView *isnewimagevier = [[UIImageView alloc] initWithFrame:CGRectMake(5,
-                                                                             55,
+            UIImageView *isnewimagevier = [[UIImageView alloc] initWithFrame:CGRectMake(0,
+                                                                             60,
                                                                              img.size.width + 5,
                                                                              img.size.height + 5)];
             isnewimagevier.image= img;
