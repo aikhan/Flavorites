@@ -609,6 +609,9 @@
 		E0B2A90F1998EBEB00FC5EC7 /* whippedcream.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A7CE1998EBEB00FC5EC7 /* whippedcream.png */; };
 		E0B2A9101998EBEB00FC5EC7 /* whippedcream1.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A7CF1998EBEB00FC5EC7 /* whippedcream1.png */; };
 		E0B2A9111998EBEB00FC5EC7 /* winter_fizz.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A7D01998EBEB00FC5EC7 /* winter_fizz.png */; };
+		E0F8FFE719AF84A90008AC20 /* RatingStarBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F8FFE419AF84A90008AC20 /* RatingStarBlue@2x.png */; };
+		E0F8FFE819AF84A90008AC20 /* RatingStarGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F8FFE519AF84A90008AC20 /* RatingStarGray@2x.png */; };
+		E0F8FFE919AF84A90008AC20 /* RatingStarHalfBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F8FFE619AF84A90008AC20 /* RatingStarHalfBlue@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1295,6 +1298,9 @@
 		E0B2A7CE1998EBEB00FC5EC7 /* whippedcream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whippedcream.png; path = Reciepe/whippedcream.png; sourceTree = "<group>"; };
 		E0B2A7CF1998EBEB00FC5EC7 /* whippedcream1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whippedcream1.png; path = Reciepe/whippedcream1.png; sourceTree = "<group>"; };
 		E0B2A7D01998EBEB00FC5EC7 /* winter_fizz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = winter_fizz.png; path = Reciepe/winter_fizz.png; sourceTree = "<group>"; };
+		E0F8FFE419AF84A90008AC20 /* RatingStarBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarBlue@2x.png"; sourceTree = "<group>"; };
+		E0F8FFE519AF84A90008AC20 /* RatingStarGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarGray@2x.png"; sourceTree = "<group>"; };
+		E0F8FFE619AF84A90008AC20 /* RatingStarHalfBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarHalfBlue@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2264,6 +2270,9 @@
 				E09AAF1019964C1B0050B705 /* close_button.png */,
 				84E92F561795D5000057431A /* GeneralBackground.png */,
 				84390914179872240021D69A /* RatingStarBlue.png */,
+				E0F8FFE419AF84A90008AC20 /* RatingStarBlue@2x.png */,
+				E0F8FFE519AF84A90008AC20 /* RatingStarGray@2x.png */,
+				E0F8FFE619AF84A90008AC20 /* RatingStarHalfBlue@2x.png */,
 				E09AAF1219965EA80050B705 /* detailbg.png */,
 				84390916179872240021D69A /* RatingStarGray.png */,
 				84390918179872240021D69A /* RatingStarHalfBlue.png */,
@@ -2540,6 +2549,7 @@
 				E0B2A8091998EBEB00FC5EC7 /* espresso_coffeetruffle.png in Resources */,
 				E0B2A8B31998EBEB00FC5EC7 /* rumcoconut_killacola.png in Resources */,
 				E0B2A7E71998EBEB00FC5EC7 /* blueraspberry_mountainbluetini.png in Resources */,
+				E0F8FFE819AF84A90008AC20 /* RatingStarGray@2x.png in Resources */,
 				E09AAF1719966E770050B705 /* rate.png in Resources */,
 				E0B2A8391998EBEB00FC5EC7 /* holiday_lemonade.png in Resources */,
 				E008A213199FF0EE007C4963 /* RecipeTabFlavorsTabSelectedS.png in Resources */,
@@ -2842,10 +2852,12 @@
 				E0B2A8121998EBEB00FC5EC7 /* fruitpunch_mountainpunch.png in Resources */,
 				84A3E52C17C748990027B9CC /* AddedInMyFaves.png in Resources */,
 				E0B2A82F1998EBEB00FC5EC7 /* girl_scout_cookie.png in Resources */,
+				E0F8FFE919AF84A90008AC20 /* RatingStarHalfBlue@2x.png in Resources */,
 				E09A974E1994F51C0095DC02 /* HelveticaRoundedLT-BoldCondObl.otf in Resources */,
 				E0B2A8B51998EBEB00FC5EC7 /* rumcoconut_killerita.png in Resources */,
 				E09891161993866000694684 /* sweettea.png in Resources */,
 				E09891071993866000694684 /* orange.png in Resources */,
+				E0F8FFE719AF84A90008AC20 /* RatingStarBlue@2x.png in Resources */,
 				E09891101993866000694684 /* redberry.png in Resources */,
 				E008A212199FF0EE007C4963 /* RecipeTabAZTabUnselectedS.png in Resources */,
 				E0B2A8AF1998EBEB00FC5EC7 /* red_berry_cooler.png in Resources */,
