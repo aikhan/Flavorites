@@ -84,7 +84,7 @@
         extraPaddingForCancelButton = 0;
         mSearchCancel = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - (cancelButtonImage1.size.width + extraPaddingForCancelButton1 + extraPaddingForCancelButton1)-(cancelButtonImage.size.width + extraPaddingForCancelButton + extraPaddingForCancelButton)-5,
                                                                    0,
-                                                                   cancelButtonImage1.size.width + extraPaddingForCancelButton1 + extraPaddingForCancelButton1,
+                                                                   cancelButtonImage1.size.width,
                                                                    self.frame.size.height)];
         [mSearchCancel setImage:cancelButtonImage1 forState:UIControlStateNormal];
         [cancelButtonImage1 release];

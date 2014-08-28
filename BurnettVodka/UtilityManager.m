@@ -338,7 +338,7 @@ static UtilityManager *sharedUtilityManager = nil;
 
 + (UIFont *)fontGetLightFontOfSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"Proxima_Nova-Sbold" size:size];
+    return [UIFont fontWithName:@"ProximaNova-Semibold" size:size];
 }
 
 

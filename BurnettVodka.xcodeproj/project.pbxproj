@@ -206,6 +206,8 @@
 		84FC228117A3EF5700B30403 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FC228017A3EF5600B30403 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		84FC228317A3F0E800B30403 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FC228217A3F0E600B30403 /* Twitter.framework */; };
 		84FC228617A4469A00B30403 /* BVShareOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC228517A4469A00B30403 /* BVShareOverlayView.m */; };
+		E002230019AF54E50044CDAA /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E00222FF19AF54E50044CDAA /* ProximaNova-Semibold.otf */; };
+		E002230219AF55200044CDAA /* Proxima_Nova-Sbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E002230119AF55200044CDAA /* Proxima_Nova-Sbold.otf */; };
 		E0068A53197F1FB000C3948D /* BVRecipeDescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0068A52197F1FB000C3948D /* BVRecipeDescriptionView.m */; };
 		E0068A55197F1FF800C3948D /* BVRecipeDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0068A54197F1FF800C3948D /* BVRecipeDescriptionView.xib */; };
 		E008A211199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A20B199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png */; };
@@ -217,7 +219,6 @@
 		E071E4041996086C00AA67E7 /* Descriptionheading.png in Resources */ = {isa = PBXBuildFile; fileRef = E071E4021996086C00AA67E7 /* Descriptionheading.png */; };
 		E071E4051996086C00AA67E7 /* Viewmore.png in Resources */ = {isa = PBXBuildFile; fileRef = E071E4031996086C00AA67E7 /* Viewmore.png */; };
 		E076B814199A449F003D871D /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E076B813199A449F003D871D /* PropertyList.plist */; };
-		E076B817199A64DC003D871D /* Proxima_Nova-Sbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E076B815199A64DC003D871D /* Proxima_Nova-Sbold.otf */; };
 		E076B818199A64DC003D871D /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E076B816199A64DC003D871D /* ProximaNova-Regular.otf */; };
 		E09890F41993866000694684 /* 80proof.png in Resources */ = {isa = PBXBuildFile; fileRef = E09890CD1993866000694684 /* 80proof.png */; };
 		E09890F51993866000694684 /* 100proof.png in Resources */ = {isa = PBXBuildFile; fileRef = E09890CE1993866000694684 /* 100proof.png */; };
@@ -890,6 +891,8 @@
 		84FC228217A3F0E600B30403 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		84FC228417A4469900B30403 /* BVShareOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVShareOverlayView.h; sourceTree = "<group>"; };
 		84FC228517A4469A00B30403 /* BVShareOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVShareOverlayView.m; sourceTree = "<group>"; };
+		E00222FF19AF54E50044CDAA /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
+		E002230119AF55200044CDAA /* Proxima_Nova-Sbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima_Nova-Sbold.otf"; sourceTree = "<group>"; };
 		E0068A51197F1FAF00C3948D /* BVRecipeDescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVRecipeDescriptionView.h; sourceTree = "<group>"; };
 		E0068A52197F1FB000C3948D /* BVRecipeDescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVRecipeDescriptionView.m; sourceTree = "<group>"; };
 		E0068A54197F1FF800C3948D /* BVRecipeDescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BVRecipeDescriptionView.xib; sourceTree = "<group>"; };
@@ -902,7 +905,6 @@
 		E071E4021996086C00AA67E7 /* Descriptionheading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Descriptionheading.png; sourceTree = "<group>"; };
 		E071E4031996086C00AA67E7 /* Viewmore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Viewmore.png; sourceTree = "<group>"; };
 		E076B813199A449F003D871D /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
-		E076B815199A64DC003D871D /* Proxima_Nova-Sbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima_Nova-Sbold.otf"; sourceTree = "<group>"; };
 		E076B816199A64DC003D871D /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		E09890CD1993866000694684 /* 80proof.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80proof.png; sourceTree = "<group>"; };
 		E09890CE1993866000694684 /* 100proof.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100proof.png; sourceTree = "<group>"; };
@@ -2266,6 +2268,7 @@
 				84390916179872240021D69A /* RatingStarGray.png */,
 				84390918179872240021D69A /* RatingStarHalfBlue.png */,
 				849FC3DE17ACEFED00DD9585 /* RecipeTabAZTabSelected.png */,
+				E002230119AF55200044CDAA /* Proxima_Nova-Sbold.otf */,
 				E008A20B199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png */,
 				E008A20C199FF0EE007C4963 /* RecipeTabAZTabUnselectedS.png */,
 				E008A20D199FF0EE007C4963 /* RecipeTabFlavorsTabSelectedS.png */,
@@ -2278,8 +2281,8 @@
 				849FC3E617ACF01300DD9585 /* RecipeTabMixersTabSelected.png */,
 				849FC3E817ACF02A00DD9585 /* RecipeTabMixersTabUnselected.png */,
 				8448C49D179E50F50087D5C4 /* RecipeTabSegmentedControlBackground.png */,
-				E076B815199A64DC003D871D /* Proxima_Nova-Sbold.otf */,
 				E076B816199A64DC003D871D /* ProximaNova-Regular.otf */,
+				E00222FF19AF54E50044CDAA /* ProximaNova-Semibold.otf */,
 				8448C4A3179E52B60087D5C4 /* RecipeTabSegmentedControlDividerImage.png */,
 				05F2797A199C2B1300B0F284 /* BackBarButtonArrow@2x.png */,
 				05F2797C199C2B2700B0F284 /* BackBarButtonArrow.png */,
@@ -2409,6 +2412,7 @@
 				E0B2A9041998EBEB00FC5EC7 /* whippedcream_butteredpancakes.png in Resources */,
 				E0B2A8CD1998EBEB00FC5EC7 /* sourapple_appletini.png in Resources */,
 				E0B2A8171998EBEB00FC5EC7 /* gin_bermudabouquet.png in Resources */,
+				E002230019AF54E50044CDAA /* ProximaNova-Semibold.otf in Resources */,
 				8423A2E2179A520D001497C1 /* RecipeDetailSeperatorInBottomBackground.png in Resources */,
 				8423A2E6179A548C001497C1 /* SampleDrinkImage1.png in Resources */,
 				E0B2A82C1998EBEB00FC5EC7 /* gin_vodkafraise.png in Resources */,
@@ -2524,7 +2528,6 @@
 				05256B3619219186002955D5 /* Recipes3.csv in Resources */,
 				E0B2A8561998EBEB00FC5EC7 /* mango_mangofizz.png in Resources */,
 				84FA495717F1497300D13E27 /* Default4Inch.png in Resources */,
-				E076B817199A64DC003D871D /* Proxima_Nova-Sbold.otf in Resources */,
 				E09A97411994D7B60095DC02 /* flavourbg.png in Resources */,
 				05F27991199C32EF00B0F284 /* toprateTab.png in Resources */,
 				E0B2A7EE1998EBEB00FC5EC7 /* cherry_cherrybreeze.png in Resources */,
@@ -2702,6 +2705,7 @@
 				849FC3EC17ACF04500DD9585 /* RecipeTabAZTabUnselected.png in Resources */,
 				849FC3EE17ACF04500DD9585 /* RecipeTabFlavorsTabSelected.png in Resources */,
 				E0989128199387E600694684 /* featured_cherry.png in Resources */,
+				E002230219AF55200044CDAA /* Proxima_Nova-Sbold.otf in Resources */,
 				E0B2A87D1998EBEB00FC5EC7 /* pear_sparkling_pears.png in Resources */,
 				E0B2A80D1998EBEB00FC5EC7 /* espresso_mochamartini.png in Resources */,
 				E0B2A8EA1998EBEB00FC5EC7 /* vodka_blackburnettsmartini.png in Resources */,

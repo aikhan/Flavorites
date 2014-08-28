@@ -30,7 +30,7 @@
 
 
 #define kGapBetweenTitleAndSeperator 10
-#define kGapBetweenSeperatorAndImage 5
+#define kGapBetweenSeperatorAndImage 10
 #define kGapBetweenImageAndRateFavView 5
 #define kGapBetweenRateFavViewAndBottomView 10
 
@@ -476,7 +476,7 @@ UIView *myViewForShareButton;
     UIFont *recipeTitleFont = [UtilityManager fontGetRegularFontOfSize:26];
     CGSize recipeTitleSize = [recipeTitleString sizeWithFont:recipeTitleFont constrainedToSize:CGSizeMake(widthAvailableForRecipeTitle, 9999) lineBreakMode:UILineBreakModeWordWrap];
     UILabel *recipeTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPaddingLeft,
-                                                                          kPaddingTop+10,
+                                                                          kPaddingTop+25,
                                                                           widthAvailableForRecipeTitle,
                                                                           45)];
     recipeTitleLabel.text = recipeTitleString;
@@ -756,7 +756,7 @@ UIView *myViewForShareButton;
     UIImage *seperatorInBottomImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailSeperatorInBottomBackground" ofType:@"png"]];
     UIImage *bottomViewCenterBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailBottomBackground" ofType:@"png"]];
     
-    UIFont *bottomViewSectionTitleFont = [UtilityManager fontGetBoldFontOfSize:18.0];
+    UIFont *bottomViewSectionTitleFont = [UtilityManager fontGetLightFontOfSize:18.0];
     UIFont *bottomViewSectionContentFont = [UtilityManager fontGetBoldFontOfSize:16.0];
     
     CGFloat widthAvailableForContentsInBottomView = availableWidth - kBottomViewPaddingLeft - kBottomViewPaddingRight;
@@ -884,7 +884,7 @@ UIView *myViewForShareButton;
     
     
     // Resize Center View and Background Image View
-    if(centerView.frame.size.height < (processContentsLabel.frame.origin.y + processContentsLabel.frame.size.height + kBottomViewPaddingBottom))
+   // if(centerView.frame.size.height < (processContentsLabel.frame.origin.y + processContentsLabel.frame.size.height + kBottomViewPaddingBottom))
     {
         centerView.frame = CGRectMake(centerView.frame.origin.x,
                                       centerView.frame.origin.y,

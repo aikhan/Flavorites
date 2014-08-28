@@ -23,8 +23,8 @@
         
         mTopRatingBackgroundCircleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(mRecipeImageView.frame.origin.x + 4,
                                                                                             mRecipeImageView.frame.origin.y /*+ mRecipeImageView.frame.size.height - backgroundCircleImage.size.height - 2*/,
-                                                                                            backgroundCircleImage.size.width,
-                                                                                            backgroundCircleImage.size.height)];
+                                                                                            30,
+                                                                                            30)];
         mTopRatingBackgroundCircleImageView.image = backgroundCircleImage;
         [mContainerView addSubview:mTopRatingBackgroundCircleImageView];
         

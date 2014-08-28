@@ -51,7 +51,8 @@ int yValue;
     yValue = self.Ingredients.frame.origin.y + (int)sizeThatFits;
     DebugLog(@"yValue is %d", yValue);
     NSLog(@"%@", NSStringFromCGRect(self.Ingredients.frame));
-    
+  //  [self.Heading sizeToFit];
+  //  [self.Heading size]
     
     CGRect recipeFrame = self.Procedure.frame;
     NSLog(@"%@", NSStringFromCGRect(self.Procedure.frame));

@@ -156,7 +156,7 @@
     CGFloat heightLeftAfterTitleTextInBackground = self.view.frame.size.height - kHeightOfTitleTextInBackgroundImage - iOS7OffsetAdjustmentForStatusBar;
         
     mScrollView = [[BVCoverFlowScrollView alloc] initWithFrame:CGRectMake(0,
-                                                                          iOS7OffsetAdjustmentForStatusBar +  kHeightOfTitleTextInBackgroundImage + roundf((heightLeftAfterTitleTextInBackground - heightOfScrollView) / 2),
+                                                                          iOS7OffsetAdjustmentForStatusBar +  kHeightOfTitleTextInBackgroundImage + roundf((heightLeftAfterTitleTextInBackground - heightOfScrollView) / 2)-20,
                                                                           self.view.frame.size.width,
                                                                           heightOfScrollView)];
     mScrollView.delegate = self;
@@ -184,7 +184,6 @@
         imageFileNameWithoutExtension = [NSString stringWithFormat:@"%@.%@",imageFileNameWithoutExtension,imageExtention];
         if (!flavorImage) {
             imageFileNameWithoutExtension = [[UtilityManager fileSystemPathForRelativeDirectoryPath:kDirectoryNameForFeaturedRecipesData] stringByAppendingPathComponent:[imagePath lastPathComponent]];
-            
         }
         NSString *isnew = [NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"isnew"]];
         if ([isnew isEqualToString:@"1"]) {
@@ -290,14 +289,22 @@
                 RecipeDescription = [[BVRecipeDescriptionView alloc] initWithFrame:CGRectMake(-10,0/*
                                                                                                   [UIScreen mainScreen].bounds.size.width/2-750, [UIScreen mainScreen].bounds.size.height/2-170*/, 130, 340)];
                 [RecipeDescription.Heading setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"drink_name"]]];
+                NSString *str123 = [NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"drink_name"]];
+                NSLog(@"%d",str123.length);
                 [RecipeDescription.Heading setFont:[UtilityManager fontGetRegularFontOfSize:18]];
+                if (str123.length>18 && str123.length<30) {
+                    [RecipeDescription.Heading setFont:[UtilityManager fontGetRegularFontOfSize:15]];
+                }
+                else if (str123.length>29) {
+                    [RecipeDescription.Heading setFont:[UtilityManager fontGetRegularFontOfSize:12]];
+                }
                 NSString *str = [NSString stringWithFormat:@"\u2022 %@",[recipeDic valueForKey:@"ingredients"]];
                 str = [str stringByReplacingOccurrencesOfString:@"\n" withString:[NSString stringWithFormat:@"\n\u2022 "]];
                 str = [str stringByReplacingOccurrencesOfString:@"Burnett's " withString:[NSString stringWithFormat:@""]];
                 [RecipeDescription.Ingredients setText:str];
-                [RecipeDescription.Ingredients setFont:[UtilityManager fontGetLightFontOfSize:15]];
+                [RecipeDescription.Ingredients setFont:[UtilityManager fontGetBoldFontOfSize:13]];
                 [RecipeDescription.Procedure setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"directions"]]];
-                [RecipeDescription.Procedure setFont:[UtilityManager fontGetLightFontOfSize:13]];
+                [RecipeDescription.Procedure setFont:[UtilityManager fontGetBoldFontOfSize:13]];
                 NSString *imagePath1 = [recipeDic valueForKey:@"recipeimage"];
                 NSString *imageExtention = [imagePath1 pathExtension];
                 NSString *imageFileNameWithoutExtension = [[imagePath1 lastPathComponent] stringByDeletingPathExtension];

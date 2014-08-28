@@ -54,7 +54,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>HelveticaRoundedLT-BoldCondObl.otf</string>
-		<string>Proxima_Nova-Sbold.otf</string>
+		<string>ProximaNova-Semibold.otf</string>
 		<string>ProximaNova-Regular.otf</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
