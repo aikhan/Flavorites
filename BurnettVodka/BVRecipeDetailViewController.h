@@ -31,12 +31,13 @@
     
     UIButton *mAddToFavButton;
     UITapGestureRecognizer *mSwipeGestureRecognizer;
-    
+  //  UIImageView *backgroundImageView;
     id <BVRecipeDetailAddToFavoriteViewDelegate> viewDelegate;
 }
 
 @property (nonatomic, assign) id <BVRecipeDetailAddToFavoriteViewDelegate> viewDelegate;
-
+//@property (nonatomic, strong) UIImageView *backgroundImageView;
+///@property (nonatomic, strong) UIButton *mAddToFavButton;
 - (void)updateViewToShowAdded:(BOOL)isAdded animated:(BOOL)animated;
 
 @end

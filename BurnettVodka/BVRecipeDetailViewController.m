@@ -32,7 +32,7 @@
 #define kGapBetweenTitleAndSeperator 10
 #define kGapBetweenSeperatorAndImage 5
 #define kGapBetweenImageAndRateFavView 5
-#define kGapBetweenRateFavViewAndBottomView 5
+#define kGapBetweenRateFavViewAndBottomView 10
 
 
 
@@ -47,9 +47,9 @@
 #define kBottomViewPaddingBottom 12
 
 #define kBottomViewGapBetweenSectionTitleAndSeperator 3
-#define kBottomViewGapBetweenSeperatorAndSectionContent 3
+#define kBottomViewGapBetweenSeperatorAndSectionContent 1
 #define kBottomViewGapBetweenTwoSections 10
-#define kBottomViewGapBetweenTwoBulletPoints 8
+#define kBottomViewGapBetweenTwoBulletPoints 3
 #define kBottomViewGapBetweenBulletPointIconAndText 7
 
 #define kRemoveFromFavViewHeight 50
@@ -108,6 +108,23 @@ static NSString *event = @"Recipe Detail";
     // Check the state
     if(isAdded)
     {
+        UIImageView *myImageView = (UIImageView*)[self viewWithTag:100];
+        if (myImageView) {
+            [myImageView setImage:[UIImage imageNamed:@"favBack.png"]];
+            CGRect backFrame = myImageView.frame;
+             backFrame.origin.y = backFrame.origin.y - 1;
+            backFrame.size.height = backFrame.size.height + 1;
+            myImageView.frame = backFrame;
+        }else{
+            myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favBack.png"]];
+            CGRect backFrame = myImageView.frame;
+            backFrame.origin.y = backFrame.origin.y - 1;
+            backFrame.size.height = backFrame.size.height + 1;
+            myImageView.frame = backFrame;
+            [self insertSubview:myImageView atIndex:[[self subviews] count] - 1];
+            myImageView.tag = 100;
+            [myImageView release];
+        }
         if([[mAddToFavButton titleForState:UIControlStateNormal] isEqualToString:@" My Faves"])
         {
             return;
@@ -115,6 +132,23 @@ static NSString *event = @"Recipe Detail";
     }
     else
     {
+        UIImageView *myImageView = (UIImageView*)[self viewWithTag:100];
+        if (myImageView) {
+            [myImageView setImage:[UIImage imageNamed:@"favBackU.png"]];
+            CGRect backFrame = myImageView.frame;
+            backFrame.origin.y = backFrame.origin.y + 1;
+            backFrame.size.height = backFrame.size.height - 1;
+            myImageView.frame = backFrame;
+        }else{
+            myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favBackU.png"]];
+            CGRect backFrame = myImageView.frame;
+            backFrame.origin.y = backFrame.origin.y + 1;
+            backFrame.size.height = backFrame.size.height - 1;
+            myImageView.frame = backFrame;
+            [self insertSubview:myImageView atIndex:[[self subviews] count] - 1];
+            myImageView.tag = 100;
+            [myImageView release];
+        }
         if([[mAddToFavButton titleForState:UIControlStateNormal] isEqualToString:@" Add to Favorites"])
         {
             return;
@@ -458,17 +492,17 @@ UIView *myViewForShareButton;
     
     
     // Seperator
-    
-    UIImage *topSeperatorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailSeperatorAfterTitle" ofType:@"png"]];
-    UIImageView *topSeperatorImageView = [[UIImageView alloc] initWithFrame:CGRectMake(roundf((self.view.frame.size.width - topSeperatorImage.size.width) / 2),
-                                                                                       recipeTitleLabel.frame.origin.y + recipeTitleLabel.frame.size.height + kGapBetweenTitleAndSeperator,
-                                                                                       topSeperatorImage.size.width,
-                                                                                       topSeperatorImage.size.height)];
-    topSeperatorImageView.image = topSeperatorImage;
-    [topSeperatorImage release];
-    
-    //[mScrollView addSubview:topSeperatorImageView];
-    [topSeperatorImageView release];
+//    
+//    UIImage *topSeperatorImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailSeperatorAfterTitle" ofType:@"png"]];
+//    UIImageView *topSeperatorImageView = [[UIImageView alloc] initWithFrame:CGRectMake(roundf((self.view.frame.size.width - topSeperatorImage.size.width) / 2),
+//                                                                                       recipeTitleLabel.frame.origin.y + recipeTitleLabel.frame.size.height + kGapBetweenTitleAndSeperator,
+//                                                                                       topSeperatorImage.size.width,
+//                                                                                       topSeperatorImage.size.height)];
+//    topSeperatorImageView.image = topSeperatorImage;
+//    [topSeperatorImage release];
+//    
+//    //[mScrollView addSubview:topSeperatorImageView];
+//    [topSeperatorImageView release];
     
     
     
@@ -476,7 +510,7 @@ UIView *myViewForShareButton;
     // Recipe ImageView
     
     UIImageView *recipeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-                                                                                 recipeTitleLabel.frame.origin.y + recipeTitleLabel.frame.size.height + kGapBetweenSeperatorAndImage+15,
+                                                                                 recipeTitleLabel.frame.origin.y + recipeTitleLabel.frame.size.height + kGapBetweenSeperatorAndImage+10,
                                                                                  self.view.frame.size.width,
                                                                                  kRecipeImageViewHeightIncludingTopAndBottomPadding - kGapBetweenSeperatorAndImage - kGapBetweenImageAndRateFavView)];
     recipeImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -1506,7 +1540,9 @@ UIView *myViewForShareButton;
     BVApp *app = [[DataManager sharedDataManager] app];
     [app addFavoriteRecipesObject:mRecipeObject];
     [DataManager saveDatabaseOnMainThread];
-        
+    
+    
+    
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kNotificationRecipeAddedToFavorite object:mRecipeObject]];
 }
 
@@ -1534,7 +1570,10 @@ UIView *myViewForShareButton;
 #pragma mark NSNotification Methods
 
 - (void)recipeRemovedFromFavorites:(NSNotification *)notification
+
 {
+    
+    
     Recipe *recipeObjectRemovedFromFavorites = [notification object];
     NSString *value = [[NSString stringWithFormat:@"%@", recipeObjectRemovedFromFavorites.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
     [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"removefromfavorites"]];
@@ -1560,6 +1599,7 @@ UIView *myViewForShareButton;
 
 - (void)recipeRemovedFromFavoritesFromRecipeDetailScreen:(NSNotification *)notification
 {
+    
     Recipe *recipeObjectRemovedFromFavorites = [notification object];
     NSString *value = [[NSString stringWithFormat:@"%@", recipeObjectRemovedFromFavorites.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
     [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"removefromfavorites_fromdetailscreen"]];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BVRecipeDescriptionView : UIView {
+@interface BVRecipeDescriptionView : UIView <UITextViewDelegate>{
  
     
 }

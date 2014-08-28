@@ -21,7 +21,7 @@
 
         UIImage *backgroundCircleImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"TopRatedBackgroundCircle.png" andAddIfRequired:YES];
         
-        mTopRatingBackgroundCircleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(mRecipeImageView.frame.origin.x + 2,
+        mTopRatingBackgroundCircleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(mRecipeImageView.frame.origin.x + 4,
                                                                                             mRecipeImageView.frame.origin.y /*+ mRecipeImageView.frame.size.height - backgroundCircleImage.size.height - 2*/,
                                                                                             backgroundCircleImage.size.width,
                                                                                             backgroundCircleImage.size.height)];

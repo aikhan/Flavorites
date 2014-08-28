@@ -60,7 +60,7 @@
         mIconImageView.image = iconImage;
         [iconImage release];
         
-        [self addSubview:mIconImageView];
+        //[self addSubview:mIconImageView];
         
         
         
@@ -81,6 +81,7 @@
         
         UIImage *cancelButtonImage1 = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"searchR" ofType:@"png"]];
         CGFloat extraPaddingForCancelButton1 = roundf((self.frame.size.height - cancelButtonImage.size.height) / 2);
+        extraPaddingForCancelButton = 0;
         mSearchCancel = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - (cancelButtonImage1.size.width + extraPaddingForCancelButton1 + extraPaddingForCancelButton1)-(cancelButtonImage.size.width + extraPaddingForCancelButton + extraPaddingForCancelButton)-5,
                                                                    0,
                                                                    cancelButtonImage1.size.width + extraPaddingForCancelButton1 + extraPaddingForCancelButton1,

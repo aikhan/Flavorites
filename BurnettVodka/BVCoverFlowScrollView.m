@@ -66,8 +66,8 @@
             UIImage *img = [UIImage imageNamed:@"new.png"];
             UIImageView *isnewimagevier = [[UIImageView alloc] initWithFrame:CGRectMake(0,
                                                                              60,
-                                                                             img.size.width + 5,
-                                                                             img.size.height + 5)];
+                                                                             45,
+                                                                             45)];
             isnewimagevier.image= img;
             [mPosterImageView addSubview:isnewimagevier];
         }

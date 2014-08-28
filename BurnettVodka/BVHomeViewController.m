@@ -287,13 +287,13 @@
                 checkOldDesc = item.recipeID;
                 [mutableArrayOfFeaturedItems addObject:item];
                 [item release];
-                RecipeDescription = [[BVRecipeDescriptionView alloc] initWithFrame:CGRectMake(0,0/*
-                                                                                                  [UIScreen mainScreen].bounds.size.width/2-750, [UIScreen mainScreen].bounds.size.height/2-170*/, 120, 340)];
-                [RecipeDescription.Heading setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"name"]]];
+                RecipeDescription = [[BVRecipeDescriptionView alloc] initWithFrame:CGRectMake(-10,0/*
+                                                                                                  [UIScreen mainScreen].bounds.size.width/2-750, [UIScreen mainScreen].bounds.size.height/2-170*/, 130, 340)];
+                [RecipeDescription.Heading setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"drink_name"]]];
                 [RecipeDescription.Heading setFont:[UtilityManager fontGetRegularFontOfSize:18]];
                 NSString *str = [NSString stringWithFormat:@"\u2022 %@",[recipeDic valueForKey:@"ingredients"]];
-                str = [str stringByReplacingOccurrencesOfString:@"\r\n" withString:[NSString stringWithFormat:@"\r\n\u2022 "]];
-                str = [str stringByReplacingOccurrencesOfString:@"Burnett's" withString:[NSString stringWithFormat:@""]];
+                str = [str stringByReplacingOccurrencesOfString:@"\n" withString:[NSString stringWithFormat:@"\n\u2022 "]];
+                str = [str stringByReplacingOccurrencesOfString:@"Burnett's " withString:[NSString stringWithFormat:@""]];
                 [RecipeDescription.Ingredients setText:str];
                 [RecipeDescription.Ingredients setFont:[UtilityManager fontGetLightFontOfSize:15]];
                 [RecipeDescription.Procedure setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"directions"]]];
@@ -344,7 +344,7 @@
         }
     }
     [mScrollView resetScrollViewWithRecipesArray:[NSArray arrayWithArray:mutableArrayOfFeaturedItems]];
-    [mScrollView setContentOffset:CGPointMake((120*(finalCount-1))+(10*(finalCount-1)) ,[UIScreen mainScreen].bounds.origin.y)];
+    [mScrollView setContentOffset:CGPointMake((110*(finalCount-1))+(10*(finalCount-1)) - 7 ,[UIScreen mainScreen].bounds.origin.y)];
     if (ScroolFl==FALSE) {
         [Scrolltimer invalidate];
         ScroolFl=TRUE;

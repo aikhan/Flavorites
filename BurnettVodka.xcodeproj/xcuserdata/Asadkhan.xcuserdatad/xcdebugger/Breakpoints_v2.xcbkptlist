@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVRecipeDetailViewController.m"
-            timestampString = "429821893.14933"
+            timestampString = "430877509.63834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1498"
-            endingLineNumber = "1498"
+            startingLineNumber = "1532"
+            endingLineNumber = "1532"
             landmarkName = "@implementation BVRecipeDetailViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVRecipeDetailViewController.m"
-            timestampString = "429821893.14933"
+            timestampString = "430877509.63834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1592"
-            endingLineNumber = "1592"
+            startingLineNumber = "1632"
+            endingLineNumber = "1632"
             landmarkName = "-recipeRemovedFromFavoritesFromRecipeDetailScreen:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVRecipeDetailViewController.m"
-            timestampString = "429821542.257427"
+            timestampString = "430877509.63834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1255"
-            endingLineNumber = "1255"
+            startingLineNumber = "1289"
+            endingLineNumber = "1289"
             landmarkName = "-shareRecipeOnMail"
             landmarkType = "5">
          </BreakpointContent>
@@ -424,6 +424,54 @@
             startingLineNumber = "473"
             endingLineNumber = "473"
             landmarkName = "-showFlavorSelectionDropDownWithOptions:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BurnettVodka/BVRecipeDescriptionView.m"
+            timestampString = "430865181.233408"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-adjustLayoutForAllViews"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BurnettVodka/BVRecipeDetailViewController.m"
+            timestampString = "430877509.63834"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1539"
+            endingLineNumber = "1539"
+            landmarkName = "-recipeDetailAddToFavoriteViewUserTappedAddToFavoriteButton:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BurnettVodka/BVRecipeDetailViewController.m"
+            timestampString = "430877998.507134"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-updateViewToShowAdded:animated:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
