@@ -11,6 +11,7 @@
 @implementation BVRecipeDescriptionView
 @synthesize Procedure,Ingredients,Heading,LoadmoreBtn,RecipeTmg,Crossbtn;
 int yValue;
+CGRect previousRect;// = CGRectZero;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -19,7 +20,9 @@ int yValue;
 		[[nib objectAtIndex:0] setFrame:frame];
         self = [nib objectAtIndex:0];
         self.alpha = 1.0;
-
+        previousRect = CGRectZero;
+        self.Ingredients.delegate = self;
+        self.Procedure.delegate = self;
     }
     return self;
 }
@@ -31,6 +34,28 @@ int yValue;
     self.Procedure.delegate = self;
     yValue = 0;
     [self performSelector:@selector(resize) withObject:nil afterDelay:0.01];
+    
+}
+
+- (void)textViewDidChange:(UITextView *)textView{
+    DebugLog(@"yo %s", __PRETTY_FUNCTION__);
+    UITextPosition* pos = textView.endOfDocument;//explore others like beginningOfDocument if you want to customize the behaviour
+    CGRect currentRect = [textView caretRectForPosition:pos];
+    if (currentRect.origin.y > previousRect.origin.y){
+        //new line reached, write your code
+        DebugLog(@"new line reached");
+    }else if (currentRect.origin.y > previousRect.origin.y){
+        //new line reached, write your code
+        DebugLog(@"2 line reached");
+    }
+    else if (currentRect.origin.y > previousRect.origin.y){
+        //new line reached, write your code
+        DebugLog(@"3 line reached");
+    }else if (currentRect.origin.y > previousRect.origin.y){
+        //new line reached, write your code
+        DebugLog(@"4 line reached");
+    }
+    previousRect = currentRect;
     
 }
 
@@ -74,4 +99,8 @@ int yValue;
     self.LoadmoreBtn.frame = recipeFrame;
 }
 
+- (void)dealloc {
+    [_titleBackImageView release];
+    [super dealloc];
+}
 @end

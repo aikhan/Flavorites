@@ -19,5 +19,6 @@
 @property (retain,nonatomic) IBOutlet UIButton* Crossbtn;
 @property (retain,nonatomic) IBOutlet UITextView* Ingredients;
 @property (retain,nonatomic) IBOutlet UITextView* Procedure;
+@property (retain, nonatomic) IBOutlet UIImageView *titleBackImageView;
 
 @end

@@ -11,12 +11,12 @@
             <rect key="frame" x="0.0" y="20" width="180" height="291"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Descriptionheading.png" id="ue9-qf-mId">
-                    <rect key="frame" x="0.0" y="7" width="150" height="37"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ue9-qf-mId">
+                    <rect key="frame" x="-2" y="7" width="150" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="red berry blueberry berry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eej-qe-wyg">
-                    <rect key="frame" x="-1" y="7" width="150" height="35"/>
+                    <rect key="frame" x="-3" y="7" width="150" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="12"/>
@@ -51,7 +51,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O3T-wi-rF4">
-                    <rect key="frame" x="7" y="261" width="166" height="20"/>
+                    <rect key="frame" x="0.0" y="261" width="166" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" image="Viewmore.png">
@@ -81,11 +81,11 @@
                 <outlet property="LoadmoreBtn" destination="O3T-wi-rF4" id="r9v-Qy-9Ja"/>
                 <outlet property="Procedure" destination="awa-MB-8WJ" id="ZoI-RE-Pg6"/>
                 <outlet property="RecipeTmg" destination="Zca-kt-VZQ" id="UfA-Al-ZbW"/>
+                <outlet property="titleBackImageView" destination="ue9-qf-mId" id="vza-TR-26b"/>
             </connections>
         </view>
     </objects>
     <resources>
-        <image name="Descriptionheading.png" width="300" height="57"/>
         <image name="Viewmore.png" width="279" height="33"/>
         <image name="close_button.png" width="25" height="25"/>
     </resources>

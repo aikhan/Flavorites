@@ -23,6 +23,10 @@
 
 #define kHeightOfTitleTextInBackgroundImage 100
 
+#define UIColorFromRGB(rgbValue) [UIColor \
+                  colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+                  green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+                  blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
 
@@ -301,8 +305,23 @@
                 NSString *str = [NSString stringWithFormat:@"\u2022 %@",[recipeDic valueForKey:@"ingredients"]];
                 str = [str stringByReplacingOccurrencesOfString:@"\n" withString:[NSString stringWithFormat:@"\n\u2022 "]];
                 str = [str stringByReplacingOccurrencesOfString:@"Burnett's " withString:[NSString stringWithFormat:@""]];
-                [RecipeDescription.Ingredients setText:str];
-                [RecipeDescription.Ingredients setFont:[UtilityManager fontGetBoldFontOfSize:13]];
+                
+                //Attributed String
+                UIFont *myFont = [UtilityManager fontGetBoldFontOfSize:13];
+                NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+                paragraphStyle.headIndent = 7;
+                NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:str attributes:@{NSParagraphStyleAttributeName: paragraphStyle, NSFontAttributeName:myFont }];
+                [RecipeDescription.Ingredients setAttributedText:attributedString];
+                RecipeDescription.Ingredients.textColor = [UIColor whiteColor];
+                
+                //Bottle Title Background Color
+                NSString *stringColor = [NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"color"]];
+                UIColor *color = SKColorFromHexString(stringColor);
+                RecipeDescription.titleBackImageView.backgroundColor = color;
+                //RecipeDescription.Heading.textColor = color;
+                
+                //[RecipeDescription.Ingredients setFont:[UtilityManager fontGetBoldFontOfSize:13]];
+                [RecipeDescription textViewDidChange:RecipeDescription.Ingredients];
                 [RecipeDescription.Procedure setText:[NSString stringWithFormat:@"%@",[recipeDic valueForKey:@"directions"]]];
                 [RecipeDescription.Procedure setFont:[UtilityManager fontGetBoldFontOfSize:13]];
                 NSString *imagePath1 = [recipeDic valueForKey:@"recipeimage"];
@@ -356,6 +375,35 @@
         [Scrolltimer invalidate];
         ScroolFl=TRUE;
     }
+}
+
+//String to Hex Code Methods
+void SKScanHexColor(NSString * hexString, float * red, float * green, float * blue, float * alpha) {
+    NSString *cleanString = [hexString stringByReplacingOccurrencesOfString:@"#" withString:@""];
+    if([cleanString length] == 3) {
+        cleanString = [NSString stringWithFormat:@"%@%@%@%@%@%@",
+                       [cleanString substringWithRange:NSMakeRange(0, 1)],[cleanString substringWithRange:NSMakeRange(0, 1)],
+                       [cleanString substringWithRange:NSMakeRange(1, 1)],[cleanString substringWithRange:NSMakeRange(1, 1)],
+                       [cleanString substringWithRange:NSMakeRange(2, 1)],[cleanString substringWithRange:NSMakeRange(2, 1)]];
+    }
+    if([cleanString length] == 6) {
+        cleanString = [cleanString stringByAppendingString:@"ff"];
+    }
+    
+    unsigned int baseValue;
+    [[NSScanner scannerWithString:cleanString] scanHexInt:&baseValue];
+    
+    if (red) { *red = ((baseValue >> 24) & 0xFF)/255.0f; }
+    if (green) { *green = ((baseValue >> 16) & 0xFF)/255.0f; }
+    if (blue) { *blue = ((baseValue >> 8) & 0xFF)/255.0f; }
+    if (alpha) { *alpha = ((baseValue >> 0) & 0xFF)/255.0f; }
+}
+
+UIColor * SKColorFromHexString(NSString * hexString) {
+    float red, green, blue, alpha;
+    SKScanHexColor(hexString, &red, &green, &blue, &alpha);
+    
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 - (void)crosstg {
