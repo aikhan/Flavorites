@@ -563,7 +563,7 @@
 		E0B2A8DD1998EBEB00FC5EC7 /* sweettea_sweetginger.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A79C1998EBEA00FC5EC7 /* sweettea_sweetginger.png */; };
 		E0B2A8DE1998EBEB00FC5EC7 /* sweettea_sweetteacooler.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A79D1998EBEA00FC5EC7 /* sweettea_sweetteacooler.png */; };
 		E0B2A8DF1998EBEB00FC5EC7 /* sweettea_sweetteamojito.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A79E1998EBEA00FC5EC7 /* sweettea_sweetteamojito.png */; };
-		E0B2A8E01998EBEB00FC5EC7 /* tropic chiller.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A79F1998EBEA00FC5EC7 /* tropic chiller.png */; };
+		E0B2A8E01998EBEB00FC5EC7 /* tropic_chiller.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A79F1998EBEA00FC5EC7 /* tropic_chiller.png */; };
 		E0B2A8E11998EBEB00FC5EC7 /* vanilla_bostoncreampie.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A7A01998EBEA00FC5EC7 /* vanilla_bostoncreampie.png */; };
 		E0B2A8E21998EBEB00FC5EC7 /* vanilla_keylimepie.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A7A11998EBEA00FC5EC7 /* vanilla_keylimepie.png */; };
 		E0B2A8E31998EBEB00FC5EC7 /* vanilla_vanilla_applejuice.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A7A21998EBEA00FC5EC7 /* vanilla_vanilla_applejuice.png */; };
@@ -1256,7 +1256,7 @@
 		E0B2A79C1998EBEA00FC5EC7 /* sweettea_sweetginger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sweettea_sweetginger.png; path = Reciepe/sweettea_sweetginger.png; sourceTree = "<group>"; };
 		E0B2A79D1998EBEA00FC5EC7 /* sweettea_sweetteacooler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sweettea_sweetteacooler.png; path = Reciepe/sweettea_sweetteacooler.png; sourceTree = "<group>"; };
 		E0B2A79E1998EBEA00FC5EC7 /* sweettea_sweetteamojito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sweettea_sweetteamojito.png; path = Reciepe/sweettea_sweetteamojito.png; sourceTree = "<group>"; };
-		E0B2A79F1998EBEA00FC5EC7 /* tropic chiller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tropic chiller.png"; path = "Reciepe/tropic chiller.png"; sourceTree = "<group>"; };
+		E0B2A79F1998EBEA00FC5EC7 /* tropic_chiller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tropic_chiller.png; path = Reciepe/tropic_chiller.png; sourceTree = "<group>"; };
 		E0B2A7A01998EBEA00FC5EC7 /* vanilla_bostoncreampie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vanilla_bostoncreampie.png; path = Reciepe/vanilla_bostoncreampie.png; sourceTree = "<group>"; };
 		E0B2A7A11998EBEA00FC5EC7 /* vanilla_keylimepie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vanilla_keylimepie.png; path = Reciepe/vanilla_keylimepie.png; sourceTree = "<group>"; };
 		E0B2A7A21998EBEA00FC5EC7 /* vanilla_vanilla_applejuice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vanilla_vanilla_applejuice.png; path = Reciepe/vanilla_vanilla_applejuice.png; sourceTree = "<group>"; };
@@ -2036,7 +2036,7 @@
 				E0B2A79C1998EBEA00FC5EC7 /* sweettea_sweetginger.png */,
 				E0B2A79D1998EBEA00FC5EC7 /* sweettea_sweetteacooler.png */,
 				E0B2A79E1998EBEA00FC5EC7 /* sweettea_sweetteamojito.png */,
-				E0B2A79F1998EBEA00FC5EC7 /* tropic chiller.png */,
+				E0B2A79F1998EBEA00FC5EC7 /* tropic_chiller.png */,
 				E0B2A7A01998EBEA00FC5EC7 /* vanilla_bostoncreampie.png */,
 				E0B2A7A11998EBEA00FC5EC7 /* vanilla_keylimepie.png */,
 				E0B2A7A21998EBEA00FC5EC7 /* vanilla_vanilla_applejuice.png */,
@@ -2571,7 +2571,7 @@
 				8441160517A5F7A600CDF046 /* CoverFlow_Move.aifc in Resources */,
 				05BA4BBC19AE837300108111 /* searchR@2x.png in Resources */,
 				E0B2A8F21998EBEB00FC5EC7 /* vodka_creamyscrewdriver.png in Resources */,
-				E0B2A8E01998EBEB00FC5EC7 /* tropic chiller.png in Resources */,
+				E0B2A8E01998EBEB00FC5EC7 /* tropic_chiller.png in Resources */,
 				E0B2A84C1998EBEB00FC5EC7 /* limeade_limecrush.png in Resources */,
 				E0B2A7F81998EBEB00FC5EC7 /* citrus_lemondrop.png in Resources */,
 				E0B2A8861998EBEB00FC5EC7 /* pinklemonade_berrypinktini.png in Resources */,
@@ -3127,8 +3127,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73167f37-ade8-4401-9caa-12e6cb4026d6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73167f37-ade8-4401-9caa-12e6cb4026d6";
+				PROVISIONING_PROFILE = "2fd77a5f-d3d8-4a2a-b855-8d075491731d";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2fd77a5f-d3d8-4a2a-b855-8d075491731d";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

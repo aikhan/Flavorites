@@ -498,11 +498,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVHomeViewController.m"
-            timestampString = "430954407.286648"
+            timestampString = "431381866.30173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "-coverFlowScrollView:userTappedWithRecipeID:"
             landmarkType = "5">
          </BreakpointContent>

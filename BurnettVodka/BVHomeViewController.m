@@ -82,6 +82,7 @@
 {    
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    self.screenName = @"Home";
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -91,7 +92,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    self.screenName = @"Home Screen";
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -343,6 +344,17 @@
                                      forControlEvents:UIControlEventTouchUpInside];
                 [RecipeDescription.LoadmoreBtn setTag:recipeID];
                 [mutableArrayOfFeaturedItems addObject:RecipeDescription];
+                id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
+                
+                [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Featured Bottles"     // Event category (required)
+                                                                      action:@"bottle tapped"  // Event action (required)
+                                                                       label:RecipeDescription.Heading.text          // Event label
+                                                                       value:nil] build]];    // Event value
+                NSString *event = @"Featured Bottles";
+                NSString *value = RecipeDescription.Heading.text ;//[[NSString stringWithFormat:@"%@", flavor.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
+                [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:event]];
+
+
             }
         }
         else {
@@ -427,9 +439,10 @@ UIColor * SKColorFromHexString(NSString * hexString) {
 - (void)ViewMore:(id)Sender {
     NSUInteger recipeID = [Sender tag];
     Flavor *flavor = nil;
+    Recipe *recipeObject = [[DataManager sharedDataManager] recipesGetRecipeWithRecipeID:recipeID];
     if(recipeID != 0)
     {
-        Recipe *recipeObject = [[DataManager sharedDataManager] recipesGetRecipeWithRecipeID:recipeID];
+        
         //flavor = recipeObject.flavor;
         flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorID:recipeID];
     }
@@ -437,15 +450,6 @@ UIColor * SKColorFromHexString(NSString * hexString) {
     {
         flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorTitle:@"Pumpkin Spice"];
     }
-    NSString *event = @"home";
-    NSString *value = [[NSString stringWithFormat:@"%@", flavor.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:event]];
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-    
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"home"     // Event category (required)
-                                                          action:@"button_press"  // Event action (required)
-                                                           label:value          // Event label
-                                                           value:nil] build]];    // Event value
     
     
     BVRecipesForFlavorViewController *viewController = [[BVRecipesForFlavorViewController alloc] initWithFlavor:flavor];

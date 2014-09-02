@@ -28,7 +28,7 @@
 #define kMinimumDurationToShowLoadingScreen 0.0
 
 
-static NSString *const kTrackingId = @"UA-24508531-2";
+static NSString *const kTrackingId = @"UA-54281296-1";
 
 
 @interface BVAppDelegate ()

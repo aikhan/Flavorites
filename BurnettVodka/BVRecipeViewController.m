@@ -151,6 +151,7 @@
     {
        // [self.navigationController setNavigationBarHidden:YES animated:animated];
     }
+    self.screenName = @"Recipes";
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -253,6 +253,7 @@
     self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"flavourTab.png"] forBarMetrics:UIBarMetricsDefault];
+    self.screenName = @"Flavors";
 }
 
 - (void)didReceiveMemoryWarning
@@ -383,8 +384,8 @@
     id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                          action:@"button_press"  // Event action (required)
-                                                           label:value          // Event label
+                                                          action:@"Flavor Tapped"  // Event action (required)
+                                                           label:flavor.title          // Event label
                                                            value:nil] build]];
     
     BVRecipesForFlavorViewController *viewController = [[BVRecipesForFlavorViewController alloc] initWithFlavor:flavor];
