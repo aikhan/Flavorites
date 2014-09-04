@@ -148,29 +148,32 @@ static NewServerFetchOperations *sharedManager = nil;
                                     }
                                 }
                                 
-                            }else{
-                            
-                            Recipe *recipe = (Recipe *)[NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:[DataManager managedObjectContextOnMainThread]];
-                            recipe.title = [recipeDic valueForKeyPath:@"drink_name"];
-                            if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
-                                recipe.ratingValue = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalAverageRating"] floatValue]];
                             }
-                            recipe.ratingCount = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalTotalNumOfSubmission"] floatValue]];
-                            recipe.recipeID = [NSNumber numberWithInteger:[[recipeDic valueForKeyPath:@"recipe_id"] integerValue]];
-                            recipe.imageName = [recipeDic valueForKeyPath:@"image"];
-                            recipe.ingredients = [recipeDic valueForKeyPath:@"ingredients"];
-                            recipe.directions = [recipeDic valueForKeyPath:@"directions"];
-                            recipe.flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorTitle:[recipeDic valueForKeyPath:@"product"]];
-                                if (!recipe.flavor) {
-                                   // DebugLog(@"Flavor name is %@", [recipeDic valueForKeyPath:@"product"]);
+                            else{
+                            Flavor *fl =[[DataManager sharedDataManager] flavorsGetFlavorWithFlavorTitle:[recipeDic valueForKeyPath:@"product"]];
+                                if (fl!=nil) {
+                                    Recipe *recipe = (Recipe *)[NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:[DataManager managedObjectContextOnMainThread]];
+                                    recipe.title = [recipeDic valueForKeyPath:@"drink_name"];
+                                    if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
+                                        recipe.ratingValue = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalAverageRating"] floatValue]];
+                                    }
+                                    recipe.ratingCount = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalTotalNumOfSubmission"] floatValue]];
+                                    recipe.recipeID = [NSNumber numberWithInteger:[[recipeDic valueForKeyPath:@"recipe_id"] integerValue]];
+                                    recipe.imageName = [recipeDic valueForKeyPath:@"image"];
+                                    recipe.ingredients = [recipeDic valueForKeyPath:@"ingredients"];
+                                    recipe.directions = [recipeDic valueForKeyPath:@"directions"];
+                                    recipe.flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorTitle:[recipeDic valueForKeyPath:@"product"]];
+                                    if (!recipe.flavor) {
+                                        // DebugLog(@"Flavor name is %@", [recipeDic valueForKeyPath:@"product"]);
+                                    }
+                                    NSString *imageFileNameWithoutExtension = [recipe.imageName lastPathComponent];
+                                    
+                                    if (![self checkFileExistsLocallyWithFileName:imageFileNameWithoutExtension]) {
+                                        DebugLog(@"Missing Recipe name %@ and image name %@", recipe.title, recipe.imageName);
+                                        [self downloadImageFileFromTheInternetForFileName:recipe.imageName withID:recipe.recipeID isFlavor:NO];
+                                    }
+                                    [self.myRecipesArray addObject:recipe];
                                 }
-                                NSString *imageFileNameWithoutExtension = [recipe.imageName lastPathComponent];
-                                
-                                if (![self checkFileExistsLocallyWithFileName:imageFileNameWithoutExtension]) {
-                                    DebugLog(@"Missing Recipe name %@ and image name %@", recipe.title, recipe.imageName);
-                                    [self downloadImageFileFromTheInternetForFileName:recipe.imageName withID:recipe.recipeID isFlavor:NO];
-                                }
-                            [self.myRecipesArray addObject:recipe];
                             //[recipe release];
                         }
                     }
@@ -222,29 +225,31 @@ static NewServerFetchOperations *sharedManager = nil;
                                 }
                                 
                             }else{
-                                
-                                Recipe *recipe = (Recipe *)[NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:[DataManager managedObjectContextOnMainThread]];
-                                recipe.title = [recipeDic valueForKeyPath:@"drink_name"];
-                                if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
-                                    recipe.ratingValue = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalAverageRating"] floatValue]];
+                                Flavor *flv = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorTitle:[recipeDic valueForKeyPath:@"product"]];
+                                if (flv!=nil) {
+                                    Recipe *recipe = (Recipe *)[NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:[DataManager managedObjectContextOnMainThread]];
+                                    recipe.title = [recipeDic valueForKeyPath:@"drink_name"];
+                                    if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
+                                        recipe.ratingValue = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalAverageRating"] floatValue]];
+                                    }
+                                    recipe.ratingCount = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalTotalNumOfSubmission"] floatValue]];
+                                    recipe.recipeID = [NSNumber numberWithInteger:[[recipeDic valueForKeyPath:@"recipe_id"] integerValue]];
+                                    recipe.imageName = [recipeDic valueForKeyPath:@"image"];
+                                    recipe.ingredients = [recipeDic valueForKeyPath:@"ingredients"];
+                                    recipe.directions = [recipeDic valueForKeyPath:@"directions"];
+                                    recipe.flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorTitle:[recipeDic valueForKeyPath:@"product"]];
+                                    if (!recipe.flavor) {
+                                        // DebugLog(@"Flavor name is %@", [recipeDic valueForKeyPath:@"product"]);
+                                    }
+                                    NSString *imageFileNameWithoutExtension = [recipe.imageName lastPathComponent];
+                                    
+                                    if (![self checkFileExistsLocallyWithFileName:imageFileNameWithoutExtension]) {
+                                        DebugLog(@"Missing Recipe name %@ and image name %@", recipe.title, recipe.imageName);
+                                        [self downloadImageFileFromTheInternetForFileName:recipe.imageName withID:recipe.recipeID isFlavor:NO];
+                                    }
+                                    [self.myRecipesArray addObject:recipe];
+                                    //[recipe release];
                                 }
-                                recipe.ratingCount = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalTotalNumOfSubmission"] floatValue]];
-                                recipe.recipeID = [NSNumber numberWithInteger:[[recipeDic valueForKeyPath:@"recipe_id"] integerValue]];
-                                recipe.imageName = [recipeDic valueForKeyPath:@"image"];
-                                recipe.ingredients = [recipeDic valueForKeyPath:@"ingredients"];
-                                recipe.directions = [recipeDic valueForKeyPath:@"directions"];
-                                recipe.flavor = [[DataManager sharedDataManager] flavorsGetFlavorWithFlavorTitle:[recipeDic valueForKeyPath:@"product"]];
-                                if (!recipe.flavor) {
-                                    // DebugLog(@"Flavor name is %@", [recipeDic valueForKeyPath:@"product"]);
-                                }
-                                NSString *imageFileNameWithoutExtension = [recipe.imageName lastPathComponent];
-                                
-                                if (![self checkFileExistsLocallyWithFileName:imageFileNameWithoutExtension]) {
-                                    DebugLog(@"Missing Recipe name %@ and image name %@", recipe.title, recipe.imageName);
-                                    [self downloadImageFileFromTheInternetForFileName:recipe.imageName withID:recipe.recipeID isFlavor:NO];
-                                }
-                                [self.myRecipesArray addObject:recipe];
-                                //[recipe release];
                             }
                         }
                     }

@@ -287,7 +287,12 @@
     for(int i=0; i<[finalArrayWithAllSortings count]; i++)
     {
         Recipe *recipeObject = [finalArrayWithAllSortings objectAtIndex:i];
-        [mTableData addObject:recipeObject];
+//        if (recipeObject.flavor==Nil) {
+//            NSLog(@"nil");
+//        }
+//        else {
+            [mTableData addObject:recipeObject];
+//        }
         count++;
         
         if(count >= 10)
