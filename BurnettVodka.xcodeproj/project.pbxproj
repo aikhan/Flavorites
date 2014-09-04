@@ -224,6 +224,16 @@
 		E071E4051996086C00AA67E7 /* Viewmore.png in Resources */ = {isa = PBXBuildFile; fileRef = E071E4031996086C00AA67E7 /* Viewmore.png */; };
 		E076B814199A449F003D871D /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E076B813199A449F003D871D /* PropertyList.plist */; };
 		E076B818199A64DC003D871D /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E076B816199A64DC003D871D /* ProximaNova-Regular.otf */; };
+		E08DF52B19B88F74000F217A /* MMHud.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF51719B88F74000F217A /* MMHud.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E08DF52C19B88F74000F217A /* MMLinearProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF51919B88F74000F217A /* MMLinearProgressView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E08DF52D19B88F74000F217A /* MMProgressHUD+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF51B19B88F74000F217A /* MMProgressHUD+Animations.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E08DF52E19B88F74000F217A /* MMProgressHUD+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF51C19B88F74000F217A /* MMProgressHUD+Class.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E08DF52F19B88F74000F217A /* MMProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF51E19B88F74000F217A /* MMProgressHUD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E08DF53019B88F74000F217A /* MMProgressHUDOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF52119B88F74000F217A /* MMProgressHUDOverlayView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E08DF53119B88F74000F217A /* MMProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF52319B88F74000F217A /* MMProgressHUDViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E08DF53219B88F74000F217A /* MMProgressHUDWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF52519B88F74000F217A /* MMProgressHUDWindow.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E08DF53319B88F74000F217A /* MMRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF52819B88F74000F217A /* MMRadialProgressView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E08DF53419B88F74000F217A /* MMVectorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF52A19B88F74000F217A /* MMVectorImage.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		E09890F41993866000694684 /* 80proof.png in Resources */ = {isa = PBXBuildFile; fileRef = E09890CD1993866000694684 /* 80proof.png */; };
 		E09890F51993866000694684 /* 100proof.png in Resources */ = {isa = PBXBuildFile; fileRef = E09890CE1993866000694684 /* 100proof.png */; };
 		E09890F61993866000694684 /* blackberry.png in Resources */ = {isa = PBXBuildFile; fileRef = E09890CF1993866000694684 /* blackberry.png */; };
@@ -917,6 +927,27 @@
 		E071E4031996086C00AA67E7 /* Viewmore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Viewmore.png; sourceTree = "<group>"; };
 		E076B813199A449F003D871D /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
 		E076B816199A64DC003D871D /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		E08DF51619B88F74000F217A /* MMHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHud.h; sourceTree = "<group>"; };
+		E08DF51719B88F74000F217A /* MMHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHud.m; sourceTree = "<group>"; };
+		E08DF51819B88F74000F217A /* MMLinearProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLinearProgressView.h; sourceTree = "<group>"; };
+		E08DF51919B88F74000F217A /* MMLinearProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLinearProgressView.m; sourceTree = "<group>"; };
+		E08DF51A19B88F74000F217A /* MMProgressHUD+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMProgressHUD+Animations.h"; sourceTree = "<group>"; };
+		E08DF51B19B88F74000F217A /* MMProgressHUD+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Animations.m"; sourceTree = "<group>"; };
+		E08DF51C19B88F74000F217A /* MMProgressHUD+Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Class.m"; sourceTree = "<group>"; };
+		E08DF51D19B88F74000F217A /* MMProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUD.h; sourceTree = "<group>"; };
+		E08DF51E19B88F74000F217A /* MMProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUD.m; sourceTree = "<group>"; };
+		E08DF51F19B88F74000F217A /* MMProgressHUDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDCommon.h; sourceTree = "<group>"; };
+		E08DF52019B88F74000F217A /* MMProgressHUDOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDOverlayView.h; sourceTree = "<group>"; };
+		E08DF52119B88F74000F217A /* MMProgressHUDOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDOverlayView.m; sourceTree = "<group>"; };
+		E08DF52219B88F74000F217A /* MMProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDViewController.h; sourceTree = "<group>"; };
+		E08DF52319B88F74000F217A /* MMProgressHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDViewController.m; sourceTree = "<group>"; };
+		E08DF52419B88F74000F217A /* MMProgressHUDWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDWindow.h; sourceTree = "<group>"; };
+		E08DF52519B88F74000F217A /* MMProgressHUDWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDWindow.m; sourceTree = "<group>"; };
+		E08DF52619B88F74000F217A /* MMProgressView-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMProgressView-Protocol.h"; sourceTree = "<group>"; };
+		E08DF52719B88F74000F217A /* MMRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRadialProgressView.h; sourceTree = "<group>"; };
+		E08DF52819B88F74000F217A /* MMRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRadialProgressView.m; sourceTree = "<group>"; };
+		E08DF52919B88F74000F217A /* MMVectorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVectorImage.h; sourceTree = "<group>"; };
+		E08DF52A19B88F74000F217A /* MMVectorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVectorImage.m; sourceTree = "<group>"; };
 		E09890CD1993866000694684 /* 80proof.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80proof.png; sourceTree = "<group>"; };
 		E09890CE1993866000694684 /* 100proof.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100proof.png; sourceTree = "<group>"; };
 		E09890CF1993866000694684 /* blackberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackberry.png; sourceTree = "<group>"; };
@@ -1632,6 +1663,7 @@
 		84BCB10F177DF339008F6058 = {
 			isa = PBXGroup;
 			children = (
+				E08DF51519B88F74000F217A /* MBProcessHUD */,
 				05256B3F19224339002955D5 /* Flurry.h */,
 				05256B4019224339002955D5 /* libFlurry_5.0.0.a */,
 				05A1041218898FEE00B7D898 /* Google Analytics */,
@@ -2234,6 +2266,34 @@
 				84FA496117F1608100D13E27 /* check_update.json */,
 			);
 			name = "Recipe and Flavor Data Files";
+			sourceTree = "<group>";
+		};
+		E08DF51519B88F74000F217A /* MBProcessHUD */ = {
+			isa = PBXGroup;
+			children = (
+				E08DF51619B88F74000F217A /* MMHud.h */,
+				E08DF51719B88F74000F217A /* MMHud.m */,
+				E08DF51819B88F74000F217A /* MMLinearProgressView.h */,
+				E08DF51919B88F74000F217A /* MMLinearProgressView.m */,
+				E08DF51A19B88F74000F217A /* MMProgressHUD+Animations.h */,
+				E08DF51B19B88F74000F217A /* MMProgressHUD+Animations.m */,
+				E08DF51C19B88F74000F217A /* MMProgressHUD+Class.m */,
+				E08DF51D19B88F74000F217A /* MMProgressHUD.h */,
+				E08DF51E19B88F74000F217A /* MMProgressHUD.m */,
+				E08DF51F19B88F74000F217A /* MMProgressHUDCommon.h */,
+				E08DF52019B88F74000F217A /* MMProgressHUDOverlayView.h */,
+				E08DF52119B88F74000F217A /* MMProgressHUDOverlayView.m */,
+				E08DF52219B88F74000F217A /* MMProgressHUDViewController.h */,
+				E08DF52319B88F74000F217A /* MMProgressHUDViewController.m */,
+				E08DF52419B88F74000F217A /* MMProgressHUDWindow.h */,
+				E08DF52519B88F74000F217A /* MMProgressHUDWindow.m */,
+				E08DF52619B88F74000F217A /* MMProgressView-Protocol.h */,
+				E08DF52719B88F74000F217A /* MMRadialProgressView.h */,
+				E08DF52819B88F74000F217A /* MMRadialProgressView.m */,
+				E08DF52919B88F74000F217A /* MMVectorImage.h */,
+				E08DF52A19B88F74000F217A /* MMVectorImage.m */,
+			);
+			path = MBProcessHUD;
 			sourceTree = "<group>";
 		};
 		E09A974F1994F8700095DC02 /* TabBarNavigation */ = {
@@ -2919,6 +2979,7 @@
 				84BCB137177DF339008F6058 /* BurnettVodka.xcdatamodeld in Sources */,
 				84BCB140177DF4C5008F6058 /* BVHomeViewController.m in Sources */,
 				84BCB146177DF52E008F6058 /* BVFlavorViewController.m in Sources */,
+				E08DF53419B88F74000F217A /* MMVectorImage.m in Sources */,
 				84BCB14B177DF66F008F6058 /* BVRecipeViewController.m in Sources */,
 				84BCB150177DF680008F6058 /* BVTopRatedViewController.m in Sources */,
 				84BCB155177DF694008F6058 /* BVFavoritesViewController.m in Sources */,
@@ -2935,14 +2996,17 @@
 				8448C41D179E24C00087D5C4 /* CHCSVParser.m in Sources */,
 				8448C4AF179E66630087D5C4 /* BVSearchBar.m in Sources */,
 				84FA496017F15CD000D13E27 /* BVCheckAppUpdateOperation.m in Sources */,
+				E08DF53019B88F74000F217A /* MMProgressHUDOverlayView.m in Sources */,
 				84C73C8617A025F700AA0934 /* BVTopRatedTabRecipeCell.m in Sources */,
 				E0068A53197F1FB000C3948D /* BVRecipeDescriptionView.m in Sources */,
 				84C73C8917A032FB00AA0934 /* BVFavTabRecipeCell.m in Sources */,
 				84C73C9217A04EB600AA0934 /* HSLazyLoadImage.m in Sources */,
 				84C73C9317A04EB600AA0934 /* HSLazyImageDownloader.m in Sources */,
+				E08DF53219B88F74000F217A /* MMProgressHUDWindow.m in Sources */,
 				84C73C9417A04EB600AA0934 /* HSLazyImageLoadOperation.m in Sources */,
 				84FC1FE617A276CF00B30403 /* BVRecipesForFlavorViewController.m in Sources */,
 				84FC1FF917A31C2E00B30403 /* BVCoverFlowScrollView.m in Sources */,
+				E08DF52B19B88F74000F217A /* MMHud.m in Sources */,
 				84FC228617A4469A00B30403 /* BVShareOverlayView.m in Sources */,
 				8404BF9417A4D4BD003CB0E0 /* FeaturedRecipeItem.m in Sources */,
 				844115F517A50E5300CDF046 /* BVRatingOverlayView.m in Sources */,
@@ -2950,9 +3014,13 @@
 				8441160017A5F6FC00CDF046 /* SystemSoundPlayer.m in Sources */,
 				8441163F17A76B7800CDF046 /* NSObject+SBJson.m in Sources */,
 				05C67E56193E4B85008AFB38 /* NewServerFetchOperations.m in Sources */,
+				E08DF52C19B88F74000F217A /* MMLinearProgressView.m in Sources */,
+				E08DF53319B88F74000F217A /* MMRadialProgressView.m in Sources */,
+				E08DF52E19B88F74000F217A /* MMProgressHUD+Class.m in Sources */,
 				8441164017A76B7800CDF046 /* SBJsonParser.m in Sources */,
 				8441164117A76B7800CDF046 /* SBJsonStreamParser.m in Sources */,
 				8441164217A76B7800CDF046 /* SBJsonStreamParserAccumulator.m in Sources */,
+				E08DF52D19B88F74000F217A /* MMProgressHUD+Animations.m in Sources */,
 				8441164317A76B7800CDF046 /* SBJsonStreamParserAdapter.m in Sources */,
 				8441164417A76B7800CDF046 /* SBJsonStreamParserState.m in Sources */,
 				8441164517A76B7800CDF046 /* SBJsonStreamWriter.m in Sources */,
@@ -2962,6 +3030,7 @@
 				8441164917A76B7800CDF046 /* SBJsonUTF8Stream.m in Sources */,
 				8441164A17A76B7800CDF046 /* SBJsonWriter.m in Sources */,
 				8426AAC717A8276700051202 /* BVFetchRatingsOperation.m in Sources */,
+				E08DF53119B88F74000F217A /* MMProgressHUDViewController.m in Sources */,
 				8426AADD17A8287800051202 /* ASIAuthenticationDialog.m in Sources */,
 				8426AADE17A8287800051202 /* ASIDataCompressor.m in Sources */,
 				8426AADF17A8287800051202 /* ASIDataDecompressor.m in Sources */,
@@ -2976,6 +3045,7 @@
 				8426AB0C17A97F4000051202 /* BVMixerFilterView.m in Sources */,
 				84FBD7E417B4C4B7002F9FC4 /* BVRecipeTabRecipeCell.m in Sources */,
 				84AE085C17B527BB00ED96F4 /* BVFetchFeaturedRecipesOperation.m in Sources */,
+				E08DF52F19B88F74000F217A /* MMProgressHUD.m in Sources */,
 				84C01BAB17BCFFBD00ED34CA /* BVAgeGateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

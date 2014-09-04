@@ -23,6 +23,8 @@
 #import "ASIHTTPRequest.h"
 #import "JSON.h"
 #import "UtilityManager.h"
+#import "MMHud.h"
+#import "MMProgressHUD.h"
 
 
 #define kMinimumDurationToShowLoadingScreen 0.0
@@ -73,8 +75,9 @@ void myExceptionHandler(NSException *exception)
     self.tracker = [[GAI sharedInstance] trackerWithName:@"BurnettVodka"
                                               trackingId:kTrackingId];
     
-    [self performSelectorInBackground:@selector(CheckDateGetFeatureRecipes) withObject:Nil];
-  //  [self CheckDateGetFeatureRecipes];
+  //  [self performSelectorInBackground:@selector(CheckDateGetFeatureRecipes) withObject:Nil];
+ //   [NSThread detachNewThreadSelector:@selector(CheckDateGetFeatureRecipes) toTarget:self withObject:nil];
+   
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     UIImage *navigationBarBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"favouriteTab" ofType:@"png"]];
@@ -240,8 +243,7 @@ void myExceptionHandler(NSException *exception)
     }
 }
 
-- (BOOL)checkAndCompleteARecipeSetFromTemporaryFolder
-{
+- (BOOL)checkAndCompleteARecipeSetFromTemporaryFolder {
     BOOL success = YES;
     
     NSString *jsonFilePath = [[UtilityManager fileSystemPathForRelativeDirectoryPath:[NSString stringWithFormat:@"%@/temp", kDirectoryNameForFeaturedRecipesData]] stringByAppendingPathComponent:kFileNameForFeaturedRecipesJSON];

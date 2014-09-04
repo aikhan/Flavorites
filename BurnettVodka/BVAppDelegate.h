@@ -28,6 +28,6 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (void)fetchRecipiesFromServer;
-
+- (void) CheckDateGetFeatureRecipes;
 
 @end

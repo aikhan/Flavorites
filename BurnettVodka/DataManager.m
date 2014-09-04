@@ -575,7 +575,7 @@ static DataManager *sharedDataManager = nil;
         
         if(_allFlavorsArray == nil)
         {
-            [self repairCoreDataForFlavorsAndRecipes];
+           // [self repairCoreDataForFlavorsAndRecipes];
             _allFlavorsArray = [[self fetchAllFlavorsFromCoreData] retain];
         }
     }
@@ -632,7 +632,7 @@ static DataManager *sharedDataManager = nil;
         
         if(_allRecipesArray == nil)
         {
-            [self repairCoreDataForFlavorsAndRecipes];
+            //[self repairCoreDataForFlavorsAndRecipes];
             _allRecipesArray = [[self fetchAllRecipesFromCoreData] retain];
         }
     }

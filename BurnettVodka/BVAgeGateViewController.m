@@ -4,7 +4,9 @@
 #import "UtilityManager.h"
 #import "Constants.h"
 #import "BVHTMLContentViewController.h"
-
+#import "MMProgressHUD.h"
+#import "MMHud.h"
+#import "BVAppDelegate.h"
 
 #define kDatePickerCoordinateY 160
 #define kDatePickerCoordinateY_4Inch 210
@@ -42,7 +44,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [MMProgressHUD showWithTitle:@"Loading.."];
+   
+    [self performSelector:@selector(Updatedata) withObject:Nil afterDelay:0.1];
     [self loadUserInterface];
+}
+
+- (void)Updatedata {
+    BVAppDelegate *appdele = (BVAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appdele CheckDateGetFeatureRecipes];
+    // [self CheckDateGetFeatureRecipes];
+    [MMProgressHUD dismiss];
+   
 }
 
 - (void)viewDidAppear:(BOOL)animated {
