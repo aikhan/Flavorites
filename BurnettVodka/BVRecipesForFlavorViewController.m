@@ -96,7 +96,7 @@ UIView *myViewForBackButton;
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"flavourTab.png"] forBarMetrics:UIBarMetricsDefault];
 
-   // self.screenName = @"Recipies For Flavor View";
+   
     myViewForBackButton = [[UIView alloc] initWithFrame:CGRectMake(20,12,71,36)];
     
     UIButton *mybutton = [UIButton buttonWithType: UIButtonTypeCustom];
@@ -315,18 +315,6 @@ UIView *myViewForBackButton;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Recipe *recipeObject = [mTableData objectAtIndex:indexPath.row];
-    NSString *event = @"Recipe for Flavor";
-    NSString *recipe = [NSString stringWithFormat:@"%@", mFlavor.title];
-    NSString *flavor = [NSString stringWithFormat:@"%@", recipeObject.title];
-   // [[NSString stringWithFormat:@"%@_%@", mFlavor.title, recipeObject.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:recipe forKey:flavor]];
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-    
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                          action:recipe  // Event action (required)
-                                                           label:flavor          // Event label
-                                                           value:nil] build]];
-    
     BVRecipeDetailViewController *viewController = [[BVRecipeDetailViewController alloc] initWithRecipe:recipeObject];
     [self.navigationController pushViewController:viewController animated:NO];
     [viewController release];

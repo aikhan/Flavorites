@@ -118,7 +118,7 @@
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"favouriteTab.png"] forBarMetrics:UIBarMetricsDefault];
 
-    //self.screenName = @"Favorites View";
+    self.screenName = @"Favorites";
 }
 
 - (void)didReceiveMemoryWarning
@@ -343,15 +343,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Recipe *recipeObject = [mTableData objectAtIndex:indexPath.row];
-    NSString *event = @"Favorites";
-    NSString *value = [[NSString stringWithFormat:@"%@", recipeObject.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:event]];
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-    
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                          action:@"button_press"  // Event action (required)
-                                                           label:value          // Event label
-                                                           value:nil] build]];
     BVRecipeDetailViewController *viewController = [[BVRecipeDetailViewController alloc] initWithRecipe:recipeObject];
     [self.navigationController pushViewController:viewController animated:NO];
     [viewController release];

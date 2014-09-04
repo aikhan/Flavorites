@@ -104,7 +104,7 @@
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"toprateTab.png"] forBarMetrics:UIBarMetricsDefault];
 
-   // self.screenName = @"Top Rated View";
+    self.screenName = @"Top Rated";
 }
 
 - (void)didReceiveMemoryWarning
@@ -396,16 +396,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Recipe *recipeObject = [mTableData objectAtIndex:indexPath.row];
-    NSString *event = @"Top Rated";
-    NSString *value = [[NSString stringWithFormat:@"%@", recipeObject.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:event]];
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-    
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                          action:@"button_press"  // Event action (required)
-                                                           label:value          // Event label
-                                                           value:nil] build]];
-    
     BVRecipeDetailViewController *viewController = [[BVRecipeDetailViewController alloc] initWithRecipe:recipeObject];
     [self.navigationController pushViewController:viewController animated:NO];
     [viewController release];

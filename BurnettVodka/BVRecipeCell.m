@@ -375,7 +375,7 @@
     mRecipeTitleLabel.text = [recipe title];
     
     
-    NSString *flavorTitle = [NSString stringWithFormat:@"Burnett's %@ Vodka", recipe.flavor.title];
+    NSString *flavorTitle = [NSString stringWithFormat:@"burnett's %@ vodka", recipe.flavor.title];
     mFlavorTitleLabel.text = flavorTitle;
     if ([flavorTitle isEqualToString:@"Burnett's Ruby Red Grapefruit Vodka"]) {
         mFlavorTitleLabel.font = [UtilityManager fontGetRegularFontOfSize:12];

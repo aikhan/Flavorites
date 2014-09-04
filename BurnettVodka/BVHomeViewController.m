@@ -305,12 +305,12 @@
                 }
                 NSString *str = [NSString stringWithFormat:@"\u2022 %@",[recipeDic valueForKey:@"ingredients"]];
                 str = [str stringByReplacingOccurrencesOfString:@"\n" withString:[NSString stringWithFormat:@"\n\u2022 "]];
-                str = [str stringByReplacingOccurrencesOfString:@"Burnett's " withString:[NSString stringWithFormat:@""]];
+                //str = [str stringByReplacingOccurrencesOfString:@"Burnett's " withString:[NSString stringWithFormat:@""]];
                 
                 //Attributed String
                 UIFont *myFont = [UtilityManager fontGetBoldFontOfSize:13];
                 NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-                paragraphStyle.headIndent = 7;
+                paragraphStyle.headIndent = 8;
                 NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:str attributes:@{NSParagraphStyleAttributeName: paragraphStyle, NSFontAttributeName:myFont }];
                 [RecipeDescription.Ingredients setAttributedText:attributedString];
                 RecipeDescription.Ingredients.textColor = [UIColor whiteColor];

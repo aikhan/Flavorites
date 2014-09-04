@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVRecipeDetailViewController.m"
-            timestampString = "430877509.63834"
+            timestampString = "431474841.501157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1532"
-            endingLineNumber = "1532"
+            startingLineNumber = "1533"
+            endingLineNumber = "1533"
             landmarkName = "@implementation BVRecipeDetailViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVRecipeDetailViewController.m"
-            timestampString = "430877509.63834"
+            timestampString = "431474841.501157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1632"
-            endingLineNumber = "1632"
-            landmarkName = "-recipeRemovedFromFavoritesFromRecipeDetailScreen:"
+            startingLineNumber = "1633"
+            endingLineNumber = "1633"
+            landmarkName = "-recipeRatingsDataChanged:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVRecipeDetailViewController.m"
-            timestampString = "430877509.63834"
+            timestampString = "431474841.501157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1289"
-            endingLineNumber = "1289"
+            startingLineNumber = "1290"
+            endingLineNumber = "1290"
             landmarkName = "-shareRecipeOnMail"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVHomeViewController.m"
-            timestampString = "430953935.671071"
+            timestampString = "431384931.79792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "-onTimer"
             landmarkType = "5">
          </BreakpointContent>
@@ -418,11 +418,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVRecipeViewController.m"
-            timestampString = "429731811.130258"
+            timestampString = "431384931.79792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "473"
-            endingLineNumber = "473"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
             landmarkName = "-showFlavorSelectionDropDownWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
@@ -450,11 +450,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVRecipeDetailViewController.m"
-            timestampString = "430877509.63834"
+            timestampString = "431474841.501157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1539"
-            endingLineNumber = "1539"
+            startingLineNumber = "1540"
+            endingLineNumber = "1540"
             landmarkName = "-recipeDetailAddToFavoriteViewUserTappedAddToFavoriteButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -498,11 +498,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BurnettVodka/BVHomeViewController.m"
-            timestampString = "431381866.30173"
+            timestampString = "431384931.79792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
             landmarkName = "-coverFlowScrollView:userTappedWithRecipeID:"
             landmarkType = "5">
          </BreakpointContent>

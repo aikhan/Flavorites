@@ -1204,17 +1204,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Recipe *recipeObject = [[[[self dataForTableView] objectAtIndex:indexPath.section] valueForKey:@"sectionContent"] objectAtIndex:indexPath.row];
-    //Event Tracking
-    NSString *event = @"Recipe";
-    NSString *value = [[NSString stringWithFormat:@"%@", recipeObject.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:event]];
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-    
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                          action:@"button_press"  // Event action (required)
-                                                           label:value          // Event label
-                                                           value:nil] build]];
-    
     BVRecipeDetailViewController *viewController = [[BVRecipeDetailViewController alloc] initWithRecipe:recipeObject];
     [self.navigationController pushViewController:viewController animated:NO];
     [viewController release];
@@ -1265,15 +1254,8 @@
 
 - (UITapGestureRecognizer *)tapGestureForSegmentControlForMixers
 {
-    NSString *event = @"Recipe";
-    NSString *value = [NSString stringWithFormat:@"recipes_topbar_mixer"];
-    [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:event]];
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                          action:@"button_press"  // Event action (required)
-                                                           label:value          // Event label
-                                                           value:nil] build]];
+    
     if(mTapGestureForSegmentControlForAlreadySelectedMixerSegment == nil)
     {
         mTapGestureForSegmentControlForAlreadySelectedMixerSegment = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSegmentControlForMixers:)];
@@ -1284,15 +1266,7 @@
 
 - (UITapGestureRecognizer *)tapGestureForSegmentControlForFlavors
 {
-    NSString *event = @"Recipe";
-    NSString *value = [NSString stringWithFormat:@"recipes_topbar_flavor"];
-    [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:event]];
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event    // Event category (required)
-                                                          action:@"button_press"  // Event action (required)
-                                                           label:value          // Event label
-                                                           value:nil] build]];
     if(mTapGestureForSegmentControlForAlreadySelectedFlavorSegment == nil)
     {
         mTapGestureForSegmentControlForAlreadySelectedFlavorSegment = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSegmentControlForFlavors:)];
@@ -1947,14 +1921,14 @@
 {
     if(!mIsSearchModeActive)
         return;
-    NSString *event = @"Recipe";
+    NSString *event = @"Search";
     NSString *value = [[NSString stringWithFormat:@"%@", searchText] stringByReplacingOccurrencesOfString:@" " withString:@""];
     [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"search_text"]];
     id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event    // Event category (required)
-                                                          action:@"search_text"  // Event action (required)
-                                                           label:value          // Event label
+                                                          action:@"Search Text"  // Event action (required)
+                                                           label:searchText          // Event label
                                                            value:nil] build]];
     
     NSMutableArray *searchResultsArray = [[NSMutableArray alloc] init];
@@ -2183,29 +2157,10 @@
     NSString *filterTypeString = @"";
     if(view == mMixerDropDownMenuView)
     {
-        NSString *event = @"Recipe";
-        NSString *value = [[NSString stringWithFormat:@"%@", stringOfSelectedOptions] stringByReplacingOccurrencesOfString:@" " withString:@""];
-        [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"recipe_dropdown_Mixer_reset_selected_option"]];
-        id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-        
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event    // Event category (required)
-                                                              action:@"recipe_dropdown_Mixer_reset_selected_option"  // Event action (required)
-                                                               label:value          // Event label
-                                                               value:nil] build]];
         filterTypeString = @"Mixer";
     }
     else if(view == mFlavorDropDownMenuView)
     {
-        NSString *event = @"Recipe";
-        NSString *value = [[NSString stringWithFormat:@"%@", stringOfSelectedOptions] stringByReplacingOccurrencesOfString:@" " withString:@""];
-        [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"recipe_dropdown_Flavor_reset_selected_option"]];
-        id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-        
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                              action:@"recipe_dropdown_Flavor_reset_selected_option"  // Event action (required)
-                                                               label:value          // Event label
-                                                               value:nil] build]];
-
         filterTypeString = @"Flavor";
     }
     
@@ -2236,15 +2191,7 @@
     if(view == mFlavorDropDownMenuView)
     {
         filterTypeString = @"Flavor";
-        NSString *event = @"Recipe";
-        NSString *value = [[NSString stringWithFormat:@"%@", stringOfSelectedOptions] stringByReplacingOccurrencesOfString:@" " withString:@""];
-        [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"recipe_dropdown_Flavor_continue_selected_option"]];
-        id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
         
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event    // Event category (required)
-                                                              action:@"recipe_dropdown_Flavor_continue_selected_option"  // Event action (required)
-                                                               label:value          // Event label
-                                                               value:nil] build]];
         [[self currentActiveFlavorFilters] removeAllObjects];
         for(BVDropDownItem *item in arrayOfSelectedOptions)
         {
@@ -2258,16 +2205,6 @@
     else if(view == mMixerDropDownMenuView)
     {
         filterTypeString = @"Mixer";
-        NSString *event = @"Recipe";
-        NSString *value = [[NSString stringWithFormat:@"%@", stringOfSelectedOptions] stringByReplacingOccurrencesOfString:@" " withString:@""];
-        [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"recipe_dropdown_Mixer_continue_selected_option"]];
-        id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-        
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                              action:@"recipe_dropdown_Mixer_continue_selected_option"  // Event action (required)
-                                                               label:value          // Event label
-                                                               value:nil] build]];
-        
         [[self currentActiveMixerFilters] removeAllObjects];
         for(BVDropDownItem *item in arrayOfSelectedOptions)
         {
@@ -2298,27 +2235,11 @@
     
     if(view == mFlavorDropDownMenuView)
     {
-        NSString *event = [NSString stringWithFormat:@"recipe_dropdown_flavor_cancel"];
-        [Flurry logEvent:event];
-        id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-        
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
-                                                              action:@"button_press"  // Event action (required)
-                                                               label:event          // Event label
-                                                               value:nil] build]];
         filterTypeString = @"Flavor";
         arrayOfActiveFilters = [self currentActiveFlavorFilters];
     }
     else if(view == mMixerDropDownMenuView)
     {
-        NSString *event = [NSString stringWithFormat:@"recipe_dropdown_mixer_cancel"];
-        [Flurry logEvent:event];
-        id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-        
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
-                                                              action:@"button_press"  // Event action (required)
-                                                               label:event          // Event label
-                                                               value:nil] build]];
         filterTypeString = @"Mixer";
         arrayOfActiveFilters = [self currentActiveMixerFilters];
     }

@@ -3127,8 +3127,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2fd77a5f-d3d8-4a2a-b855-8d075491731d";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2fd77a5f-d3d8-4a2a-b855-8d075491731d";
+				PROVISIONING_PROFILE = "73167f37-ade8-4401-9caa-12e6cb4026d6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73167f37-ade8-4401-9caa-12e6cb4026d6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

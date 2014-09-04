@@ -1212,11 +1212,11 @@ UIView *myViewForShareButton;
         [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"shareonmessage"]];
         id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
         
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                              action:@"shareonmessage"  // Event action (required)
-                                                               label:value          // Event label
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Recipe Share"     // Event category (required)
+                                                              action:@"Message"  // Event action (required)
+                                                               label:mRecipeObject.title          // Event label
                                                                value:nil] build]];
-        NSString *messageString = [NSString stringWithFormat:@"Check out this Burnett's %@ recipe which I found in the Burnett’s Flavorite Occasions Recipe App!\n\n%@", mRecipeObject.title, [mRecipeObject urlLinkForRecipe]];
+        NSString *messageString = [NSString stringWithFormat:@"Check out this Burnett's %@ recipe which I found in the Burnett’s more recipes, more fun App!\n\n%@", mRecipeObject.title.capitalizedString, [mRecipeObject urlLinkForRecipe]];
         
         MFMessageComposeViewController *smsViewController = [[MFMessageComposeViewController alloc] init];
         smsViewController.messageComposeDelegate = self;
@@ -1240,21 +1240,22 @@ UIView *myViewForShareButton;
     [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"shareonmail"]];
     id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event    // Event category (required)
-                                                          action:@"shareonmail"  // Event action (required)
-                                                           label:value          // Event label
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Recipe Share"    // Event category (required)
+                                                          action:@"Mail"  // Event action (required)
+                                                           label:mRecipeObject.title          // Event label
                                                            value:nil] build]];
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
 	mailComposer.mailComposeDelegate = self;
+
 	
-	[mailComposer setSubject:[NSString stringWithFormat:@"Burnett's %@ recipe", mRecipeObject.title]];
+	[mailComposer setSubject:[NSString stringWithFormat:@"Burnett's %@ Recipe", mRecipeObject.title.capitalizedString]];
     
     
     
     NSString *htmlTemplateString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"burnetts-recipe-email" ofType:@"html"] encoding:4 error:nil];
     
     // Replace Recipe Name
-    htmlTemplateString = [htmlTemplateString stringByReplacingOccurrencesOfString:@"%RECIPE_NAME%" withString:mRecipeObject.title];
+    htmlTemplateString = [htmlTemplateString stringByReplacingOccurrencesOfString:@"%RECIPE_NAME%" withString:mRecipeObject.title.capitalizedString];
     
     // Replace Recipe Link
     htmlTemplateString = [htmlTemplateString stringByReplacingOccurrencesOfString:@"%RECIPE_LINK%" withString:[mRecipeObject urlLinkForRecipe]];
@@ -1296,12 +1297,12 @@ UIView *myViewForShareButton;
     [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"shareontwitter"]];
     id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                          action:@"shareontwitter"  // Event action (required)
-                                                           label:value          // Event label
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Recipe Share"     // Event category (required)
+                                                          action:@"Twitter"  // Event action (required)
+                                                           label:mRecipeObject.title          // Event label
                                                            value:nil] build]];
     
-    NSString *textToBeTweeted = [NSString stringWithFormat:@"Check out this Burnett's %@ recipe on Flavorite Occasions Recipe App!", mRecipeObject.title];
+    NSString *textToBeTweeted = [NSString stringWithFormat:@"Check out this Burnett's %@ recipe on more recipes, more fun App!", mRecipeObject.title.capitalizedString];
         
     // Check and decide which framework to use for twitter sharing.
     // iOS 6.0 onwards we shall use Social Framework and before that, we shall use Twitter Framework
@@ -1345,9 +1346,9 @@ UIView *myViewForShareButton;
     [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"shareonfacebook"]];
     id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event    // Event category (required)
-                                                          action:@"shareonfacebook"  // Event action (required)
-                                                           label:value          // Event label
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Recipe Share"    // Event category (required)
+                                                          action:@"Facebook"  // Event action (required)
+                                                           label:mRecipeObject.title          // Event label
                                                            value:nil] build]];
     // Check and decide which framework to use for twitter sharing.
     // iOS 6.0 onwards we shall use Social Framework and before that, we shall use Twitter Framework
@@ -1355,7 +1356,7 @@ UIView *myViewForShareButton;
     {
         SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [facebookSheet setInitialText:[NSString stringWithFormat:@"Check out this Burnett's %@ recipe which I found in the Burnett’s Flavorite Occasions Recipe App!\n\n", mRecipeObject.title]];
+        [facebookSheet setInitialText:[NSString stringWithFormat:@"Check out this Burnett's %@ recipe which I found in the Burnett’s more recipes, more fun App!\n\n", mRecipeObject.title.capitalizedString]];
         
         [facebookSheet addURL:[NSURL URLWithString:[mRecipeObject urlLinkForRecipe]]];
         
@@ -1577,12 +1578,7 @@ UIView *myViewForShareButton;
     Recipe *recipeObjectRemovedFromFavorites = [notification object];
     NSString *value = [[NSString stringWithFormat:@"%@", recipeObjectRemovedFromFavorites.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
     [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"removefromfavorites"]];
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event    // Event category (required)
-                                                          action:@"removefromfavorites"  // Event action (required)
-                                                           label:value          // Event label
-                                                           value:nil] build]];
     
     if(recipeObjectRemovedFromFavorites == mRecipeObject)
     {
@@ -1605,9 +1601,9 @@ UIView *myViewForShareButton;
     [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"removefromfavorites_fromdetailscreen"]];
     id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                          action:@"removefromfavorites_fromdetailscreen"  // Event action (required)
-                                                           label:value          // Event label
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Favorites"    // Event category (required)
+                                                          action:@"Removed From Fav"  // Event action (required)
+                                                           label:recipeObjectRemovedFromFavorites.title          // Event label
                                                            value:nil] build]];
     if(recipeObjectRemovedFromFavorites == mRecipeObject)
     {
@@ -1647,8 +1643,8 @@ UIView *myViewForShareButton;
             [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"ratedwithvalue"]];
             id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
             
-            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                                  action:@"ratedwithvalue"  // Event action (required)
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Recipe Rating"     // Event category (required)
+                                                                  action:@"Rated"  // Event action (required)
                                                                    label:value          // Event label
                                                                    value:nil] build]];
         
@@ -1665,9 +1661,9 @@ UIView *myViewForShareButton;
     [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:@"addtofavorites"]];
     id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
-                                                          action:@"addtofavorites"  // Event action (required)
-                                                           label:value          // Event label
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Favorites"     // Event category (required)
+                                                          action:@"Added To Fav"  // Event action (required)
+                                                           label:recipeAddedToFavorites.title          // Event label
                                                            value:nil] build]];
     if(recipeAddedToFavorites == mRecipeObject)
     {

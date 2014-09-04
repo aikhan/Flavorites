@@ -48,7 +48,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    self.screenName = @"Gate View";
+   // self.screenName = @"Gate View";
 }
 
 - (void)didReceiveMemoryWarning
