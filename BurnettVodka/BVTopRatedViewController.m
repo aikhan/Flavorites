@@ -215,7 +215,7 @@
     
     for(Recipe *recipeObject in allRecipes)
     {
-        NSString *ratingValueKey = [NSString stringWithFormat:@"%.2f", [recipeObject.ratingCount floatValue] * [recipeObject.ratingValue floatValue]];
+        NSString *ratingValueKey = [NSString stringWithFormat:@"%.2f", [recipeObject.ratingValue floatValue]];
         NSMutableArray *array = [mapOfRecipeObjectsCategoriedBySameRatingValue valueForKey:ratingValueKey];
         if(array == nil)
         {
