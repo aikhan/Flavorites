@@ -399,7 +399,7 @@ void myExceptionHandler(NSException *exception)
     if(_ageGateController == nil)
     {
         DebugLog(@"Inside Fetch Recipes");
-        [[DataManager sharedDataManager] fetchRecipesRatingsFromServer];
+        //[[DataManager sharedDataManager] fetchRecipesRatingsFromServer];
         [self CheckDateGetFeatureRecipes];
     }
 }
@@ -581,7 +581,7 @@ void myExceptionHandler(NSException *exception)
 {
     [self showTabBar];
     
-    [[DataManager sharedDataManager] fetchRecipesRatingsFromServer];
+   // [[DataManager sharedDataManager] fetchRecipesRatingsFromServer];
     [[DataManager sharedDataManager] fetchLaterAppVersionAvailableFromServer];
     
     _ageGateController.controllerDelegate = nil;

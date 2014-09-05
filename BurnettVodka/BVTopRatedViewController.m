@@ -215,7 +215,7 @@
     
     for(Recipe *recipeObject in allRecipes)
     {
-        NSString *ratingValueKey = [NSString stringWithFormat:@"%.2f", [recipeObject.ratingValue floatValue]];
+        NSString *ratingValueKey = [NSString stringWithFormat:@"%.4f", [recipeObject.ratingValue floatValue]];
         NSMutableArray *array = [mapOfRecipeObjectsCategoriedBySameRatingValue valueForKey:ratingValueKey];
         if(array == nil)
         {
@@ -240,41 +240,45 @@
         
         NSMutableDictionary *mapOfRecipeObjectsCategoriedBySameRatingCount = [[NSMutableDictionary alloc] init];
         
-        for(Recipe *recipeObject in arrayOfRecipesWithSameRatingValue)
-        {
-            NSString *ratingCountKey = [NSString stringWithFormat:@"%d", [recipeObject.ratingCount integerValue]];
-            NSMutableArray *array = [mapOfRecipeObjectsCategoriedBySameRatingCount valueForKey:ratingCountKey];
-            if(array == nil)
-            {
-                array = [[NSMutableArray alloc] init];
-                [mapOfRecipeObjectsCategoriedBySameRatingCount setValue:array forKey:ratingCountKey];
-                [array release];
-            }
-            [array addObject:recipeObject];
-        }
+//        for(Recipe *recipeObject in arrayOfRecipesWithSameRatingValue)
+//        {
+//            NSString *ratingCountKey = [NSString stringWithFormat:@"%d", [recipeObject.ratingCount integerValue]];
+//            NSMutableArray *array = [mapOfRecipeObjectsCategoriedBySameRatingCount valueForKey:ratingCountKey];
+//            if(array == nil)
+//            {
+//                array = [[NSMutableArray alloc] init];
+//                [mapOfRecipeObjectsCategoriedBySameRatingCount setValue:array forKey:ratingCountKey];
+//                [array release];
+//            }
+//            [array addObject:recipeObject];
+//        }
         
-        NSMutableArray *allKeysOfMapOfRatingCount = [[NSMutableArray alloc] initWithArray:[mapOfRecipeObjectsCategoriedBySameRatingCount allKeys]];
-        [allKeysOfMapOfRatingCount sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-            
-            return [((NSString *)obj2) compare:((NSString *)obj1) options:NSNumericSearch];
-        }];
+        //NSMutableArray *allKeysOfMapOfRatingCount = [[NSMutableArray alloc] initWithArray:[mapOfRecipeObjectsCategoriedBySameRatingCount allKeys]];
+//        [arrayOfRecipesWithSameRatingValue sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+//            
+//            return [((NSString *)obj2) compare:((NSString *)obj1) options:NSNumericSearch];
+//        }];
         
         
-        for(NSString *countKey in allKeysOfMapOfRatingCount)
-        {
-            NSMutableArray *arrayOfRecipesWithSameRatingCount = [mapOfRecipeObjectsCategoriedBySameRatingCount valueForKey:countKey];
-            [arrayOfRecipesWithSameRatingCount sortUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]]];
-            
-            
-            for(Recipe *recipeObject in arrayOfRecipesWithSameRatingCount)
-            {
-                [finalArrayWithAllSortings addObject:recipeObject];
-            }
+//        for(NSString *countKey in allKeysOfMapOfRatingCount)
+//        {
+//            NSMutableArray *arrayOfRecipesWithSameRatingCount = [mapOfRecipeObjectsCategoriedBySameRatingCount valueForKey:countKey];
+//            [arrayOfRecipesWithSameRatingCount sortUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]]];
+//            
+//            
+//            for(Recipe *recipeObject in arrayOfRecipesWithSameRatingCount)
+//            {
+//                [finalArrayWithAllSortings addObject:recipeObject];
+//            }
+//        }
+        [arrayOfRecipesWithSameRatingValue sortUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]]];
+        for (Recipe *recipes in arrayOfRecipesWithSameRatingValue) {
+            [finalArrayWithAllSortings addObject:recipes];
         }
         
         
         [mapOfRecipeObjectsCategoriedBySameRatingCount release];
-        [allKeysOfMapOfRatingCount release];
+        //[allKeysOfMapOfRatingCount release];
     }
     
     
@@ -292,6 +296,7 @@
 //        }
 //        else {
             [mTableData addObject:recipeObject];
+        DebugLog(@"name of recipe is %@ and value of rating is %f", recipeObject.title, recipeObject.ratingValue.floatValue);
 //        }
         count++;
         
