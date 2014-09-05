@@ -106,97 +106,267 @@
     UIImage *emptyImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"RatingStarGray.png" andAddIfRequired:YES];
     UIImage *halfImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"RatingStarHalfBlue.png" andAddIfRequired:YES];    
     
+    UIImage *QuaterImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"RatingStarOneQuater.png" andAddIfRequired:YES];
+    UIImage *TwoQuaterImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"RatingStarThreeQuater.png" andAddIfRequired:YES];
     
-
     
-    if(rating <= 0.25)
-    {
-        mStarView1.image = emptyImage;
-        mStarView2.image = emptyImage;
-        mStarView3.image = emptyImage;
-        mStarView4.image = emptyImage;
-        mStarView5.image = emptyImage;
+    NSString *str = [NSString stringWithFormat:@"%f",rating];
+    NSArray *strarr = [str componentsSeparatedByString:@"."];
+    int integerpart = [[strarr firstObject] intValue];
+    float decimalpart = [[strarr lastObject] floatValue];
+    if (integerpart==0) {
+        if (decimalpart>000000 && decimalpart<500000) {
+            mStarView1.image = QuaterImage;
+        }
+        else if (decimalpart==500000) {
+            mStarView1.image = halfImage;
+        }
+        else if (decimalpart>500000 && decimalpart<1000000) {
+            mStarView1.image = TwoQuaterImage;
+        }
+        else {
+            mStarView1.image = emptyImage;
+            mStarView2.image = emptyImage;
+            mStarView3.image = emptyImage;
+            mStarView4.image = emptyImage;
+            mStarView5.image = emptyImage;
+        }
     }
-    else if(rating > 0.25 && rating <= 0.75)
-    {
-        mStarView1.image = halfImage;
-        mStarView2.image = emptyImage;
-        mStarView3.image = emptyImage;
-        mStarView4.image = emptyImage;
-        mStarView5.image = emptyImage;
-    }
-    else if(rating > 0.75 && rating <= 1.25)
-    {
+    else if (integerpart==1) {
         mStarView1.image = fullImage;
-        mStarView2.image = emptyImage;
+        if (decimalpart>000000 && decimalpart<500000) {
+            mStarView2.image = QuaterImage;
+        }
+        else if (decimalpart==500000) {
+            mStarView2.image = halfImage;
+        }
+        else if (decimalpart>500000 && decimalpart<1000000) {
+            mStarView2.image = TwoQuaterImage;
+        }
+        else {
+            mStarView2.image = emptyImage;
+        }
         mStarView3.image = emptyImage;
         mStarView4.image = emptyImage;
         mStarView5.image = emptyImage;
     }
-    else if(rating > 1.25 && rating <= 1.75)
-    {
-        mStarView1.image = fullImage;
-        mStarView2.image = halfImage;
-        mStarView3.image = emptyImage;
-        mStarView4.image = emptyImage;
-        mStarView5.image = emptyImage;
-    }
-    else if(rating > 1.75 && rating <= 2.25)
-    {
+    else if (integerpart==2) {
         mStarView1.image = fullImage;
         mStarView2.image = fullImage;
-        mStarView3.image = emptyImage;
+        if (decimalpart>000000 && decimalpart<500000) {
+            mStarView3.image = QuaterImage;
+        }
+        else if (decimalpart==500000) {
+            mStarView3.image = halfImage;
+        }
+        else if (decimalpart>500000 && decimalpart<1000000) {
+            mStarView3.image = TwoQuaterImage;
+        }
+        else {
+            mStarView3.image = emptyImage;
+        }
         mStarView4.image = emptyImage;
         mStarView5.image = emptyImage;
     }
-    else if(rating > 2.25 && rating <= 2.75)
-    {
-        mStarView1.image = fullImage;
-        mStarView2.image = fullImage;
-        mStarView3.image = halfImage;
-        mStarView4.image = emptyImage;
-        mStarView5.image = emptyImage;
-    }
-    else if(rating > 2.75 && rating <= 3.25)
-    {
+    else if (integerpart==3) {
         mStarView1.image = fullImage;
         mStarView2.image = fullImage;
         mStarView3.image = fullImage;
-        mStarView4.image = emptyImage;
+        if (decimalpart>000000 && decimalpart<500000) {
+            mStarView4.image = QuaterImage;
+        }
+        else if (decimalpart==500000) {
+            mStarView4.image = halfImage;
+        }
+        else if (decimalpart>500000 && decimalpart<1000000) {
+            mStarView4.image = TwoQuaterImage;
+        }
+        else {
+            mStarView4.image = emptyImage;
+        }
         mStarView5.image = emptyImage;
     }
-    else if(rating > 3.25 && rating <= 3.75)
-    {
-        mStarView1.image = fullImage;
-        mStarView2.image = fullImage;
-        mStarView3.image = fullImage;
-        mStarView4.image = halfImage;
-        mStarView5.image = emptyImage;
-    }
-    else if(rating > 3.75 && rating <= 4.25)
-    {
+    else if (integerpart==4) {
         mStarView1.image = fullImage;
         mStarView2.image = fullImage;
         mStarView3.image = fullImage;
         mStarView4.image = fullImage;
-        mStarView5.image = emptyImage;
+        if (decimalpart>000000 && decimalpart<500000) {
+            mStarView5.image = QuaterImage;
+        }
+        else if (decimalpart==500000) {
+            mStarView5.image = halfImage;
+        }
+        else if (decimalpart>500000 && decimalpart<1000000) {
+            mStarView5.image = TwoQuaterImage;
+        }
+        else {
+            mStarView5.image = emptyImage;
+        }
     }
-    else if(rating > 4.25 && rating <= 4.75)
-    {
-        mStarView1.image = fullImage;
-        mStarView2.image = fullImage;
-        mStarView3.image = fullImage;
-        mStarView4.image = fullImage;
-        mStarView5.image = halfImage;
-    }
-    else if(rating > 4.75)
-    {
+    else if (integerpart==5) {
         mStarView1.image = fullImage;
         mStarView2.image = fullImage;
         mStarView3.image = fullImage;
         mStarView4.image = fullImage;
         mStarView5.image = fullImage;
     }
+    
+    
+//    
+//    
+//    if(rating < 0.5)
+//    {
+//        mStarView1.image = QuaterImage;
+//        mStarView2.image = emptyImage;
+//        mStarView3.image = emptyImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 0.5 && rating <1.0)
+//    {
+//        mStarView1.image = TwoQuaterImage;
+//        mStarView2.image = emptyImage;
+//        mStarView3.image = emptyImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating >1.0 && rating<=1.0)
+//    {
+//        mStarView1.image = fullImage;
+//        mStarView2.image = emptyImage;
+//        mStarView3.image = emptyImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 1.0 && rating <= 1.25)
+//    {
+//        mStarView1.image = QuaterImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = emptyImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 1.25 && rating <= 1.5)
+//    {
+//        mStarView1.image = halfImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = emptyImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 1.5 && rating <= 1.75)
+//    {
+//        mStarView1.image = TwoQuaterImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = emptyImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating >1.75 && rating<=2.0)
+//    {
+//        mStarView1.image = fullImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = emptyImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 2.0 && rating <= 2.25)
+//    {
+//        mStarView1.image = QuaterImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 2.25 && rating <= 2.5)
+//    {
+//        mStarView1.image = halfImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 2.5 && rating <= 2.75)
+//    {
+//        mStarView1.image = TwoQuaterImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating >2.75 && rating<=3.0)
+//    {
+//        mStarView1.image = fullImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = emptyImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 3.0 && rating <= 3.25)
+//    {
+//        mStarView1.image = QuaterImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = fullImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 3.25 && rating <= 3.5)
+//    {
+//        mStarView1.image = halfImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = fullImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 3.5 && rating <= 3.75)
+//    {
+//        mStarView1.image = TwoQuaterImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = fullImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating >3.75 && rating<=4.0)
+//    {
+//        mStarView1.image = fullImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = fullImage;
+//        mStarView5.image = emptyImage;
+//    }
+//    else if(rating > 4.0 && rating <= 4.25)
+//    {
+//        mStarView1.image = QuaterImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = fullImage;
+//        mStarView5.image = fullImage;
+//    }
+//    else if(rating > 4.25 && rating <= 4.5)
+//    {
+//        mStarView1.image = halfImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = fullImage;
+//        mStarView5.image = fullImage;
+//    }
+//    else if(rating > 4.5 && rating <= 4.75)
+//    {
+//        mStarView1.image = TwoQuaterImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = fullImage;
+//        mStarView5.image = fullImage;
+//    }
+//    else if(rating >4.75 && rating<=5.0)
+//    {
+//        mStarView1.image = fullImage;
+//        mStarView2.image = fullImage;
+//        mStarView3.image = fullImage;
+//        mStarView4.image = fullImage;
+//        mStarView5.image = fullImage;
+//    }
 }
 
 

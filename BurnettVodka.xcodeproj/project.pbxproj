@@ -623,6 +623,10 @@
 		E0B2A90F1998EBEB00FC5EC7 /* whippedcream.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A7CE1998EBEB00FC5EC7 /* whippedcream.png */; };
 		E0B2A9101998EBEB00FC5EC7 /* whippedcream1.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A7CF1998EBEB00FC5EC7 /* whippedcream1.png */; };
 		E0B2A9111998EBEB00FC5EC7 /* winter_fizz.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B2A7D01998EBEB00FC5EC7 /* winter_fizz.png */; };
+		E0D366F719B9F1D600AA61D6 /* RatingStarOneQuater.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D366F319B9F1D600AA61D6 /* RatingStarOneQuater.png */; };
+		E0D366F819B9F1D600AA61D6 /* RatingStarOneQuater@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D366F419B9F1D600AA61D6 /* RatingStarOneQuater@2x.png */; };
+		E0D366F919B9F1D600AA61D6 /* RatingStarThreeQuater.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D366F519B9F1D600AA61D6 /* RatingStarThreeQuater.png */; };
+		E0D366FA19B9F1D600AA61D6 /* RatingStarThreeQuater@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D366F619B9F1D600AA61D6 /* RatingStarThreeQuater@2x.png */; };
 		E0F8FFE719AF84A90008AC20 /* RatingStarBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F8FFE419AF84A90008AC20 /* RatingStarBlue@2x.png */; };
 		E0F8FFE819AF84A90008AC20 /* RatingStarGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F8FFE519AF84A90008AC20 /* RatingStarGray@2x.png */; };
 		E0F8FFE919AF84A90008AC20 /* RatingStarHalfBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F8FFE619AF84A90008AC20 /* RatingStarHalfBlue@2x.png */; };
@@ -1337,6 +1341,10 @@
 		E0B2A7CE1998EBEB00FC5EC7 /* whippedcream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whippedcream.png; path = Reciepe/whippedcream.png; sourceTree = "<group>"; };
 		E0B2A7CF1998EBEB00FC5EC7 /* whippedcream1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whippedcream1.png; path = Reciepe/whippedcream1.png; sourceTree = "<group>"; };
 		E0B2A7D01998EBEB00FC5EC7 /* winter_fizz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = winter_fizz.png; path = Reciepe/winter_fizz.png; sourceTree = "<group>"; };
+		E0D366F319B9F1D600AA61D6 /* RatingStarOneQuater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RatingStarOneQuater.png; sourceTree = "<group>"; };
+		E0D366F419B9F1D600AA61D6 /* RatingStarOneQuater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarOneQuater@2x.png"; sourceTree = "<group>"; };
+		E0D366F519B9F1D600AA61D6 /* RatingStarThreeQuater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RatingStarThreeQuater.png; sourceTree = "<group>"; };
+		E0D366F619B9F1D600AA61D6 /* RatingStarThreeQuater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarThreeQuater@2x.png"; sourceTree = "<group>"; };
 		E0F8FFE419AF84A90008AC20 /* RatingStarBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarBlue@2x.png"; sourceTree = "<group>"; };
 		E0F8FFE519AF84A90008AC20 /* RatingStarGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarGray@2x.png"; sourceTree = "<group>"; };
 		E0F8FFE619AF84A90008AC20 /* RatingStarHalfBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RatingStarHalfBlue@2x.png"; sourceTree = "<group>"; };
@@ -2329,6 +2337,10 @@
 		E09A97501994F8930095DC02 /* General Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0D366F319B9F1D600AA61D6 /* RatingStarOneQuater.png */,
+				E0D366F419B9F1D600AA61D6 /* RatingStarOneQuater@2x.png */,
+				E0D366F519B9F1D600AA61D6 /* RatingStarThreeQuater.png */,
+				E0D366F619B9F1D600AA61D6 /* RatingStarThreeQuater@2x.png */,
 				05BA4BCF19AE8C2C00108111 /* RecipeTabSearchBarBackground.png */,
 				05BA4BD019AE8C2C00108111 /* RecipeTabSearchBarBackground@2x.png */,
 				05BA4BCD19AE8B3400108111 /* TopRatedBackgroundCircle.png */,
@@ -2512,6 +2524,7 @@
 				8423A2F1179A58D3001497C1 /* RecipeDetailBottomBackgroundHeader.png in Resources */,
 				E09A973A1994B7B80095DC02 /* TabBarFlavorsS.png in Resources */,
 				8423A2F5179AA3A4001497C1 /* RecipeDetailBulletPointIcon.png in Resources */,
+				E0D366F819B9F1D600AA61D6 /* RatingStarOneQuater@2x.png in Resources */,
 				E0B2A9091998EBEB00FC5EC7 /* whippedcream_redcreamfloat.png in Resources */,
 				E0B2A8EE1998EBEB00FC5EC7 /* vodka_burnettscosmo.png in Resources */,
 				E0B2A80B1998EBEB00FC5EC7 /* espresso_espressotini.png in Resources */,
@@ -2525,6 +2538,7 @@
 				8448C49E179E50F50087D5C4 /* RecipeTabSegmentedControlBackground.png in Resources */,
 				E0B2A8531998EBEB00FC5EC7 /* mango_burnettsmangococtail.png in Resources */,
 				E0B2A8FE1998EBEB00FC5EC7 /* watermelon_kissthefloor.png in Resources */,
+				E0D366F719B9F1D600AA61D6 /* RatingStarOneQuater.png in Resources */,
 				E0B2A8B61998EBEB00FC5EC7 /* rumcoconut_tidalwave.png in Resources */,
 				E0B2A8771998EBEB00FC5EC7 /* peach_peachfizz.png in Resources */,
 				E0B2A89B1998EBEB00FC5EC7 /* pomegranate_pomegranatetruffle.png in Resources */,
@@ -2568,6 +2582,7 @@
 				E0B2A8321998EBEB00FC5EC7 /* grape_grapefizz.png in Resources */,
 				E09AAF1319965EA80050B705 /* detailbg.png in Resources */,
 				05256B3419219186002955D5 /* Recipes1.csv in Resources */,
+				E0D366FA19B9F1D600AA61D6 /* RatingStarThreeQuater@2x.png in Resources */,
 				E0B2A8701998EBEB00FC5EC7 /* orangecream_orangcreamsicle.png in Resources */,
 				E0B2A8A31998EBEB00FC5EC7 /* raspberry_anonymouscocktail.png in Resources */,
 				E09891061993866000694684 /* maplesyrup.png in Resources */,
@@ -2844,6 +2859,7 @@
 				E0B2A8E51998EBEB00FC5EC7 /* vanilla_vanillapinacolada.png in Resources */,
 				E0B2A8AC1998EBEB00FC5EC7 /* raspberry_raspberrypucker.png in Resources */,
 				E0B2A84E1998EBEB00FC5EC7 /* limeade_locolimeade.png in Resources */,
+				E0D366F919B9F1D600AA61D6 /* RatingStarThreeQuater.png in Resources */,
 				E0B2A8651998EBEB00FC5EC7 /* orange_orangerussianicetea.png in Resources */,
 				E0B2A8951998EBEB00FC5EC7 /* pomegranate_oasisrefresher.png in Resources */,
 				E071E4041996086C00AA67E7 /* Descriptionheading.png in Resources */,
