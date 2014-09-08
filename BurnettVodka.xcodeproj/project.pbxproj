@@ -25,8 +25,6 @@
 		05655F33199E6A880061988B /* pina_mango-lada.png in Resources */ = {isa = PBXBuildFile; fileRef = 05655F32199E6A880061988B /* pina_mango-lada.png */; };
 		057B8B3319BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B8B3119BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav.png */; };
 		057B8B3419BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B8B3219BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav@2x.png */; };
-		057B8B3719BA617A00DF5E14 /* abcd.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B8B3519BA617A00DF5E14 /* abcd.png */; };
-		057B8B3819BA617A00DF5E14 /* abcd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B8B3619BA617A00DF5E14 /* abcd@2x.png */; };
 		05A1041C18899E9C00B7D898 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A1041B18899E9C00B7D898 /* FacebookSDK.framework */; };
 		05AA29A0199BDB2D00181B20 /* rumwhite_sharktooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 05AA299F199BDB2D00181B20 /* rumwhite_sharktooth.png */; };
 		05ACD31719BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05ACD31319BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS@2x.png */; };
@@ -660,8 +658,6 @@
 		05655F32199E6A880061988B /* pina_mango-lada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pina_mango-lada.png"; path = "Reciepe/pina_mango-lada.png"; sourceTree = "<group>"; };
 		057B8B3119BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailBgForRatingAndFav.png; sourceTree = "<group>"; };
 		057B8B3219BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailBgForRatingAndFav@2x.png"; sourceTree = "<group>"; };
-		057B8B3519BA617A00DF5E14 /* abcd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abcd.png; sourceTree = "<group>"; };
-		057B8B3619BA617A00DF5E14 /* abcd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "abcd@2x.png"; sourceTree = "<group>"; };
 		05A1041B18899E9C00B7D898 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		05AA299F199BDB2D00181B20 /* rumwhite_sharktooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rumwhite_sharktooth.png; sourceTree = "<group>"; };
 		05ACD31319BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailBgForRatingAndFavS@2x.png"; sourceTree = "<group>"; };
@@ -1428,8 +1424,6 @@
 		8423A2D3179A51DE001497C1 /* Recipe Detail  */ = {
 			isa = PBXGroup;
 			children = (
-				057B8B3519BA617A00DF5E14 /* abcd.png */,
-				057B8B3619BA617A00DF5E14 /* abcd@2x.png */,
 				057B8B3119BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav.png */,
 				057B8B3219BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav@2x.png */,
 				05ACD31319BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS@2x.png */,
@@ -2863,7 +2857,6 @@
 				E0B2A8B21998EBEB00FC5EC7 /* rumcoconut_bluebird.png in Resources */,
 				E0B2A88B1998EBEB00FC5EC7 /* pinklemonade_pinkbubbles.png in Resources */,
 				E0B2A7D51998EBEB00FC5EC7 /* blueberry_berryblast.png in Resources */,
-				057B8B3719BA617A00DF5E14 /* abcd.png in Resources */,
 				E0B2A8E51998EBEB00FC5EC7 /* vanilla_vanillapinacolada.png in Resources */,
 				E0B2A8AC1998EBEB00FC5EC7 /* raspberry_raspberrypucker.png in Resources */,
 				E0B2A84E1998EBEB00FC5EC7 /* limeade_locolimeade.png in Resources */,
@@ -2926,7 +2919,6 @@
 				E0B2A8261998EBEB00FC5EC7 /* gin_peterpancocktail.png in Resources */,
 				E0B2A7E61998EBEB00FC5EC7 /* blueraspberry_icepop.png in Resources */,
 				E09A973B1994B7B80095DC02 /* TabBarHomeS.png in Resources */,
-				057B8B3819BA617A00DF5E14 /* abcd@2x.png in Resources */,
 				E09890FD1993866000694684 /* coconut.png in Resources */,
 				84EEEC1417BE78B500136E16 /* AddToMyFaves.png in Resources */,
 				E09891041993866000694684 /* mango.png in Resources */,
