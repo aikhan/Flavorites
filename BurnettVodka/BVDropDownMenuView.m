@@ -109,7 +109,7 @@
                                                                    mContentView.frame.size.height - kBottomButtonPaddingBottom - kBottomButtonHeight,
                                                                    kBottomButtonWidth,
                                                                    kBottomButtonHeight)];
-        [mResetButton setTitle:@"RESET" forState:UIControlStateNormal];
+        [mResetButton setTitle:@"reset " forState:UIControlStateNormal];
         mResetButton.titleLabel.font = [UtilityManager fontGetRegularFontOfSize:14];
         [mResetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [mResetButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
@@ -123,7 +123,7 @@
                                                                    mResetButton.frame.origin.y,
                                                                    kBottomButtonWidth,
                                                                    kBottomButtonHeight)];
-        [mCancelButton setTitle:@"CANCEL" forState:UIControlStateNormal];
+        [mCancelButton setTitle:@"cancel  " forState:UIControlStateNormal];
         mCancelButton.titleLabel.font = [UtilityManager fontGetRegularFontOfSize:14];
         [mCancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [mCancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
@@ -137,7 +137,7 @@
                                                                      mCancelButton.frame.origin.y,
                                                                      kBottomButtonWidth,
                                                                      kBottomButtonHeight)];
-        [mContinueButton setTitle:@"CONTINUE" forState:UIControlStateNormal];
+        [mContinueButton setTitle:@"continue" forState:UIControlStateNormal];
         mContinueButton.titleLabel.font = [UtilityManager fontGetRegularFontOfSize:14];
         [mContinueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [mContinueButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];

@@ -133,6 +133,8 @@ static NewServerFetchOperations *sharedManager = nil;
                                     recipe.title = [recipeDic valueForKeyPath:@"name"];
                                     if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
                                         recipe.ratingValue = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalAverageRating"] floatValue]];
+                                    }else if ([recipeDic valueForKeyPath:@"finalAverageRating"] == [NSNull null] ){
+                                        recipe.ratingValue = [NSNumber numberWithFloat:(float) 0.0F];
                                     }
                                     recipe.ratingCount = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalTotalNumOfSubmission"] floatValue]];
                                     //recipe.recipeID = [NSNumber numberWithInteger:[[recipeDic valueForKeyPath:@"recipe_id"] integerValue]];
@@ -156,6 +158,8 @@ static NewServerFetchOperations *sharedManager = nil;
                                     recipe.title = [recipeDic valueForKeyPath:@"drink_name"];
                                     if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
                                         recipe.ratingValue = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalAverageRating"] floatValue]];
+                                    }else if ([recipeDic valueForKeyPath:@"finalAverageRating"] == [NSNull null] ){
+                                        recipe.ratingValue = [NSNumber numberWithFloat:(float) 0.0F];
                                     }
                                     recipe.ratingCount = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalTotalNumOfSubmission"] floatValue]];
                                     recipe.recipeID = [NSNumber numberWithInteger:[[recipeDic valueForKeyPath:@"recipe_id"] integerValue]];
@@ -209,6 +213,8 @@ static NewServerFetchOperations *sharedManager = nil;
                                     recipe.title = [recipeDic valueForKeyPath:@"name"];
                                     if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
                                         recipe.ratingValue = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalAverageRating"] floatValue]];
+                                    }else if ([recipeDic valueForKeyPath:@"finalAverageRating"] == [NSNull null] ){
+                                        recipe.ratingValue = [NSNumber numberWithFloat:(float) 0.0F];
                                     }
                                     recipe.ratingCount = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalTotalNumOfSubmission"] floatValue]];
                                     //recipe.recipeID = [NSNumber numberWithInteger:[[recipeDic valueForKeyPath:@"recipe_id"] integerValue]];
@@ -231,6 +237,8 @@ static NewServerFetchOperations *sharedManager = nil;
                                     recipe.title = [recipeDic valueForKeyPath:@"drink_name"];
                                     if ([recipeDic valueForKeyPath:@"finalAverageRating"] != [NSNull null] ) {
                                         recipe.ratingValue = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalAverageRating"] floatValue]];
+                                    }else if ([recipeDic valueForKeyPath:@"finalAverageRating"] == [NSNull null] ){
+                                        recipe.ratingValue = [NSNumber numberWithFloat:(float) 0.0F];
                                     }
                                     recipe.ratingCount = [NSNumber numberWithFloat:(float)[[recipeDic valueForKeyPath:@"finalTotalNumOfSubmission"] floatValue]];
                                     recipe.recipeID = [NSNumber numberWithInteger:[[recipeDic valueForKeyPath:@"recipe_id"] integerValue]];

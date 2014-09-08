@@ -104,7 +104,12 @@
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"toprateTab.png"] forBarMetrics:UIBarMetricsDefault];
 
-    self.screenName = @"Top Rated";
+    NSString *event = @"Top Rated";
+    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
+                                                          action:@"Top Rated Screen"  // Event action (required)
+                                                           label:nil          // Event label
+                                                           value:nil] build]];
 }
 
 - (void)didReceiveMemoryWarning

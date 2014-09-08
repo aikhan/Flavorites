@@ -18,7 +18,7 @@
 #import "GAITracker.h"
 #import "GAIDictionaryBuilder.h"
 
-#define kInformativeMessageForNoFavoriteRecipes @"Please add recipes to My Faves"
+#define kInformativeMessageForNoFavoriteRecipes @"Please add recipes to my faves"
 
 
 
@@ -118,7 +118,12 @@
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"favouriteTab.png"] forBarMetrics:UIBarMetricsDefault];
 
-    self.screenName = @"Favorites";
+    NSString *event = @"Favorites";
+    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
+                                                          action:@"Favorites Screen"  // Event action (required)
+                                                           label:nil          // Event label
+                                                           value:nil] build]];
 }
 
 - (void)didReceiveMemoryWarning

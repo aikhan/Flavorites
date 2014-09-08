@@ -846,7 +846,7 @@ static DataManager *sharedDataManager = nil;
      */
     NSString *path = [[NSBundle mainBundle] pathForResource: @"PropertyList" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
-    id obj = [dict objectForKey: @"http://secure.xm0001.net/heavenhill/burnetts/recipe_api/featured_recipe.php"];
+    id obj = [dict objectForKey: @"http://facebook.heavenhill.com/burnetts/recipe_api/2014/featured_recipe.php"];
     NSArray *defaultFeaturedRecipes = [[obj JSONValue] valueForKey:@"featured_recipes"];
     return defaultFeaturedRecipes;
 }

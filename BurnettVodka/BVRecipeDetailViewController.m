@@ -109,23 +109,25 @@ static NSString *event = @"Recipe Detail";
     if(isAdded)
     {
         UIImageView *myImageView = (UIImageView*)[self viewWithTag:100];
+        [myImageView removeFromSuperview];
+        myImageView = nil;
         if (myImageView) {
             [myImageView setImage:[UIImage imageNamed:@"favBack.png"]];
             CGRect backFrame = myImageView.frame;
-             backFrame.origin.y = backFrame.origin.y - 1;
-            backFrame.size.height = backFrame.size.height + 1;
+             backFrame.origin.y = backFrame.origin.y + 0.5 ;
+            //backFrame.size.height = backFrame.size.height - 1;
             myImageView.frame = backFrame;
         }else{
             myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favBack.png"]];
             CGRect backFrame = myImageView.frame;
-            backFrame.origin.y = backFrame.origin.y - 1;
-            backFrame.size.height = backFrame.size.height + 1;
+            backFrame.origin.y = backFrame.origin.y + 0.5;
+           // backFrame.size.height = backFrame.size.height - 1;
             myImageView.frame = backFrame;
             [self insertSubview:myImageView atIndex:[[self subviews] count] - 1];
             myImageView.tag = 100;
             [myImageView release];
         }
-        if([[mAddToFavButton titleForState:UIControlStateNormal] isEqualToString:@" My Faves"])
+        if([[mAddToFavButton titleForState:UIControlStateNormal] isEqualToString:@" my faves"])
         {
             return;
         }
@@ -133,17 +135,19 @@ static NSString *event = @"Recipe Detail";
     else
     {
         UIImageView *myImageView = (UIImageView*)[self viewWithTag:100];
+        [myImageView removeFromSuperview];
+        myImageView = nil;
         if (myImageView) {
             [myImageView setImage:[UIImage imageNamed:@"favBackU.png"]];
             CGRect backFrame = myImageView.frame;
-            backFrame.origin.y = backFrame.origin.y + 1;
-            backFrame.size.height = backFrame.size.height - 1;
+           // backFrame.origin.y = backFrame.origin.y + 0.5;
+            //backFrame.size.height = backFrame.size.height - 0.5;
             myImageView.frame = backFrame;
         }else{
             myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favBackU.png"]];
             CGRect backFrame = myImageView.frame;
-            backFrame.origin.y = backFrame.origin.y + 1;
-            backFrame.size.height = backFrame.size.height - 1;
+            backFrame.origin.y = backFrame.origin.y + 0.5;
+            backFrame.size.height = backFrame.size.height - 0.5;
             myImageView.frame = backFrame;
             [self insertSubview:myImageView atIndex:[[self subviews] count] - 1];
             myImageView.tag = 100;
@@ -173,22 +177,23 @@ static NSString *event = @"Recipe Detail";
                              
                              if(isAdded)
                              {
-                                 title = @" My Faves";
+                                 title = @" my fave";
                                  mAddToFavButton.userInteractionEnabled = NO;
                                  
-                                 UIImage *addedInFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddedInMyFaves.png" andAddIfRequired:YES];
-                                // [mAddToFavButton setImage:addedInFavImage forState:UIControlStateNormal];
+                                 //UIImage *addedInFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddedInMyFaves.png" andAddIfRequired:YES];
+                                 //[mAddToFavButton setImage:[UIImage imageNamed:@"favBack.png"] forState:UIControlStateNormal];
+                                 
                                  
                                  UITapGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
                                  [self addGestureRecognizer:gesture];
                              }
                              else
                              {
-                                 title = @" Add to Favorites";
+                                 title = @" add to favourites";
                                  mAddToFavButton.userInteractionEnabled = YES;
                                  
-                                 UIImage *addToFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddToMyFaves.png" andAddIfRequired:YES];
-                                // [mAddToFavButton setImage:addToFavImage forState:UIControlStateNormal];
+                                // UIImage *addToFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"favBack.png" andAddIfRequired:YES];
+                              //   [mAddToFavButton setImage:[UIImage imageNamed:@"favBackU.png"] forState:UIControlStateNormal];
                                  
                                  UITapGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
                                  [self removeGestureRecognizer:gesture];
@@ -212,23 +217,23 @@ static NSString *event = @"Recipe Detail";
         
         if(isAdded)
         {
-            title = @" My Faves";
+            title = @" my fave";
             mAddToFavButton.userInteractionEnabled = NO;
             
             UIImage *addedInFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddedInMyFaves.png" andAddIfRequired:YES];
           //  [mAddToFavButton setImage:addedInFavImage forState:UIControlStateNormal];
-            
+           // [mAddToFavButton setImage:[UIImage imageNamed:@"favBack.png"] forState:UIControlStateNormal];
             UITapGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
             [self addGestureRecognizer:gesture];
         }
         else
         {
-            title = @" Add to Favorites";
+            title = @" add to favourites";
             mAddToFavButton.userInteractionEnabled = YES;
             
             UIImage *addToFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddToMyFaves.png" andAddIfRequired:YES];
             //[mAddToFavButton setImage:addToFavImage forState:UIControlStateNormal];
-            
+          //  [mAddToFavButton setImage:[UIImage imageNamed:@"favBack.png"] forState:UIControlStateNormal];
             UITapGestureRecognizer *gesture = [self swipeGestureToRemoveFromFaves];
             [self removeGestureRecognizer:gesture];
         }
@@ -546,7 +551,7 @@ UIView *myViewForShareButton;
                                                                                                  bottomView.frame.origin.y + bottomView.frame.size.height + kGapBetweenImageAndRateFavView,backgroundImageForRatingAndFavView.size.width,                                                                                                 backgroundImageForRatingAndFavView.size.height)];
     ratingAndFavBackgroundImageView.image = backgroundImageForRatingAndFavView;
     [backgroundImageForRatingAndFavView release];
-    
+//    [ratingAndFavBackgroundImageView setBackgroundColor:[UIColor yellowColor]];
     [mScrollView addSubview:ratingAndFavBackgroundImageView];
     [ratingAndFavBackgroundImageView release];
     
@@ -568,16 +573,17 @@ UIView *myViewForShareButton;
                                                                                  ratingView.frame.size.width,
                                                                                  ratingView.frame.size.height)];
     [invisibleRatingButton addTarget:self action:@selector(ratingViewTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [invisibleRatingButton setBackgroundImage:[UIImage imageNamed:@"abcd.png"] forState:UIControlStateNormal];
     [ratingView addSubview:invisibleRatingButton];
     [invisibleRatingButton release];
     
     
 
-    NSString *ratingString = @"My Rating:";
+    NSString *ratingString = @"rate:";
     UIFont *ratingFont = [UtilityManager fontGetRegularFontOfSize:14];
     if(mRecipeObject.ratingValueSubmittedByUser == nil || [mRecipeObject.ratingValueSubmittedByUser floatValue] == 0)
     {
-        ratingString = @"Rate:";
+        ratingString = @"rate:";
     }
     CGSize ratitngSize = [ratingString sizeWithFont:ratingFont];
     mRatingTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
@@ -1022,10 +1028,10 @@ UIView *myViewForShareButton;
 
 - (void)updateRatingTitleLabel
 {
-    NSString *ratingString = @"Rate:";
+    NSString *ratingString = @"rate:";
     if(mRecipeObject.ratingValueSubmittedByUser == nil || [mRecipeObject.ratingValueSubmittedByUser floatValue] == 0)
     {
-        ratingString = @"Rate:";
+        ratingString = @"rate:";
     }
     
     mRatingTitleLabel.text = ratingString;
@@ -1045,7 +1051,7 @@ UIView *myViewForShareButton;
         
         
         
-        NSString *messageString = @"Are you sure you want to remove from My Faves?";
+        NSString *messageString = @"Are you sure you want to remove from my faves?";
         UIFont *messageFont = [UtilityManager fontGetRegularFontOfSize:14];
         CGSize messageSize = [messageString sizeWithFont:messageFont];
         UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
@@ -1216,7 +1222,7 @@ UIView *myViewForShareButton;
                                                               action:@"Message"  // Event action (required)
                                                                label:mRecipeObject.title          // Event label
                                                                value:nil] build]];
-        NSString *messageString = [NSString stringWithFormat:@"Check out this Burnett's %@ recipe which I found in the Burnett’s more recipes, more fun App!\n\n%@", mRecipeObject.title.capitalizedString, [mRecipeObject urlLinkForRecipe]];
+        NSString *messageString = [NSString stringWithFormat:@"Check out this Burnett's %@ Recipe which I found in Burnett’s More Recipes, More Fun App!\n\n%@", mRecipeObject.title.capitalizedString, [mRecipeObject urlLinkForRecipe]];
         
         MFMessageComposeViewController *smsViewController = [[MFMessageComposeViewController alloc] init];
         smsViewController.messageComposeDelegate = self;
@@ -1263,6 +1269,19 @@ UIView *myViewForShareButton;
     // Replace Recipe Process
     htmlTemplateString = [htmlTemplateString stringByReplacingOccurrencesOfString:@"%PROCESS%" withString:mRecipeObject.directions];
     
+    //Replace Year
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    NSString *yearString = [formatter stringFromDate:[NSDate date]];
+    [formatter release];
+    htmlTemplateString = [htmlTemplateString stringByReplacingOccurrencesOfString:@"%YEAR%" withString:yearString];
+    
+    
+    
+    if (([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)) {
+        htmlTemplateString = [htmlTemplateString stringByReplacingOccurrencesOfString:@"%DOWNLOAD_LINK%" withString:kAppURL];
+    }
+    
     // Replace Recipe Image URL
     NSString *recipleImageURL = [NSString stringWithFormat:@"%@", mRecipeObject.imageName];
     htmlTemplateString = [htmlTemplateString stringByReplacingOccurrencesOfString:@"%IMAGE_URL%" withString:recipleImageURL];
@@ -1302,7 +1321,7 @@ UIView *myViewForShareButton;
                                                            label:mRecipeObject.title          // Event label
                                                            value:nil] build]];
     
-    NSString *textToBeTweeted = [NSString stringWithFormat:@"Check out this Burnett's %@ recipe on more recipes, more fun App!", mRecipeObject.title.capitalizedString];
+    NSString *textToBeTweeted = [NSString stringWithFormat:@"Check out this Burnett's %@ Recipe on Burnett’s More Recipes, More Fun App!", mRecipeObject.title.capitalizedString];
         
     // Check and decide which framework to use for twitter sharing.
     // iOS 6.0 onwards we shall use Social Framework and before that, we shall use Twitter Framework
@@ -1356,7 +1375,7 @@ UIView *myViewForShareButton;
     {
         SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [facebookSheet setInitialText:[NSString stringWithFormat:@"Check out this Burnett's %@ recipe which I found in the Burnett’s more recipes, more fun App!\n\n", mRecipeObject.title.capitalizedString]];
+        [facebookSheet setInitialText:[NSString stringWithFormat:@"Check out this Burnett's %@ Recipe which I found in Burnett’s More Recipes, More Fun App!\n\n", mRecipeObject.title.capitalizedString]];
         
         [facebookSheet addURL:[NSURL URLWithString:[mRecipeObject urlLinkForRecipe]]];
         
@@ -1644,8 +1663,8 @@ UIView *myViewForShareButton;
             id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
             
             [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Recipe Rating"     // Event category (required)
-                                                                  action:@"Rated"  // Event action (required)
-                                                                   label:value          // Event label
+                                                                  action:mRecipeObject.title  // Event action (required)
+                                                                   label:[NSString stringWithFormat:@"%f",[mRecipeObject.ratingValueSubmittedByUser floatValue]]
                                                                    value:nil] build]];
         
             [self updateRatingTitleLabel];

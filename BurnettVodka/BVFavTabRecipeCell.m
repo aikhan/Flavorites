@@ -43,7 +43,7 @@
         
         
         
-        NSString *titleString = @"Remove From My Faves?";
+        NSString *titleString = @"Remove From my faves?";
         UIFont *titleFont = [UtilityManager fontGetRegularFontOfSize:17];
         CGSize titleSize = [titleString sizeWithFont:titleFont];
         mTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(roundf((self.frame.size.width - titleSize.width) / 2),

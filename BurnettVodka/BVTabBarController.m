@@ -389,7 +389,7 @@
             
         case 4:
         {
-            title = @"My Faves Tab: Appear";
+            title = @"my faves Tab: Appear";
             break;
         }
             

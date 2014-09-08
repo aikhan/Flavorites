@@ -151,7 +151,12 @@
     {
        // [self.navigationController setNavigationBarHidden:YES animated:animated];
     }
-    self.screenName = @"Recipes";
+    NSString *event = @"Recipes";
+    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
+                                                          action:@"Recipe Screen"  // Event action (required)
+                                                           label:nil          // Event label
+                                                           value:nil] build]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -891,7 +896,7 @@
     for(Flavor *flavorObject in flavorsWithAtleastOneRecipe)
     {
         NSMutableDictionary *sectionDic = [[NSMutableDictionary alloc] init];
-        [sectionDic setValue:[NSString stringWithFormat:@"%@ Vodka", flavorObject.title] forKey:@"sectionTitle"];
+        [sectionDic setValue:[NSString stringWithFormat:@"%@ Vodka", flavorObject.title.capitalizedString] forKey:@"sectionTitle"];
         
         
         
@@ -1204,6 +1209,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Recipe *recipeObject = [[[[self dataForTableView] objectAtIndex:indexPath.section] valueForKey:@"sectionContent"] objectAtIndex:indexPath.row];
+    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Recipe Screen"    // Event category (required)
+                                                          action:@"Recipe Tapped"  // Event action (required)
+                                                           label:recipeObject.title          // Event label
+                                                           value:nil] build]];
+    
     BVRecipeDetailViewController *viewController = [[BVRecipeDetailViewController alloc] initWithRecipe:recipeObject];
     [self.navigationController pushViewController:viewController animated:NO];
     [viewController release];

@@ -253,7 +253,13 @@
     self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 59);
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"flavourTab.png"] forBarMetrics:UIBarMetricsDefault];
-    self.screenName = @"Flavors";
+    
+    NSString *event = @"Flavor";
+    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
+                                                          action:@"Flavor Screen"  // Event action (required)
+                                                           label:nil          // Event label
+                                                           value:nil] build]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -378,9 +384,7 @@
 
 - (void)flavorView:(BVFlavorView *)flavorView userTappedOnViewWithFlavor:(Flavor *)flavor
 {
-    NSString *event = @"flavor";
-    NSString *value =[[NSString stringWithFormat:@"%@", flavor.title] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [Flurry logEvent:event withParameters:[NSDictionary dictionaryWithObject:value forKey:event]];
+    NSString *event = @"Flavor";
     id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:event     // Event category (required)
