@@ -50,7 +50,7 @@
 #define kBottomViewGapBetweenSeperatorAndSectionContent 1
 #define kBottomViewGapBetweenTwoSections 10
 #define kBottomViewGapBetweenTwoBulletPoints 3
-#define kBottomViewGapBetweenBulletPointIconAndText 7
+#define kBottomViewGapBetweenBulletPointIconAndText 5
 
 #define kRemoveFromFavViewHeight 50
 #define kRemoveFromFavViewPaddingTop 5
@@ -967,9 +967,10 @@ UIView *myViewForShareButton;
     
     UIImage *bulletImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RecipeDetailBulletPointIcon" ofType:@"png"]];
     UIImageView *bulletPointImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-                                                                                      0,
-                                                                                      bulletImage.size.width,
-                                                                                      bulletImage.size.height)];
+                                                                             0,
+                                                                             bulletImage.size.width,
+                                                                             bulletImage.size.height)];
+        
     bulletPointImageView.image = bulletImage;
     [bulletImage release];
     
@@ -978,7 +979,17 @@ UIView *myViewForShareButton;
     
     
     CGFloat widthAvailableForText = availableWidth - (bulletPointImageView.frame.origin.x + bulletPointImageView.frame.size.width + kBottomViewGapBetweenBulletPointIconAndText);
-    CGSize textLabelSize = [pointString sizeWithFont:font constrainedToSize:CGSizeMake(widthAvailableForText, 9999) lineBreakMode:UILineBreakModeWordWrap];
+    if([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        pointString = [pointString stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    }
+    else {
+
+    }
+    CGSize textLabelSize = [pointString sizeWithFont:font constrainedToSize:CGSizeMake(widthAvailableForText, 9999) lineBreakMode:NSLineBreakByWordWrapping];
+
+    
+    
+    NSLog(@"%f",textLabelSize.height);
     UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(bulletPointImageView.frame.origin.x + bulletPointImageView.frame.size.width + kBottomViewGapBetweenBulletPointIconAndText,
                                                                    0,
                                                                    widthAvailableForText,

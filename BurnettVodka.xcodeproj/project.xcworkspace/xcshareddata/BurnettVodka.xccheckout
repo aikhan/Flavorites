@@ -12,20 +12,24 @@
 	<dict>
 		<key>C6AE9D36-6977-469F-8224-B74FB45DFEA2</key>
 		<string>ssh://bitbucket.org/exaviar/flavorites.git</string>
+		<key>D72A469F4A009D8B4D847391DEC0B9686F94CF22</key>
+		<string>https://bitbucket.org/exaviar/flavorites.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BurnettVodka.xcodeproj/project.xcworkspace</string>
+	<string>BurnettVodka.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C6AE9D36-6977-469F-8224-B74FB45DFEA2</key>
+		<string>../../../BurnettVodka</string>
+		<key>D72A469F4A009D8B4D847391DEC0B9686F94CF22</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://bitbucket.org/exaviar/flavorites.git</string>
+	<string>https://bitbucket.org/exaviar/flavorites.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C6AE9D36-6977-469F-8224-B74FB45DFEA2</string>
+	<string>D72A469F4A009D8B4D847391DEC0B9686F94CF22</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>C6AE9D36-6977-469F-8224-B74FB45DFEA2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BurnettVodka</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D72A469F4A009D8B4D847391DEC0B9686F94CF22</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Falvourites</string>
 		</dict>
 	</array>
 </dict>
