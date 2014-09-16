@@ -16,16 +16,9 @@
 		<string>Burnetts_iOS_80px</string>
 		<string>Burnetts_iOS_58px</string>
 		<string>Burnetts_iOS_29px</string>
-		<string>Icon-60</string>
-		<string>Icon-76</string>
-		<string>Icon-40</string>
-		<string>Icon-Small</string>
-		<string>Icon-Small-50</string>
-		<string>Icon</string>
-		<string>Icon-72</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.burnettsvodka.BurnettVodka</string>
+	<string>com.burnettsvodka.flavorites</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -33,7 +26,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.5</string>
+	<string>2.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -46,7 +39,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.5</string>
+	<string>2.0</string>
 	<key>FacebookAppID</key>
 	<string>587896904602773</string>
 	<key>LSRequiresIPhoneOS</key>

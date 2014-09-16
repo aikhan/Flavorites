@@ -25,10 +25,16 @@
 		05655F33199E6A880061988B /* pina_mango-lada.png in Resources */ = {isa = PBXBuildFile; fileRef = 05655F32199E6A880061988B /* pina_mango-lada.png */; };
 		057B8B3319BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B8B3119BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav.png */; };
 		057B8B3419BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B8B3219BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav@2x.png */; };
+		0584047419C22FC60021198D /* enterdob.png in Resources */ = {isa = PBXBuildFile; fileRef = 0584047319C22FC60021198D /* enterdob.png */; };
+		0584047619C230A10021198D /* enterdob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0584047519C230A10021198D /* enterdob@2x.png */; };
+		0584047819C2320E0021198D /* BurnettFlavoriteOccasionLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0584047719C2320E0021198D /* BurnettFlavoriteOccasionLogo@2x.png */; };
+		0584047A19C232CB0021198D /* AgeGateContinueButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0584047919C232CB0021198D /* AgeGateContinueButton@2x.png */; };
+		0584047C19C238A90021198D /* getdate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0584047B19C238A90021198D /* getdate@2x.png */; };
 		05A1041C18899E9C00B7D898 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A1041B18899E9C00B7D898 /* FacebookSDK.framework */; };
 		05AA29A0199BDB2D00181B20 /* rumwhite_sharktooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 05AA299F199BDB2D00181B20 /* rumwhite_sharktooth.png */; };
 		05ACD31719BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05ACD31319BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS@2x.png */; };
 		05ACD31819BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS.png in Resources */ = {isa = PBXBuildFile; fileRef = 05ACD31419BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS.png */; };
+		05AF2F7F19C1ECBE0004BA2E /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05AF2F7E19C1ECBE0004BA2E /* PropertyList.plist */; };
 		05B73D2119ABD1CA002AF6ED /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B73D2019ABD1C9002AF6ED /* new.png */; };
 		05BA4BBC19AE837300108111 /* searchR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05BA4BBB19AE837300108111 /* searchR@2x.png */; };
 		05BA4BBE19AE84C100108111 /* searchR.png in Resources */ = {isa = PBXBuildFile; fileRef = 05BA4BBD19AE84C100108111 /* searchR.png */; };
@@ -222,7 +228,6 @@
 		E008A216199FF0EE007C4963 /* RecipeTabMixersTabUnselectedS.png in Resources */ = {isa = PBXBuildFile; fileRef = E008A210199FF0EE007C4963 /* RecipeTabMixersTabUnselectedS.png */; };
 		E071E4041996086C00AA67E7 /* Descriptionheading.png in Resources */ = {isa = PBXBuildFile; fileRef = E071E4021996086C00AA67E7 /* Descriptionheading.png */; };
 		E071E4051996086C00AA67E7 /* Viewmore.png in Resources */ = {isa = PBXBuildFile; fileRef = E071E4031996086C00AA67E7 /* Viewmore.png */; };
-		E076B814199A449F003D871D /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E076B813199A449F003D871D /* PropertyList.plist */; };
 		E076B818199A64DC003D871D /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E076B816199A64DC003D871D /* ProximaNova-Regular.otf */; };
 		E08DF52B19B88F74000F217A /* MMHud.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF51719B88F74000F217A /* MMHud.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		E08DF52C19B88F74000F217A /* MMLinearProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E08DF51919B88F74000F217A /* MMLinearProgressView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -272,7 +277,6 @@
 		E09891171993866000694684 /* tropicalfruit.png in Resources */ = {isa = PBXBuildFile; fileRef = E09890F01993866000694684 /* tropicalfruit.png */; };
 		E09891181993866000694684 /* vanilla.png in Resources */ = {isa = PBXBuildFile; fileRef = E09890F11993866000694684 /* vanilla.png */; };
 		E09891191993866000694684 /* watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = E09890F21993866000694684 /* watermelon.png */; };
-		E098911A1993866000694684 /* whippedcream.png in Resources */ = {isa = PBXBuildFile; fileRef = E09890F31993866000694684 /* whippedcream.png */; };
 		E0989128199387E600694684 /* featured_cherry.png in Resources */ = {isa = PBXBuildFile; fileRef = E098911B199387E600694684 /* featured_cherry.png */; };
 		E0989129199387E600694684 /* featured_citrus.png in Resources */ = {isa = PBXBuildFile; fileRef = E098911C199387E600694684 /* featured_citrus.png */; };
 		E098912A199387E600694684 /* featured_eighty_proof.png in Resources */ = {isa = PBXBuildFile; fileRef = E098911D199387E600694684 /* featured_eighty_proof.png */; };
@@ -286,7 +290,6 @@
 		E0989132199387E600694684 /* featured_vanilla.png in Resources */ = {isa = PBXBuildFile; fileRef = E0989125199387E600694684 /* featured_vanilla.png */; };
 		E0989133199387E600694684 /* featured_watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0989126199387E600694684 /* featured_watermelon.png */; };
 		E0989134199387E600694684 /* featured_whippedcream.png in Resources */ = {isa = PBXBuildFile; fileRef = E0989127199387E600694684 /* featured_whippedcream.png */; };
-		E09893781993A42C00694684 /* enterdob.png in Resources */ = {isa = PBXBuildFile; fileRef = E09893771993A42C00694684 /* enterdob.png */; };
 		E098937A1993B7E200694684 /* getDate.png in Resources */ = {isa = PBXBuildFile; fileRef = E09893791993B7E100694684 /* getDate.png */; };
 		E098937C1993B88400694684 /* remember.png in Resources */ = {isa = PBXBuildFile; fileRef = E098937B1993B88400694684 /* remember.png */; };
 		E098937E1993B9C800694684 /* remember1.png in Resources */ = {isa = PBXBuildFile; fileRef = E098937D1993B9C800694684 /* remember1.png */; };
@@ -658,10 +661,16 @@
 		05655F32199E6A880061988B /* pina_mango-lada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pina_mango-lada.png"; path = "Reciepe/pina_mango-lada.png"; sourceTree = "<group>"; };
 		057B8B3119BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailBgForRatingAndFav.png; sourceTree = "<group>"; };
 		057B8B3219BA608B00DF5E14 /* RecipeDetailBgForRatingAndFav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailBgForRatingAndFav@2x.png"; sourceTree = "<group>"; };
+		0584047319C22FC60021198D /* enterdob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enterdob.png; sourceTree = "<group>"; };
+		0584047519C230A10021198D /* enterdob@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enterdob@2x.png"; sourceTree = "<group>"; };
+		0584047719C2320E0021198D /* BurnettFlavoriteOccasionLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BurnettFlavoriteOccasionLogo@2x.png"; sourceTree = "<group>"; };
+		0584047919C232CB0021198D /* AgeGateContinueButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AgeGateContinueButton@2x.png"; sourceTree = "<group>"; };
+		0584047B19C238A90021198D /* getdate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "getdate@2x.png"; sourceTree = "<group>"; };
 		05A1041B18899E9C00B7D898 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		05AA299F199BDB2D00181B20 /* rumwhite_sharktooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rumwhite_sharktooth.png; sourceTree = "<group>"; };
 		05ACD31319BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecipeDetailBgForRatingAndFavS@2x.png"; sourceTree = "<group>"; };
 		05ACD31419BA5AC800335B17 /* RecipeDetailBgForRatingAndFavS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeDetailBgForRatingAndFavS.png; sourceTree = "<group>"; };
+		05AF2F7E19C1ECBE0004BA2E /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
 		05B73D2019ABD1C9002AF6ED /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
 		05BA4BBB19AE837300108111 /* searchR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchR@2x.png"; sourceTree = "<group>"; };
 		05BA4BBD19AE84C100108111 /* searchR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchR.png; sourceTree = "<group>"; };
@@ -929,7 +938,6 @@
 		E008A210199FF0EE007C4963 /* RecipeTabMixersTabUnselectedS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTabMixersTabUnselectedS.png; sourceTree = "<group>"; };
 		E071E4021996086C00AA67E7 /* Descriptionheading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Descriptionheading.png; sourceTree = "<group>"; };
 		E071E4031996086C00AA67E7 /* Viewmore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Viewmore.png; sourceTree = "<group>"; };
-		E076B813199A449F003D871D /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
 		E076B816199A64DC003D871D /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		E08DF51619B88F74000F217A /* MMHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHud.h; sourceTree = "<group>"; };
 		E08DF51719B88F74000F217A /* MMHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHud.m; sourceTree = "<group>"; };
@@ -990,7 +998,6 @@
 		E09890F01993866000694684 /* tropicalfruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tropicalfruit.png; sourceTree = "<group>"; };
 		E09890F11993866000694684 /* vanilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vanilla.png; sourceTree = "<group>"; };
 		E09890F21993866000694684 /* watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watermelon.png; sourceTree = "<group>"; };
-		E09890F31993866000694684 /* whippedcream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whippedcream.png; sourceTree = "<group>"; };
 		E098911B199387E600694684 /* featured_cherry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = featured_cherry.png; sourceTree = "<group>"; };
 		E098911C199387E600694684 /* featured_citrus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = featured_citrus.png; sourceTree = "<group>"; };
 		E098911D199387E600694684 /* featured_eighty_proof.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = featured_eighty_proof.png; sourceTree = "<group>"; };
@@ -1004,7 +1011,6 @@
 		E0989125199387E600694684 /* featured_vanilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = featured_vanilla.png; sourceTree = "<group>"; };
 		E0989126199387E600694684 /* featured_watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = featured_watermelon.png; sourceTree = "<group>"; };
 		E0989127199387E600694684 /* featured_whippedcream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = featured_whippedcream.png; sourceTree = "<group>"; };
-		E09893771993A42C00694684 /* enterdob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enterdob.png; sourceTree = "<group>"; };
 		E09893791993B7E100694684 /* getDate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getDate.png; sourceTree = "<group>"; };
 		E098937B1993B88400694684 /* remember.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remember.png; sourceTree = "<group>"; };
 		E098937D1993B9C800694684 /* remember1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remember1.png; sourceTree = "<group>"; };
@@ -1790,13 +1796,16 @@
 		84C01BAC17BD0B9600ED34CA /* Age Gate */ = {
 			isa = PBXGroup;
 			children = (
-				E09893771993A42C00694684 /* enterdob.png */,
+				0584047319C22FC60021198D /* enterdob.png */,
+				0584047519C230A10021198D /* enterdob@2x.png */,
 				E098937B1993B88400694684 /* remember.png */,
 				E098937D1993B9C800694684 /* remember1.png */,
 				84EEEC2317C0C4CB00136E16 /* AgeGateBackground_4inch.png */,
 				E09893791993B7E100694684 /* getDate.png */,
+				0584047B19C238A90021198D /* getdate@2x.png */,
 				84C01BAF17BD0B9F00ED34CA /* AgeGateBackground.png */,
 				84C01BB917BD0EB000ED34CA /* AgeGateContinueButton.png */,
+				0584047919C232CB0021198D /* AgeGateContinueButton@2x.png */,
 			);
 			name = "Age Gate";
 			sourceTree = "<group>";
@@ -2214,7 +2223,6 @@
 				E09890F01993866000694684 /* tropicalfruit.png */,
 				E09890F11993866000694684 /* vanilla.png */,
 				E09890F21993866000694684 /* watermelon.png */,
-				E09890F31993866000694684 /* whippedcream.png */,
 			);
 			name = "Flavor Images";
 			sourceTree = "<group>";
@@ -2317,6 +2325,7 @@
 				05F27986199C323200B0F284 /* flavourTab@2x.png */,
 				05F27984199C320700B0F284 /* favouriteTab@2x.png */,
 				05F27982199C31FF00B0F284 /* favouriteTab.png */,
+				0584047719C2320E0021198D /* BurnettFlavoriteOccasionLogo@2x.png */,
 				84C01BB517BD0EA800ED34CA /* BurnettFlavoriteOccasionLogo.png */,
 				848564E117913EA2000CC9AE /* TabBarBackgroundImage.png */,
 				849FC3C217ACB47600DD9585 /* TabBarFlavors.png */,
@@ -2362,6 +2371,7 @@
 				84390918179872240021D69A /* RatingStarHalfBlue.png */,
 				849FC3DE17ACEFED00DD9585 /* RecipeTabAZTabSelected.png */,
 				E002230119AF55200044CDAA /* Proxima_Nova-Sbold.otf */,
+				05AF2F7E19C1ECBE0004BA2E /* PropertyList.plist */,
 				E008A20B199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png */,
 				E008A20C199FF0EE007C4963 /* RecipeTabAZTabUnselectedS.png */,
 				E008A20D199FF0EE007C4963 /* RecipeTabFlavorsTabSelectedS.png */,
@@ -2392,7 +2402,6 @@
 				84A3E52A17C748990027B9CC /* AddedInMyFaves.png */,
 				84EEEC1017BE78B500136E16 /* AddToMyFaves.png */,
 				84EEEC1817BE790500136E16 /* RecipeTabSearchBarCross.png */,
-				E076B813199A449F003D871D /* PropertyList.plist */,
 				84EAD2E817EA059800D8C694 /* NewFlavorBadge.png */,
 			);
 			name = "General Resources";
@@ -2555,7 +2564,6 @@
 				E0B2A8F91998EBEB00FC5EC7 /* vodka_twister.png in Resources */,
 				E0B2A86A1998EBEB00FC5EC7 /* orange_sunshine.png in Resources */,
 				05AA29A0199BDB2D00181B20 /* rumwhite_sharktooth.png in Resources */,
-				E098911A1993866000694684 /* whippedcream.png in Resources */,
 				E0B2A8221998EBEB00FC5EC7 /* gin_muleshindleg.png in Resources */,
 				84FC1FE917A2B42300B30403 /* RecipeTabSearchBarIcon.png in Resources */,
 				E0B2A7DD1998EBEB00FC5EC7 /* blueberry_bluelagoonmartini.png in Resources */,
@@ -2576,21 +2584,23 @@
 				E09891151993866000694684 /* sugarcookie.png in Resources */,
 				E0B2A7DA1998EBEB00FC5EC7 /* blueberry_blueberrylemonade.png in Resources */,
 				E0B2A8DE1998EBEB00FC5EC7 /* sweettea_sweetteacooler.png in Resources */,
+				0584047419C22FC60021198D /* enterdob.png in Resources */,
 				84FC1FF517A316EF00B30403 /* burnett_home_datestring.png in Resources */,
 				E008A211199FF0EE007C4963 /* RecipeTabAZTabSelectedS.png in Resources */,
 				E0B2A8321998EBEB00FC5EC7 /* grape_grapefizz.png in Resources */,
 				E09AAF1319965EA80050B705 /* detailbg.png in Resources */,
 				05256B3419219186002955D5 /* Recipes1.csv in Resources */,
 				E0D366FA19B9F1D600AA61D6 /* RatingStarThreeQuater@2x.png in Resources */,
+				0584047A19C232CB0021198D /* AgeGateContinueButton@2x.png in Resources */,
 				E0B2A8701998EBEB00FC5EC7 /* orangecream_orangcreamsicle.png in Resources */,
 				E0B2A8A31998EBEB00FC5EC7 /* raspberry_anonymouscocktail.png in Resources */,
+				0584047C19C238A90021198D /* getdate@2x.png in Resources */,
 				E09891061993866000694684 /* maplesyrup.png in Resources */,
 				E0B2A8881998EBEB00FC5EC7 /* pinklemonade_gingerfusion.png in Resources */,
 				E0B2A8481998EBEB00FC5EC7 /* lime_sublimecosmo.png in Resources */,
 				05256B2919217B32002955D5 /* Default@2x.png in Resources */,
 				E0B2A9061998EBEB00FC5EC7 /* whippedcream_ojandcream.png in Resources */,
 				E0B2A7E91998EBEB00FC5EC7 /* buttered_pancakes.png in Resources */,
-				E076B814199A449F003D871D /* PropertyList.plist in Resources */,
 				E0B2A83B1998EBEB00FC5EC7 /* hotcinn_cherryspice.png in Resources */,
 				E0B2A7F51998EBEB00FC5EC7 /* citrus_citruscooler.png in Resources */,
 				84FA496217F1608100D13E27 /* check_update.json in Resources */,
@@ -2685,7 +2695,6 @@
 				E0B2A8641998EBEB00FC5EC7 /* orange_orangeblossom.png in Resources */,
 				8426AAF317A8DF2A00051202 /* CancelButton.png in Resources */,
 				E0989131199387E600694684 /* featured_strawberrybanana.png in Resources */,
-				E09893781993A42C00694684 /* enterdob.png in Resources */,
 				E0B2A8B81998EBEB00FC5EC7 /* rumgold_calypso.png in Resources */,
 				E0989129199387E600694684 /* featured_citrus.png in Resources */,
 				05F2799E199C4A2A00B0F284 /* cancel_button.png in Resources */,
@@ -2818,6 +2827,7 @@
 				849FC3F017ACF04500DD9585 /* RecipeTabFlavorsTabUnselected.png in Resources */,
 				E0B2A8E11998EBEB00FC5EC7 /* vanilla_bostoncreampie.png in Resources */,
 				E0B2A8F41998EBEB00FC5EC7 /* vodka_lemondropmartini.png in Resources */,
+				0584047819C2320E0021198D /* BurnettFlavoriteOccasionLogo@2x.png in Resources */,
 				E0B2A86E1998EBEB00FC5EC7 /* orangecream_dreamtini.png in Resources */,
 				E0B2A8DD1998EBEB00FC5EC7 /* sweettea_sweetginger.png in Resources */,
 				E0B2A8371998EBEB00FC5EC7 /* hawaiian_sunrise.png in Resources */,
@@ -2884,6 +2894,7 @@
 				E0B2A8CB1998EBEB00FC5EC7 /* sourapple_applehawaiianfizz.png in Resources */,
 				05F279A9199C4B9600B0F284 /* Burnetts_iOS_80px.png in Resources */,
 				05BA4BCC19AE8AB900108111 /* ShareTwitterIcon.png in Resources */,
+				05AF2F7F19C1ECBE0004BA2E /* PropertyList.plist in Resources */,
 				E0B2A8821998EBEB00FC5EC7 /* pinapple_pinapplefizz.png in Resources */,
 				E0B2A8C01998EBEB00FC5EC7 /* rumwhite_greatwhite.png in Resources */,
 				E0B2A8D11998EBEB00FC5EC7 /* strawberry_strawberryfizz.png in Resources */,
@@ -2898,6 +2909,7 @@
 				E0B2A8831998EBEB00FC5EC7 /* pinapple_pinapplesunset.png in Resources */,
 				E09A973D1994B7B80095DC02 /* TabBarRecipesS.png in Resources */,
 				E0989134199387E600694684 /* featured_whippedcream.png in Resources */,
+				0584047619C230A10021198D /* enterdob@2x.png in Resources */,
 				E0B2A7D31998EBEB00FC5EC7 /* berry_orange_fizz.png in Resources */,
 				E0B2A8C81998EBEB00FC5EC7 /* rumwhite_runnerrita.png in Resources */,
 				E09890F91993866000694684 /* candycane.png in Resources */,
@@ -3185,8 +3197,8 @@
 					armv7,
 					i386,
 				);
-				CODE_SIGN_IDENTITY = "iPhone Distribution: XenoPsi Media";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: XenoPsi Media";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Heaven Hill Distilleries, Inc. (E89GAKDSJ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Heaven Hill Distilleries, Inc. (E89GAKDSJ2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/BurnettVodka\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
@@ -3213,8 +3225,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73167f37-ade8-4401-9caa-12e6cb4026d6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73167f37-ade8-4401-9caa-12e6cb4026d6";
+				PROVISIONING_PROFILE = "c71561af-edd5-4b6a-8c26-665c13e990b2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "c71561af-edd5-4b6a-8c26-665c13e990b2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
