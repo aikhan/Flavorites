@@ -728,8 +728,8 @@ static DataManager *sharedDataManager = nil;
     }
     
     
-    if(doWeNeedToRepairData)
-        [self repairCoreDataForFlavorsAndRecipes];
+   // if(doWeNeedToRepairData)
+       // [self repairCoreDataForFlavorsAndRecipes];
 }
 
 - (void)fetchRecipesRatingsFromServer
