@@ -75,9 +75,6 @@ void myExceptionHandler(NSException *exception)
     self.tracker = [[GAI sharedInstance] trackerWithName:@"BurnettVodka"
                                               trackingId:kTrackingId];
     
-  //  [self performSelectorInBackground:@selector(CheckDateGetFeatureRecipes) withObject:Nil];
- //   [NSThread detachNewThreadSelector:@selector(CheckDateGetFeatureRecipes) toTarget:self withObject:nil];
-   
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     UIImage *navigationBarBackgroundImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"favouriteTab" ofType:@"png"]];
@@ -105,6 +102,7 @@ void myExceptionHandler(NSException *exception)
 - (void) CheckDateGetFeatureRecipes {
     NSDate *newdate = [NSDate date];
     
+    NSLog(@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"DateDict"]);
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"DateDict"]==NULL) {
         [self fetchRecipiesFromServer];
         NSMutableDictionary *dateDict = [[NSMutableDictionary alloc] init];

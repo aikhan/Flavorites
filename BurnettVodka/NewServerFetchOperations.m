@@ -101,15 +101,8 @@ static NewServerFetchOperations *sharedManager = nil;
                 isUpdate = NO;
         }
         else{
-            NSDate *date = [self fetchLastRecipeUpdateDate];
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"yyyy-mm-dd"];
-            NSString *stringFromDate = [formatter stringFromDate:date];
-            [formatter release];
-            NSString *urlString = [NSString stringWithFormat:@"%@%@", kGetRecipesUpdates, stringFromDate];
-            DebugLog(@"URL Date String %@", urlString);
-            request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-            isUpdate = YES;
+            request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:kGetAllRecipes]];
+            isUpdate = NO;
         }
             request.timeOutSeconds = 30;
             request.cachePolicy = ASIDoNotReadFromCacheCachePolicy;
@@ -295,14 +288,8 @@ static NewServerFetchOperations *sharedManager = nil;
             isUpdate = NO;
         }
         else{
-            NSDate *date = [self fetchLastRecipeUpdateDate];
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"yyyy-mm-dd"];
-            NSString *stringFromDate = [formatter stringFromDate:date];
-            [formatter release];
-            NSString *urlString = [NSString stringWithFormat:@"%@%@", kGetFlavoeUpdates, stringFromDate];
-            request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-            isUpdate = YES;
+            request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:kGetAllFlavors]];
+            isUpdate = NO;
         }
         request.timeOutSeconds = 30;
         request.cachePolicy = ASIDoNotReadFromCacheCachePolicy;
