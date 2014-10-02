@@ -114,14 +114,14 @@ static NSString *event = @"Recipe Detail";
         if (myImageView) {
             [myImageView setImage:[UIImage imageNamed:@"favBack.png"]];
             CGRect backFrame = myImageView.frame;
-             backFrame.origin.y = backFrame.origin.y + 0.5 ;
+             backFrame.origin.y = backFrame.origin.y + 0.7 ;
             //backFrame.size.height = backFrame.size.height - 1;
             myImageView.frame = backFrame;
         }else{
             myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favBack.png"]];
             CGRect backFrame = myImageView.frame;
-            backFrame.origin.y = backFrame.origin.y + 0.5;
-           // backFrame.size.height = backFrame.size.height - 1;
+            backFrame.origin.y = backFrame.origin.y + 0.7;
+            backFrame.size.height = backFrame.size.height + 0.4;
             myImageView.frame = backFrame;
             [self insertSubview:myImageView atIndex:[[self subviews] count] - 1];
             myImageView.tag = 100;
@@ -146,7 +146,7 @@ static NSString *event = @"Recipe Detail";
         }else{
             myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favBackU.png"]];
             CGRect backFrame = myImageView.frame;
-            backFrame.origin.y = backFrame.origin.y + 0.5;
+            backFrame.origin.y = backFrame.origin.y + 0.7;
             backFrame.size.height = backFrame.size.height - 0.5;
             myImageView.frame = backFrame;
             [self insertSubview:myImageView atIndex:[[self subviews] count] - 1];
@@ -189,7 +189,7 @@ static NSString *event = @"Recipe Detail";
                              }
                              else
                              {
-                                 title = @" add to favourites";
+                                 title = @" add to faves";
                                  mAddToFavButton.userInteractionEnabled = YES;
                                  
                                 // UIImage *addToFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"favBack.png" andAddIfRequired:YES];
@@ -228,7 +228,7 @@ static NSString *event = @"Recipe Detail";
         }
         else
         {
-            title = @" add to favourites";
+            title = @" add to faves";
             mAddToFavButton.userInteractionEnabled = YES;
             
             UIImage *addToFavImage = [[UtilityManager sharedUtilityManager] cacheImageWithCompleteFileName:@"AddToMyFaves.png" andAddIfRequired:YES];
